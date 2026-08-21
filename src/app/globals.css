@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+
+:root {
+  --background: #faf6ee;
+  --foreground: #101b33;
+
+  /* Sellio palette */
+  --color-paper: #faf6ee;
+  --color-paper-dim: #f2ece0;
+  --color-navy: #101b33;
+  --color-navy-soft: #16274a;
+  --color-navy-mute: #4a5875;
+  --color-coral: #ff5b45;
+  --color-coral-dark: #e0432f;
+  --color-coral-light: #ffe4de;
+  --color-border: #e5ddcd;
+  --color-ink-mute: #6b6a63;
+  --color-white: #ffffff;
+  --color-good: #1f9d6b;
+  --color-bad: #e0432f;
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-paper: var(--color-paper);
+  --color-paper-dim: var(--color-paper-dim);
+  --color-navy: var(--color-navy);
+  --color-navy-soft: var(--color-navy-soft);
+  --color-navy-mute: var(--color-navy-mute);
+  --color-coral: var(--color-coral);
+  --color-coral-dark: var(--color-coral-dark);
+  --color-coral-light: var(--color-coral-light);
+  --color-border: var(--color-border);
+  --color-ink-mute: var(--color-ink-mute);
+  --color-good: var(--color-good);
+  --color-bad: var(--color-bad);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--color-coral);
+  color: white;
+}
+
+.container-xl {
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
