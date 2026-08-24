@@ -1,6 +1,6 @@
 "use client";
 
-import { changelog } from "@/lib/changelog-data";
+import { changelog } from "../lib/changelog-data";
 
 export default function ChangelogSidebar() {
   return (
