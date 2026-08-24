@@ -23,10 +23,18 @@ const socialLinks: SocialLink[] = [
     href: "https://instagram.com/",
     icon: (
       <IconWrap>
-        <path d="M12 2.2c3.2 0 3.6 0 4.8.07 1.2.06 2 .25 2.7.53a5.4 5.4 0 0 1 2 1.3 5.4 5.4 0 0 1 1.3 2c.28.7.47 1.5.53 2.7.06 1.2.07 1.6.07 4.8s0 3.6-.07 4.8c-.06 1.2-.25 2-.53 2.7a5.4 5.4 0 0 1-1.3 2 5.4 5.4 0 0 1-2 1.3c-.7.28-1.5.47-2.7.53-1.2.06-1.6.07-4.8.07s-3.6 0-4.8-.07c-1.2-.06-2-.25-2.7-.53a5.4 5.4 0 0 1-2-1.3 5.4 5.4 0 0 1-1.3-2c-.28-.7-.47-1.5-.53-2.7C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.8c.06-1.2.25-2 .53-2.7a5.4 5.4 0 0 1 1.3-2 5.4 5.4 0 0 1 2-1.3c.7-.28 1.5-.47 2.7-.53C8.4 2.2 8.8 2.2 12 2.2z" />
+        {/* Instagram outer rounded square */}
+        <path d="M7.75 2h8.5C19.42 2 22 4.58 22 7.75v8.5C22 19.42 19.42 22 16.25 22h-8.5C4.58 22 2 19.42 2 16.25v-8.5C2 4.58 4.58 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5C18.32 20 20 18.32 20 16.25v-8.5C20 5.68 18.32 4 16.25 4h-8.5z" />
+
+        {/* Instagram center circle */}
+        <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
+
+        {/* Instagram top-right dot */}
+        <circle cx="17.25" cy="6.75" r="1.2" />
       </IconWrap>
     ),
   },
+
   {
     name: "X (Twitter)",
     href: "https://x.com/",
@@ -36,6 +44,7 @@ const socialLinks: SocialLink[] = [
       </IconWrap>
     ),
   },
+
   {
     name: "Facebook",
     href: "https://facebook.com/",
@@ -45,6 +54,7 @@ const socialLinks: SocialLink[] = [
       </IconWrap>
     ),
   },
+
   {
     name: "TikTok",
     href: "https://tiktok.com/",
@@ -59,8 +69,8 @@ const socialLinks: SocialLink[] = [
 export default function SocialMediaSection() {
   return (
     <section className="border-t border-[#ECE6DE] bg-[#FEF9F5] py-16">
-      <div className="mx-auto flex max-w-7xl px-6 lg:px-8 flex-col items-center justify-between gap-6 px-6 sm:flex-row">
-
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 sm:flex-row lg:px-8">
+        {/* Text */}
         <div>
           <p className="text-sm font-semibold text-[#12172A]">
             Follow along for new drops and winner announcements.
@@ -71,7 +81,7 @@ export default function SocialMediaSection() {
           </p>
         </div>
 
-
+        {/* Social Icons */}
         <div className="flex items-center gap-3">
           {socialLinks.map((link) => (
             <a
@@ -86,7 +96,6 @@ export default function SocialMediaSection() {
             </a>
           ))}
         </div>
-
       </div>
     </section>
   );
