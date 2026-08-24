@@ -10,7 +10,7 @@ const links = [
   { label: "Pricing", href: "/#pricing" },
   { label: "Latest Updates", href: "/updates" },
   { label: "Screencasts", href: "/screencasts" },
-  { label: "Documentation", href: "/#support" },
+  { label: "Documentation", href: "/documentation" },
   { label: "Contact", href: "/#contact" },
 ];
 
