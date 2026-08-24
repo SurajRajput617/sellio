@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const links = [
@@ -15,6 +16,19 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href.startsWith("/#")) {
+      return (
+        pathname === "/" &&
+        typeof window !== "undefined" &&
+        window.location.hash === href.slice(1)
+      );
+    }
+
+    return pathname === href;
+  };
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-paper/85 backdrop-blur-md">
@@ -38,7 +52,11 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-[15px] font-medium text-navy-mute transition-colors hover:text-navy"
+              className={`text-[15px] font-medium transition-colors hover:text-[#ff5b45] ${
+                isActive(link.href)
+                  ? "text-[#ff5b45]"
+                  : "text-navy-mute"
+              }`}
             >
               {link.label}
             </Link>
@@ -49,7 +67,7 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 md:flex">
           <Link
             href="/#pricing"
-            className="text-[15px] font-medium text-navy-mute transition-colors hover:text-navy"
+            className="text-[15px] font-medium text-navy-mute transition-colors hover:text-[#ff5b45]"
           >
             Sign in
           </Link>
@@ -67,7 +85,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-navy md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-navy transition-colors hover:text-[#ff5b45] md:hidden"
           aria-label="Toggle menu"
           aria-expanded={open}
         >
@@ -89,7 +107,11 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-[15px] font-medium text-navy-mute hover:bg-paper-dim hover:text-navy"
+                className={`rounded-lg px-3 py-3 text-[15px] font-medium transition-colors hover:bg-paper-dim hover:text-[#ff5b45] ${
+                  isActive(link.href)
+                    ? "text-[#ff5b45]"
+                    : "text-navy-mute"
+                }`}
               >
                 {link.label}
               </Link>
@@ -100,7 +122,7 @@ export default function Navbar() {
               <Link
                 href="/#pricing"
                 onClick={() => setOpen(false)}
-                className="rounded-full border border-border px-4 py-2.5 text-center text-[15px] font-medium text-navy"
+                className="rounded-full border border-border px-4 py-2.5 text-center text-[15px] font-medium text-navy transition-colors hover:text-[#ff5b45]"
               >
                 Sign in
               </Link>
