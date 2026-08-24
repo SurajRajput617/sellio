@@ -13,6 +13,7 @@ import {
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 export default function TermsPage() {
   return (
@@ -26,88 +27,8 @@ export default function TermsPage() {
           {/* LEFT SIDEBAR */}
           {/* ===================================================== */}
 
-          <aside className="hidden lg:block">
-            <div className="sticky top-28">
-              <Link
-                href="/documentation"
-                className="mb-8 block text-lg font-bold text-navy-mute transition-colors hover:text-coral"
-              >
-                Welcome
-              </Link>
-
-              <p className="mb-3 text-xs font-bold uppercase tracking-[0.15em] text-navy">
-                Getting Started
-              </p>
-
-              <nav className="space-y-1">
-                <Link
-                  href="/documentation"
-                  className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-coral"
-                >
-                  <Rocket className="h-4 w-4 shrink-0" />
-                  <span>Overview</span>
-                </Link>
-
-                <Link
-                  href="/documentation/buy-domain"
-                  className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-coral"
-                >
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-coral text-xs font-bold text-white">
-                    1
-                  </span>
-
-                  <span>Buy Your Domain</span>
-                </Link>
-
-                <Link
-                  href="/documentation/add-domain"
-                  className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-coral"
-                >
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-coral text-xs font-bold text-white">
-                    2
-                  </span>
-
-                  <span>Add Your Domain to Sellio</span>
-                </Link>
-
-                <Link
-                  href="/documentation/create-company"
-                  className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-coral"
-                >
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-coral text-xs font-bold text-white">
-                    3
-                  </span>
-
-                  <span>Creating Your Company</span>
-                </Link>
-
-                {/* ACTIVE PAGE */}
-
-                <Link
-                  href="/documentation/terms"
-                  className="flex items-center gap-3 rounded-xl bg-coral/10 px-3 py-2.5 text-sm font-semibold text-coral"
-                >
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-coral text-xs font-bold text-white">
-                    4
-                  </span>
-
-                  <span>Adding Your Terms</span>
-                </Link>
-
-                <Link
-                  href="/documentation/payment-gateway"
-                  className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-coral"
-                >
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-coral text-xs font-bold text-white">
-                    5
-                  </span>
-
-                  <span>Payment Gateway</span>
-                </Link>
-              </nav>
-            </div>
-          </aside>
-
+       <DocumentationSidebar />
+       
           {/* ===================================================== */}
           {/* MAIN CONTENT */}
           {/* ===================================================== */}
