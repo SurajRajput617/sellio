@@ -8,7 +8,7 @@ export default function Support() {
     <section id="support" className="border-t border-border bg-paper-dim py-20 md:py-28">
       <div className="container-xl">
         <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-wide text-coral-dark">Resources</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-coral-dark">Documentation</p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-navy sm:text-4xl">
             You&apos;re not left figuring it out alone.
           </h2>
