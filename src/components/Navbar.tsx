@@ -65,12 +65,7 @@ export default function Navbar() {
 
         {/* Desktop Actions */}
         <div className="hidden items-center gap-3 md:flex">
-          <Link
-            href="/#pricing"
-            className="text-[15px] font-medium text-navy-mute transition-colors hover:text-[#ff5b45]"
-          >
-            Sign in
-          </Link>
+          
 
           <Link
             href="/#pricing"
@@ -119,13 +114,7 @@ export default function Navbar() {
 
             <div className="mt-2 flex flex-col gap-2 border-t border-border pt-4">
 
-              <Link
-                href="/#pricing"
-                onClick={() => setOpen(false)}
-                className="rounded-full border border-border px-4 py-2.5 text-center text-[15px] font-medium text-navy transition-colors hover:text-[#ff5b45]"
-              >
-                Sign in
-              </Link>
+            
 
               <Link
                 href="/#pricing"
