@@ -18,7 +18,9 @@ export default function ChangelogPage() {
       <main className="py-14 md:py-20">
         <div className="container-xl">
           <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-wide text-coral-dark">Changelog</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-coral-dark">
+Latest Updates
+</p>
             <h1 className="mt-3 font-display text-4xl font-bold tracking-tight text-navy sm:text-5xl">
               See what we&apos;ve been shipping.
             </h1>
