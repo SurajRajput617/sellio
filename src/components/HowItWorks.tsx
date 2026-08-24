@@ -6,7 +6,7 @@ export default function HowItWorks() {
     <section id="how-it-works" className="py-20 md:py-28">
       <div className="container-xl">
         <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-wide text-coral-dark">How it works</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-coral-dark">Features</p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-navy sm:text-4xl">
             From idea to online store in weeks, not months.
           </h2>
