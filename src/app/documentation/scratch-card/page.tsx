@@ -3,8 +3,8 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle2,
-  Gamepad2,
-  Settings,
+  CircleHelp,
+  PlayCircle,
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-export default function InstantWinGamesPage() {
+export default function ScratchCardPage() {
 
   return (
     <>
@@ -67,7 +67,7 @@ export default function InstantWinGamesPage() {
                 tracking-[-0.04em]
                 "
               >
-                Instant Win Games
+                Scratch Card
               </h1>
 
 
@@ -82,10 +82,9 @@ export default function InstantWinGamesPage() {
                 text-navy-mute
                 "
               >
-                Create instant win experiences where customers
-                can participate and discover results instantly.
-                Sellio allows you to configure different game
-                formats and reward customers quickly.
+                Create an interactive Scratch Card game where
+                customers reveal hidden results by scratching
+                the card and discovering their reward.
               </p>
 
 
@@ -99,11 +98,11 @@ export default function InstantWinGamesPage() {
 
 
 
-            {/* OVERVIEW */}
+            {/* WHAT IS IT */}
 
 
             <section
-              id="overview"
+              id="what-is-it"
               className="
               scroll-mt-28
               border-b border-border
@@ -115,7 +114,7 @@ export default function InstantWinGamesPage() {
               <div className="flex items-center gap-3">
 
 
-                <Gamepad2
+                <CircleHelp
                   className="
                   h-6 w-6
                   text-coral
@@ -131,7 +130,7 @@ export default function InstantWinGamesPage() {
                   font-bold
                   "
                 >
-                  Instant Win Games Overview
+                  What is it?
                 </h2>
 
 
@@ -147,10 +146,10 @@ export default function InstantWinGamesPage() {
                 text-navy-mute
                 "
               >
-                Instant Win Games let customers play a game
-                and receive an immediate result. These games
-                are designed to increase engagement and create
-                interactive customer experiences.
+                Scratch Card is an instant win game that
+                gives customers a fun reveal experience.
+                Customers scratch a digital card to discover
+                whether they have received a reward.
               </p>
 
 
@@ -160,9 +159,9 @@ export default function InstantWinGamesPage() {
 
 
                 {[
-                  "Create instant reward experiences.",
-                  "Choose different game formats.",
-                  "Engage customers with interactive games."
+                  "Customer opens the Scratch Card game.",
+                  "Customer scratches the covered area.",
+                  "The result is revealed instantly."
                 ].map((item)=>(
 
 
@@ -178,7 +177,6 @@ export default function InstantWinGamesPage() {
                       text-coral
                       "
                     />
-
 
 
                     <p className="text-navy-mute">
@@ -208,9 +206,8 @@ export default function InstantWinGamesPage() {
             {/* HOW IT WORKS */}
 
 
-
             <section
-              id="how-work"
+              id="how-it-works"
               className="
               scroll-mt-28
               border-b border-border
@@ -219,107 +216,10 @@ export default function InstantWinGamesPage() {
             >
 
 
-              <h2
-                className="
-                font-display
-                text-3xl
-                font-bold
-                "
-              >
-                How Instant Win Games Work
-              </h2>
-
-
-
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                Customers participate in an instant game and
-                receive a result based on your configured game
-                settings.
-              </p>
-
-
-
-
-              <div className="mt-7 space-y-4">
-
-
-                {[
-                  "Customer opens an available instant win game.",
-                  "Customer plays the selected game.",
-                  "System checks the game result.",
-                  "Reward or outcome is displayed instantly."
-                ].map((item,index)=>(
-
-
-                  <div
-                    key={item}
-                    className="flex gap-3"
-                  >
-
-
-                    <span
-                      className="
-                      flex h-6 w-6
-                      items-center justify-center
-                      rounded-full
-                      bg-coral
-                      text-xs
-                      font-bold
-                      text-white
-                      "
-                    >
-                      {index + 1}
-                    </span>
-
-
-                    <p className="text-navy-mute">
-                      {item}
-                    </p>
-
-
-                  </div>
-
-
-                ))}
-
-
-              </div>
-
-
-            </section>
-
-
-
-
-
-
-
-
-
-            {/* SET GAME TYPE */}
-
-
-
-            <section
-              id="game-type"
-              className="
-              scroll-mt-28
-              py-12
-              "
-            >
-
-
               <div className="flex items-center gap-3">
 
 
-                <Settings
+                <PlayCircle
                   className="
                   h-6 w-6
                   text-coral
@@ -335,7 +235,7 @@ export default function InstantWinGamesPage() {
                   font-bold
                   "
                 >
-                  How to Set a Game Type
+                  How It Works
                 </h2>
 
 
@@ -351,8 +251,9 @@ export default function InstantWinGamesPage() {
                 text-navy-mute
                 "
               >
-                Select the type of instant win game you want
-                to create from your Sellio dashboard.
+                Customers interact with the Scratch Card by
+                revealing the hidden area. The system then
+                displays the configured result.
               </p>
 
 
@@ -362,11 +263,10 @@ export default function InstantWinGamesPage() {
 
 
                 {[
-                  "Open the Sellio admin panel.",
-                  "Go to Instant Win Games settings.",
-                  "Create a new game.",
-                  "Select your preferred game type.",
-                  "Save your configuration."
+                  "Customer selects the Scratch Card.",
+                  "The scratch area becomes available.",
+                  "Customer reveals the hidden content.",
+                  "Reward or result is displayed."
                 ].map((item,index)=>(
 
 
@@ -407,104 +307,7 @@ export default function InstantWinGamesPage() {
 
             </section>
             
-            {/* ADD / CONFIGURE GAME */}
-
-
-            <section
-              id="configure-game"
-              className="
-              scroll-mt-28
-              border-b border-border
-              py-12
-              "
-            >
-
-
-              <h2
-                className="
-                font-display
-                text-3xl
-                font-bold
-                "
-              >
-                Configure Instant Win Game
-              </h2>
-
-
-
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                After selecting a game type, configure the
-                rules, rewards and settings for your instant
-                win experience.
-              </p>
-
-
-
-
-              <div className="mt-7 space-y-4">
-
-
-                {[
-                  "Add the game name and description.",
-                  "Configure available rewards.",
-                  "Set participation rules.",
-                  "Review settings before publishing."
-                ].map((item,index)=>(
-
-
-                  <div
-                    key={item}
-                    className="flex gap-3"
-                  >
-
-
-                    <span
-                      className="
-                      flex h-6 w-6
-                      items-center justify-center
-                      rounded-full
-                      bg-coral
-                      text-xs
-                      font-bold
-                      text-white
-                      "
-                    >
-                      {index + 1}
-                    </span>
-
-
-                    <p className="text-navy-mute">
-                      {item}
-                    </p>
-
-
-                  </div>
-
-
-                ))}
-
-
-              </div>
-
-
-            </section>
-
-
-
-
-
-
-
-
-
-            {/* GAME PREVIEW */}
+            {/* PREVIEW SECTION */}
 
 
             <section
@@ -524,7 +327,7 @@ export default function InstantWinGamesPage() {
                 font-bold
                 "
               >
-                Game Preview
+                Scratch Card Preview
               </h2>
 
 
@@ -537,8 +340,9 @@ export default function InstantWinGamesPage() {
                 text-navy-mute
                 "
               >
-                Use the preview option to check how the game
-                will appear to customers before making it live.
+                Preview your Scratch Card experience before
+                publishing it. Check the design, scratch area
+                and customer interaction flow.
               </p>
 
 
@@ -547,45 +351,12 @@ export default function InstantWinGamesPage() {
               <div
                 className="
                 mt-7
+                overflow-hidden
                 rounded-xl
                 border border-border
-                bg-white
-                p-5
                 "
               >
 
-
-                <p className="font-bold">
-                  Preview Checklist
-                </p>
-
-
-
-                <ul
-                  className="
-                  mt-4
-                  space-y-3
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-
-                  <li>
-                    • Check game appearance.
-                  </li>
-
-
-                  <li>
-                    • Verify reward information.
-                  </li>
-
-
-                  <li>
-                    • Confirm customer experience.
-                  </li>
-
-
-                </ul>
 
 
               </div>
@@ -601,12 +372,11 @@ export default function InstantWinGamesPage() {
 
 
 
-            {/* TEST BEFORE LAUNCH */}
-
+            {/* CUSTOMISATION OPTIONS */}
 
 
             <section
-              id="test"
+              id="customisation"
               className="
               scroll-mt-28
               border-b border-border
@@ -622,7 +392,7 @@ export default function InstantWinGamesPage() {
                 font-bold
                 "
               >
-                Test Before You Launch
+                Customisation Options
               </h2>
 
 
@@ -635,9 +405,209 @@ export default function InstantWinGamesPage() {
                 text-navy-mute
                 "
               >
-                Before publishing your instant win game,
-                test the complete customer journey to make
-                sure everything works correctly.
+                Customize your Scratch Card design by adding
+                your own images and creating a unique customer
+                experience.
+              </p>
+
+
+
+
+
+
+
+
+
+              {/* OVERLAY IMAGE */}
+
+
+
+              <div className="mt-10">
+
+
+                <h3
+                  className="
+                  text-xl
+                  font-bold
+                  "
+                >
+                  Custom Overlay Image
+                </h3>
+
+
+
+
+                <p
+                  className="
+                  mt-3
+                  leading-7
+                  text-navy-mute
+                  "
+                >
+                  Upload a custom overlay image that covers
+                  the hidden reward area. Customers scratch
+                  this layer to reveal their result.
+                </p>
+
+
+
+
+                <div className="mt-6 space-y-4">
+
+
+                  {[
+                    "Prepare your scratch overlay design.",
+                    "Upload the image in Scratch Card settings.",
+                    "Preview the scratch effect.",
+                    "Save your custom design."
+                  ].map((item,index)=>(
+
+
+                    <div
+                      key={item}
+                      className="flex gap-3"
+                    >
+
+
+                      <span
+                        className="
+                        flex h-6 w-6
+                        items-center justify-center
+                        rounded-full
+                        bg-coral
+                        text-xs
+                        font-bold
+                        text-white
+                        "
+                      >
+                        {index + 1}
+                      </span>
+
+
+
+                      <p className="text-navy-mute">
+                        {item}
+                      </p>
+
+
+                    </div>
+
+
+                  ))}
+
+
+                </div>
+
+
+              </div>
+
+
+
+
+
+
+
+
+
+              {/* DESIGN TIPS */}
+
+
+
+              <div className="mt-10">
+
+
+                <h3
+                  className="
+                  text-xl
+                  font-bold
+                  "
+                >
+                  Design Tips
+                </h3>
+
+
+
+
+                <div className="mt-5 space-y-3">
+
+
+                  {[
+                    "Use clear and attractive visuals.",
+                    "Keep scratch areas easy to identify.",
+                    "Match the design with your brand."
+                  ].map((item)=>(
+
+
+                    <div
+                      key={item}
+                      className="flex gap-3"
+                    >
+
+
+                      <CheckCircle2
+                        className="
+                        h-5 w-5
+                        text-coral
+                        "
+                      />
+
+
+                      <p className="text-navy-mute">
+                        {item}
+                      </p>
+
+
+                    </div>
+
+
+                  ))}
+
+
+                </div>
+
+
+              </div>
+
+
+            </section>
+            
+            {/* WANT TO TRY FIRST */}
+
+
+
+            <section
+              id="try-first"
+              className="
+              scroll-mt-28
+              py-12
+              "
+            >
+
+
+              <h2
+                className="
+                font-display
+                text-3xl
+                font-bold
+                "
+              >
+                Want to try it first?
+              </h2>
+
+
+
+
+              <p
+                className="
+                mt-5
+                leading-8
+                text-navy-mute
+                "
+              >
+                Test your Scratch Card before launching it.
+                Preview the customer experience and make sure
+                the scratch effect, design and rewards work
+                correctly.
               </p>
 
 
@@ -647,10 +617,10 @@ export default function InstantWinGamesPage() {
 
 
                 {[
-                  "Open the game preview.",
-                  "Test customer participation flow.",
-                  "Check rewards and results.",
-                  "Publish when everything is ready."
+                  "Open the Scratch Card preview.",
+                  "Scratch the card as a customer.",
+                  "Check the revealed result.",
+                  "Update settings if required."
                 ].map((item,index)=>(
 
 
@@ -673,6 +643,7 @@ export default function InstantWinGamesPage() {
                     >
                       {index + 1}
                     </span>
+
 
 
                     <p className="text-navy-mute">
@@ -699,86 +670,8 @@ export default function InstantWinGamesPage() {
 
 
 
-            {/* AVAILABLE GAME MODES */}
-
-
-
-            <section
-              id="game-modes"
-              className="
-              scroll-mt-28
-              py-12
-              "
-            >
-
-
-              <h2
-                className="
-                font-display
-                text-3xl
-                font-bold
-                "
-              >
-                Available Game Modes
-              </h2>
-
-
-
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                Choose from different instant win formats
-                available in Sellio to create unique customer
-                experiences.
-              </p>
-
-
-
-
-              <div className="mt-7 space-y-3">
-
-
-                {[
-                  "Spin Wheel",
-                  "Scratch Card",
-                  "Pick a Prize",
-                  "Lucky Draw",
-                  "Mystery Reward",
-                  "Instant Choice"
-                ].map((item)=>(
-
-
-                  <div
-                    key={item}
-                    className="
-                    rounded-xl
-                    border border-border
-                    bg-white
-                    px-5
-                    py-4
-                    font-medium
-                    "
-                  >
-
-                    {item}
-
-                  </div>
-
-
-                ))}
-
-
-              </div>
-
-
-            </section>
-            
             {/* PREVIOUS NEXT */}
+
 
 
             <div
@@ -791,11 +684,14 @@ export default function InstantWinGamesPage() {
             >
 
 
+
+
               {/* PREVIOUS */}
 
 
+
               <Link
-                href="/documentation/homepage-setup"
+                href="/documentation/slots"
                 className="
                 rounded-2xl
                 border border-border
@@ -803,6 +699,7 @@ export default function InstantWinGamesPage() {
                 p-5
                 "
               >
+
 
                 <p
                   className="
@@ -815,12 +712,18 @@ export default function InstantWinGamesPage() {
                 </p>
 
 
+
                 <p className="mt-2 font-bold">
-                  Homepage Setup
+                  Slots
                 </p>
 
 
               </Link>
+
+
+
+
+
 
 
 
@@ -829,7 +732,7 @@ export default function InstantWinGamesPage() {
 
 
               <Link
-                href="/documentation/test-a-game-type"
+                href="/documentation/pop"
                 className="
                 rounded-2xl
                 border border-border
@@ -852,6 +755,7 @@ export default function InstantWinGamesPage() {
 
 
 
+
                 <div
                   className="
                   mt-2
@@ -864,7 +768,7 @@ export default function InstantWinGamesPage() {
 
 
                   <p className="font-bold">
-                    Test-a-Game-Type
+                    Pop
                   </p>
 
 
@@ -887,10 +791,7 @@ export default function InstantWinGamesPage() {
 
 
           </article>
-
-
-
-
+          
 
 
 
@@ -928,55 +829,27 @@ export default function InstantWinGamesPage() {
 
 
                 <a
-                  href="#overview"
+                  href="#what-is-it"
                   className="
                   text-sm
                   text-coral
                   "
                 >
-                  Instant Win Games Overview
+                  What is it?
                 </a>
 
 
 
 
                 <a
-                  href="#how-work"
+                  href="#how-it-works"
                   className="
                   block
                   text-sm
                   text-navy-mute
                   "
                 >
-                  How Games Work
-                </a>
-
-
-
-
-                <a
-                  href="#game-type"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Set Game Type
-                </a>
-
-
-
-
-                <a
-                  href="#configure-game"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Configure Game
+                  How It Works
                 </a>
 
 
@@ -990,35 +863,35 @@ export default function InstantWinGamesPage() {
                   text-navy-mute
                   "
                 >
-                  Game Preview
+                  Scratch Card Preview
                 </a>
 
 
 
 
                 <a
-                  href="#test"
+                  href="#customisation"
                   className="
                   block
                   text-sm
                   text-navy-mute
                   "
                 >
-                  Test Before Launch
+                  Customisation Options
                 </a>
 
 
 
 
                 <a
-                  href="#game-modes"
+                  href="#try-first"
                   className="
                   block
                   text-sm
                   text-navy-mute
                   "
                 >
-                  Available Game Modes
+                  Want to try it first?
                 </a>
 
 

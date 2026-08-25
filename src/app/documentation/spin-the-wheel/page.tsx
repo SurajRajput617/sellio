@@ -3,7 +3,7 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle2,
-  Gamepad2,
+  CircleHelp,
   Settings,
 } from "lucide-react";
 
@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-export default function InstantWinGamesPage() {
+export default function SpinTheWheelPage() {
 
   return (
     <>
@@ -31,13 +31,8 @@ export default function InstantWinGamesPage() {
         >
 
 
-          {/* LEFT SIDEBAR */}
-
           <DocumentationSidebar />
 
-
-
-          {/* CONTENT */}
 
 
           <article className="min-w-0">
@@ -67,7 +62,7 @@ export default function InstantWinGamesPage() {
                 tracking-[-0.04em]
                 "
               >
-                Instant Win Games
+                Spin the Wheel
               </h1>
 
 
@@ -82,10 +77,10 @@ export default function InstantWinGamesPage() {
                 text-navy-mute
                 "
               >
-                Create instant win experiences where customers
-                can participate and discover results instantly.
-                Sellio allows you to configure different game
-                formats and reward customers quickly.
+                Create an interactive Spin the Wheel game
+                where customers spin a virtual wheel and
+                receive instant results based on configured
+                rewards.
               </p>
 
 
@@ -99,11 +94,11 @@ export default function InstantWinGamesPage() {
 
 
 
-            {/* OVERVIEW */}
+            {/* WHAT IS IT */}
 
 
             <section
-              id="overview"
+              id="what-is-it"
               className="
               scroll-mt-28
               border-b border-border
@@ -115,7 +110,7 @@ export default function InstantWinGamesPage() {
               <div className="flex items-center gap-3">
 
 
-                <Gamepad2
+                <CircleHelp
                   className="
                   h-6 w-6
                   text-coral
@@ -131,7 +126,7 @@ export default function InstantWinGamesPage() {
                   font-bold
                   "
                 >
-                  Instant Win Games Overview
+                  What is it?
                 </h2>
 
 
@@ -147,10 +142,9 @@ export default function InstantWinGamesPage() {
                 text-navy-mute
                 "
               >
-                Instant Win Games let customers play a game
-                and receive an immediate result. These games
-                are designed to increase engagement and create
-                interactive customer experiences.
+                Spin the Wheel is an instant win game that
+                allows customers to spin a digital wheel and
+                discover their reward immediately.
               </p>
 
 
@@ -160,9 +154,9 @@ export default function InstantWinGamesPage() {
 
 
                 {[
-                  "Create instant reward experiences.",
-                  "Choose different game formats.",
-                  "Engage customers with interactive games."
+                  "Customers interact with a spinning wheel.",
+                  "The wheel selects a configured result.",
+                  "Rewards are displayed instantly."
                 ].map((item)=>(
 
 
@@ -178,7 +172,6 @@ export default function InstantWinGamesPage() {
                       text-coral
                       "
                     />
-
 
 
                     <p className="text-navy-mute">
@@ -208,9 +201,8 @@ export default function InstantWinGamesPage() {
             {/* HOW IT WORKS */}
 
 
-
             <section
-              id="how-work"
+              id="how-it-works"
               className="
               scroll-mt-28
               border-b border-border
@@ -226,7 +218,7 @@ export default function InstantWinGamesPage() {
                 font-bold
                 "
               >
-                How Instant Win Games Work
+                How it Works
               </h2>
 
 
@@ -239,9 +231,9 @@ export default function InstantWinGamesPage() {
                 text-navy-mute
                 "
               >
-                Customers participate in an instant game and
-                receive a result based on your configured game
-                settings.
+                Customers start the Spin the Wheel game,
+                complete the spin action and receive the
+                result generated from your game settings.
               </p>
 
 
@@ -251,10 +243,10 @@ export default function InstantWinGamesPage() {
 
 
                 {[
-                  "Customer opens an available instant win game.",
-                  "Customer plays the selected game.",
-                  "System checks the game result.",
-                  "Reward or outcome is displayed instantly."
+                  "Customer opens the Spin the Wheel game.",
+                  "Customer clicks the spin button.",
+                  "The wheel animation starts.",
+                  "A reward or result is displayed."
                 ].map((item,index)=>(
 
 
@@ -294,23 +286,15 @@ export default function InstantWinGamesPage() {
 
 
             </section>
-
-
-
-
-
-
-
-
-
-            {/* SET GAME TYPE */}
-
+            
+            {/* CUSTOMISATION OPTIONS */}
 
 
             <section
-              id="game-type"
+              id="customisation"
               className="
               scroll-mt-28
+              border-b border-border
               py-12
               "
             >
@@ -327,7 +311,6 @@ export default function InstantWinGamesPage() {
                 />
 
 
-
                 <h2
                   className="
                   font-display
@@ -335,7 +318,7 @@ export default function InstantWinGamesPage() {
                   font-bold
                   "
                 >
-                  How to Set a Game Type
+                  Customisation Options
                 </h2>
 
 
@@ -351,67 +334,267 @@ export default function InstantWinGamesPage() {
                 text-navy-mute
                 "
               >
-                Select the type of instant win game you want
-                to create from your Sellio dashboard.
+                Customize your Spin the Wheel experience by
+                changing the design, sounds and visual elements
+                of your game.
               </p>
 
 
 
 
-              <div className="mt-7 space-y-4">
 
 
-                {[
-                  "Open the Sellio admin panel.",
-                  "Go to Instant Win Games settings.",
-                  "Create a new game.",
-                  "Select your preferred game type.",
-                  "Save your configuration."
-                ].map((item,index)=>(
 
 
-                  <div
-                    key={item}
-                    className="flex gap-3"
-                  >
+
+              {/* THEME EDITOR */}
 
 
-                    <span
-                      className="
-                      flex h-6 w-6
-                      items-center justify-center
-                      rounded-full
-                      bg-coral
-                      text-xs
-                      font-bold
-                      text-white
-                      "
+              <div className="mt-10">
+
+
+                <h3
+                  className="
+                  text-xl
+                  font-bold
+                  "
+                >
+                  Theme Editor
+                </h3>
+
+
+
+
+                <p
+                  className="
+                  mt-3
+                  leading-7
+                  text-navy-mute
+                  "
+                >
+                  Adjust the appearance of your wheel to match
+                  your brand style and customer experience.
+                </p>
+
+
+
+
+                <div className="mt-5 space-y-3">
+
+
+                  {[
+                    "Change wheel colours.",
+                    "Update wheel text styles.",
+                    "Match the design with your brand."
+                  ].map((item)=>(
+
+
+                    <div
+                      key={item}
+                      className="flex gap-3"
                     >
-                      {index + 1}
-                    </span>
 
 
-                    <p className="text-navy-mute">
-                      {item}
-                    </p>
+                      <CheckCircle2
+                        className="
+                        h-5 w-5
+                        text-coral
+                        "
+                      />
 
 
-                  </div>
+                      <p className="text-navy-mute">
+                        {item}
+                      </p>
 
 
-                ))}
+                    </div>
+
+
+                  ))}
+
+
+                </div>
+
+
+              </div>
+
+
+
+
+
+
+
+
+
+              {/* CUSTOM WHEEL SOUND */}
+
+
+              <div className="mt-10">
+
+
+                <h3
+                  className="
+                  text-xl
+                  font-bold
+                  "
+                >
+                  Custom Wheel Sound
+                </h3>
+
+
+
+
+                <p
+                  className="
+                  mt-3
+                  leading-7
+                  text-navy-mute
+                  "
+                >
+                  Add sound effects to make the spinning
+                  experience more engaging for customers.
+                </p>
+
+
+
+
+                <div className="mt-5 space-y-3">
+
+
+                  {[
+                    "Upload or select wheel sounds.",
+                    "Preview audio before saving.",
+                    "Enable or disable sound settings."
+                  ].map((item)=>(
+
+
+                    <div
+                      key={item}
+                      className="flex gap-3"
+                    >
+
+
+                      <CheckCircle2
+                        className="
+                        h-5 w-5
+                        text-coral
+                        "
+                      />
+
+
+                      <p className="text-navy-mute">
+                        {item}
+                      </p>
+
+
+                    </div>
+
+
+                  ))}
+
+
+                </div>
+
+
+              </div>
+
+
+
+
+
+
+
+
+
+              {/* CUSTOM BACKGROUND IMAGE */}
+
+
+              <div className="mt-10">
+
+
+                <h3
+                  className="
+                  text-xl
+                  font-bold
+                  "
+                >
+                  Custom Background Image
+                </h3>
+
+
+
+
+                <p
+                  className="
+                  mt-3
+                  leading-7
+                  text-navy-mute
+                  "
+                >
+                  Upload a custom background image to create
+                  a unique Spin the Wheel appearance.
+                </p>
+
+
+
+
+                <div className="mt-5 space-y-3">
+
+
+                  {[
+                    "Upload your background image.",
+                    "Check the preview display.",
+                    "Save your custom design."
+                  ].map((item)=>(
+
+
+                    <div
+                      key={item}
+                      className="flex gap-3"
+                    >
+
+
+                      <CheckCircle2
+                        className="
+                        h-5 w-5
+                        text-coral
+                        "
+                      />
+
+
+                      <p className="text-navy-mute">
+                        {item}
+                      </p>
+
+
+                    </div>
+
+
+                  ))}
+
+
+                </div>
 
 
               </div>
 
 
             </section>
-            
-            {/* ADD / CONFIGURE GAME */}
+
+
+
+
+
+
+
+
+
+            {/* IMAGE PREVIEW */}
 
 
             <section
-              id="configure-game"
+              id="preview-image"
               className="
               scroll-mt-28
               border-b border-border
@@ -427,7 +610,7 @@ export default function InstantWinGamesPage() {
                 font-bold
                 "
               >
-                Configure Instant Win Game
+                Spin the Wheel Preview
               </h2>
 
 
@@ -440,105 +623,8 @@ export default function InstantWinGamesPage() {
                 text-navy-mute
                 "
               >
-                After selecting a game type, configure the
-                rules, rewards and settings for your instant
-                win experience.
-              </p>
-
-
-
-
-              <div className="mt-7 space-y-4">
-
-
-                {[
-                  "Add the game name and description.",
-                  "Configure available rewards.",
-                  "Set participation rules.",
-                  "Review settings before publishing."
-                ].map((item,index)=>(
-
-
-                  <div
-                    key={item}
-                    className="flex gap-3"
-                  >
-
-
-                    <span
-                      className="
-                      flex h-6 w-6
-                      items-center justify-center
-                      rounded-full
-                      bg-coral
-                      text-xs
-                      font-bold
-                      text-white
-                      "
-                    >
-                      {index + 1}
-                    </span>
-
-
-                    <p className="text-navy-mute">
-                      {item}
-                    </p>
-
-
-                  </div>
-
-
-                ))}
-
-
-              </div>
-
-
-            </section>
-
-
-
-
-
-
-
-
-
-            {/* GAME PREVIEW */}
-
-
-            <section
-              id="preview"
-              className="
-              scroll-mt-28
-              border-b border-border
-              py-12
-              "
-            >
-
-
-              <h2
-                className="
-                font-display
-                text-3xl
-                font-bold
-                "
-              >
-                Game Preview
-              </h2>
-
-
-
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                Use the preview option to check how the game
-                will appear to customers before making it live.
+                Preview your configured Spin the Wheel game
+                before making it available to customers.
               </p>
 
 
@@ -547,69 +633,25 @@ export default function InstantWinGamesPage() {
               <div
                 className="
                 mt-7
+                overflow-hidden
                 rounded-xl
                 border border-border
-                bg-white
-                p-5
                 "
               >
 
-
-                <p className="font-bold">
-                  Preview Checklist
-                </p>
-
-
-
-                <ul
-                  className="
-                  mt-4
-                  space-y-3
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-
-                  <li>
-                    • Check game appearance.
-                  </li>
-
-
-                  <li>
-                    • Verify reward information.
-                  </li>
-
-
-                  <li>
-                    • Confirm customer experience.
-                  </li>
-
-
-                </ul>
 
 
               </div>
 
 
             </section>
-
-
-
-
-
-
-
-
-
-            {/* TEST BEFORE LAUNCH */}
-
+                        {/* TRY FIRST */}
 
 
             <section
-              id="test"
+              id="try-first"
               className="
               scroll-mt-28
-              border-b border-border
               py-12
               "
             >
@@ -622,7 +664,7 @@ export default function InstantWinGamesPage() {
                 font-bold
                 "
               >
-                Test Before You Launch
+                Want to try it first?
               </h2>
 
 
@@ -635,9 +677,10 @@ export default function InstantWinGamesPage() {
                 text-navy-mute
                 "
               >
-                Before publishing your instant win game,
-                test the complete customer journey to make
-                sure everything works correctly.
+                Test your Spin the Wheel game before launch.
+                Preview the customer experience and confirm
+                that the wheel, rewards and results work as
+                expected.
               </p>
 
 
@@ -647,10 +690,10 @@ export default function InstantWinGamesPage() {
 
 
                 {[
-                  "Open the game preview.",
-                  "Test customer participation flow.",
-                  "Check rewards and results.",
-                  "Publish when everything is ready."
+                  "Open the Spin the Wheel preview.",
+                  "Spin the wheel as a customer.",
+                  "Check the selected reward.",
+                  "Update settings if changes are needed."
                 ].map((item,index)=>(
 
 
@@ -699,85 +742,6 @@ export default function InstantWinGamesPage() {
 
 
 
-            {/* AVAILABLE GAME MODES */}
-
-
-
-            <section
-              id="game-modes"
-              className="
-              scroll-mt-28
-              py-12
-              "
-            >
-
-
-              <h2
-                className="
-                font-display
-                text-3xl
-                font-bold
-                "
-              >
-                Available Game Modes
-              </h2>
-
-
-
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                Choose from different instant win formats
-                available in Sellio to create unique customer
-                experiences.
-              </p>
-
-
-
-
-              <div className="mt-7 space-y-3">
-
-
-                {[
-                  "Spin Wheel",
-                  "Scratch Card",
-                  "Pick a Prize",
-                  "Lucky Draw",
-                  "Mystery Reward",
-                  "Instant Choice"
-                ].map((item)=>(
-
-
-                  <div
-                    key={item}
-                    className="
-                    rounded-xl
-                    border border-border
-                    bg-white
-                    px-5
-                    py-4
-                    font-medium
-                    "
-                  >
-
-                    {item}
-
-                  </div>
-
-
-                ))}
-
-
-              </div>
-
-
-            </section>
-            
             {/* PREVIOUS NEXT */}
 
 
@@ -791,11 +755,9 @@ export default function InstantWinGamesPage() {
             >
 
 
-              {/* PREVIOUS */}
-
 
               <Link
-                href="/documentation/homepage-setup"
+                href="/documentation/test-a-game-type"
                 className="
                 rounded-2xl
                 border border-border
@@ -803,6 +765,7 @@ export default function InstantWinGamesPage() {
                 p-5
                 "
               >
+
 
                 <p
                   className="
@@ -815,8 +778,9 @@ export default function InstantWinGamesPage() {
                 </p>
 
 
+
                 <p className="mt-2 font-bold">
-                  Homepage Setup
+                 Test-a-game-type
                 </p>
 
 
@@ -824,12 +788,13 @@ export default function InstantWinGamesPage() {
 
 
 
-              {/* NEXT */}
+
+
 
 
 
               <Link
-                href="/documentation/test-a-game-type"
+                href="/documentation/slots"
                 className="
                 rounded-2xl
                 border border-border
@@ -852,6 +817,7 @@ export default function InstantWinGamesPage() {
 
 
 
+
                 <div
                   className="
                   mt-2
@@ -864,15 +830,13 @@ export default function InstantWinGamesPage() {
 
 
                   <p className="font-bold">
-                    Test-a-Game-Type
+                    Slots
                   </p>
 
 
 
                   <ArrowRight
-                    className="
-                    h-4 w-4
-                    "
+                    className="h-4 w-4"
                   />
 
 
@@ -887,10 +851,7 @@ export default function InstantWinGamesPage() {
 
 
           </article>
-
-
-
-
+          
 
 
 
@@ -928,97 +889,68 @@ export default function InstantWinGamesPage() {
 
 
                 <a
-                  href="#overview"
+                  href="#what-is-it"
                   className="
                   text-sm
                   text-coral
                   "
                 >
-                  Instant Win Games Overview
+                  What is it?
                 </a>
 
 
 
-
                 <a
-                  href="#how-work"
+                  href="#how-it-works"
                   className="
                   block
                   text-sm
                   text-navy-mute
                   "
                 >
-                  How Games Work
+                  How it Works
                 </a>
 
 
 
 
                 <a
-                  href="#game-type"
+                  href="#customisation"
                   className="
                   block
                   text-sm
                   text-navy-mute
                   "
                 >
-                  Set Game Type
+                  Customisation Options
                 </a>
 
 
 
 
                 <a
-                  href="#configure-game"
+                  href="#preview-image"
                   className="
                   block
                   text-sm
                   text-navy-mute
                   "
                 >
-                  Configure Game
+                  Spin the Wheel Preview
                 </a>
 
 
 
 
                 <a
-                  href="#preview"
+                  href="#try-first"
                   className="
                   block
                   text-sm
                   text-navy-mute
                   "
                 >
-                  Game Preview
-                </a>
-
-
-
-
-                <a
-                  href="#test"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Test Before Launch
-                </a>
-
-
-
-
-                <a
-                  href="#game-modes"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Available Game Modes
+                  Want to try it first?
                 </a>
 
 
