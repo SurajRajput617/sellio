@@ -437,6 +437,139 @@ export default function DocumentationPage() {
 
   </nav>
 </details>
+
+{/* ===================================================== */}
+{/* ADDITIONAL SETTINGS DROPDOWN */}
+{/* ===================================================== */}
+
+<details className="group mt-7" open>
+  <summary
+    className="
+      flex cursor-pointer list-none items-center justify-between
+      rounded-lg border border-border px-3 py-2.5
+      text-xs font-bold uppercase tracking-wide text-navy
+      transition-colors
+      hover:border-coral/40
+      [&::-webkit-details-marker]:hidden
+    "
+  >
+    <span>ADDITIONAL SETTINGS</span>
+
+    <svg
+      viewBox="0 0 20 20"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      className="
+        h-4 w-4 shrink-0
+        transition-transform duration-200
+        group-open:rotate-180
+      "
+    >
+      <path
+        d="M5 7.5L10 12.5L15 7.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </summary>
+
+
+  <nav className="mt-1 space-y-1">
+
+    <Link
+      href="/documentation/entry-list-display"
+      className="
+        block rounded-lg px-3 py-2
+        text-sm font-medium text-navy-mute
+        transition-colors
+        hover:bg-coral/10 hover:text-coral
+      "
+    >
+      Entry List Display
+    </Link>
+
+
+    <Link
+      href="/documentation/order-cart-settings"
+      className="
+        block rounded-lg px-3 py-2
+        text-sm font-medium text-navy-mute
+        transition-colors
+        hover:bg-coral/10 hover:text-coral
+      "
+    >
+      Order & Cart Settings
+    </Link>
+
+
+    <Link
+      href="/documentation/free-entry"
+      className="
+        block rounded-lg px-3 py-2
+        text-sm font-medium text-navy-mute
+        transition-colors
+        hover:bg-coral/10 hover:text-coral
+      "
+    >
+      Free Entry
+    </Link>
+
+
+    <Link
+      href="/documentation/site-credit-wallets"
+      className="
+        block rounded-lg px-3 py-2
+        text-sm font-medium text-navy-mute
+        transition-colors
+        hover:bg-coral/10 hover:text-coral
+      "
+    >
+      Site Credit & Wallets
+    </Link>
+
+
+    <Link
+      href="/documentation/payouts"
+      className="
+        block rounded-lg px-3 py-2
+        text-sm font-medium text-navy-mute
+        transition-colors
+        hover:bg-coral/10 hover:text-coral
+      "
+    >
+      Payouts
+    </Link>
+
+
+    <Link
+      href="/documentation/safe-play-setting"
+      className="
+        block rounded-lg px-3 py-2
+        text-sm font-medium text-navy-mute
+        transition-colors
+        hover:bg-coral/10 hover:text-coral
+      "
+    >
+      Safe Play Setting
+    </Link>
+
+
+    <Link
+      href="/documentation/leaderboards"
+      className="
+        block rounded-lg px-3 py-2
+        text-sm font-medium text-navy-mute
+        transition-colors
+        hover:bg-coral/10 hover:text-coral
+      "
+    >
+      Leaderboards
+    </Link>
+
+  </nav>
+</details>
+
               </nav>
             </div>
           </aside>
