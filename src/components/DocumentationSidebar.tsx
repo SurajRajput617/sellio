@@ -358,7 +358,7 @@ export default function DocumentationSidebar() {
   <nav className="mt-1 space-y-1">
 
     <Link
-      href="/documentation/social-accounts"
+      href="/documentation/connect-social-accounts"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
