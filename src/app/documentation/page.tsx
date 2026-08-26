@@ -736,7 +736,7 @@ export default function DocumentationPage() {
     </Link>
 
 
-    <Link href="/documentation/pot-drop"
+    {/* <Link href="/documentation/pot-drop"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Pot Drop
@@ -768,7 +768,7 @@ export default function DocumentationPage() {
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Gems
-    </Link>
+    </Link> */}
 
   </nav>
 
