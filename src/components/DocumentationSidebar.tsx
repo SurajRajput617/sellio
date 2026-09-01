@@ -662,14 +662,14 @@ export default function DocumentationSidebar() {
       Manual Draw
     </Link>
 
-    {/* <Link
+    <Link
       href="/documentation/managing-instant-winners"
       className={subLinkClass(
         "/documentation/managing-instant-winners"
       )}
     >
       Managing Instant Winners
-    </Link> */}
+    </Link>
 
     {/* <Link
       href="/documentation/add-daily-instant-winner-stats"

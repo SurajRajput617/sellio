@@ -457,8 +457,6 @@ export default function PinataPage() {
 </section>
 
 
-
-
 <section
   id="customisation"
   className="
