@@ -994,7 +994,7 @@ font-semibold
 >
 
 
-Managing-Layouts
+Managing Payouts
 
 
 <ArrowRight

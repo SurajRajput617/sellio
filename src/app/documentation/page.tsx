@@ -856,10 +856,10 @@ export default function DocumentationPage() {
     </Link>
 
     <Link
-      href="/documentation/managing-payouts"
+      href="/documentation/managing-layouts"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-navy"
     >
-      Managing Payouts
+      Managing Layouts
     </Link>
 
   </nav>
