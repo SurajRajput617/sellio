@@ -1198,7 +1198,7 @@ text-navy-mute
 
 
               <Link
-                href="/documentation/settings"
+                href="/documentation/leaderboards"
                 className="
                 rounded-2xl
                 border border-border
@@ -1214,7 +1214,7 @@ text-navy-mute
 
 
                 <p className="mt-2 font-bold">
-                  Settings
+                  Leaderboards
                 </p>
 
 
@@ -1227,7 +1227,7 @@ text-navy-mute
 
 
               <Link
-                href="/documentation/api"
+                href="/documentation/entry-list-display"
                 className="
                 rounded-2xl
                 border border-border
@@ -1255,7 +1255,7 @@ text-navy-mute
                 >
 
                   <p className="font-bold">
-                    API
+                    Entry-List-Display
                   </p>
 
 

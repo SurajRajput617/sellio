@@ -690,7 +690,7 @@ export default function HiddenVipCompetitionsPage() {
 
 
               <Link
-                href="/documentation"
+                href="/documentation/create-competition"
                 className="
                 rounded-xl
                 border
@@ -712,7 +712,7 @@ export default function HiddenVipCompetitionsPage() {
 
 
                 <p className="mt-2 font-bold">
-                  Documentation
+                  Create-Competition
                 </p>
 
 

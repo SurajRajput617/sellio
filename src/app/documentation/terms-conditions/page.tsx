@@ -526,7 +526,7 @@ export default function TermsConditionsPage() {
 
 
               <Link
-                href="/documentation/payment-gateway"
+                href="/documentation/connect-social-accounts"
                 className="
                 rounded-2xl
                 border border-border
@@ -562,7 +562,7 @@ export default function TermsConditionsPage() {
 
 
                   <p className="font-bold">
-                    Payment Gateway
+                    Connect-Social-Accounts
                   </p>
 
 

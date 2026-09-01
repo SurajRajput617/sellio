@@ -1260,7 +1260,7 @@ export default function LeaderboardsPage() {
 
 
               <Link
-                href="/documentation/settings"
+                href="/documentation/integrations"
                 className="
                 rounded-2xl
                 border border-border
@@ -1289,7 +1289,7 @@ export default function LeaderboardsPage() {
 
 
                   <p className="font-bold">
-                    Settings
+                    Settings/Integrations
                   </p>
 
 

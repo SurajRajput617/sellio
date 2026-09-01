@@ -401,7 +401,7 @@ export default function PaymentGatewayPage() {
               {/* NEXT */}
 
               <Link
-                href="#"
+                href="buy-domain"
                 className="group rounded-2xl border border-border bg-white p-5 text-right transition-colors hover:border-coral/40"
               >
 
@@ -414,7 +414,7 @@ export default function PaymentGatewayPage() {
                 </span>
 
                 <p className="mt-2 font-display text-lg font-bold text-navy">
-                  Create a Competition
+                 Buy-Domain
                 </p>
 
               </Link>
