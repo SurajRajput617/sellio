@@ -655,14 +655,14 @@ export default function DocumentationSidebar() {
       TrueNorth Live Stream Draws
     </Link>
 
-    {/* <Link
+    <Link
       href="/documentation/manual-draw"
       className={subLinkClass("/documentation/manual-draw")}
     >
       Manual Draw
     </Link>
 
-    <Link
+    {/* <Link
       href="/documentation/managing-instant-winners"
       className={subLinkClass(
         "/documentation/managing-instant-winners"

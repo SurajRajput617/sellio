@@ -295,7 +295,7 @@ lg:grid-cols-[250px_minmax(0,1fr)_220px]
 
 
 <p className="text-xs font-semibold text-coral">
-Sellio Documentation
+DRAWING WINNERS
 </p>
 
 
