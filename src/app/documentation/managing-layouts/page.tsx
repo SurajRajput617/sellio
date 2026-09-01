@@ -17,30 +17,29 @@ import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 const sections = [
   {
-    id: "feed",
-    label: "The Sellio Activity Feed",
+    id:"details",
+    label:"Viewing Payment Details",
   },
   {
-    id: "settings",
-    label: "Navigate to Settings",
+    id:"customer",
+    label:"How Customers Add Payment Details",
   },
   {
-    id: "stats",
-    label: "Add Dashboard Stats",
+    id:"video",
+    label:"Payment Demo Video",
   },
   {
-    id: "related",
-    label: "Related Guides",
+    id:"payments",
+    label:"Making Payments",
   },
 ];
 
 
-
-export default function AddDashboardStatsPage() {
+export default function ManagingPaymentsPage(){
 
 
 const [activeSection,setActiveSection] =
-useState("feed");
+useState("details");
 
 
 
@@ -55,11 +54,11 @@ sections[0].id;
 
 
 
-sections.forEach((section)=>{
+sections.forEach((item)=>{
 
 
 const element =
-document.getElementById(section.id);
+document.getElementById(item.id);
 
 
 
@@ -69,16 +68,16 @@ if(!element) return;
 
 if(
 element.offsetTop <=
-window.scrollY + 150
+window.scrollY + 160
 ){
 
-current =
-section.id;
+current=item.id;
 
 }
 
 
 });
+
 
 
 setActiveSection(current);
@@ -95,6 +94,7 @@ handleScroll,
 passive:true
 }
 );
+
 
 
 handleScroll();
@@ -115,9 +115,10 @@ handleScroll
 
 
 
-return (
+return(
 
 <>
+
 
 <Navbar />
 
@@ -146,11 +147,14 @@ lg:grid-cols-[250px_minmax(0,1fr)_210px]
 
 
 
+
 <article
 className="
 min-w-0
 "
 >
+
+
 
 
 
@@ -170,7 +174,7 @@ font-semibold
 text-coral
 "
 >
-Sellio Dashboard
+Sellio Payments
 </p>
 
 
@@ -182,7 +186,7 @@ text-3xl
 font-bold
 "
 >
-Add Dashboard Activity Stats
+Managing Payments
 </h1>
 
 
@@ -196,10 +200,11 @@ leading-7
 text-navy-mute
 "
 >
-Learn how to add activity statistics to your Sellio
-dashboard and display important store information
-in an organized view.
+Learn how Sellio helps you manage customer payment
+information, review transaction details, and keep
+your ecommerce payment workflow organized.
 </p>
+
 
 
 </section>
@@ -212,7 +217,7 @@ in an organized view.
 
 
 <section
-id="feed"
+id="details"
 className="
 scroll-mt-28
 border-b
@@ -228,7 +233,7 @@ text-xl
 font-bold
 "
 >
-The Sellio Activity Feed
+Viewing Payment Details
 </h2>
 
 
@@ -241,52 +246,10 @@ leading-7
 text-navy-mute
 "
 >
-This creates a dashboard area where you can view
-recent store activity, connected services and
-important updates.
+Review payment records and customer transaction
+information directly from your Sellio dashboard.
 </p>
 
-
-
-
-</section>
-
-
-
-
-<section
-id="settings"
-className="
-scroll-mt-28
-border-b
-border-border
-py-8
-"
->
-
-
-<h2
-className="
-text-xl
-font-bold
-"
->
-Navigate to Settings
-</h2>
-
-
-
-<p
-className="
-mt-4
-text-sm
-leading-7
-text-navy-mute
-"
->
-Follow these steps to access your Sellio dashboard
-settings and prepare your activity information.
-</p>
 
 
 
@@ -307,113 +270,26 @@ text-navy-mute
 
 
 <li>
-2. Open the dashboard settings area.
+2. Open the Payments section.
 </li>
 
 
 <li>
-3. Select the analytics and activity options.
+3. Select a transaction record.
 </li>
 
 
 <li>
-4. Review available dashboard sections.
+4. Review payment details and status.
 </li>
 
 
 <li>
-5. Save your preferred settings.
+5. Update information when required.
 </li>
 
 
 </ol>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-<section
-id="stats"
-className="
-scroll-mt-28
-border-b
-border-border
-py-8
-"
->
-
-
-<h2
-className="
-text-xl
-font-bold
-"
->
-Add Dashboard Stats
-</h2>
-
-
-
-<p
-className="
-mt-4
-text-sm
-leading-7
-text-navy-mute
-"
->
-Add useful statistics to your Sellio dashboard
-so store activity can be reviewed quickly.
-</p>
-
-
-
-<ol
-className="
-mt-5
-space-y-3
-text-sm
-leading-6
-text-navy-mute
-"
->
-
-
-<li>
-1. Select the dashboard widget option.
-</li>
-
-
-<li>
-2. Choose the statistic type.
-</li>
-
-
-<li>
-3. Add the required information.
-</li>
-
-
-<li>
-4. Preview the dashboard update.
-</li>
-
-
-<li>
-5. Save the changes.
-</li>
-
-
-</ol>
-
-
 
 
 
@@ -457,27 +333,36 @@ leading-6
 text-navy-mute
 "
 >
-Dashboard statistics help you understand store
-activity and review important information without
-checking multiple sections.
+Payment information is stored in an organized
+dashboard view so you can quickly review customer
+transactions.
 </p>
 
 
-</div>
-
 
 </div>
 
+
+</div>
 
 
 
 </section>
 
+
+
+
+
+
+
+
 <section
+id="customer"
 className="
-py-8
+scroll-mt-28
 border-b
 border-border
+py-8
 "
 >
 
@@ -488,7 +373,88 @@ text-xl
 font-bold
 "
 >
-Dashboard Preview
+How Customers Add Payment Details
+</h2>
+
+
+
+<p
+className="
+mt-4
+text-sm
+leading-6
+text-navy-mute
+"
+>
+Customers can securely provide required payment
+information through your Sellio checkout workflow.
+</p>
+
+
+
+
+<ol
+className="
+mt-5
+space-y-3
+text-sm
+leading-6
+text-navy-mute
+"
+>
+
+
+<li>
+1. Customer opens the payment section.
+</li>
+
+
+<li>
+2. Customer enters required payment information.
+</li>
+
+
+<li>
+3. Information is reviewed before submission.
+</li>
+
+
+<li>
+4. Payment status updates in Sellio dashboard.
+</li>
+
+
+</ol>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<section
+id="video"
+className="
+scroll-mt-28
+border-b
+border-border
+py-8
+"
+>
+
+
+<h2
+className="
+text-xl
+font-bold
+"
+>
+Payment Demo Video
 </h2>
 
 
@@ -501,9 +467,126 @@ leading-7
 text-navy-mute
 "
 >
-Preview how activity statistics can appear inside
-your Sellio dashboard.
+Watch the Sellio payment management demo to
+understand the workflow and dashboard experience.
 </p>
+
+
+
+
+<div
+  className="
+    mt-6
+    overflow-hidden
+    rounded-lg
+    border
+    border-border
+  "
+>
+  <div
+    className="
+      aspect-video
+      bg-black
+      flex
+      items-center
+      justify-center
+    "
+  >
+    <div
+      className="
+        w-16
+        h-10
+        bg-red-600
+        rounded-xl
+        flex
+        items-center
+        justify-center
+        text-white
+      "
+    >
+      ▶
+    </div>
+  </div>
+</div>
+
+
+
+</section>
+<section
+id="payments"
+className="
+scroll-mt-28
+border-b
+border-border
+py-8
+"
+>
+
+
+<h2
+className="
+text-xl
+font-bold
+"
+>
+Making Payments
+</h2>
+
+
+
+<p
+className="
+mt-4
+text-sm
+leading-7
+text-navy-mute
+"
+>
+Manage payment updates and review transaction
+progress from your Sellio dashboard.
+</p>
+
+
+
+
+<ol
+className="
+mt-5
+space-y-3
+text-sm
+leading-6
+text-navy-mute
+"
+>
+
+
+<li>
+1. Open the payment management area.
+</li>
+
+
+<li>
+2. Review pending customer transactions.
+</li>
+
+
+<li>
+3. Confirm payment information.
+</li>
+
+
+<li>
+4. Update the payment status.
+</li>
+
+
+<li>
+5. Save the completed payment record.
+</li>
+
+
+</ol>
+
 
 
 
@@ -514,156 +597,42 @@ mt-6
 rounded-lg
 border
 border-border
-overflow-hidden
-"
->
-
-
-<div
-className="
 bg-black/5
-px-5
-py-4
-"
->
-
-<p
-className="
-text-sm
-font-semibold
-"
->
-Sellio Activity Dashboard
-</p>
-
-
-<p
-className="
-mt-1
-text-xs
-text-navy-mute
-"
->
-Demo dashboard component
-</p>
-
-
-</div>
-
-
-
-
-
-<div
-className="
-grid
-gap-4
-p-5
-sm:grid-cols-3
+px-4
+py-3
 "
 >
 
 
 <div
 className="
-rounded-lg
-border
-border-border
-p-4
+flex
+items-start
+gap-3
 "
 >
 
-<p
+<Info
 className="
-text-xs
-text-navy-mute
-"
->
-Orders
-</p>
-
-
-<p
-className="
-mt-3
-text-xl
-font-bold
-"
->
-248
-</p>
-
-
-</div>
-
-
-
-
-
-<div
-className="
-rounded-lg
-border
-border-border
-p-4
-"
->
-
-<p
-className="
-text-xs
-text-navy-mute
-"
->
-Revenue
-</p>
-
-
-<p
-className="
-mt-3
-text-xl
-font-bold
-"
->
-$12.4K
-</p>
-
-
-</div>
-
-
-
-
-
-<div
-className="
-rounded-lg
-border
-border-border
-p-4
-"
->
-
-<p
-className="
-text-xs
-text-navy-mute
-"
->
-Active Users
-</p>
-
-
-<p
-className="
-mt-3
-text-xl
-font-bold
+mt-0.5
+h-4
+w-4
 text-coral
 "
+/>
+
+
+
+<p
+className="
+text-sm
+leading-6
+text-navy-mute
+"
 >
-96
+Always review payment information before
+confirming updates to keep your customer
+records accurate.
 </p>
 
 
@@ -672,10 +641,6 @@ text-coral
 
 </div>
 
-
-
-
-</div>
 
 
 </section>
@@ -701,7 +666,7 @@ text-xl
 font-bold
 "
 >
-Activity Graph
+Payment Activity Overview
 </h2>
 
 
@@ -714,8 +679,8 @@ leading-7
 text-navy-mute
 "
 >
-Example visualization showing how Sellio can
-display dashboard activity trends.
+Example dashboard visualization showing how Sellio
+can display payment activity trends.
 </p>
 
 
@@ -730,6 +695,7 @@ border-border
 p-5
 "
 >
+
 
 
 <div
@@ -745,13 +711,13 @@ gap-3
 {
 [
 35,
-55,
-45,
-80,
+60,
+48,
+78,
 65,
 90,
-75
-].map((item,index)=>(
+72
+].map((value,index)=>(
 
 
 <div
@@ -762,7 +728,7 @@ rounded-t-md
 bg-coral
 "
 style={{
-height:`${item}%`
+height:`${value}%`
 }}
 />
 
@@ -772,7 +738,9 @@ height:`${item}%`
 }
 
 
+
 </div>
+
 
 
 
@@ -818,6 +786,7 @@ Sun
 </div>
 
 
+
 </div>
 
 
@@ -830,11 +799,8 @@ Sun
 
 
 
-
 <section
-id="related"
 className="
-scroll-mt-28
 py-8
 "
 >
@@ -859,8 +825,8 @@ leading-6
 text-navy-mute
 "
 >
-Continue learning about Sellio dashboards,
-integrations and ecommerce management.
+Continue exploring Sellio documentation to learn
+more about dashboard management and integrations.
 </p>
 
 
@@ -874,14 +840,10 @@ space-y-3
 >
 
 
-
 </div>
 
 
 </section>
-
-
-
 
 
 
@@ -898,7 +860,7 @@ sm:grid-cols-2
 
 
 <Link
-href="/documentation/managing-instant-winners"
+href="/documentation/add-daily-instant-winner-stats"
 className="
 rounded-lg
 border
@@ -922,6 +884,7 @@ Previous
 
 
 
+
 <div
 className="
 mt-2
@@ -933,6 +896,7 @@ font-semibold
 "
 >
 
+
 <ArrowLeft
 className="
 h-4
@@ -941,7 +905,7 @@ w-4
 />
 
 
-Managing-instant-winners
+Add-daily-instant-winner-stats
 
 
 </div>
@@ -956,7 +920,7 @@ Managing-instant-winners
 
 
 <Link
-href="/documentation/managing-layouts"
+href="/documentation/truenorth-setup"
 className="
 rounded-lg
 border
@@ -981,6 +945,7 @@ Next
 
 
 
+
 <div
 className="
 mt-2
@@ -994,7 +959,7 @@ font-semibold
 >
 
 
-Managing-Layouts
+Truenorth-setup
 
 
 <ArrowRight
@@ -1009,7 +974,6 @@ w-4
 
 
 </Link>
-
 
 
 </div>
@@ -1105,6 +1069,7 @@ activeSection === item.id
 }
 
 
+
 </nav>
 
 
@@ -1128,6 +1093,5 @@ activeSection === item.id
 </>
 
 );
-
 
 }

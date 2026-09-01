@@ -680,12 +680,12 @@ export default function DocumentationSidebar() {
       Add Daily Instant Winner Stats
     </Link>
 
-    {/* <Link
+    <Link
       href="/documentation/managing-layouts"
       className={subLinkClass("/documentation/managing-layouts")}
     >
       Managing Layouts
-    </Link> */}
+    </Link>
 
   </nav>
 </details>

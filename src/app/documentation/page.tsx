@@ -854,13 +854,13 @@ export default function DocumentationPage() {
     >
       Add Daily Instant Winner Stats
     </Link>
-{/* 
+
     <Link
       href="/documentation/managing-payouts"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-navy"
     >
       Managing Payouts
-    </Link> */}
+    </Link>
 
   </nav>
 </details>
