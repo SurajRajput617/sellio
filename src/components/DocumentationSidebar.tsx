@@ -594,7 +594,101 @@ export default function DocumentationSidebar() {
 
           </nav>
         </details>
+{/* ===================================================== */}
+{/* DRAWING WINNERS */}
+{/* ===================================================== */}
 
+<details className="group mt-7" open>
+  <summary
+    className="
+      flex cursor-pointer list-none items-center justify-between
+      rounded-lg border border-border px-3 py-2.5
+      text-xs font-bold uppercase tracking-wide text-navy
+      transition-colors
+      hover:border-coral/40
+      [&::-webkit-details-marker]:hidden
+    "
+  >
+    <span>DRAWING WINNERS</span>
+
+    <svg
+      viewBox="0 0 20 20"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      className="
+        h-4 w-4 shrink-0
+        transition-transform duration-200
+        group-open:rotate-180
+      "
+    >
+      <path
+        d="M5 7.5L10 12.5L15 7.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </summary>
+
+  <nav className="mt-1 space-y-1">
+
+    <Link
+      href="/documentation/truenorth-setup"
+      className={subLinkClass("/documentation/truenorth-setup")}
+    >
+      TrueNorth Setup
+    </Link>
+
+    <Link
+      href="/documentation/truenorth-autodraws"
+      className={subLinkClass("/documentation/truenorth-autodraws")}
+    >
+      TrueNorth Autodraws
+    </Link>
+
+    <Link
+      href="/documentation/truenorth-live-stream-draws"
+      className={subLinkClass(
+        "/documentation/truenorth-live-stream-draws"
+      )}
+    >
+      TrueNorth Live Stream Draws
+    </Link>
+
+    <Link
+      href="/documentation/manual-draw"
+      className={subLinkClass("/documentation/manual-draw")}
+    >
+      Manual Draw
+    </Link>
+
+    <Link
+      href="/documentation/managing-instant-winners"
+      className={subLinkClass(
+        "/documentation/managing-instant-winners"
+      )}
+    >
+      Managing Instant Winners
+    </Link>
+
+    <Link
+      href="/documentation/add-daily-instant-winner-stats"
+      className={subLinkClass(
+        "/documentation/add-daily-instant-winner-stats"
+      )}
+    >
+      Add Daily Instant Winner Stats
+    </Link>
+
+    <Link
+      href="/documentation/managing-layouts"
+      className={subLinkClass("/documentation/managing-layouts")}
+    >
+      Managing Layouts
+    </Link>
+
+  </nav>
+</details>
       </div>
     </aside>
   );
