@@ -669,9 +669,9 @@ export default function DocumentationSidebar() {
       )}
     >
       Managing Instant Winners
-    </Link>
+    </Link> */}
 
-    <Link
+    {/* <Link
       href="/documentation/add-daily-instant-winner-stats"
       className={subLinkClass(
         "/documentation/add-daily-instant-winner-stats"

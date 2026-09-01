@@ -286,7 +286,7 @@ export default function PinataPage() {
 
 
             </section>
-            // GAME EXPERIENCE
+          
 
 
 <section
@@ -379,13 +379,6 @@ export default function PinataPage() {
 
 
 
-
-
-
-
-// CUSTOMER RESULTS
-
-
 <section
   id="customer-result"
   className="
@@ -464,14 +457,6 @@ export default function PinataPage() {
 </section>
 
 
-
-
-
-
-
-
-
-// CUSTOMISATION OPTIONS
 
 
 <section
