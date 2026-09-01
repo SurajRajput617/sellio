@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
@@ -80,15 +80,89 @@ const statusData: StatusPoint[] = [
   { label: "15:00", value: 90 },
 ];
 
+const onThisPageItems = [
+  {
+    id: "before-you-start",
+    label: "Before You Start",
+  },
+  {
+    id: "connect-account",
+    label: "Connect Your Account",
+  },
+  {
+    id: "connection-flow",
+    label: "Connection Flow",
+  },
+  {
+    id: "after-connect",
+    label: "After You Connect",
+  },
+  {
+    id: "integration-automation",
+    label: "Integration Automation",
+  },
+  {
+    id: "live-status",
+    label: "Live Connection Status",
+  },
+  {
+    id: "troubleshooting",
+    label: "Troubleshooting",
+  },
+  {
+    id: "next-steps",
+    label: "Next Steps",
+  },
+];
+
 /* =========================================================
    PAGE
 ========================================================= */
 
 export default function TrueNorthSetupPage() {
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
+
   const [connectionStatus, setConnectionStatus] = useState<
     "idle" | "checking" | "connected"
   >("idle");
+
+  /* =======================================================
+     ON THIS PAGE ACTIVE SECTION
+  ======================================================= */
+
+  const [activeSection, setActiveSection] =
+    useState("before-you-start");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
+
+      let currentSection = onThisPageItems[0].id;
+
+      onThisPageItems.forEach((item) => {
+        const section = document.getElementById(item.id);
+
+        if (section && section.offsetTop <= scrollPosition) {
+          currentSection = item.id;
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
 
   /* =======================================================
      WORKFLOW FUNCTIONS
@@ -140,7 +214,6 @@ export default function TrueNorthSetupPage() {
               MAIN ARTICLE
           ===================================================== */}
           <article className="min-w-0">
-
             {/* =================================================
                 HEADER
             ================================================= */}
@@ -360,7 +433,7 @@ export default function TrueNorthSetupPage() {
             </section>
 
             {/* =================================================
-                HOW CONNECTION WORKS
+                CONNECTION FLOW
             ================================================= */}
             <section
               id="connection-flow"
@@ -393,7 +466,6 @@ export default function TrueNorthSetupPage() {
                     md:grid-cols-[1fr_auto_1fr_auto_1fr]
                   "
                 >
-                  {/* SELLIO */}
                   <div
                     className="
                       rounded-xl
@@ -417,13 +489,7 @@ export default function TrueNorthSetupPage() {
                       Sellio
                     </p>
 
-                    <p
-                      className="
-                        mt-2 text-xs
-                        leading-5
-                        text-navy-mute
-                      "
-                    >
+                    <p className="mt-2 text-xs leading-5 text-navy-mute">
                       Starts the account workflow.
                     </p>
                   </div>
@@ -436,7 +502,6 @@ export default function TrueNorthSetupPage() {
                     "
                   />
 
-                  {/* CONNECTION */}
                   <div
                     className="
                       rounded-xl
@@ -460,13 +525,7 @@ export default function TrueNorthSetupPage() {
                       Integration
                     </p>
 
-                    <p
-                      className="
-                        mt-2 text-xs
-                        leading-5
-                        text-navy-mute
-                      "
-                    >
+                    <p className="mt-2 text-xs leading-5 text-navy-mute">
                       Handles the connection.
                     </p>
                   </div>
@@ -479,7 +538,6 @@ export default function TrueNorthSetupPage() {
                     "
                   />
 
-                  {/* ACCOUNT */}
                   <div
                     className="
                       rounded-xl
@@ -503,13 +561,7 @@ export default function TrueNorthSetupPage() {
                       Connected Account
                     </p>
 
-                    <p
-                      className="
-                        mt-2 text-xs
-                        leading-5
-                        text-navy-mute
-                      "
-                    >
+                    <p className="mt-2 text-xs leading-5 text-navy-mute">
                       Returns the connection status.
                     </p>
                   </div>
@@ -611,7 +663,6 @@ export default function TrueNorthSetupPage() {
                 below to update the demo progress.
               </p>
 
-              {/* WORKFLOW DEMO */}
               <div
                 className="
                   mt-7 overflow-hidden
@@ -619,7 +670,6 @@ export default function TrueNorthSetupPage() {
                   border border-border
                 "
               >
-                {/* HEADER */}
                 <div
                   className="
                     flex flex-col gap-4
@@ -662,14 +712,8 @@ export default function TrueNorthSetupPage() {
                 </div>
 
                 <div className="p-5 sm:p-7">
-
                   {/* PROGRESS */}
-                  <div
-                    className="
-                      flex items-center
-                      justify-between
-                    "
-                  >
+                  <div className="flex items-center justify-between">
                     <p className="text-sm font-semibold">
                       Workflow Progress
                     </p>
@@ -733,12 +777,7 @@ export default function TrueNorthSetupPage() {
                               }
                             `}
                           >
-                            <div
-                              className="
-                                flex items-center
-                                justify-between
-                              "
-                            >
+                            <div className="flex items-center justify-between">
                               <div
                                 className={`
                                   flex h-9 w-9
@@ -761,19 +800,9 @@ export default function TrueNorthSetupPage() {
                               </div>
 
                               {completed ? (
-                                <CheckCircle2
-                                  className="
-                                    h-4 w-4
-                                    text-coral
-                                  "
-                                />
+                                <CheckCircle2 className="h-4 w-4 text-coral" />
                               ) : (
-                                <Circle
-                                  className="
-                                    h-4 w-4
-                                    text-navy-mute
-                                  "
-                                />
+                                <Circle className="h-4 w-4 text-navy-mute" />
                               )}
                             </div>
 
@@ -781,13 +810,7 @@ export default function TrueNorthSetupPage() {
                               {step.title}
                             </p>
 
-                            <p
-                              className="
-                                mt-2 text-xs
-                                leading-5
-                                text-navy-mute
-                              "
-                            >
+                            <p className="mt-2 text-xs leading-5 text-navy-mute">
                               {step.description}
                             </p>
                           </button>
@@ -820,12 +843,7 @@ export default function TrueNorthSetupPage() {
                   >
                     {progress === 0 && (
                       <div className="flex items-center gap-3">
-                        <Circle
-                          className="
-                            h-5 w-5
-                            shrink-0 text-navy-mute
-                          "
-                        />
+                        <Circle className="h-5 w-5 shrink-0 text-navy-mute" />
 
                         <div>
                           <p className="text-sm font-bold">
@@ -841,12 +859,7 @@ export default function TrueNorthSetupPage() {
 
                     {progress > 0 && progress < 100 && (
                       <div className="flex items-center gap-3">
-                        <RefreshCw
-                          className="
-                            h-5 w-5
-                            shrink-0 text-coral
-                          "
-                        />
+                        <RefreshCw className="h-5 w-5 shrink-0 text-coral" />
 
                         <div>
                           <p className="text-sm font-bold">
@@ -863,12 +876,7 @@ export default function TrueNorthSetupPage() {
 
                     {progress === 100 && (
                       <div className="flex items-center gap-3">
-                        <CheckCircle2
-                          className="
-                            h-5 w-5
-                            shrink-0 text-coral
-                          "
-                        />
+                        <CheckCircle2 className="h-5 w-5 shrink-0 text-coral" />
 
                         <div>
                           <p className="text-sm font-bold">
@@ -926,7 +934,6 @@ export default function TrueNorthSetupPage() {
                 demo values to show the interface.
               </p>
 
-              {/* STATUS DASHBOARD */}
               <div
                 className="
                   mt-7 overflow-hidden
@@ -1007,48 +1014,20 @@ export default function TrueNorthSetupPage() {
                 </div>
 
                 <div className="p-5 sm:p-7">
-
                   {/* STATUS CARDS */}
-                  <div
-                    className="
-                      grid gap-4
-                      sm:grid-cols-3
-                    "
-                  >
-                    <div
-                      className="
-                        rounded-xl
-                        border border-border
-                        p-4
-                      "
-                    >
+                  <div className="grid gap-4 sm:grid-cols-3">
+                    <div className="rounded-xl border border-border p-4">
                       <p className="text-xs text-navy-mute">
                         Current Status
                       </p>
 
                       <div className="mt-3 flex items-center gap-2">
                         {connectionStatus === "connected" ? (
-                          <CheckCircle2
-                            className="
-                              h-5 w-5
-                              text-coral
-                            "
-                          />
+                          <CheckCircle2 className="h-5 w-5 text-coral" />
                         ) : connectionStatus === "checking" ? (
-                          <RefreshCw
-                            className="
-                              h-5 w-5
-                              animate-spin
-                              text-coral
-                            "
-                          />
+                          <RefreshCw className="h-5 w-5 animate-spin text-coral" />
                         ) : (
-                          <Circle
-                            className="
-                              h-5 w-5
-                              text-navy-mute
-                            "
-                          />
+                          <Circle className="h-5 w-5 text-navy-mute" />
                         )}
 
                         <p className="text-sm font-bold">
@@ -1061,13 +1040,7 @@ export default function TrueNorthSetupPage() {
                       </div>
                     </div>
 
-                    <div
-                      className="
-                        rounded-xl
-                        border border-border
-                        p-4
-                      "
-                    >
+                    <div className="rounded-xl border border-border p-4">
                       <p className="text-xs text-navy-mute">
                         Workflow
                       </p>
@@ -1081,13 +1054,7 @@ export default function TrueNorthSetupPage() {
                       </p>
                     </div>
 
-                    <div
-                      className="
-                        rounded-xl
-                        border border-border
-                        p-4
-                      "
-                    >
+                    <div className="rounded-xl border border-border p-4">
                       <p className="text-xs text-navy-mute">
                         Monitor
                       </p>
@@ -1102,9 +1069,9 @@ export default function TrueNorthSetupPage() {
                     </div>
                   </div>
 
-                  {/* =============================================
+                  {/* =================================================
                       GRAPH
-                  ============================================= */}
+                  ================================================= */}
                   <div
                     className="
                       mt-6 rounded-xl
@@ -1112,12 +1079,7 @@ export default function TrueNorthSetupPage() {
                       p-5
                     "
                   >
-                    <div
-                      className="
-                        flex items-center
-                        justify-between
-                      "
-                    >
+                    <div className="flex items-center justify-between">
                       <div>
                         <p className="text-sm font-bold">
                           Connection Health
@@ -1128,25 +1090,12 @@ export default function TrueNorthSetupPage() {
                         </p>
                       </div>
 
-                      <div
-                        className="
-                          flex items-center gap-2
-                          text-xs text-navy-mute
-                        "
-                      >
-                        <span
-                          className="
-                            h-2 w-2
-                            rounded-full
-                            bg-coral
-                          "
-                        />
-
+                      <div className="flex items-center gap-2 text-xs text-navy-mute">
+                        <span className="h-2 w-2 rounded-full bg-coral" />
                         Health
                       </div>
                     </div>
 
-                    {/* GRAPH AREA */}
                     <div
                       className="
                         relative mt-7
@@ -1165,10 +1114,7 @@ export default function TrueNorthSetupPage() {
                         {[100, 75, 50, 25, 0].map((value) => (
                           <div
                             key={value}
-                            className="
-                              relative
-                              border-t border-border
-                            "
+                            className="relative border-t border-border"
                           >
                             <span
                               className="
@@ -1212,7 +1158,6 @@ export default function TrueNorthSetupPage() {
                                 items-end justify-center
                               "
                             >
-                              {/* TOOLTIP */}
                               <div
                                 className="
                                   pointer-events-none
@@ -1251,12 +1196,7 @@ export default function TrueNorthSetupPage() {
                               />
                             </div>
 
-                            <span
-                              className="
-                                mt-2 text-[10px]
-                                text-navy-mute
-                              "
-                            >
+                            <span className="mt-2 text-[10px] text-navy-mute">
                               {item.label}
                             </span>
                           </div>
@@ -1265,7 +1205,7 @@ export default function TrueNorthSetupPage() {
                     </div>
                   </div>
 
-                  {/* CONNECTION MESSAGE */}
+                  {/* STATUS MESSAGE */}
                   <div
                     className="
                       mt-6 rounded-xl
@@ -1276,12 +1216,7 @@ export default function TrueNorthSetupPage() {
                   >
                     {connectionStatus === "idle" && (
                       <div className="flex items-start gap-3">
-                        <Info
-                          className="
-                            mt-0.5 h-5 w-5
-                            shrink-0 text-navy-mute
-                          "
-                        />
+                        <Info className="mt-0.5 h-5 w-5 shrink-0 text-navy-mute" />
 
                         <div>
                           <p className="text-sm font-bold">
@@ -1322,12 +1257,7 @@ export default function TrueNorthSetupPage() {
 
                     {connectionStatus === "connected" && (
                       <div className="flex items-start gap-3">
-                        <CheckCircle2
-                          className="
-                            mt-0.5 h-5 w-5
-                            shrink-0 text-coral
-                          "
-                        />
+                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-coral" />
 
                         <div>
                           <p className="text-sm font-bold">
@@ -1376,25 +1306,14 @@ export default function TrueNorthSetupPage() {
                     p-4
                   "
                 >
-                  <XCircle
-                    className="
-                      mt-0.5 h-5 w-5
-                      shrink-0 text-navy-mute
-                    "
-                  />
+                  <XCircle className="mt-0.5 h-5 w-5 shrink-0 text-navy-mute" />
 
                   <div>
                     <p className="text-sm font-bold">
                       Connection unavailable
                     </p>
 
-                    <p
-                      className="
-                        mt-1 text-xs
-                        leading-5
-                        text-navy-mute
-                      "
-                    >
+                    <p className="mt-1 text-xs leading-5 text-navy-mute">
                       Review the supplied account information and make
                       sure the integration configuration is complete.
                     </p>
@@ -1409,25 +1328,14 @@ export default function TrueNorthSetupPage() {
                     p-4
                   "
                 >
-                  <Database
-                    className="
-                      mt-0.5 h-5 w-5
-                      shrink-0 text-navy-mute
-                    "
-                  />
+                  <Database className="mt-0.5 h-5 w-5 shrink-0 text-navy-mute" />
 
                   <div>
                     <p className="text-sm font-bold">
                       Status has not updated
                     </p>
 
-                    <p
-                      className="
-                        mt-1 text-xs
-                        leading-5
-                        text-navy-mute
-                      "
-                    >
+                    <p className="mt-1 text-xs leading-5 text-navy-mute">
                       Refresh the dashboard and review the connection
                       configuration before checking again.
                     </p>
@@ -1471,24 +1379,14 @@ export default function TrueNorthSetupPage() {
                   "
                 >
                   <div className="flex items-center gap-4">
-                    <Workflow
-                      className="
-                        h-5 w-5
-                        text-coral
-                      "
-                    />
+                    <Workflow className="h-5 w-5 text-coral" />
 
                     <div>
                       <p className="text-sm font-semibold">
                         Integration Automation
                       </p>
 
-                      <p
-                        className="
-                          mt-1 text-xs
-                          text-navy-mute
-                        "
-                      >
+                      <p className="mt-1 text-xs text-navy-mute">
                         Review automated account workflows and
                         connection status.
                       </p>
@@ -1519,26 +1417,16 @@ export default function TrueNorthSetupPage() {
                   "
                 >
                   <div className="flex items-center gap-4">
-                    <Activity
-                      className="
-                        h-5 w-5
-                        text-coral
-                      "
-                    />
+                    <Activity className="h-5 w-5 text-coral" />
 
                     <div>
                       <p className="text-sm font-semibold">
                         Live Connection Status
                       </p>
 
-                      <p
-                        className="
-                          mt-1 text-xs
-                          text-navy-mute
-                        "
-                      >
-                        Learn how to review the status of your
-                        connected account.
+                      <p className="mt-1 text-xs text-navy-mute">
+                        Learn how to review the status of your connected
+                        account.
                       </p>
                     </div>
                   </div>
@@ -1642,7 +1530,7 @@ export default function TrueNorthSetupPage() {
           </article>
 
           {/* =====================================================
-              RIGHT SIDEBAR
+              RIGHT SIDEBAR - ACTIVE SCROLL 
           ===================================================== */}
           <aside className="hidden xl:block">
             <div
@@ -1663,99 +1551,32 @@ export default function TrueNorthSetupPage() {
               </p>
 
               <nav className="mt-5 space-y-4">
-                <a
-                  href="#before-you-start"
-                  className="
-                    block text-sm
-                    text-coral
-                  "
-                >
-                  Before You Start
-                </a>
+                {onThisPageItems.map((item) => {
+                  const isActive =
+                    activeSection === item.id;
 
-                <a
-                  href="#connect-account"
-                  className="
-                    block text-sm
-                    text-navy-mute
-                    transition
-                    hover:text-coral
-                  "
-                >
-                  Connect Your Account
-                </a>
-
-                <a
-                  href="#connection-flow"
-                  className="
-                    block text-sm
-                    text-navy-mute
-                    transition
-                    hover:text-coral
-                  "
-                >
-                  Connection Flow
-                </a>
-
-                <a
-                  href="#after-connect"
-                  className="
-                    block text-sm
-                    text-navy-mute
-                    transition
-                    hover:text-coral
-                  "
-                >
-                  After You Connect
-                </a>
-
-                <a
-                  href="#integration-automation"
-                  className="
-                    block text-sm
-                    text-navy-mute
-                    transition
-                    hover:text-coral
-                  "
-                >
-                  Integration Automation
-                </a>
-
-                <a
-                  href="#live-status"
-                  className="
-                    block text-sm
-                    text-navy-mute
-                    transition
-                    hover:text-coral
-                  "
-                >
-                  Live Connection Status
-                </a>
-
-                <a
-                  href="#troubleshooting"
-                  className="
-                    block text-sm
-                    text-navy-mute
-                    transition
-                    hover:text-coral
-                  "
-                >
-                  Troubleshooting
-                </a>
-
-                <a
-                  href="#next-steps"
-                  className="
-                    block text-sm
-                    text-navy-mute
-                    transition
-                    hover:text-coral
-                  "
-                >
-                  Next Steps
-                </a>
+                  return (
+                    <a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      onClick={() =>
+                        setActiveSection(item.id)
+                      }
+                      className={`
+                        block text-sm
+                        transition-colors
+                        duration-200
+                        ${
+                          isActive
+                            ? "font-medium text-coral"
+                            : "text-navy-mute hover:text-coral"
+                        }
+                      `}
+                    >
+                      {item.label}
+                    </a>
+                  );
+                })}
               </nav>
             </div>
           </aside>
