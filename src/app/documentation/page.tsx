@@ -848,13 +848,13 @@ export default function DocumentationPage() {
       Managing Instant Winners
     </Link>
 
-    {/* <Link
+    <Link
       href="/documentation/add-daily-instant-winner-stats"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-navy"
     >
       Add Daily Instant Winner Stats
     </Link>
-
+{/* 
     <Link
       href="/documentation/managing-payouts"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-navy"
