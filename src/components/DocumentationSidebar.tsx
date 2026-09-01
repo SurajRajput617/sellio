@@ -708,7 +708,7 @@ export default function DocumentationSidebar() {
     </Link>
 
 
-    {/* <Link href="/documentation/pot-drop"
+    <Link href="/documentation/pot-drop"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Pot Drop
@@ -721,7 +721,7 @@ export default function DocumentationSidebar() {
       Whack-a-Mole
     </Link>
 
-
+{/* 
     <Link href="/documentation/one-line-bingo"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
