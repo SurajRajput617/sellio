@@ -834,7 +834,7 @@ export default function DocumentationPage() {
       TrueNorth Live Stream Draws
     </Link>
 
-    <Link
+    {/* <Link
       href="/documentation/manual-draw"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-navy"
     >
@@ -860,7 +860,7 @@ export default function DocumentationPage() {
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-navy"
     >
       Managing Payouts
-    </Link>
+    </Link> */}
 
   </nav>
 </details>

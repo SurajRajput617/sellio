@@ -655,7 +655,7 @@ export default function DocumentationSidebar() {
       TrueNorth Live Stream Draws
     </Link>
 
-    <Link
+    {/* <Link
       href="/documentation/manual-draw"
       className={subLinkClass("/documentation/manual-draw")}
     >
@@ -685,7 +685,7 @@ export default function DocumentationSidebar() {
       className={subLinkClass("/documentation/managing-layouts")}
     >
       Managing Layouts
-    </Link>
+    </Link> */}
 
   </nav>
 </details>
