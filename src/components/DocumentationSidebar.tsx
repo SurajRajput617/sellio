@@ -721,7 +721,7 @@ export default function DocumentationSidebar() {
       Whack-a-Mole
     </Link>
 
-{/* 
+
     <Link href="/documentation/one-line-bingo"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
@@ -729,7 +729,7 @@ export default function DocumentationSidebar() {
     </Link>
 
 
-    <Link href="/documentation/plinko"
+    {/* <Link href="/documentation/plinko"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Plinko

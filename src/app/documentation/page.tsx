@@ -750,13 +750,13 @@ export default function DocumentationPage() {
     </Link>
 
 
-    {/* <Link href="/documentation/one-line-bingo"
+    <Link href="/documentation/one-line-bingo"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       One Line Bingo
     </Link>
 
-
+{/* 
     <Link href="/documentation/plinko"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
