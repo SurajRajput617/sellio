@@ -997,7 +997,7 @@ export default function SendingEmailNotifyPage() {
 
 
               <Link
-                href="/documentation/kliaviyo-integration"
+                href="/documentation/klaviyo-integration"
                 className="
                 rounded-lg
                 border

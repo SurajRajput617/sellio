@@ -1005,7 +1005,7 @@ text-coral
 
 
               <Link
-                href="/documentation/email-automation"
+                href="/documentation/sending-an-email-with-notify"
                 className="
                   rounded-lg
                   border
@@ -1043,7 +1043,7 @@ text-coral
                 >
 
 
-                  Email Automation
+                  Sending-an-Email-with-Notify
 
 
                   <ArrowRight
