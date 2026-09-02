@@ -1747,7 +1747,7 @@ How Users Participate
 
 
 <Link
-href="/documentation/affiliate-overview"
+href="/documentation/downloads-reports-overview"
 className="
 rounded-lg
 border
@@ -1783,7 +1783,7 @@ font-semibold
 >
 
 
-Affiliate-Overview
+Downloads-Reports-Overview
 
 
 <ArrowRight

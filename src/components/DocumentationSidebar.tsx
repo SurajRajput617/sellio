@@ -1069,7 +1069,72 @@ export default function DocumentationSidebar() {
     </nav>
 
   </details>
+{/* ===================================================== */}
+{/* DOWNLOADS & REPORTS */}
+{/* ===================================================== */}
 
+<div className="mt-7">
+
+  <details className="group" open>
+
+    <summary
+      className="
+        flex cursor-pointer list-none items-center justify-between
+      rounded-md border border-[#e5ddcd]
+        px-3 py-2
+        text-sm font-semibold text-[#101b33]
+        transition-colors
+        hover:border-[#ff5b45]/40
+        [&::-webkit-details-marker]:hidden
+      "
+    >
+
+      <span>
+        DOWNLOADS & REPORTS
+      </span>
+
+
+      <svg
+        viewBox="0 0 20 20"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        className="
+          h-4 w-4 shrink-0
+          transition-transform duration-200
+          group-open:rotate-180
+        "
+      >
+
+        <path
+          d="M5 7.5L10 12.5L15 7.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+
+      </svg>
+
+    </summary>
+
+
+    <nav className="mt-2 space-y-1">
+
+
+      <Link
+        href="/documentation/downloads-reports-overview"
+        className={subLinkClass(
+          "/documentation/downloads-reports-overview"
+        )}
+      >
+        Overview
+      </Link>
+
+
+    </nav>
+
+  </details>
+
+</div>
 </div>
 </div>
 
