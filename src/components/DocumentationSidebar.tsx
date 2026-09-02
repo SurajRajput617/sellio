@@ -687,8 +687,89 @@ export default function DocumentationSidebar() {
       Managing Layouts
     </Link>
 
+{/* ===================================================== */}
+{/* MARKETING */}
+{/* ===================================================== */}
+
+<div className="mt-7">
+  <h3 className="mb-3 px-3 text-xs font-bold uppercase tracking-wide text-[#ff5b45]">
+    MARKETING
+  </h3>
+
+  <details className="group" open>
+    <summary
+      className="
+        flex cursor-pointer list-none items-center justify-between
+        rounded-md border border-[#4a5875] px-3 py-2
+        text-sm font-semibold text-[#4a5875]
+        [&::-webkit-details-marker]:hidden
+      "
+    >
+      <span>Website tools</span>
+
+      <svg
+        viewBox="0 0 20 20"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        className="
+          h-4 w-4 shrink-0
+          transition-transform duration-200
+          group-open:rotate-180
+        "
+      >
+        <path
+          d="M5 7.5L10 12.5L15 7.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </summary>
+
+    <nav className="mt-2 space-y-1 pl-5">
+
+      <Link
+        href="/documentation/promos-and-discounts"
+        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
+      >
+        Promos and Discounts
+      </Link>
+
+      <Link
+        href="/documentation/upsell"
+        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
+      >
+        Upsell
+      </Link>
+
+      <Link
+        href="/documentation/dropped-basket-recovery"
+        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
+      >
+        Dropped Basket Recovery
+      </Link>
+
+      <Link
+        href="/documentation/seo-settings"
+        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
+      >
+        SEO Settings
+      </Link>
+
+      <Link
+        href="/documentation/top-banner-text"
+        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
+      >
+        Top Banner Text
+      </Link>
+
+    </nav>
+  </details>
+</div>
+
   </nav>
 </details>
+
       </div>
     </aside>
   );
