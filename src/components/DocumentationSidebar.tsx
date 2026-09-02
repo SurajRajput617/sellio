@@ -894,10 +894,94 @@ export default function DocumentationSidebar() {
 
   </details>
 
+{/* --- */}
+
+{/* ===================================================== */}
+{/* FACEBOOK & META */}
+{/* ===================================================== */}
+
+<div className="mt-7">
+
+  <details className="group" open>
+
+    <summary
+      className="
+        flex cursor-pointer list-none items-center justify-between
+        rounded-md border border-[#4a5875]
+        px-3 py-2
+        text-sm font-semibold text-[#4a5875]
+        transition-colors
+        hover:border-[#ff5b45]/40
+        [&::-webkit-details-marker]:hidden
+      "
+    >
+
+      <span>
+        Facebook & Meta
+      </span>
+
+
+      <svg
+        viewBox="0 0 20 20"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        className="
+          h-4 w-4 shrink-0
+          transition-transform duration-200
+          group-open:rotate-180
+        "
+      >
+        <path
+          d="M5 7.5L10 12.5L15 7.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+
+    </summary>
+
+
+    <nav className="mt-2 space-y-1">
+
+      <Link
+        href="/documentation/advertising"
+        className={subLinkClass(
+          "/documentation/advertising"
+        )}
+      >
+        Advertising
+      </Link>
+
+
+      <Link
+        href="/documentation/tracking"
+        className={subLinkClass(
+          "/documentation/tracking"
+        )}
+      >
+        Tracking
+      </Link>
+
+
+      <Link
+        href="/documentation/product-catalogue"
+        className={subLinkClass(
+          "/documentation/product-catalogue"
+        )}
+      >
+        Product Catalogue
+      </Link>
+
+
+    </nav>
+
+  </details>
+
 </div>
 
+</div>
 
-{/* --- */}
 
 </div>
 
