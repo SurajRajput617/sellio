@@ -2128,7 +2128,7 @@ Managing-Referrals
 
 
 <Link
-href="/documentation/customer-insights"
+href="/documentation/downloads-reports-overview"
 className="
 rounded-lg
 border
@@ -2165,7 +2165,7 @@ font-semibold
 >
 
 
-Customer Insights
+Downloads-Reports-Overview
 
 
 
