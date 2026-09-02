@@ -775,8 +775,6 @@ export default function DocumentationPage() {
 </details>
 {/* ===================================================== */}
 {/* DRAWING WINNERS */}
-{/* Paste this AFTER Instant Win Games </details> */}
-{/* and BEFORE the outer </nav> */}
 {/* ===================================================== */}
 
 <details className="group mt-7" open>
@@ -862,115 +860,45 @@ export default function DocumentationPage() {
       Managing Layouts
     </Link>
 
-{/* ===================================================== */}
-{/* DRAWING WINNERS */}
-{/* ===================================================== */}
-
-<div className="mt-7">
-  <h3 className="mb-3 px-3 text-xs font-bold uppercase tracking-wide text-[#ff5b45]">
-    DRAWING WINNERS
-  </h3>
-
-  <details className="group" open>
-    <summary
-      className="
-        flex cursor-pointer list-none items-center justify-between
-        rounded-md border border-[#4a5875] px-3 py-2
-        text-sm font-semibold text-[#4a5875]
-        [&::-webkit-details-marker]:hidden
-      "
-    >
-      <span>Drawing Winners</span>
-
-      <svg
-        viewBox="0 0 20 20"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        className="
-          h-4 w-4 shrink-0
-          transition-transform duration-200
-          group-open:rotate-180
-        "
-      >
-        <path
-          d="M5 7.5L10 12.5L15 7.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </summary>
-
-    <nav className="mt-2 space-y-1 pl-5">
-
-      <Link
-        href="/documentation/truenorth-setup"
-        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
-      >
-        TrueNorth Setup
-      </Link>
-
-      <Link
-        href="/documentation/truenorth-autodraws"
-        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
-      >
-        TrueNorth Autodraws
-      </Link>
-
-      <Link
-        href="/documentation/truenorth-live-stream-draws"
-        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
-      >
-        TrueNorth Live Stream Draws
-      </Link>
-
-      <Link
-        href="/documentation/manual-draw"
-        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
-      >
-        Manual Draw
-      </Link>
-
-      <Link
-        href="/documentation/managing-instant-winners"
-        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
-      >
-        Managing Instant Winners
-      </Link>
-
-      <Link
-        href="/documentation/add-daily-instant-winner-stats"
-        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
-      >
-        Add Daily Instant Winner Stats
-      </Link>
-
-      <Link
-        href="/documentation/managing-layouts"
-        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
-      >
-        Managing Layouts
-      </Link>
+  </nav>
+</details>
 
 {/* ===================================================== */}
 {/* MARKETING */}
 {/* ===================================================== */}
 
 <div className="mt-7">
-  <h3 className="mb-3 px-3 text-xs font-bold uppercase tracking-wide text-[#ff5b45]">
+
+  <h3
+    className="
+      mb-3
+      px-3
+      text-xs
+      font-bold
+      uppercase
+      tracking-wide
+      text-[#ff5b45]
+    "
+  >
     MARKETING
   </h3>
 
-  <details className="group" open>
+
+  <details className="group mt-7" open>
+
     <summary
       className="
         flex cursor-pointer list-none items-center justify-between
-        rounded-md border border-[#4a5875] px-3 py-2
-        text-sm font-semibold text-[#4a5875]
+        rounded-lg border border-border px-3 py-2.5
+        text-xs font-bold uppercase tracking-wide text-navy
+        transition-colors
+        hover:border-coral/40
         [&::-webkit-details-marker]:hidden
       "
     >
-      <span>Website tools</span>
+
+      <span>Website Tools</span>
+
 
       <svg
         viewBox="0 0 20 20"
@@ -989,55 +917,186 @@ export default function DocumentationPage() {
           strokeLinejoin="round"
         />
       </svg>
+
     </summary>
 
-    <nav className="mt-2 space-y-1 pl-5">
+
+    <nav className="mt-1 space-y-1">
 
       <Link
         href="/documentation/promos-and-discounts"
-        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
       >
         Promos and Discounts
       </Link>
 
+
       <Link
         href="/documentation/upsell"
-        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
       >
         Upsell
       </Link>
 
+
       <Link
         href="/documentation/dropped-basket-recovery"
-        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
       >
         Dropped Basket Recovery
       </Link>
 
+
       <Link
         href="/documentation/seo-settings"
-        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
       >
         SEO Settings
       </Link>
 
+
       <Link
         href="/documentation/top-banner-text"
-        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
       >
         Top Banner Text
       </Link>
 
     </nav>
+
   </details>
-</div>
+{/* ===================================================== */}
+{/* SMS & EMAIL */}
+{/* ===================================================== */}
+
+<div className="mt-7">
+
+  <details className="group" open>
+
+    <summary
+      className="
+        flex cursor-pointer list-none items-center justify-between
+        rounded-lg border border-border px-3 py-2.5
+        text-xs font-bold uppercase tracking-wide text-navy
+        transition-colors
+        hover:border-coral/40
+        [&::-webkit-details-marker]:hidden
+      "
+    >
+
+      <span>
+        SMS & Email
+      </span>
+
+
+      <svg
+        viewBox="0 0 20 20"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        className="
+          h-4 w-4 shrink-0
+          transition-transform duration-200
+          group-open:rotate-180
+        "
+      >
+        <path
+          d="M5 7.5L10 12.5L15 7.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+
+    </summary>
+
+
+    <nav className="mt-1 space-y-1">
+
+
+      <Link
+        href="/documentation/sms"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
+      >
+        SMS
+      </Link>
+
+
+      <Link
+        href="/documentation/setup-email-marketing"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
+      >
+        Set Up Email Marketing
+      </Link>
+
+
+      <Link
+        href="/documentation/sending-an-email-with-notify"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
+      >
+        Sending an Email with Notify
+      </Link>
+
+
+      <Link
+        href="/documentation/klaviyo-integration"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
+      >
+        Klaviyo Integration
+      </Link>
 
 
     </nav>
+
   </details>
+
 </div>
-  </nav>
-</details>
+</div>
+
               </nav>
             </div>
           </aside>

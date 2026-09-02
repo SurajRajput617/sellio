@@ -686,7 +686,8 @@ export default function DocumentationSidebar() {
     >
       Managing Layouts
     </Link>
-
+   </nav>
+        </details>
 {/* ===================================================== */}
 {/* MARKETING */}
 {/* ===================================================== */}
@@ -800,6 +801,93 @@ export default function DocumentationSidebar() {
       >
         Top Banner Text
       </Link>
+  </nav>
+        </details>
+{/* ===================================================== */}
+{/* SMS & EMAIL */}
+{/* ===================================================== */}
+
+<div className="mt-7">
+
+  <details className="group" open>
+
+    <summary
+      className="
+        flex cursor-pointer list-none items-center justify-between
+        rounded-md border border-[#e5ddcd]
+        px-3 py-2
+        text-sm font-semibold text-[#101b33]
+        transition-colors
+         hover:border-coral/40
+        [&::-webkit-details-marker]:hidden
+      "
+    >
+
+      <span>
+        SMS & Email
+      </span>
+
+
+      <svg
+        viewBox="0 0 20 20"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        className="
+          h-4 w-4 shrink-0
+          transition-transform duration-200
+          group-open:rotate-180
+        "
+      >
+        <path
+          d="M5 7.5L10 12.5L15 7.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+
+    </summary>
+
+
+    <nav className="mt-2 space-y-1">
+
+
+      <Link
+        href="/documentation/sms"
+        className={subLinkClass("/documentation/sms")}
+      >
+        SMS
+      </Link>
+
+
+      <Link
+        href="/documentation/setup-email-marketing"
+        className={subLinkClass(
+          "/documentation/setup-email-marketing"
+        )}
+      >
+        Set Up Email Marketing
+      </Link>
+
+
+      <Link
+        href="/documentation/sending-an-email-with-notify"
+        className={subLinkClass(
+          "/documentation/sending-an-email-with-notify"
+        )}
+      >
+        Sending an Email with Notify
+      </Link>
+
+
+      <Link
+        href="/documentation/klaviyo-integration"
+        className={subLinkClass(
+          "/documentation/klaviyo-integration"
+        )}
+      >
+        Klaviyo Integration
+      </Link>
 
 
     </nav>
@@ -808,8 +896,10 @@ export default function DocumentationSidebar() {
 
 </div>
 
-  </nav>
-</details>
+
+{/* --- */}
+
+</div>
 
       </div>
     </aside>
