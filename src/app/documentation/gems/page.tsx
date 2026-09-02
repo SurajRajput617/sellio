@@ -741,7 +741,7 @@ export default function GemBoardPage() {
               </Link>
 
               <Link
-                href="/documentation/overview"
+                href="/documentation/truenorth-setup"
                 className="
                   group rounded-xl
                   border border-border
@@ -764,7 +764,7 @@ export default function GemBoardPage() {
                   "
                 >
                   <p className="font-semibold">
-                    Overview
+                    True North-Setup
                   </p>
 
                   <ArrowRight

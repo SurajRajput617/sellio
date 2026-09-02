@@ -637,7 +637,7 @@ export default function HomepageSetupPage() {
 
 
               <Link
-                href="/documentation/add-logo"
+                href="/documentation/connect-social-accounts"
                 className="
                 rounded-2xl
                 border border-border
@@ -656,7 +656,7 @@ export default function HomepageSetupPage() {
 
 
                   <p className="font-bold">
-                    Add-Logo
+                    Connect-Social-Accounts
                   </p>
 
 

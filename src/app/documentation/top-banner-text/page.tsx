@@ -1012,7 +1012,7 @@ SEO Settings
 
 
 <Link
-href="/documentation/promos-and-discounts"
+href="/documentation/sms"
 className="
 rounded-lg
 border
@@ -1051,8 +1051,7 @@ font-semibold
 >
 
 
-Promos-and-Discounts
-
+SMS
 
 <ArrowRight
 className="

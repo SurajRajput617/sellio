@@ -920,7 +920,7 @@ Add-daily-instant-winner-stats
 
 
 <Link
-href="/documentation/truenorth-setup"
+href="/documentation/promos-and-discounts"
 className="
 rounded-lg
 border
@@ -959,7 +959,7 @@ font-semibold
 >
 
 
-Truenorth-setup
+Promos-and-Discounts
 
 
 <ArrowRight

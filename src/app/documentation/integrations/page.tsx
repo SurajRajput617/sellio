@@ -1227,7 +1227,7 @@ text-navy-mute
 
 
               <Link
-                href="/documentation/entry-list-display"
+                href="/documentation/overview"
                 className="
                 rounded-2xl
                 border border-border
@@ -1255,7 +1255,7 @@ text-navy-mute
                 >
 
                   <p className="font-bold">
-                    Entry-List-Display
+                    Overview
                   </p>
 
 

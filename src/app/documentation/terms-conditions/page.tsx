@@ -526,7 +526,7 @@ export default function TermsConditionsPage() {
 
 
               <Link
-                href="/documentation/connect-social-accounts"
+                href="/documentation/entry-list-display"
                 className="
                 rounded-2xl
                 border border-border
@@ -562,7 +562,7 @@ export default function TermsConditionsPage() {
 
 
                   <p className="font-bold">
-                    Connect-Social-Accounts
+                    Entry-List-Display
                   </p>
 
 

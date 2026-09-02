@@ -461,6 +461,8 @@ export default function CreateCompetitionPage() {
               allowFullScreen
               />
 
+              
+
             </div>
 
 
@@ -470,6 +472,41 @@ export default function CreateCompetitionPage() {
 
 
 
+        
+            {/* ================================================= */}
+            {/* PREVIOUS / NEXT                                   */}
+            {/* ================================================= */}
+
+            <div className="grid gap-4 py-10 sm:grid-cols-2">
+              <Link
+                href="/documentation/payment-gateway"
+                className="group rounded-2xl border border-border bg-white p-5 transition-colors hover:border-coral/40"
+              >
+                <span className="flex items-center gap-2 text-xs font-bold uppercase text-navy-mute">
+                  <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+                  Previous
+                </span>
+
+                <p className="mt-2 font-display text-lg font-bold">
+                Payment-Gateway
+                </p>
+              </Link>
+
+              <Link
+                href="/documentation/instant-wins"
+                className="group rounded-2xl border border-border bg-white p-5 text-right transition-colors hover:border-coral/40"
+              >
+                <span className="flex items-center justify-end gap-2 text-xs font-bold uppercase text-navy-mute">
+                  Next
+
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </span>
+
+                <p className="mt-2 font-display text-lg font-bold">
+                  Instant-Wins
+                </p>
+              </Link>
+            </div>
           </article>
 
 

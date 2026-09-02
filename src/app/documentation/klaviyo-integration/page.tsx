@@ -1079,7 +1079,7 @@ Connected
 
 
               <Link
-                href="/documentation/sms"
+                href="/documentation/advertising"
                 className="
                   rounded-lg
                   border
@@ -1117,7 +1117,7 @@ Connected
                 >
 
 
-                 SMS
+                 Advertising
 
 
                   <ArrowRight

@@ -1165,7 +1165,7 @@ Active
 
 
               <Link
-                href="/documentation/advertising"
+                href="/documentation/affiliate-overview"
                 className="
                   rounded-lg
                   border
@@ -1202,7 +1202,7 @@ Active
                 >
 
 
-                 Advertising
+                 Affiliate-Overview
 
 
                   <ArrowRight
