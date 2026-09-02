@@ -907,9 +907,9 @@ export default function DocumentationSidebar() {
     <summary
       className="
         flex cursor-pointer list-none items-center justify-between
-        rounded-md border border-[#4a5875]
+        rounded-md border border-[#e5ddcd]
         px-3 py-2
-        text-sm font-semibold text-[#4a5875]
+        text-sm font-semibold text-[#101b33]
         transition-colors
         hover:border-[#ff5b45]/40
         [&::-webkit-details-marker]:hidden
@@ -977,7 +977,100 @@ export default function DocumentationSidebar() {
     </nav>
 
   </details>
+{/* ===================================================== */}
+{/* AFFILIATE REFERRAL SCHEME */}
+{/* ===================================================== */}
 
+<div className="mt-7">
+
+  <details className="group" open>
+
+    <summary
+      className="
+        flex cursor-pointer list-none items-center justify-between
+        rounded-md border border-[#e5ddcd]
+        px-3 py-2
+        text-sm font-semibold text-[#101b33]
+        transition-colors
+        hover:border-[#ff5b45]/40
+        [&::-webkit-details-marker]:hidden
+      "
+    >
+
+      <span>
+        AFFILIATE REFERRAL SCHEME
+      </span>
+
+
+      <svg
+        viewBox="0 0 20 20"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        className="
+          h-4 w-4 shrink-0
+          transition-transform duration-200
+          group-open:rotate-180
+        "
+      >
+        <path
+          d="M5 7.5L10 12.5L15 7.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+
+    </summary>
+
+
+    <nav className="mt-2 space-y-1">
+
+
+      <Link
+        href="/documentation/affiliate-overview"
+        className={subLinkClass(
+          "/documentation/affiliate-overview"
+        )}
+      >
+        Overview
+      </Link>
+
+
+      <Link
+        href="/documentation/setting-up-the-scheme"
+        className={subLinkClass(
+          "/documentation/setting-up-the-scheme"
+        )}
+      >
+        Setting Up the Scheme
+      </Link>
+
+
+      <Link
+        href="/documentation/how-users-participate"
+        className={subLinkClass(
+          "/documentation/how-users-participate"
+        )}
+      >
+        How Users Participate
+      </Link>
+
+
+      <Link
+        href="/documentation/managing-referrals"
+        className={subLinkClass(
+          "/documentation/managing-referrals"
+        )}
+      >
+        Managing Referrals
+      </Link>
+
+
+    </nav>
+
+  </details>
+
+</div>
 </div>
 
 </div>
