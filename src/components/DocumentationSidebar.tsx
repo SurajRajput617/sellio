@@ -692,20 +692,39 @@ export default function DocumentationSidebar() {
 {/* ===================================================== */}
 
 <div className="mt-7">
-  <h3 className="mb-3 px-3 text-xs font-bold uppercase tracking-wide text-[#ff5b45]">
+
+  <h3
+    className="
+      mb-3
+      px-3
+      text-xs
+      font-bold
+      uppercase
+      tracking-wide
+      text-[#ff5b45]
+    "
+  >
     MARKETING
   </h3>
 
+
   <details className="group" open>
+
     <summary
       className="
         flex cursor-pointer list-none items-center justify-between
-        rounded-md border border-[#4a5875] px-3 py-2
-        text-sm font-semibold text-[#4a5875]
+        rounded-lg border border-border px-3 py-2.5
+        text-xs font-bold uppercase tracking-wide text-navy
+        transition-colors
+        hover:border-coral/40
         [&::-webkit-details-marker]:hidden
       "
     >
-      <span>Website tools</span>
+
+      <span>
+        Website tools
+      </span>
+
 
       <svg
         viewBox="0 0 20 20"
@@ -718,53 +737,75 @@ export default function DocumentationSidebar() {
           group-open:rotate-180
         "
       >
+
         <path
           d="M5 7.5L10 12.5L15 7.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
+
       </svg>
+
     </summary>
 
-    <nav className="mt-2 space-y-1 pl-5">
+
+    <nav className="mt-1 space-y-1">
+
 
       <Link
         href="/documentation/promos-and-discounts"
-        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
+        className={subLinkClass(
+          "/documentation/promos-and-discounts"
+        )}
       >
         Promos and Discounts
       </Link>
 
+
       <Link
         href="/documentation/upsell"
-        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
+        className={subLinkClass(
+          "/documentation/upsell"
+        )}
       >
         Upsell
       </Link>
 
+
       <Link
         href="/documentation/dropped-basket-recovery"
-        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
+        className={subLinkClass(
+          "/documentation/dropped-basket-recovery"
+        )}
       >
         Dropped Basket Recovery
       </Link>
 
+
       <Link
         href="/documentation/seo-settings"
-        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
+        className={subLinkClass(
+          "/documentation/seo-settings"
+        )}
       >
         SEO Settings
       </Link>
 
+
       <Link
         href="/documentation/top-banner-text"
-        className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-navy"
+        className={subLinkClass(
+          "/documentation/top-banner-text"
+        )}
       >
         Top Banner Text
       </Link>
 
+
     </nav>
+
   </details>
+
 </div>
 
   </nav>
