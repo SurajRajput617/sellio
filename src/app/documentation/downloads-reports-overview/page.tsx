@@ -2128,7 +2128,7 @@ Managing-Referrals
 
 
 <Link
-href="/documentation/downloads-reports-overview"
+href="/documentation/standards-overview"
 className="
 rounded-lg
 border
@@ -2165,7 +2165,7 @@ font-semibold
 >
 
 
-Downloads-Reports-Overview
+Standards-Overview
 
 
 
