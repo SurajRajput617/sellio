@@ -1421,7 +1421,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/standards/player-protections"
+        href="/documentation/player-protections"
         className="
           flex items-center gap-3 rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
