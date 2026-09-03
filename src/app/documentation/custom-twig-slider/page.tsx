@@ -4484,37 +4484,7 @@ export default function CustomTwigSliderPage() {
                 </p>
 
                 <div className="mt-4 space-y-3">
-                  {/* PRODUCT MANAGEMENT */}
-
-                  <Link
-                    href="/documentation/product-management"
-                    className="
-                      group
-                      flex
-                      items-center
-                      justify-between
-                      gap-2
-                      text-xs
-                      leading-5
-                      text-navy-mute
-                      transition-colors
-                      hover:text-coral
-                    "
-                  >
-                    <span>
-                      Product Management
-                    </span>
-
-                    <ChevronRight
-                      className="
-                        h-3.5
-                        w-3.5
-                        shrink-0
-                        transition-transform
-                        group-hover:translate-x-0.5
-                      "
-                    />
-                  </Link>
+          
 
                   {/* STORE MANAGEMENT */}
 
