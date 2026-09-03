@@ -1031,7 +1031,7 @@ text-coral
 
 
               <Link
-                href="/documentation/advertising"
+                href="/documentation/klaviyo-integration"
                 className="
                   rounded-lg
                   border
@@ -1075,7 +1075,7 @@ text-coral
                   />
 
 
-                  Advertising
+                  Klaviyo-Integration
 
 
                 </div>

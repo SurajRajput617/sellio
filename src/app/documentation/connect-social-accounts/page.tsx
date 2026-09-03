@@ -483,7 +483,7 @@ export default function ConnectSocialAccountsPage() {
               {/* PREVIOUS */}
 
               <Link
-                href="/documentation/site-colours"
+                href="/documentation/homepage-setup"
                 className="
                 rounded-2xl
                 border border-border
@@ -499,7 +499,7 @@ export default function ConnectSocialAccountsPage() {
 
 
                 <p className="mt-2 font-bold">
-                  Choose Site Colours
+                  Set Up Your Homepage
                 </p>
 
 

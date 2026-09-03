@@ -896,7 +896,7 @@ sm:grid-cols-2
 
 
 <Link
-href="/documentation/sms"
+href="/documentation/top-banner-text"
 className="
 rounded-lg
 border
@@ -941,7 +941,7 @@ w-4
 />
 
 
-SMS & Email
+Top-Banner-Text
 
 
 </div>

@@ -363,7 +363,7 @@ export default function AddLogoPage() {
 
 
               <a
-                href="https://sellio-seven.vercel.app/documentation/homepage-setup"
+                href="/documentation/hidden-vip-competitions"
                 className="
                 rounded-2xl
                 border border-border
@@ -397,7 +397,7 @@ export default function AddLogoPage() {
                   text-navy
                   "
                 >
-                  Homepage Setup
+                  Hidden-Vip-Competitions
                 </p>
 
 

@@ -1046,7 +1046,7 @@ sm:grid-cols-2
 
 
 <Link
-href="/documentation/affiliate-overview"
+href="/documentation/product-catalogue"
 className="
 rounded-lg
 border
@@ -1088,7 +1088,7 @@ w-4
 "
 />
 
-Affiliate-Overview
+Product-Catalogue
 
 
 

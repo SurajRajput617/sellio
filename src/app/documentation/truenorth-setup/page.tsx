@@ -1455,7 +1455,7 @@ export default function TrueNorthSetupPage() {
             >
               {/* PREVIOUS */}
               <Link
-                href="/documentation/truenorth-setup"
+                href="/documentation/gems"
                 className="
                   group rounded-xl
                   border border-border
@@ -1479,7 +1479,7 @@ export default function TrueNorthSetupPage() {
                   />
 
                   <p className="font-semibold">
-                    Truenorth-setup
+                    Gems
                   </p>
                 </div>
               </Link>

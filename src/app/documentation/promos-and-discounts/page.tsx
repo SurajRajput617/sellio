@@ -913,7 +913,7 @@ sm:grid-cols-2
 
 
 <Link
-href="/documentation/promos-and-discounts"
+href="/documentation/managing-layouts"
 className="
 rounded-lg
 border
@@ -957,7 +957,7 @@ w-4
 "
 />
 
-Promos-and-Discounts
+Managing-Layouts
 
 
 </div>

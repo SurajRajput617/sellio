@@ -795,7 +795,7 @@ export default function InstantWinGamesPage() {
 
 
               <Link
-                href="/documentation/homepage-setup"
+                href="/documentation/integrations"
                 className="
                 rounded-2xl
                 border border-border
@@ -816,7 +816,7 @@ export default function InstantWinGamesPage() {
 
 
                 <p className="mt-2 font-bold">
-                  Homepage Setup
+                  Settings-Integrations
                 </p>
 
 
