@@ -1435,7 +1435,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/standards-transparency"
+        href="/documentation/transparency"
         className="
           flex items-center gap-3 rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1449,7 +1449,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/standards-accountability"
+        href="/documentation/accountability"
         className="
           flex items-center gap-3 rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
