@@ -1802,7 +1802,7 @@ export default function StandardsOverviewPage() {
               "
             >
               <Link
-                href="/documentation/downloads"
+                href="/documentation/downloads-reports-overview"
                 className="
                   rounded-lg
                   border
@@ -1830,13 +1830,13 @@ export default function StandardsOverviewPage() {
                   <ArrowLeft className="h-4 w-4" />
 
                   <span>
-                    Downloads &amp; Reports
+                   Downloads-Reports-Overview
                   </span>
                 </div>
               </Link>
 
               <Link
-                href="/documentation"
+                href="/documentation/player-protections"
                 className="
                   rounded-lg
                   border
@@ -1864,7 +1864,7 @@ export default function StandardsOverviewPage() {
                   "
                 >
                   <span>
-                    Documentation
+                  Player-Protections
                   </span>
 
                   <ArrowRight className="h-4 w-4" />
