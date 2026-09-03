@@ -1750,7 +1750,7 @@ export default function CustomTwigBlockPage() {
 
 
                 <Link
-                  href="/contact"
+                  href="/#contact"
                   className="
                     mt-5
                     inline-flex
@@ -1912,7 +1912,7 @@ export default function CustomTwigBlockPage() {
               {/* PREVIOUS */}
 
               <Link
-                href="/documentation/standards-overview"
+                href="/documentation/conversion-event-tracking"
                 className="
                   group
                   rounded-lg
@@ -1954,7 +1954,7 @@ export default function CustomTwigBlockPage() {
                     "
                   />
 
-                  Standards Overview
+      Conversion-Event-Tracking
 
                 </div>
 
@@ -1964,7 +1964,7 @@ export default function CustomTwigBlockPage() {
               {/* NEXT */}
 
               <Link
-                href="/documentation/conversion-event-tracking"
+                href="/documentation/custom-twig-product-grid"
                 className="
                   group
                   rounded-lg
@@ -2001,7 +2001,7 @@ export default function CustomTwigBlockPage() {
                   "
                 >
 
-                  Conversion Event Tracking
+                  Custom-Twig-Product-Grid
 
                   <ArrowRight
                     className="
