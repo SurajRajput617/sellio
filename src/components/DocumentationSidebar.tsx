@@ -1138,25 +1138,19 @@ export default function DocumentationSidebar() {
 {/* ===================================================== */}
 
 <div className="mt-7">
-
   <details className="group" open>
-
     <summary
       className="
         flex cursor-pointer list-none items-center justify-between
         rounded-md border border-[#4a5875]
         px-3 py-2
-      text-sm font-semibold text-[#101b33]
+        text-sm font-semibold text-[#101b33]
         transition-colors
         hover:border-[#ff5b45]/40
         [&::-webkit-details-marker]:hidden
       "
     >
-
-      <span>
-        STANDARDS
-      </span>
-
+      <span>STANDARDS</span>
 
       <svg
         viewBox="0 0 20 20"
@@ -1169,21 +1163,17 @@ export default function DocumentationSidebar() {
           group-open:rotate-180
         "
       >
-
         <path
           d="M5 7.5L10 12.5L15 7.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-
       </svg>
-
     </summary>
-
 
     <nav className="mt-2 space-y-1">
 
-
+      {/* Overview */}
       <Link
         href="/documentation/standards-overview"
         className={subLinkClass(
@@ -1193,90 +1183,93 @@ export default function DocumentationSidebar() {
         ⚖ <span className="ml-2">Overview</span>
       </Link>
 
-
+      {/* Player Protections */}
       <Link
         href="/documentation/player-protections"
         className={subLinkClass(
-          "/documentation/standards/player-protections"
+          "/documentation/player-protections"
         )}
       >
         ♡ <span className="ml-2">Player Protections</span>
       </Link>
 
-
+      {/* Transparency */}
       <Link
         href="/documentation/transparency"
         className={subLinkClass(
-          "/documentation/standards/transparency"
+          "/documentation/transparency"
         )}
       >
         ◉ <span className="ml-2">Transparency</span>
       </Link>
 
-
+      {/* Accountability */}
       <Link
         href="/documentation/accountability"
         className={subLinkClass(
-          "/documentation/standards/accountability"
+          "/documentation/accountability"
         )}
       >
         ☑ <span className="ml-2">Accountability</span>
       </Link>
 
-
     </nav>
-
   </details>
 
-{/* Conversion Event Tracking */}
 
-<details className="group mt-7" open>
-  <summary
-    className="
-      flex cursor-pointer list-none items-center justify-between
-      rounded-lg border border-border px-3 py-2.5
-      text-xs font-bold uppercase tracking-wide text-navy
-      transition-colors
-      hover:border-coral/40
-      [&::-webkit-details-marker]:hidden
-    "
-  >
-    <span>ADVANCED</span>
+{/* ===================================================== */}
+{/* ADVANCED */}
+{/* ===================================================== */}
 
-    <svg
-      viewBox="0 0 20 20"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
+<div className="mt-7">
+  <details className="group" open>
+    <summary
       className="
-        h-4 w-4 shrink-0
-        transition-transform duration-200
-        group-open:rotate-180
-      "
-    >
-      <path
-        d="M5 7.5L10 12.5L15 7.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  </summary>
-
-  <nav className="mt-2 space-y-1 pl-5">
-    <Link
-      href="/documentation/conversion-event-tracking"
-      className="
-        block rounded-lg px-3 py-2
-        text-sm font-medium text-navy-mute
+        flex cursor-pointer list-none items-center justify-between
+        rounded-lg border border-border
+        px-3 py-2.5
+        text-xs font-bold uppercase tracking-wide text-navy
         transition-colors
-        hover:bg-coral/10 hover:text-navy
+        hover:border-coral/40
+        [&::-webkit-details-marker]:hidden
       "
     >
-      Conversion Event Tracking
-    </Link>
-  </nav>
-</details>
+      <span>ADVANCED</span>
 
+      <svg
+        viewBox="0 0 20 20"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        className="
+          h-4 w-4 shrink-0
+          transition-transform duration-200
+          group-open:rotate-180
+        "
+      >
+        <path
+          d="M5 7.5L10 12.5L15 7.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </summary>
+
+    <nav className="mt-2 space-y-1 pl-5">
+
+      {/* Conversion Event Tracking */}
+      <Link
+        href="/documentation/conversion-event-tracking"
+        className={subLinkClass(
+          "/documentation/conversion-event-tracking"
+        )}
+      >
+        Conversion Event Tracking
+      </Link>
+
+    </nav>
+  </details>
+</div>
 
 {/* ===================================================== */}
 {/* TWIG TEMPLATING */}
