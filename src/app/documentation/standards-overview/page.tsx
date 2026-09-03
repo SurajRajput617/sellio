@@ -8,8 +8,12 @@ import {
   ArrowRight,
   ChevronRight,
   Info,
-  CheckCircle2,
   ShieldCheck,
+  UserCheck,
+  Settings,
+  LockKeyhole,
+  Headphones,
+  CheckCircle2,
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
@@ -17,43 +21,34 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 const sections = [
-  {
-    id: "overview",
-    label: "Overview",
-  },
-  {
-    id: "voluntary",
-    label: "Voluntary Code",
-  },
-  {
-    id: "section",
-    label: "In This Section",
-  },
-  {
-    id: "related",
-    label: "Related Guides",
-  },
+  { id: "overview", label: "Overview" },
+  { id: "account-safety", label: "Account Safety" },
+  { id: "access", label: "Access Requirements" },
+  { id: "controls", label: "Account Controls" },
+  { id: "support", label: "Customer Support" },
+  { id: "complaints", label: "Complaints Process" },
+  { id: "privacy", label: "Customer Privacy" },
+  { id: "payment", label: "Payment Security" },
+  { id: "activity", label: "Account Activity" },
+  { id: "checklist", label: "Protection Checklist" },
+  { id: "related", label: "Related Guides" },
 ];
 
-export default function StandardsPage() {
+type ControlId =
+  | "account-settings"
+  | "privacy-settings"
+  | "customer-support";
+
+export default function StandardsOverviewPage() {
   const [activeSection, setActiveSection] =
     useState("overview");
 
-  const [openStandard, setOpenStandard] =
-    useState<string | null>(null);
+  const [openControl, setOpenControl] =
+    useState<ControlId | null>(null);
 
-  const [openGuide, setOpenGuide] =
-    useState<string | null>(null);
-
-  const toggleStandard = (name: string) => {
-    setOpenStandard((current) =>
-      current === name ? null : name
-    );
-  };
-
-  const toggleGuide = (name: string) => {
-    setOpenGuide((current) =>
-      current === name ? null : name
+  const toggleControl = (control: ControlId) => {
+    setOpenControl((current) =>
+      current === control ? null : control
     );
   };
 
@@ -61,18 +56,17 @@ export default function StandardsPage() {
     const handleScroll = () => {
       let current = sections[0].id;
 
-      sections.forEach((section) => {
-        const element = document.getElementById(
-          section.id
-        );
+      sections.forEach((item) => {
+        const element =
+          document.getElementById(item.id);
 
         if (!element) return;
 
         if (
           element.offsetTop <=
-          window.scrollY + 180
+          window.scrollY + 160
         ) {
-          current = section.id;
+          current = item.id;
         }
       });
 
@@ -101,7 +95,13 @@ export default function StandardsPage() {
     <>
       <Navbar />
 
-      <main className="min-h-screen bg-paper text-navy">
+      <main
+        className="
+          min-h-screen
+          bg-paper
+          text-navy
+        "
+      >
         <div
           className="
             container-xl
@@ -114,9 +114,7 @@ export default function StandardsPage() {
           <DocumentationSidebar />
 
           <article className="min-w-0">
-            {/* ========================================
-                OVERVIEW
-            ======================================== */}
+            {/* OVERVIEW */}
             <section
               id="overview"
               className="
@@ -143,7 +141,7 @@ export default function StandardsPage() {
                   font-bold
                 "
               >
-                Overview
+                Standards Overview
               </h1>
 
               <p
@@ -155,9 +153,10 @@ export default function StandardsPage() {
                   text-navy-mute
                 "
               >
-                Standards help keep your Sellio store
-                consistent, reliable, and easy for
-                customers to use.
+                Learn about Sellio standards for customer
+                protection, account safety, privacy,
+                payments, support, and responsible store
+                management.
               </p>
 
               <p
@@ -169,10 +168,9 @@ export default function StandardsPage() {
                   text-navy-mute
                 "
               >
-                This section explains the recommended
-                practices for managing your store,
-                customer experience, marketing activity,
-                and day-to-day operations.
+                These standards help store owners provide a
+                secure, clear, and reliable experience for
+                customers using their Sellio store.
               </p>
 
               <div
@@ -186,13 +184,7 @@ export default function StandardsPage() {
                   py-4
                 "
               >
-                <div
-                  className="
-                    flex
-                    items-start
-                    gap-3
-                  "
-                >
+                <div className="flex items-start gap-3">
                   <Info
                     className="
                       mt-0.5
@@ -210,20 +202,17 @@ export default function StandardsPage() {
                       text-navy-mute
                     "
                   >
-                    These guidelines are designed to
-                    help you maintain a clear and
-                    consistent experience across your
-                    Sellio store.
+                    Review these standards regularly and
+                    keep customer-facing information
+                    accurate, accessible, and up to date.
                   </p>
                 </div>
               </div>
             </section>
 
-            {/* ========================================
-                VOLUNTARY CODE
-            ======================================== */}
+            {/* ACCOUNT SAFETY */}
             <section
-              id="voluntary"
+              id="account-safety"
               className="
                 scroll-mt-28
                 border-b
@@ -231,13 +220,8 @@ export default function StandardsPage() {
                 py-8
               "
             >
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                About the Voluntary Code
+              <h2 className="text-xl font-bold">
+                Account Safety
               </h2>
 
               <p
@@ -248,24 +232,9 @@ export default function StandardsPage() {
                   text-navy-mute
                 "
               >
-                The Sellio Voluntary Code provides
-                practical guidance for maintaining
-                transparent and customer-friendly
-                store practices.
-              </p>
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Following these recommendations can
-                make important information easier for
-                customers to understand and help keep
-                your store operations consistent.
+                Sellio store owners should provide customers
+                with clear information about account access,
+                security, and available support.
               </p>
 
               <ul
@@ -278,27 +247,19 @@ export default function StandardsPage() {
                 "
               >
                 <li>
-                  • Keep customer-facing information
-                  clear and accurate.
+                  • Keep account information accurate.
                 </li>
 
                 <li>
-                  • Make important store policies easy
-                  to find.
+                  • Use secure authentication practices.
                 </li>
 
                 <li>
-                  • Keep product and pricing information
-                  up to date.
+                  • Protect customer information.
                 </li>
 
                 <li>
-                  • Use consistent communication across
-                  your store.
-                </li>
-
-                <li>
-                  • Review important settings regularly.
+                  • Make support information easy to find.
                 </li>
               </ul>
 
@@ -313,13 +274,7 @@ export default function StandardsPage() {
                   py-4
                 "
               >
-                <div
-                  className="
-                    flex
-                    items-start
-                    gap-3
-                  "
-                >
+                <div className="flex items-start gap-3">
                   <ShieldCheck
                     className="
                       mt-0.5
@@ -337,19 +292,17 @@ export default function StandardsPage() {
                       text-navy-mute
                     "
                   >
-                    Use these standards as a practical
-                    checklist when reviewing your
-                    Sellio store.
+                    Regularly review account and security
+                    settings to help keep customer
+                    information protected.
                   </p>
                 </div>
               </div>
             </section>
 
-            {/* ========================================
-                IN THIS SECTION - DROPDOWNS
-            ======================================== */}
+            {/* ACCESS REQUIREMENTS */}
             <section
-              id="section"
+              id="access"
               className="
                 scroll-mt-28
                 border-b
@@ -357,13 +310,8 @@ export default function StandardsPage() {
                 py-8
               "
             >
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                In This Section
+              <h2 className="text-xl font-bold">
+                Access Requirements
               </h2>
 
               <p
@@ -374,399 +322,90 @@ export default function StandardsPage() {
                   text-navy-mute
                 "
               >
-                Explore the available standards and
-                guidance for managing different parts
-                of your Sellio store.
+                Clearly explain any requirements that
+                customers must meet before accessing
+                particular account features or services.
               </p>
 
-              <div className="mt-6 space-y-3">
-                {/* STORE STANDARDS */}
-                <div>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      toggleStandard("store")
-                    }
-                    aria-expanded={
-                      openStandard === "store"
-                    }
-                    className={`
-                      flex
-                      w-full
-                      items-center
-                      justify-between
-                      rounded-lg
-                      border
-                      px-4
-                      py-3
-                      text-left
-                      text-sm
-                      transition
-                      hover:border-coral
-                      ${
-                        openStandard === "store"
-                          ? "border-navy"
-                          : "border-border"
-                      }
-                    `}
-                  >
-                    <span>Store Standards</span>
-
-                    <ChevronRight
-                      className={`
-                        h-4
-                        w-4
-                        shrink-0
-                        transition-transform
-                        duration-200
-                        ${
-                          openStandard === "store"
-                            ? "rotate-90"
-                            : ""
-                        }
-                      `}
-                    />
-                  </button>
-
-                  {openStandard === "store" && (
-                    <div
-                      className="
-                        mt-2
-                        rounded-lg
-                        border
-                        border-border
-                        bg-black/5
-                        px-5
-                        py-4
-                      "
-                    >
-                      <p
-                        className="
-                          text-sm
-                          leading-6
-                          text-navy-mute
-                        "
-                      >
-                        Keep your Sellio store
-                        information accurate,
-                        consistent, and easy for
-                        customers to understand.
-                      </p>
-
-                      <ul
-                        className="
-                          mt-4
-                          space-y-2
-                          text-sm
-                          leading-6
-                          text-navy-mute
-                        "
-                      >
-                        <li>
-                          • Keep product information
-                          current.
-                        </li>
-
-                        <li>
-                          • Display clear pricing and
-                          availability.
-                        </li>
-
-                        <li>
-                          • Make important store
-                          policies easy to access.
-                        </li>
-
-                        <li>
-                          • Review customer-facing
-                          information regularly.
-                        </li>
-                      </ul>
-                    </div>
-                  )}
-                </div>
-
-                {/* CUSTOMER EXPERIENCE */}
-                <div>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      toggleStandard("customer")
-                    }
-                    aria-expanded={
-                      openStandard === "customer"
-                    }
-                    className={`
-                      flex
-                      w-full
-                      items-center
-                      justify-between
-                      rounded-lg
-                      border
-                      px-4
-                      py-3
-                      text-left
-                      text-sm
-                      transition
-                      hover:border-coral
-                      ${
-                        openStandard === "customer"
-                          ? "border-navy"
-                          : "border-border"
-                      }
-                    `}
-                  >
-                    <span>
-                      Customer Experience
-                    </span>
-
-                    <ChevronRight
-                      className={`
-                        h-4
-                        w-4
-                        shrink-0
-                        transition-transform
-                        duration-200
-                        ${
-                          openStandard === "customer"
-                            ? "rotate-90"
-                            : ""
-                        }
-                      `}
-                    />
-                  </button>
-
-                  {openStandard === "customer" && (
-                    <div
-                      className="
-                        mt-2
-                        rounded-lg
-                        border
-                        border-border
-                        bg-black/5
-                        px-5
-                        py-4
-                      "
-                    >
-                      <p
-                        className="
-                          text-sm
-                          leading-6
-                          text-navy-mute
-                        "
-                      >
-                        A consistent customer
-                        experience helps visitors
-                        understand your products,
-                        services, and store policies.
-                      </p>
-
-                      <ul
-                        className="
-                          mt-4
-                          space-y-2
-                          text-sm
-                          leading-6
-                          text-navy-mute
-                        "
-                      >
-                        <li>
-                          • Use clear product
-                          descriptions.
-                        </li>
-
-                        <li>
-                          • Provide useful information
-                          before checkout.
-                        </li>
-
-                        <li>
-                          • Keep support and contact
-                          information visible.
-                        </li>
-
-                        <li>
-                          • Make important account and
-                          order information easy to
-                          find.
-                        </li>
-                      </ul>
-                    </div>
-                  )}
-                </div>
-
-                {/* MARKETING STANDARDS */}
-                <div>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      toggleStandard("marketing")
-                    }
-                    aria-expanded={
-                      openStandard === "marketing"
-                    }
-                    className={`
-                      flex
-                      w-full
-                      items-center
-                      justify-between
-                      rounded-lg
-                      border
-                      px-4
-                      py-3
-                      text-left
-                      text-sm
-                      transition
-                      hover:border-coral
-                      ${
-                        openStandard === "marketing"
-                          ? "border-navy"
-                          : "border-border"
-                      }
-                    `}
-                  >
-                    <span>
-                      Marketing Standards
-                    </span>
-
-                    <ChevronRight
-                      className={`
-                        h-4
-                        w-4
-                        shrink-0
-                        transition-transform
-                        duration-200
-                        ${
-                          openStandard === "marketing"
-                            ? "rotate-90"
-                            : ""
-                        }
-                      `}
-                    />
-                  </button>
-
-                  {openStandard === "marketing" && (
-                    <div
-                      className="
-                        mt-2
-                        rounded-lg
-                        border
-                        border-border
-                        bg-black/5
-                        px-5
-                        py-4
-                      "
-                    >
-                      <p
-                        className="
-                          text-sm
-                          leading-6
-                          text-navy-mute
-                        "
-                      >
-                        Keep promotional content clear
-                        and consistent across your
-                        Sellio marketing channels.
-                      </p>
-
-                      <ul
-                        className="
-                          mt-4
-                          space-y-2
-                          text-sm
-                          leading-6
-                          text-navy-mute
-                        "
-                      >
-                        <li>
-                          • Use accurate promotional
-                          information.
-                        </li>
-
-                        <li>
-                          • Make offer terms easy to
-                          understand.
-                        </li>
-
-                        <li>
-                          • Keep campaign information
-                          updated.
-                        </li>
-
-                        <li>
-                          • Review promotions before
-                          publishing.
-                        </li>
-
-                        <li>
-                          • Keep marketing messages
-                          consistent with your store
-                          information.
-                        </li>
-                      </ul>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </section>
-
-            {/* ========================================
-                NOTE
-            ======================================== */}
-            <div
-              className="
-                mt-8
-                rounded-lg
-                border
-                border-border
-                bg-black/5
-                px-5
-                py-4
-              "
-            >
-              <div
+              <ol
                 className="
-                  flex
-                  items-start
-                  gap-3
+                  mt-5
+                  space-y-3
+                  text-sm
+                  leading-6
+                  text-navy-mute
                 "
               >
-                <CheckCircle2
-                  className="
-                    mt-0.5
-                    h-4
-                    w-4
-                    shrink-0
-                    text-coral
-                  "
-                />
+                <li>
+                  1. Review the requirements for the feature.
+                </li>
+
+                <li>
+                  2. Provide customers with clear instructions.
+                </li>
+
+                <li>
+                  3. Request only the information that is
+                  required.
+                </li>
+
+                <li>
+                  4. Keep submitted customer information
+                  secure.
+                </li>
+              </ol>
+
+              <div
+                className="
+                  mt-6
+                  rounded-lg
+                  border
+                  border-border
+                  bg-black/5
+                  px-5
+                  py-4
+                "
+              >
+                <div className="flex items-center gap-3">
+                  <UserCheck
+                    className="
+                      h-5
+                      w-5
+                      text-coral
+                    "
+                  />
+
+                  <h3 className="font-semibold">
+                    Clear Access Information
+                  </h3>
+                </div>
 
                 <p
                   className="
+                    mt-3
                     text-sm
                     leading-6
                     text-navy-mute
                   "
                 >
-                  Review the standards that apply to
-                  your store before making significant
-                  changes to customer-facing settings.
+                  Make requirements easy to understand
+                  before customers begin an account or
+                  service process.
                 </p>
               </div>
-            </div>
-
-            {/* ========================================
-                STORE STANDARDS
-            ======================================== */}
+            </section>
+                        {/* ACCOUNT CONTROLS */}
             <section
+              id="controls"
               className="
+                scroll-mt-28
                 border-b
                 border-border
                 py-8
               "
             >
               <h2 className="text-xl font-bold">
-                Store Standards
+                Account Controls
               </h2>
 
               <p
@@ -777,53 +416,689 @@ export default function StandardsPage() {
                   text-navy-mute
                 "
               >
-                Keep your Sellio store information
-                accurate, consistent, and easy for
-                customers to understand.
+                Give customers appropriate ways to manage
+                their account information, privacy choices,
+                security settings, and support requests.
               </p>
 
-              <ul
-                className="
-                  mt-5
-                  space-y-3
-                  text-sm
-                  leading-6
-                  text-navy-mute
-                "
-              >
-                <li>
-                  • Keep product information current.
-                </li>
+              <div className="mt-6 space-y-3">
+                {/* ACCOUNT SETTINGS DROPDOWN */}
+                <div
+                  className={`
+                    overflow-hidden
+                    rounded-lg
+                    border
+                    transition-colors
+                    ${
+                      openControl === "account-settings"
+                        ? "border-navy"
+                        : "border-border"
+                    }
+                  `}
+                >
+                  <button
+                    type="button"
+                    onClick={() =>
+                      toggleControl("account-settings")
+                    }
+                    aria-expanded={
+                      openControl === "account-settings"
+                    }
+                    className="
+                      flex
+                      w-full
+                      items-center
+                      justify-between
+                      gap-4
+                      px-4
+                      py-4
+                      text-left
+                      text-sm
+                      transition-colors
+                      hover:bg-black/[0.025]
+                    "
+                  >
+                    <span className="flex items-center gap-3">
+                      <Settings
+                        className="
+                          h-4
+                          w-4
+                          text-coral
+                        "
+                      />
 
-                <li>
-                  • Display clear pricing and
-                  availability.
-                </li>
+                      <span className="font-medium">
+                        Account Settings
+                      </span>
+                    </span>
 
-                <li>
-                  • Make important store policies easy
-                  to access.
-                </li>
+                    <ChevronRight
+                      className={`
+                        h-4
+                        w-4
+                        shrink-0
+                        transition-transform
+                        duration-200
+                        ${
+                          openControl ===
+                          "account-settings"
+                            ? "rotate-90"
+                            : ""
+                        }
+                      `}
+                    />
+                  </button>
 
-                <li>
-                  • Review customer-facing information
-                  regularly.
-                </li>
-              </ul>
+                  {openControl === "account-settings" && (
+                    <div
+                      className="
+                        border-t
+                        border-border
+                        bg-black/[0.02]
+                        px-5
+                        py-5
+                      "
+                    >
+                      <h3
+                        className="
+                          text-sm
+                          font-semibold
+                        "
+                      >
+                        Managing Account Settings
+                      </h3>
+
+                      <p
+                        className="
+                          mt-2
+                          text-sm
+                          leading-6
+                          text-navy-mute
+                        "
+                      >
+                        Customers should have clear ways to
+                        review and update important account
+                        information while store owners keep
+                        administrative controls secure.
+                      </p>
+
+                      <div
+                        className="
+                          mt-4
+                          grid
+                          gap-3
+                          sm:grid-cols-2
+                        "
+                      >
+                        <div
+                          className="
+                            rounded-md
+                            border
+                            border-border
+                            bg-paper
+                            p-4
+                          "
+                        >
+                          <p
+                            className="
+                              text-sm
+                              font-semibold
+                            "
+                          >
+                            Profile Information
+                          </p>
+
+                          <p
+                            className="
+                              mt-1
+                              text-xs
+                              leading-5
+                              text-navy-mute
+                            "
+                          >
+                            Allow customers to keep names,
+                            contact details, and relevant
+                            profile information current.
+                          </p>
+                        </div>
+
+                        <div
+                          className="
+                            rounded-md
+                            border
+                            border-border
+                            bg-paper
+                            p-4
+                          "
+                        >
+                          <p
+                            className="
+                              text-sm
+                              font-semibold
+                            "
+                          >
+                            Login &amp; Security
+                          </p>
+
+                          <p
+                            className="
+                              mt-1
+                              text-xs
+                              leading-5
+                              text-navy-mute
+                            "
+                          >
+                            Provide secure password,
+                            authentication, and account
+                            recovery options.
+                          </p>
+                        </div>
+                      </div>
+
+                      <ul
+                        className="
+                          mt-4
+                          space-y-2
+                          text-sm
+                          leading-6
+                          text-navy-mute
+                        "
+                      >
+                        <li className="flex gap-2">
+                          <CheckCircle2
+                            className="
+                              mt-1
+                              h-3.5
+                              w-3.5
+                              shrink-0
+                              text-coral
+                            "
+                          />
+
+                          Keep customer contact information
+                          accurate.
+                        </li>
+
+                        <li className="flex gap-2">
+                          <CheckCircle2
+                            className="
+                              mt-1
+                              h-3.5
+                              w-3.5
+                              shrink-0
+                              text-coral
+                            "
+                          />
+
+                          Protect changes to sensitive account
+                          settings.
+                        </li>
+
+                        <li className="flex gap-2">
+                          <CheckCircle2
+                            className="
+                              mt-1
+                              h-3.5
+                              w-3.5
+                              shrink-0
+                              text-coral
+                            "
+                          />
+
+                          Make account recovery instructions
+                          clear.
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </div>
+
+                {/* PRIVACY SETTINGS DROPDOWN */}
+                <div
+                  className={`
+                    overflow-hidden
+                    rounded-lg
+                    border
+                    transition-colors
+                    ${
+                      openControl === "privacy-settings"
+                        ? "border-navy"
+                        : "border-border"
+                    }
+                  `}
+                >
+                  <button
+                    type="button"
+                    onClick={() =>
+                      toggleControl("privacy-settings")
+                    }
+                    aria-expanded={
+                      openControl === "privacy-settings"
+                    }
+                    className="
+                      flex
+                      w-full
+                      items-center
+                      justify-between
+                      gap-4
+                      px-4
+                      py-4
+                      text-left
+                      text-sm
+                      transition-colors
+                      hover:bg-black/[0.025]
+                    "
+                  >
+                    <span className="flex items-center gap-3">
+                      <LockKeyhole
+                        className="
+                          h-4
+                          w-4
+                          text-coral
+                        "
+                      />
+
+                      <span className="font-medium">
+                        Privacy Settings
+                      </span>
+                    </span>
+
+                    <ChevronRight
+                      className={`
+                        h-4
+                        w-4
+                        shrink-0
+                        transition-transform
+                        duration-200
+                        ${
+                          openControl ===
+                          "privacy-settings"
+                            ? "rotate-90"
+                            : ""
+                        }
+                      `}
+                    />
+                  </button>
+
+                  {openControl === "privacy-settings" && (
+                    <div
+                      className="
+                        border-t
+                        border-border
+                        bg-black/[0.02]
+                        px-5
+                        py-5
+                      "
+                    >
+                      <h3
+                        className="
+                          text-sm
+                          font-semibold
+                        "
+                      >
+                        Customer Privacy Controls
+                      </h3>
+
+                      <p
+                        className="
+                          mt-2
+                          text-sm
+                          leading-6
+                          text-navy-mute
+                        "
+                      >
+                        Customers should understand what
+                        information is collected, why it is
+                        used, and which preferences they can
+                        manage.
+                      </p>
+
+                      <div
+                        className="
+                          mt-4
+                          space-y-3
+                        "
+                      >
+                        <div
+                          className="
+                            rounded-md
+                            border
+                            border-border
+                            bg-paper
+                            p-4
+                          "
+                        >
+                          <p
+                            className="
+                              text-sm
+                              font-semibold
+                            "
+                          >
+                            Communication Preferences
+                          </p>
+
+                          <p
+                            className="
+                              mt-1
+                              text-xs
+                              leading-5
+                              text-navy-mute
+                            "
+                          >
+                            Give customers clear controls for
+                            relevant email and communication
+                            preferences.
+                          </p>
+                        </div>
+
+                        <div
+                          className="
+                            rounded-md
+                            border
+                            border-border
+                            bg-paper
+                            p-4
+                          "
+                        >
+                          <p
+                            className="
+                              text-sm
+                              font-semibold
+                            "
+                          >
+                            Customer Information
+                          </p>
+
+                          <p
+                            className="
+                              mt-1
+                              text-xs
+                              leading-5
+                              text-navy-mute
+                            "
+                          >
+                            Explain how customer information
+                            is stored, protected, and used for
+                            legitimate store operations.
+                          </p>
+                        </div>
+
+                        <div
+                          className="
+                            rounded-md
+                            border
+                            border-border
+                            bg-paper
+                            p-4
+                          "
+                        >
+                          <p
+                            className="
+                              text-sm
+                              font-semibold
+                            "
+                          >
+                            Privacy Requests
+                          </p>
+
+                          <p
+                            className="
+                              mt-1
+                              text-xs
+                              leading-5
+                              text-navy-mute
+                            "
+                          >
+                            Provide an understandable process
+                            for customers to submit relevant
+                            privacy or account-data requests.
+                          </p>
+                        </div>
+                      </div>
+
+                      <a
+                        href="#privacy"
+                        className="
+                          mt-4
+                          inline-flex
+                          items-center
+                          gap-1
+                          text-sm
+                          font-medium
+                          text-coral
+                          hover:underline
+                        "
+                      >
+                        Read Customer Privacy
+
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </a>
+                    </div>
+                  )}
+                </div>
+
+                {/* CUSTOMER SUPPORT DROPDOWN */}
+                <div
+                  className={`
+                    overflow-hidden
+                    rounded-lg
+                    border
+                    transition-colors
+                    ${
+                      openControl === "customer-support"
+                        ? "border-navy"
+                        : "border-border"
+                    }
+                  `}
+                >
+                  <button
+                    type="button"
+                    onClick={() =>
+                      toggleControl("customer-support")
+                    }
+                    aria-expanded={
+                      openControl === "customer-support"
+                    }
+                    className="
+                      flex
+                      w-full
+                      items-center
+                      justify-between
+                      gap-4
+                      px-4
+                      py-4
+                      text-left
+                      text-sm
+                      transition-colors
+                      hover:bg-black/[0.025]
+                    "
+                  >
+                    <span className="flex items-center gap-3">
+                      <Headphones
+                        className="
+                          h-4
+                          w-4
+                          text-coral
+                        "
+                      />
+
+                      <span className="font-medium">
+                        Customer Support
+                      </span>
+                    </span>
+
+                    <ChevronRight
+                      className={`
+                        h-4
+                        w-4
+                        shrink-0
+                        transition-transform
+                        duration-200
+                        ${
+                          openControl ===
+                          "customer-support"
+                            ? "rotate-90"
+                            : ""
+                        }
+                      `}
+                    />
+                  </button>
+
+                  {openControl === "customer-support" && (
+                    <div
+                      className="
+                        border-t
+                        border-border
+                        bg-black/[0.02]
+                        px-5
+                        py-5
+                      "
+                    >
+                      <h3
+                        className="
+                          text-sm
+                          font-semibold
+                        "
+                      >
+                        Getting Customer Help
+                      </h3>
+
+                      <p
+                        className="
+                          mt-2
+                          text-sm
+                          leading-6
+                          text-navy-mute
+                        "
+                      >
+                        Make support easy to locate and give
+                        customers enough information to
+                        understand what happens after they
+                        request help.
+                      </p>
+
+                      <div
+                        className="
+                          mt-4
+                          grid
+                          gap-3
+                          sm:grid-cols-3
+                        "
+                      >
+                        <div
+                          className="
+                            rounded-md
+                            border
+                            border-border
+                            bg-paper
+                            p-4
+                          "
+                        >
+                          <p className="text-sm font-semibold">
+                            Account Help
+                          </p>
+
+                          <p
+                            className="
+                              mt-1
+                              text-xs
+                              leading-5
+                              text-navy-mute
+                            "
+                          >
+                            Help with account access and
+                            account information.
+                          </p>
+                        </div>
+
+                        <div
+                          className="
+                            rounded-md
+                            border
+                            border-border
+                            bg-paper
+                            p-4
+                          "
+                        >
+                          <p className="text-sm font-semibold">
+                            Order Help
+                          </p>
+
+                          <p
+                            className="
+                              mt-1
+                              text-xs
+                              leading-5
+                              text-navy-mute
+                            "
+                          >
+                            Give customers clear information
+                            for order-related questions.
+                          </p>
+                        </div>
+
+                        <div
+                          className="
+                            rounded-md
+                            border
+                            border-border
+                            bg-paper
+                            p-4
+                          "
+                        >
+                          <p className="text-sm font-semibold">
+                            Payment Help
+                          </p>
+
+                          <p
+                            className="
+                              mt-1
+                              text-xs
+                              leading-5
+                              text-navy-mute
+                            "
+                          >
+                            Explain where customers can get
+                            help with payment-related issues.
+                          </p>
+                        </div>
+                      </div>
+
+                      <a
+                        href="#support"
+                        className="
+                          mt-4
+                          inline-flex
+                          items-center
+                          gap-1
+                          text-sm
+                          font-medium
+                          text-coral
+                          hover:underline
+                        "
+                      >
+                        Read Customer Support
+
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </div>
             </section>
 
-            {/* ========================================
-                CUSTOMER EXPERIENCE
-            ======================================== */}
+            {/* CUSTOMER SUPPORT */}
             <section
+              id="support"
               className="
+                scroll-mt-28
                 border-b
                 border-border
                 py-8
               "
             >
               <h2 className="text-xl font-bold">
-                Customer Experience
+                Customer Support
               </h2>
 
               <p
@@ -834,9 +1109,9 @@ export default function StandardsPage() {
                   text-navy-mute
                 "
               >
-                A consistent customer experience helps
-                visitors understand your products,
-                services, and store policies.
+                Make it easy for customers to find help when
+                they have questions about their account,
+                orders, payments, or store services.
               </p>
 
               <ul
@@ -849,22 +1124,20 @@ export default function StandardsPage() {
                 "
               >
                 <li>
-                  • Use clear product descriptions.
+                  • Provide clear contact information.
                 </li>
 
                 <li>
-                  • Provide useful information before
-                  checkout.
+                  • Explain how customers can request help.
                 </li>
 
                 <li>
-                  • Keep support and contact information
-                  visible.
+                  • Keep support information current.
                 </li>
 
                 <li>
-                  • Make important account and order
-                  information easy to find.
+                  • Give customers clear next steps when an
+                  issue requires additional assistance.
                 </li>
               </ul>
 
@@ -879,13 +1152,7 @@ export default function StandardsPage() {
                   py-4
                 "
               >
-                <div
-                  className="
-                    flex
-                    items-start
-                    gap-3
-                  "
-                >
+                <div className="flex items-start gap-3">
                   <Info
                     className="
                       mt-0.5
@@ -903,26 +1170,25 @@ export default function StandardsPage() {
                       text-navy-mute
                     "
                   >
-                    Clear information can help customers
-                    make informed decisions while using
-                    your store.
+                    Clear support information helps
+                    customers understand where to go when
+                    they need assistance.
                   </p>
                 </div>
               </div>
             </section>
-
-            {/* ========================================
-                MARKETING STANDARDS
-            ======================================== */}
+                        {/* COMPLAINTS PROCESS */}
             <section
+              id="complaints"
               className="
+                scroll-mt-28
                 border-b
                 border-border
                 py-8
               "
             >
               <h2 className="text-xl font-bold">
-                Marketing Standards
+                Complaints Process
               </h2>
 
               <p
@@ -933,67 +1199,9 @@ export default function StandardsPage() {
                   text-navy-mute
                 "
               >
-                Keep promotional content clear and
-                consistent across your Sellio marketing
-                channels.
-              </p>
-
-              <ul
-                className="
-                  mt-5
-                  space-y-3
-                  text-sm
-                  leading-6
-                  text-navy-mute
-                "
-              >
-                <li>
-                  • Use accurate promotional information.
-                </li>
-
-                <li>
-                  • Make offer terms easy to understand.
-                </li>
-
-                <li>
-                  • Keep campaign information updated.
-                </li>
-
-                <li>
-                  • Review promotions before publishing.
-                </li>
-
-                <li>
-                  • Keep marketing messages consistent
-                  with your store information.
-                </li>
-              </ul>
-            </section>
-
-            {/* ========================================
-                STORE OPERATIONS
-            ======================================== */}
-            <section
-              className="
-                border-b
-                border-border
-                py-8
-              "
-            >
-              <h2 className="text-xl font-bold">
-                Store Operations
-              </h2>
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Regularly review your Sellio settings
-                to keep your store operating consistently.
+                Provide customers with a straightforward
+                process for raising concerns and requesting
+                a review of an issue.
               </p>
 
               <ol
@@ -1006,42 +1214,71 @@ export default function StandardsPage() {
                 "
               >
                 <li>
-                  1. Review your store settings.
+                  1. Contact the appropriate support channel.
                 </li>
 
                 <li>
-                  2. Check product and inventory
-                  information.
+                  2. Explain the issue clearly.
                 </li>
 
                 <li>
-                  3. Review customer-facing policies.
+                  3. Provide relevant account or order
+                  details.
                 </li>
 
                 <li>
-                  4. Check marketing and promotional
-                  settings.
+                  4. Allow the support team to review the
+                  issue.
                 </li>
 
                 <li>
-                  5. Update information whenever your
-                  business changes.
+                  5. Keep the customer informed about the
+                  resolution process.
                 </li>
               </ol>
+
+              <div
+                className="
+                  mt-6
+                  rounded-lg
+                  border
+                  border-border
+                  bg-black/5
+                  px-5
+                  py-4
+                "
+              >
+                <h3 className="font-semibold">
+                  Keep the Process Clear
+                </h3>
+
+                <p
+                  className="
+                    mt-3
+                    text-sm
+                    leading-6
+                    text-navy-mute
+                  "
+                >
+                  Explain how customers can submit concerns
+                  and what information may be needed to
+                  review their request.
+                </p>
+              </div>
             </section>
 
-            {/* ========================================
-                RECOMMENDED PRACTICES
-            ======================================== */}
+            {/* CUSTOMER PRIVACY */}
             <section
+              id="privacy"
               className="
+                scroll-mt-28
                 border-b
                 border-border
                 py-8
               "
             >
               <h2 className="text-xl font-bold">
-                Recommended Practices
+                Customer Privacy
               </h2>
 
               <p
@@ -1052,8 +1289,9 @@ export default function StandardsPage() {
                   text-navy-mute
                 "
               >
-                Use these simple practices to maintain
-                a reliable and consistent Sellio store.
+                Handle customer information responsibly and
+                provide clear information about how account
+                data is used and protected.
               </p>
 
               <div
@@ -1073,7 +1311,7 @@ export default function StandardsPage() {
                   "
                 >
                   <h3 className="font-semibold">
-                    Keep Information Updated
+                    Protect Information
                   </h3>
 
                   <p
@@ -1084,8 +1322,8 @@ export default function StandardsPage() {
                       text-navy-mute
                     "
                   >
-                    Review product, pricing, policy,
-                    and contact information regularly.
+                    Limit access to customer information to
+                    appropriate members of your team.
                   </p>
                 </div>
 
@@ -1098,7 +1336,7 @@ export default function StandardsPage() {
                   "
                 >
                   <h3 className="font-semibold">
-                    Review Before Publishing
+                    Keep Information Accurate
                   </h3>
 
                   <p
@@ -1109,8 +1347,8 @@ export default function StandardsPage() {
                       text-navy-mute
                     "
                   >
-                    Check important customer-facing
-                    changes before making them live.
+                    Keep stored customer information
+                    accurate and review it when necessary.
                   </p>
                 </div>
 
@@ -1123,7 +1361,7 @@ export default function StandardsPage() {
                   "
                 >
                   <h3 className="font-semibold">
-                    Keep Policies Clear
+                    Explain Data Use
                   </h3>
 
                   <p
@@ -1134,8 +1372,8 @@ export default function StandardsPage() {
                       text-navy-mute
                     "
                   >
-                    Make store rules and customer
-                    information easy to understand.
+                    Give customers clear information about
+                    relevant data practices.
                   </p>
                 </div>
 
@@ -1148,7 +1386,7 @@ export default function StandardsPage() {
                   "
                 >
                   <h3 className="font-semibold">
-                    Monitor Store Activity
+                    Secure Access
                   </h3>
 
                   <p
@@ -1159,67 +1397,352 @@ export default function StandardsPage() {
                       text-navy-mute
                     "
                   >
-                    Use Sellio reports and dashboard
-                    tools to review store activity.
+                    Use appropriate account and
+                    administrative access controls.
                   </p>
                 </div>
               </div>
             </section>
 
-            {/* ========================================
-                INFORMATION BOX
-            ======================================== */}
-            <div
+            {/* PAYMENT SECURITY */}
+            <section
+              id="payment"
               className="
-                mt-8
-                rounded-lg
-                border
+                scroll-mt-28
+                border-b
                 border-border
-                bg-black/5
-                px-5
-                py-4
+                py-8
               "
             >
-              <div
+              <h2 className="text-xl font-bold">
+                Payment Security
+              </h2>
+
+              <p
                 className="
-                  flex
-                  items-start
-                  gap-3
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
                 "
               >
-                <CheckCircle2
-                  className="
-                    mt-0.5
-                    h-4
-                    w-4
-                    shrink-0
-                    text-coral
-                  "
-                />
+                Follow appropriate payment security
+                practices when handling customer
+                transactions.
+              </p>
 
-                <p
+              <ul
+                className="
+                  mt-5
+                  space-y-3
+                  text-sm
+                  leading-6
+                  text-navy-mute
+                "
+              >
+                <li>
+                  • Use supported and trusted payment
+                  services.
+                </li>
+
+                <li>
+                  • Do not expose sensitive payment
+                  information.
+                </li>
+
+                <li>
+                  • Keep administrative access protected.
+                </li>
+
+                <li>
+                  • Review payment activity for unexpected
+                  issues.
+                </li>
+              </ul>
+            </section>
+
+            {/* ACCOUNT ACTIVITY */}
+            <section
+              id="activity"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+              <h2 className="text-xl font-bold">
+                Account Activity
+              </h2>
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                Review relevant account activity to identify
+                issues that may require customer support or
+                administrative attention.
+              </p>
+
+              <div
+                className="
+                  mt-6
+                  rounded-lg
+                  border
+                  border-border
+                  bg-black/5
+                  p-5
+                "
+              >
+                <div
                   className="
-                    text-sm
-                    leading-6
-                    text-navy-mute
+                    grid
+                    gap-5
+                    sm:grid-cols-3
                   "
                 >
-                  These recommendations can be used
-                  as a regular checklist when reviewing
-                  your Sellio store.
-                </p>
-              </div>
-            </div>
+                  <div>
+                    <p className="text-xs text-navy-mute">
+                      Account
+                    </p>
 
-            {/* ========================================
-                RELATED GUIDES - DROPDOWNS
-            ======================================== */}
+                    <p
+                      className="
+                        mt-2
+                        text-sm
+                        font-semibold
+                      "
+                    >
+                      Review access
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-xs text-navy-mute">
+                      Orders
+                    </p>
+
+                    <p
+                      className="
+                        mt-2
+                        text-sm
+                        font-semibold
+                      "
+                    >
+                      Check activity
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-xs text-navy-mute">
+                      Support
+                    </p>
+
+                    <p
+                      className="
+                        mt-2
+                        text-sm
+                        font-semibold
+                      "
+                    >
+                      Resolve issues
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <p
+                className="
+                  mt-5
+                  text-sm
+                  leading-6
+                  text-navy-mute
+                "
+              >
+                Use activity information only for
+                appropriate store management, security, and
+                customer-support purposes.
+              </p>
+            </section>
+                        {/* PROTECTION CHECKLIST */}
+            <section
+              id="checklist"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+              <h2 className="text-xl font-bold">
+                Customer Protection Checklist
+              </h2>
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                Use this checklist when reviewing
+                customer-facing settings in your Sellio
+                store.
+              </p>
+
+              <div
+                className="
+                  mt-6
+                  overflow-x-auto
+                  rounded-lg
+                  border
+                  border-border
+                "
+              >
+                <table
+                  className="
+                    w-full
+                    min-w-[520px]
+                    text-left
+                    text-sm
+                  "
+                >
+                  <thead className="bg-black/5">
+                    <tr>
+                      <th
+                        className="
+                          px-4
+                          py-3
+                          font-semibold
+                        "
+                      >
+                        Area
+                      </th>
+
+                      <th
+                        className="
+                          px-4
+                          py-3
+                          font-semibold
+                        "
+                      >
+                        Check
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr className="border-t border-border">
+                      <td className="px-4 py-3">
+                        Account Safety
+                      </td>
+
+                      <td
+                        className="
+                          px-4
+                          py-3
+                          text-navy-mute
+                        "
+                      >
+                        Security information is current
+                      </td>
+                    </tr>
+
+                    <tr className="border-t border-border">
+                      <td className="px-4 py-3">
+                        Account Controls
+                      </td>
+
+                      <td
+                        className="
+                          px-4
+                          py-3
+                          text-navy-mute
+                        "
+                      >
+                        Customers can manage appropriate
+                        account settings
+                      </td>
+                    </tr>
+
+                    <tr className="border-t border-border">
+                      <td className="px-4 py-3">
+                        Support
+                      </td>
+
+                      <td
+                        className="
+                          px-4
+                          py-3
+                          text-navy-mute
+                        "
+                      >
+                        Contact information is available
+                      </td>
+                    </tr>
+
+                    <tr className="border-t border-border">
+                      <td className="px-4 py-3">
+                        Privacy
+                      </td>
+
+                      <td
+                        className="
+                          px-4
+                          py-3
+                          text-navy-mute
+                        "
+                      >
+                        Customer information is protected
+                      </td>
+                    </tr>
+
+                    <tr className="border-t border-border">
+                      <td className="px-4 py-3">
+                        Payments
+                      </td>
+
+                      <td
+                        className="
+                          px-4
+                          py-3
+                          text-navy-mute
+                        "
+                      >
+                        Payment practices are reviewed
+                      </td>
+                    </tr>
+
+                    <tr className="border-t border-border">
+                      <td className="px-4 py-3">
+                        Complaints
+                      </td>
+
+                      <td
+                        className="
+                          px-4
+                          py-3
+                          text-navy-mute
+                        "
+                      >
+                        A clear process is available
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* RELATED GUIDES */}
             <section
               id="related"
               className="
                 scroll-mt-28
-                border-t
-                border-border
                 py-8
               "
             >
@@ -1235,386 +1758,39 @@ export default function StandardsPage() {
                   text-navy-mute
                 "
               >
-                Explore more Sellio guides for managing
-                your store, customers, marketing, and
-                business data.
+                Explore more Sellio documentation for
+                managing customer accounts, store settings,
+                reports, and support.
               </p>
 
               <div className="mt-5 space-y-3">
-                {/* DOWNLOADS & REPORTS */}
-                <div>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      toggleGuide("downloads")
-                    }
-                    aria-expanded={
-                      openGuide === "downloads"
-                    }
-                    className={`
-                      flex
-                      w-full
-                      items-center
-                      justify-between
-                      rounded-lg
-                      border
-                      px-4
-                      py-3
-                      text-left
-                      text-sm
-                      transition
-                      hover:border-coral
-                      ${
-                        openGuide === "downloads"
-                          ? "border-navy"
-                          : "border-border"
-                      }
-                    `}
-                  >
-                    <span>
-                      Downloads & Reports
-                    </span>
+                <Link
+                  href="/documentation"
+                  className="
+                    flex
+                    items-center
+                    justify-between
+                    rounded-lg
+                    border
+                    border-border
+                    px-4
+                    py-3
+                    text-sm
+                    transition-colors
+                    hover:border-coral
+                  "
+                >
+                  <span>
+                    Documentation Home
+                  </span>
 
-                    <ChevronRight
-                      className={`
-                        h-4
-                        w-4
-                        shrink-0
-                        transition-transform
-                        duration-200
-                        ${
-                          openGuide === "downloads"
-                            ? "rotate-90"
-                            : ""
-                        }
-                      `}
-                    />
-                  </button>
+                  <ChevronRight className="h-4 w-4" />
+                </Link>
 
-                  {openGuide === "downloads" && (
-                    <div
-                      className="
-                        mt-2
-                        rounded-lg
-                        border
-                        border-border
-                        bg-black/5
-                        px-5
-                        py-4
-                      "
-                    >
-                      <h3
-                        className="
-                          text-sm
-                          font-semibold
-                        "
-                      >
-                        Downloads & Reports
-                      </h3>
-
-                      <p
-                        className="
-                          mt-2
-                          text-sm
-                          leading-6
-                          text-navy-mute
-                        "
-                      >
-                        Access downloadable store
-                        information and reports to help
-                        review your Sellio activity and
-                        business data.
-                      </p>
-
-                      <ul
-                        className="
-                          mt-4
-                          space-y-2
-                          text-sm
-                          leading-6
-                          text-navy-mute
-                        "
-                      >
-                        <li>
-                          • Review available store
-                          reports.
-                        </li>
-
-                        <li>
-                          • Download important business
-                          data.
-                        </li>
-
-                        <li>
-                          • Keep copies of useful
-                          reports for your records.
-                        </li>
-
-                        <li>
-                          • Review exported information
-                          before using it outside
-                          Sellio.
-                        </li>
-                      </ul>
-
-                      
-                    </div>
-                  )}
-                </div>
-
-                {/* PRODUCT CATALOGUE */}
-                <div>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      toggleGuide("catalogue")
-                    }
-                    aria-expanded={
-                      openGuide === "catalogue"
-                    }
-                    className={`
-                      flex
-                      w-full
-                      items-center
-                      justify-between
-                      rounded-lg
-                      border
-                      px-4
-                      py-3
-                      text-left
-                      text-sm
-                      transition
-                      hover:border-coral
-                      ${
-                        openGuide === "catalogue"
-                          ? "border-navy"
-                          : "border-border"
-                      }
-                    `}
-                  >
-                    <span>
-                      Product Catalogue
-                    </span>
-
-                    <ChevronRight
-                      className={`
-                        h-4
-                        w-4
-                        shrink-0
-                        transition-transform
-                        duration-200
-                        ${
-                          openGuide === "catalogue"
-                            ? "rotate-90"
-                            : ""
-                        }
-                      `}
-                    />
-                  </button>
-
-                  {openGuide === "catalogue" && (
-                    <div
-                      className="
-                        mt-2
-                        rounded-lg
-                        border
-                        border-border
-                        bg-black/5
-                        px-5
-                        py-4
-                      "
-                    >
-                      <h3
-                        className="
-                          text-sm
-                          font-semibold
-                        "
-                      >
-                        Product Catalogue
-                      </h3>
-
-                      <p
-                        className="
-                          mt-2
-                          text-sm
-                          leading-6
-                          text-navy-mute
-                        "
-                      >
-                        Manage your Sellio product
-                        catalogue and keep
-                        customer-facing product
-                        information clear and current.
-                      </p>
-
-                      <ul
-                        className="
-                          mt-4
-                          space-y-2
-                          text-sm
-                          leading-6
-                          text-navy-mute
-                        "
-                      >
-                        <li>
-                          • Keep product names and
-                          descriptions accurate.
-                        </li>
-
-                        <li>
-                          • Review product pricing
-                          regularly.
-                        </li>
-
-                        <li>
-                          • Keep availability and
-                          inventory information
-                          updated.
-                        </li>
-
-                        <li>
-                          • Review product information
-                          before publishing changes.
-                        </li>
-                      </ul>
-
-                
-                    </div>
-                  )}
-                </div>
-
-                {/* MARKETING TOOLS */}
-                <div>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      toggleGuide("marketing-tools")
-                    }
-                    aria-expanded={
-                      openGuide === "marketing-tools"
-                    }
-                    className={`
-                      flex
-                      w-full
-                      items-center
-                      justify-between
-                      rounded-lg
-                      border
-                      px-4
-                      py-3
-                      text-left
-                      text-sm
-                      transition
-                      hover:border-coral
-                      ${
-                        openGuide === "marketing-tools"
-                          ? "border-navy"
-                          : "border-border"
-                      }
-                    `}
-                  >
-                    <span>
-                      Marketing Tools
-                    </span>
-
-                    <ChevronRight
-                      className={`
-                        h-4
-                        w-4
-                        shrink-0
-                        transition-transform
-                        duration-200
-                        ${
-                          openGuide ===
-                          "marketing-tools"
-                            ? "rotate-90"
-                            : ""
-                        }
-                      `}
-                    />
-                  </button>
-
-                  {openGuide ===
-                    "marketing-tools" && (
-                    <div
-                      className="
-                        mt-2
-                        rounded-lg
-                        border
-                        border-border
-                        bg-black/5
-                        px-5
-                        py-4
-                      "
-                    >
-                      <h3
-                        className="
-                          text-sm
-                          font-semibold
-                        "
-                      >
-                        Marketing Tools
-                      </h3>
-
-                      <p
-                        className="
-                          mt-2
-                          text-sm
-                          leading-6
-                          text-navy-mute
-                        "
-                      >
-                        Use Sellio marketing tools to
-                        manage promotional activity
-                        while keeping your messages
-                        clear and consistent.
-                      </p>
-
-                      <ul
-                        className="
-                          mt-4
-                          space-y-2
-                          text-sm
-                          leading-6
-                          text-navy-mute
-                        "
-                      >
-                        <li>
-                          • Create clear promotional
-                          messages.
-                        </li>
-
-                        <li>
-                          • Keep campaign information
-                          accurate.
-                        </li>
-
-                        <li>
-                          • Review offers and
-                          promotional terms.
-                        </li>
-
-                        <li>
-                          • Check marketing content
-                          before publishing.
-                        </li>
-
-                        <li>
-                          • Keep campaigns consistent
-                          with your store information.
-                        </li>
-                      </ul>
-
-                     
-                    </div>
-                  )}
-                </div>
               </div>
             </section>
 
-            {/* ========================================
-                PREVIOUS / NEXT
-            ======================================== */}
+            {/* PREVIOUS / NEXT */}
             <div
               className="
                 grid
@@ -1626,23 +1802,18 @@ export default function StandardsPage() {
               "
             >
               <Link
-                href="/documentation/downloads-reports-overview"
+                href="/documentation/downloads"
                 className="
                   rounded-lg
                   border
                   border-border
                   px-5
                   py-4
-                  transition
+                  transition-colors
                   hover:border-coral
                 "
               >
-                <p
-                  className="
-                    text-xs
-                    text-navy-mute
-                  "
-                >
+                <p className="text-xs text-navy-mute">
                   Previous
                 </p>
 
@@ -1658,12 +1829,14 @@ export default function StandardsPage() {
                 >
                   <ArrowLeft className="h-4 w-4" />
 
-                  Downloads-Reports-Overview
+                  <span>
+                    Downloads &amp; Reports
+                  </span>
                 </div>
               </Link>
 
               <Link
-                href="/documentation/player-protections"
+                href="/documentation"
                 className="
                   rounded-lg
                   border
@@ -1671,16 +1844,11 @@ export default function StandardsPage() {
                   px-5
                   py-4
                   text-right
-                  transition
+                  transition-colors
                   hover:border-coral
                 "
               >
-                <p
-                  className="
-                    text-xs
-                    text-navy-mute
-                  "
-                >
+                <p className="text-xs text-navy-mute">
                   Next
                 </p>
 
@@ -1695,17 +1863,16 @@ export default function StandardsPage() {
                     font-semibold
                   "
                 >
-                 Player-Protections
+                  <span>
+                    Documentation
+                  </span>
 
                   <ArrowRight className="h-4 w-4" />
                 </div>
               </Link>
             </div>
           </article>
-
-          {/* ========================================
-              RIGHT SIDEBAR
-          ======================================== */}
+                    {/* RIGHT SIDEBAR */}
           <aside
             className="
               hidden

@@ -1195,7 +1195,7 @@ export default function DocumentationSidebar() {
 
 
       <Link
-        href="/documentation/standards/player-protections"
+        href="/documentation/player-protections"
         className={subLinkClass(
           "/documentation/standards/player-protections"
         )}
@@ -1205,7 +1205,7 @@ export default function DocumentationSidebar() {
 
 
       <Link
-        href="/documentation/standards/transparency"
+        href="/documentation/transparency"
         className={subLinkClass(
           "/documentation/standards/transparency"
         )}
@@ -1215,7 +1215,7 @@ export default function DocumentationSidebar() {
 
 
       <Link
-        href="/documentation/standards/accountability"
+        href="/documentation/accountability"
         className={subLinkClass(
           "/documentation/standards/accountability"
         )}
