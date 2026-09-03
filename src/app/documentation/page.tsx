@@ -1603,6 +1603,198 @@ export default function DocumentationPage() {
 
   </nav>
 </details>
+{/* ===================================================== */}
+{/* HELPFUL INFO */}
+{/* ===================================================== */}
+
+<div className="mt-7">
+
+  <details className="group" open>
+
+    <summary
+      className="
+        flex cursor-pointer list-none items-center justify-between
+        rounded-lg border border-border px-3 py-2.5
+        text-xs font-bold uppercase tracking-wide text-navy
+        transition-colors
+        hover:border-coral/40
+        [&::-webkit-details-marker]:hidden
+      "
+    >
+      <span>HELPFUL INFO</span>
+
+      <svg
+        viewBox="0 0 20 20"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        className="
+          h-4 w-4 shrink-0
+          transition-transform duration-200
+          group-open:rotate-180
+        "
+      >
+        <path
+          d="M5 7.5L10 12.5L15 7.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+
+    </summary>
+
+
+    <nav className="mt-2 space-y-1">
+
+      <Link
+        href="/documentation/analytics"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
+      >
+        Analytics
+      </Link>
+
+      {/* <Link
+        href="/documentation/google-analytics"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
+      >
+        Google Analytics
+      </Link>
+
+      <Link
+        href="/documentation/what-google-analytics-tracks"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
+      >
+        What Google Analytics Tracks
+      </Link>
+
+      <Link
+        href="/documentation/utm-tags"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
+      >
+        UTM Tags
+      </Link>
+
+      <Link
+        href="/documentation/creating-a-free-entry-competition"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
+      >
+        Creating a Free Entry Competition
+      </Link>
+
+      <Link
+        href="/documentation/ensure-www-loads-your-site"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
+      >
+        Ensure www. Loads Your Site
+      </Link>
+
+      <Link
+        href="/documentation/pci-compliance-scan"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
+      >
+        PCI Compliance Scan
+      </Link>
+
+      <Link
+        href="/documentation/pending-tickets"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
+      >
+        Pending Tickets
+      </Link>
+
+      <Link
+        href="/documentation/set-up-email-inbox"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
+      >
+        Set Up Email Inbox
+      </Link>
+
+      <Link
+        href="/documentation/image-size-guide"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
+      >
+        Image Size Guide
+      </Link>
+
+      <Link
+        href="/documentation/reset-password"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
+      >
+        Reset Password
+      </Link>
+
+      <Link
+        href="/documentation/checklist"
+        className="
+          block rounded-lg px-3 py-2
+          text-sm font-medium text-navy-mute
+          transition-colors
+          hover:bg-coral/10 hover:text-navy
+        "
+      >
+        Checklist
+      </Link> */}
+
+    </nav>
+
+  </details>
+
+</div>
 </div>
 </div>
 </div>

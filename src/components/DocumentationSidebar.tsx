@@ -1359,9 +1359,158 @@ export default function DocumentationSidebar() {
     </nav>
 
   </details>
+{/* ===================================================== */}
+{/* HELPFUL INFO */}
+{/* ===================================================== */}
 
+<div className="mt-7">
+
+  <details className="group" open>
+
+    <summary
+      className="
+        flex cursor-pointer list-none items-center justify-between
+        rounded-md border border-[#4a5875]
+        px-3 py-2
+        text-sm font-semibold text-[#101b33]
+        transition-colors
+        hover:border-[#ff5b45]/40
+        [&::-webkit-details-marker]:hidden
+      "
+    >
+      <span>
+        HELPFUL INFO
+      </span>
+
+      <svg
+        viewBox="0 0 20 20"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        className="
+          h-4 w-4 shrink-0
+          transition-transform duration-200
+          group-open:rotate-180
+        "
+      >
+        <path
+          d="M5 7.5L10 12.5L15 7.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+
+    </summary>
+
+
+    <nav className="mt-2 space-y-1">
+
+      <Link
+        href="/documentation/analytics"
+        className={subLinkClass("/documentation/analytics")}
+      >
+        Analytics
+      </Link>
+
+      {/* <Link
+        href="/documentation/google-analytics"
+        className={subLinkClass("/documentation/google-analytics")}
+      >
+        Google Analytics
+      </Link>
+
+      <Link
+        href="/documentation/what-google-analytics-tracks"
+        className={subLinkClass(
+          "/documentation/what-google-analytics-tracks"
+        )}
+      >
+        What Google Analytics Tracks
+      </Link>
+
+      <Link
+        href="/documentation/utm-tags"
+        className={subLinkClass("/documentation/utm-tags")}
+      >
+        UTM Tags
+      </Link>
+
+      <Link
+        href="/documentation/creating-a-free-entry-competition"
+        className={subLinkClass(
+          "/documentation/creating-a-free-entry-competition"
+        )}
+      >
+        Creating a Free Entry Competition
+      </Link>
+
+      <Link
+        href="/documentation/ensure-www-loads-your-site"
+        className={subLinkClass(
+          "/documentation/ensure-www-loads-your-site"
+        )}
+      >
+        Ensure www. Loads Your Site
+      </Link>
+
+      <Link
+        href="/documentation/pci-compliance-scan"
+        className={subLinkClass(
+          "/documentation/pci-compliance-scan"
+        )}
+      >
+        PCI Compliance Scan
+      </Link>
+
+      <Link
+        href="/documentation/pending-tickets"
+        className={subLinkClass(
+          "/documentation/pending-tickets"
+        )}
+      >
+        Pending Tickets
+      </Link>
+
+      <Link
+        href="/documentation/set-up-email-inbox"
+        className={subLinkClass(
+          "/documentation/set-up-email-inbox"
+        )}
+      >
+        Set Up Email Inbox
+      </Link>
+
+      <Link
+        href="/documentation/image-size-guide"
+        className={subLinkClass(
+          "/documentation/image-size-guide"
+        )}
+      >
+        Image Size Guide
+      </Link>
+
+      <Link
+        href="/documentation/reset-password"
+        className={subLinkClass(
+          "/documentation/reset-password"
+        )}
+      >
+        Reset Password
+      </Link>
+
+      <Link
+        href="/documentation/checklist"
+        className={subLinkClass("/documentation/checklist")}
+      >
+        Checklist
+      </Link> */}
+
+    </nav>
+
+  </details>
 </div>
 
+</div>
 </div>
 </div>
 </div>
