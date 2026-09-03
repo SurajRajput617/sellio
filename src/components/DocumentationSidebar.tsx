@@ -1228,70 +1228,8 @@ export default function DocumentationSidebar() {
 
   </details>
 
-{/* ===================================================== */}
-{/* DOWNLOADS & REPORTS */}
-{/* ===================================================== */}
+{/* Conversion Event Tracking */}
 
-<div className="mt-7">
-
-  <details className="group" open>
-
-    <summary
-      className="
-        flex cursor-pointer list-none items-center justify-between
-        rounded-lg border border-border px-3 py-2.5
-        text-xs font-bold uppercase tracking-wide text-navy
-        transition-colors
-        hover:border-coral/40
-        [&::-webkit-details-marker]:hidden
-      "
-    >
-
-      <span>
-        DOWNLOADS & REPORTS
-      </span>
-
-
-      <svg
-        viewBox="0 0 20 20"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        className="
-          h-4 w-4 shrink-0
-          transition-transform duration-200
-          group-open:rotate-180
-        "
-      >
-
-        <path
-          d="M5 7.5L10 12.5L15 7.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-
-      </svg>
-
-    </summary>
-
-
-    <nav className="mt-2 space-y-1 pl-5">
-
-      <Link
-        href="/documentation/downloads-reports-overview"
-        className="
-          block rounded-lg px-3 py-2
-          text-sm font-medium text-navy-mute
-          transition-colors
-          hover:bg-coral/10 hover:text-navy
-        "
-      >
-        Overview
-      </Link>
-
-    </nav>
-
-  </details>
 <details className="group mt-7" open>
   <summary
     className="
@@ -1338,7 +1276,7 @@ export default function DocumentationSidebar() {
     </Link>
   </nav>
 </details>
-</div>
+
 
 {/* ===================================================== */}
 {/* TWIG TEMPLATING */}
