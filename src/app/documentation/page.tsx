@@ -1366,7 +1366,7 @@ export default function DocumentationPage() {
 
     <summary
       className="
-        flex cursor-pointer list-none items-center justify-between
+         flex cursor-pointer list-none items-center justify-between
         rounded-lg border border-border px-3 py-2.5
         text-xs font-bold uppercase tracking-wide text-navy
         transition-colors

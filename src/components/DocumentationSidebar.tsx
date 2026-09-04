@@ -1142,7 +1142,7 @@ export default function DocumentationSidebar() {
     <summary
       className="
         flex cursor-pointer list-none items-center justify-between
-        rounded-md border border-[#4a5875]
+        rounded-md border border-[#e5ddcd]
         px-3 py-2
         text-sm font-semibold text-[#101b33]
         transition-colors
@@ -1282,7 +1282,7 @@ export default function DocumentationSidebar() {
     <summary
       className="
         flex cursor-pointer list-none items-center justify-between
-        rounded-md border border-[#4a5875]
+        rounded-md border border-[#e5ddcd]
         px-3 py-2
         text-sm font-semibold text-[#101b33]
         transition-colors
@@ -1370,7 +1370,7 @@ export default function DocumentationSidebar() {
     <summary
       className="
         flex cursor-pointer list-none items-center justify-between
-        rounded-md border border-[#4a5875]
+        rounded-md border border-[#e5ddcd]
         px-3 py-2
         text-sm font-semibold text-[#101b33]
         transition-colors
