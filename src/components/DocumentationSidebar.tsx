@@ -1462,7 +1462,7 @@ export default function DocumentationSidebar() {
         PCI Compliance Scan
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/pending-tickets"
         className={subLinkClass(
           "/documentation/pending-tickets"
@@ -1471,7 +1471,7 @@ export default function DocumentationSidebar() {
         Pending Tickets
       </Link>
 
-      <Link
+      {/* <Link
         href="/documentation/set-up-email-inbox"
         className={subLinkClass(
           "/documentation/set-up-email-inbox"

@@ -1730,7 +1730,7 @@ export default function DocumentationPage() {
         PCI Compliance Scan
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/pending-tickets"
         className="
           block rounded-lg px-3 py-2
@@ -1742,7 +1742,7 @@ export default function DocumentationPage() {
         Pending Tickets
       </Link>
 
-      <Link
+      {/* <Link
         href="/documentation/set-up-email-inbox"
         className="
           block rounded-lg px-3 py-2
