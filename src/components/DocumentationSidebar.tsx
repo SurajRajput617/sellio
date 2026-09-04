@@ -1453,7 +1453,7 @@ export default function DocumentationSidebar() {
         Ensure www. Loads Your Site
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/pci-compliance-scan"
         className={subLinkClass(
           "/documentation/pci-compliance-scan"
@@ -1462,7 +1462,7 @@ export default function DocumentationSidebar() {
         PCI Compliance Scan
       </Link>
 
-      <Link
+      {/* <Link
         href="/documentation/pending-tickets"
         className={subLinkClass(
           "/documentation/pending-tickets"
