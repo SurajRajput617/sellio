@@ -1498,12 +1498,12 @@ export default function DocumentationSidebar() {
         Reset Password
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/checklist"
         className={subLinkClass("/documentation/checklist")}
       >
         Checklist
-      </Link> */}
+      </Link>
 
     </nav>
 

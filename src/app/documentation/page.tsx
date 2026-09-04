@@ -1778,7 +1778,7 @@ export default function DocumentationPage() {
         Reset Password
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/checklist"
         className="
           block rounded-lg px-3 py-2
@@ -1788,7 +1788,7 @@ export default function DocumentationPage() {
         "
       >
         Checklist
-      </Link> */}
+      </Link>
 
     </nav>
 
