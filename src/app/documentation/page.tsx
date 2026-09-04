@@ -1706,7 +1706,7 @@ export default function DocumentationPage() {
         Creating a Free Entry Competition
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/ensure-www-loads-your-site"
         className="
           block rounded-lg px-3 py-2
@@ -1718,7 +1718,7 @@ export default function DocumentationPage() {
         Ensure www. Loads Your Site
       </Link>
 
-      <Link
+      {/* <Link
         href="/documentation/pci-compliance-scan"
         className="
           block rounded-lg px-3 py-2

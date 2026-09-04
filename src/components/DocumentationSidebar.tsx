@@ -1444,7 +1444,7 @@ export default function DocumentationSidebar() {
         Creating a Free Entry Competition
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/ensure-www-loads-your-site"
         className={subLinkClass(
           "/documentation/ensure-www-loads-your-site"
@@ -1453,7 +1453,7 @@ export default function DocumentationSidebar() {
         Ensure www. Loads Your Site
       </Link>
 
-      <Link
+      {/* <Link
         href="/documentation/pci-compliance-scan"
         className={subLinkClass(
           "/documentation/pci-compliance-scan"
