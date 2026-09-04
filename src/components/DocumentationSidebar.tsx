@@ -1419,7 +1419,7 @@ export default function DocumentationSidebar() {
         Google Analytics
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/what-google-analytics-tracks"
         className={subLinkClass(
           "/documentation/what-google-analytics-tracks"
@@ -1428,7 +1428,7 @@ export default function DocumentationSidebar() {
         What Google Analytics Tracks
       </Link>
 
-      <Link
+      {/* <Link
         href="/documentation/utm-tags"
         className={subLinkClass("/documentation/utm-tags")}
       >
