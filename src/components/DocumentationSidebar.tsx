@@ -1471,7 +1471,7 @@ export default function DocumentationSidebar() {
         Pending Tickets
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/set-up-email-inbox"
         className={subLinkClass(
           "/documentation/set-up-email-inbox"
@@ -1480,7 +1480,7 @@ export default function DocumentationSidebar() {
         Set Up Email Inbox
       </Link>
 
-      <Link
+      {/* <Link
         href="/documentation/image-size-guide"
         className={subLinkClass(
           "/documentation/image-size-guide"
