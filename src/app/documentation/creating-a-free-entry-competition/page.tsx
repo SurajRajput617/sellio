@@ -1596,7 +1596,7 @@ export default function CreatingFreePromotionalCampaignPage() {
               ================================================== */}
 
               <Link
-                href="/documentation/ensure-www.-loads-your-site"
+                href="/documentation/ensure-www-loads-your-site"
                 className="
                   group
                   rounded-lg
