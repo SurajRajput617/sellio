@@ -1435,7 +1435,7 @@ export default function DocumentationSidebar() {
         UTM Tags
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/creating-a-free-entry-competition"
         className={subLinkClass(
           "/documentation/creating-a-free-entry-competition"
@@ -1444,7 +1444,7 @@ export default function DocumentationSidebar() {
         Creating a Free Entry Competition
       </Link>
 
-      <Link
+      {/* <Link
         href="/documentation/ensure-www-loads-your-site"
         className={subLinkClass(
           "/documentation/ensure-www-loads-your-site"

@@ -1694,7 +1694,7 @@ export default function DocumentationPage() {
         UTM Tags
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/creating-a-free-entry-competition"
         className="
           block rounded-lg px-3 py-2
@@ -1706,7 +1706,7 @@ export default function DocumentationPage() {
         Creating a Free Entry Competition
       </Link>
 
-      <Link
+      {/* <Link
         href="/documentation/ensure-www-loads-your-site"
         className="
           block rounded-lg px-3 py-2
