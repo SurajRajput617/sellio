@@ -79,6 +79,7 @@ export default function DocumentationPage() {
           {/* ===================================================== */}
           {/* LEFT SIDEBAR - KEPT FROM YOUR CURRENT DESIGN          */}
           {/* ===================================================== */}
+          
           <aside>
             <div className="sticky top-28">
               <Link

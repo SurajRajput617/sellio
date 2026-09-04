@@ -24,8 +24,38 @@ export default function DocumentationSidebar() {
   };
 
   return (
-   <aside className="hidden lg:block">
+<aside className="hidden lg:block">
   <div className="sticky top-28 max-h-[calc(100vh-7rem)] overflow-y-auto pr-2">
+{/* Fixed Sidebar Button */}
+<div className="sticky top-0 z-50 bg-[#faf6ee] pt-5 pb-5">
+  <div className="flex justify-start bg-[#faf6ee]">
+   <Link 
+  href="/"
+  className="
+    flex 
+    w-[180px] 
+    items-start 
+    justify-start 
+    gap-2 
+    rounded-full 
+    bg-[#ff5b45] 
+    px-5 
+    py-3 
+    text-sm 
+    font-bold 
+    text-white 
+    shadow-md 
+    transition 
+    duration-300
+    hover:-translate-y-1
+    hover:bg-[#e0432f]
+  "
+>
+  Back To Sellio ↗
+</Link>
+  </div>
+</div>
+
 
         {/* ============================================= */}
         {/* GETTING STARTED */}
