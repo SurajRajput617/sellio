@@ -1480,7 +1480,7 @@ export default function DocumentationSidebar() {
         Set Up Email Inbox
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/image-size-guide"
         className={subLinkClass(
           "/documentation/image-size-guide"
@@ -1489,7 +1489,7 @@ export default function DocumentationSidebar() {
         Image Size Guide
       </Link>
 
-      <Link
+      {/* <Link
         href="/documentation/reset-password"
         className={subLinkClass(
           "/documentation/reset-password"

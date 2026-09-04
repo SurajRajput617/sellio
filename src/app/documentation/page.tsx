@@ -1754,7 +1754,7 @@ export default function DocumentationPage() {
         Set Up Email Inbox
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/image-size-guide"
         className="
           block rounded-lg px-3 py-2
@@ -1766,7 +1766,7 @@ export default function DocumentationPage() {
         Image Size Guide
       </Link>
 
-      <Link
+      {/* <Link
         href="/documentation/reset-password"
         className="
           block rounded-lg px-3 py-2
