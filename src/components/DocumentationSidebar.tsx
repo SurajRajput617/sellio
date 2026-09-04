@@ -1428,14 +1428,14 @@ export default function DocumentationSidebar() {
         What Google Analytics Tracks
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/utm-tags"
         className={subLinkClass("/documentation/utm-tags")}
       >
         UTM Tags
       </Link>
 
-      <Link
+      {/* <Link
         href="/documentation/creating-a-free-entry-competition"
         className={subLinkClass(
           "/documentation/creating-a-free-entry-competition"

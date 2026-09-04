@@ -1682,7 +1682,7 @@ export default function DocumentationPage() {
         What Google Analytics Tracks
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/utm-tags"
         className="
           block rounded-lg px-3 py-2
@@ -1694,7 +1694,7 @@ export default function DocumentationPage() {
         UTM Tags
       </Link>
 
-      <Link
+      {/* <Link
         href="/documentation/creating-a-free-entry-competition"
         className="
           block rounded-lg px-3 py-2
