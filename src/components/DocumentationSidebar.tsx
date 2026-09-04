@@ -24,8 +24,8 @@ export default function DocumentationSidebar() {
   };
 
   return (
-    <aside className="hidden lg:block">
-      <div className="sticky top-28">
+   <aside className="hidden lg:block">
+  <div className="sticky top-28 max-h-[calc(100vh-7rem)] overflow-y-auto pr-2">
 
         {/* ============================================= */}
         {/* GETTING STARTED */}
