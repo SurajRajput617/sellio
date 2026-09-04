@@ -1489,7 +1489,7 @@ export default function DocumentationSidebar() {
         Image Size Guide
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/reset-password"
         className={subLinkClass(
           "/documentation/reset-password"
@@ -1498,7 +1498,7 @@ export default function DocumentationSidebar() {
         Reset Password
       </Link>
 
-      <Link
+      {/* <Link
         href="/documentation/checklist"
         className={subLinkClass("/documentation/checklist")}
       >
