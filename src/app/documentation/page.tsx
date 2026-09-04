@@ -1658,7 +1658,7 @@ export default function DocumentationPage() {
         Analytics
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/google-analytics"
         className="
           block rounded-lg px-3 py-2
@@ -1670,7 +1670,7 @@ export default function DocumentationPage() {
         Google Analytics
       </Link>
 
-      <Link
+      {/* <Link
         href="/documentation/what-google-analytics-tracks"
         className="
           block rounded-lg px-3 py-2

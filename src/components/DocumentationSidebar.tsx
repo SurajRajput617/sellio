@@ -1412,14 +1412,14 @@ export default function DocumentationSidebar() {
         Analytics
       </Link>
 
-      {/* <Link
+      <Link
         href="/documentation/google-analytics"
         className={subLinkClass("/documentation/google-analytics")}
       >
         Google Analytics
       </Link>
 
-      <Link
+      {/* <Link
         href="/documentation/what-google-analytics-tracks"
         className={subLinkClass(
           "/documentation/what-google-analytics-tracks"
