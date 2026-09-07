@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
@@ -15,6 +18,44 @@ import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
 export default function ProductCategoriesPage() {
+  const sections = [
+    { id: "access", label: "Open Categories" },
+    { id: "create", label: "Create Category" },
+    { id: "image", label: "Category Image" },
+    { id: "assign", label: "Assign Competitions" },
+    { id: "video", label: "Video Guide" },
+  ];
+
+  const [activeSection, setActiveSection] = useState("access");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
+
+      let currentSection = sections[0].id;
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = section.id;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -493,82 +534,32 @@ export default function ProductCategoriesPage() {
           </article>
 
 
+{/* RIGHT SIDEBAR */}
 
+<aside className="hidden xl:block">
+  <div className="sticky top-28 border-l border-border pl-6">
+    <p className="text-xs font-bold uppercase tracking-[0.12em] text-navy-mute">
+      On This Page
+    </p>
 
-
-
-          {/* RIGHT SIDEBAR */}
-
-          <aside className="hidden xl:block">
-
-            <div
-              className="
-              sticky top-28
-              border-l border-border
-              pl-6
-              "
-            >
-
-              <p
-                className="
-                text-xs font-bold
-                uppercase text-navy-mute
-                "
-              >
-                On This Page
-              </p>
-
-
-              <nav className="mt-5 space-y-4">
-
-
-                <a
-                  href="#access"
-                  className="block text-sm text-navy-mute"
-                >
-                  Open Categories
-                </a>
-
-
-                <a
-                  href="#create"
-                  className="block text-sm text-navy-mute"
-                >
-                  Create Category
-                </a>
-
-
-                <a
-                  href="#image"
-                  className="block text-sm text-navy-mute"
-                >
-                  Category Image
-                </a>
-
-
-                <a
-                  href="#assign"
-                  className="block text-sm text-navy-mute"
-                >
-                  Assign Competitions
-                </a>
-
-
-                <a
-                  href="#video"
-                  className="block text-sm text-navy-mute"
-                >
-                  Video Guide
-                </a>
-
-
-              </nav>
-
-
-            </div>
-
-
-          </aside>
+    <nav className="mt-5 space-y-4">
+      {sections.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          onClick={() => setActiveSection(item.id)}
+          className={`block text-sm leading-6 transition-colors ${
+            activeSection === item.id
+              ? "font-semibold text-coral"
+              : "text-navy-mute hover:text-coral"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</aside>
 
 
         </div>

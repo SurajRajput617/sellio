@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
@@ -16,6 +19,45 @@ import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
 export default function InstantWinsPage() {
+  const sections = [
+    { id: "competition", label: "Competition Manager" },
+    { id: "setup", label: "Create Instant Wins" },
+    { id: "media", label: "Prize Media" },
+    { id: "working", label: "How It Works" },
+    { id: "games", label: "Reveal Experiences" },
+    { id: "video", label: "Video Guide" },
+  ];
+
+  const [activeSection, setActiveSection] = useState("competition");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
+
+      let currentSection = sections[0].id;
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = section.id;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -531,91 +573,32 @@ export default function InstantWinsPage() {
           </article>
 
 
+{/* RIGHT SIDEBAR */}
 
+<aside className="hidden xl:block">
+  <div className="sticky top-28 border-l border-border pl-6">
+    <p className="text-xs font-bold uppercase tracking-[0.12em] text-navy-mute">
+      On This Page
+    </p>
 
-
-
-
-
-          {/* RIGHT SIDEBAR */}
-
-          <aside className="hidden xl:block">
-
-            <div
-              className="
-              sticky top-28
-              border-l border-border
-              pl-6
-              "
-            >
-
-              <p
-                className="
-                text-xs font-bold
-                uppercase text-navy-mute
-                "
-              >
-                On This Page
-              </p>
-
-
-              <nav className="mt-5 space-y-4">
-
-
-                <a
-                  href="#competition"
-                  className="block text-sm text-navy-mute"
-                >
-                  Competition Manager
-                </a>
-
-
-                <a
-                  href="#setup"
-                  className="block text-sm text-navy-mute"
-                >
-                  Create Instant Wins
-                </a>
-
-
-                <a
-                  href="#media"
-                  className="block text-sm text-navy-mute"
-                >
-                  Prize Media
-                </a>
-
-
-                <a
-                  href="#working"
-                  className="block text-sm text-navy-mute"
-                >
-                  How It Works
-                </a>
-
-
-                <a
-                  href="#games"
-                  className="block text-sm text-navy-mute"
-                >
-                  Reveal Experiences
-                </a>
-
-
-                <a
-                  href="#video"
-                  className="block text-sm text-navy-mute"
-                >
-                  Video Guide
-                </a>
-
-
-              </nav>
-
-            </div>
-
-          </aside>
-
+    <nav className="mt-5 space-y-4">
+      {sections.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          onClick={() => setActiveSection(item.id)}
+          className={`block text-sm leading-6 transition-colors ${
+            activeSection === item.id
+              ? "font-semibold text-coral"
+              : "text-navy-mute hover:text-coral"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</aside>
 
         </div>
 
