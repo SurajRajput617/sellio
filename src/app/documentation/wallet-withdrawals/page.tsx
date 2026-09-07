@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
@@ -15,6 +18,47 @@ import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
 export default function WalletWithdrawalsPage() {
+  const sections = [
+    { id: "wallet", label: "Wallet Overview" },
+    { id: "credit", label: "Wallet Credit" },
+    { id: "payments", label: "Wallet Payments" },
+    { id: "withdraw", label: "Withdrawals" },
+    { id: "requirements", label: "Requirements" },
+    { id: "process", label: "Withdrawal Process" },
+    { id: "verification", label: "ID Verification" },
+    { id: "admin", label: "Admin" },
+    { id: "faq", label: "FAQ" },
+  ];
+
+  const [activeSection, setActiveSection] = useState("wallet");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
+
+      let currentSection = sections[0].id;
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = section.id;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -935,125 +979,32 @@ export default function WalletWithdrawalsPage() {
           </article>
 
 
+{/* RIGHT SIDEBAR */}
 
+<aside className="hidden xl:block">
+  <div className="sticky top-28 border-l border-border pl-6">
+    <p className="text-xs font-bold uppercase tracking-wide text-navy-mute">
+      On This Page
+    </p>
 
-
-
-
-
-
-          {/* RIGHT SIDEBAR */}
-
-
-          <aside className="hidden xl:block">
-
-
-            <div
-              className="
-              sticky top-28
-              border-l border-border
-              pl-6
-              "
-            >
-
-
-              <p
-                className="
-                text-xs
-                font-bold
-                uppercase
-                text-navy-mute
-                "
-              >
-                On This Page
-              </p>
-
-
-
-              <nav className="mt-5 space-y-4">
-
-
-                <a
-                  href="#wallet"
-                  className="text-sm text-coral"
-                >
-                  Wallet Overview
-                </a>
-
-
-                <a
-                  href="#credit"
-                  className="block text-sm text-navy-mute"
-                >
-                  Wallet Credit
-                </a>
-
-
-                <a
-                  href="#payments"
-                  className="block text-sm text-navy-mute"
-                >
-                  Wallet Payments
-                </a>
-
-
-                <a
-                  href="#withdraw"
-                  className="block text-sm text-navy-mute"
-                >
-                  Withdrawals
-                </a>
-
-
-                <a
-                  href="#requirements"
-                  className="block text-sm text-navy-mute"
-                >
-                  Requirements
-                </a>
-
-
-                <a
-                  href="#process"
-                  className="block text-sm text-navy-mute"
-                >
-                  Withdrawal Process
-                </a>
-
-
-                <a
-                  href="#verification"
-                  className="block text-sm text-navy-mute"
-                >
-                  ID Verification
-                </a>
-
-
-                <a
-                  href="#admin"
-                  className="block text-sm text-navy-mute"
-                >
-                  Admin
-                </a>
-
-
-                <a
-                  href="#faq"
-                  className="block text-sm text-navy-mute"
-                >
-                  FAQ
-                </a>
-
-
-              </nav>
-
-
-            </div>
-
-
-          </aside>
-
-
+    <nav className="mt-5 space-y-4">
+      {sections.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          onClick={() => setActiveSection(item.id)}
+          className={`block text-sm transition-colors ${
+            activeSection === item.id
+              ? "font-semibold text-coral"
+              : "text-navy-mute hover:text-coral"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</aside>
 
         </div>
 
