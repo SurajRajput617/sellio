@@ -400,7 +400,7 @@ export default function AddLogoPage() {
 
 
               <a
-                href="/documentation/hidden-vip-competitions"
+                href="/create-your-first-raffle/hidden-vip-competitions"
                 className="
                 rounded-2xl
                 border border-border
@@ -443,17 +443,11 @@ export default function AddLogoPage() {
 
 
 
-
-
-
-
-
-
               {/* NEXT */}
 
 
               <Link
-                href="/documentation/site-colours"
+                href="/customize-your-site/site-colours"
                 className="
                 rounded-2xl
                 border border-border

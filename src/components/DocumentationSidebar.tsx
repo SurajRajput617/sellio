@@ -206,7 +206,7 @@ export default function DocumentationSidebar() {
         </details>
 
         {/* ============================================= */}
-        {/* CUSTOMISE YOUR SITE */}
+        {/* CUSTOMIZE YOUR SITE */}
         {/* ============================================= */}
 
         <details className="group mt-7" open>
@@ -221,7 +221,7 @@ export default function DocumentationSidebar() {
               [&::-webkit-details-marker]:hidden
             "
           >
-            <span>CUSTOMISE YOUR SITE</span>
+            <span>CUSTOMIZE YOUR SITE</span>
 
             <svg
               viewBox="0 0 20 20"
@@ -245,22 +245,22 @@ export default function DocumentationSidebar() {
           <nav className="mt-1 space-y-1">
 
             <Link
-              href="/documentation/add-logo"
-              className={subLinkClass("/documentation/add-logo")}
+              href="/customize-your-site/add-logo"
+              className={subLinkClass("/customize-your-site/add-logo")}
             >
               Add Your Logo
             </Link>
 
             <Link
-              href="/documentation/site-colours"
-              className={subLinkClass("/documentation/site-colours")}
+              href="/customize-your-site/site-colours"
+              className={subLinkClass("/customize-your-site/site-colours")}
             >
               Choose Site Colours
             </Link>
 
             <Link
-              href="/documentation/homepage-setup"
-              className={subLinkClass("/documentation/homepage-setup")}
+              href="/customize-your-site/homepage-setup"
+              className={subLinkClass("/customize-your-site/homepage-setup")}
             >
               Set Up Your Homepage
             </Link>

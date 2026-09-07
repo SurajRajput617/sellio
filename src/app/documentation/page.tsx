@@ -277,7 +277,7 @@ export default function DocumentationPage() {
   </nav>
 </details>
 {/* ===================================================== */}
-{/* CUSTOMISE YOUR SITE DROPDOWN */}
+{/* CUSTOMIzE YOUR SITE DROPDOWN */}
 {/* ===================================================== */}
 
 <details className="group mt-7" open>
@@ -294,7 +294,7 @@ export default function DocumentationPage() {
     "
   >
 
-    <span>CUSTOMISE YOUR SITE </span>
+    <span>CUSTOMIZE YOUR SITE </span>
 
 
     <svg
@@ -326,7 +326,7 @@ export default function DocumentationPage() {
 
 
     <Link
-      href="/documentation/add-logo"
+      href="/customize-your-site/add-logo"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -340,7 +340,7 @@ export default function DocumentationPage() {
 
 
     <Link
-      href="/documentation/site-colours"
+      href="/customize-your-site/site-colours"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -354,7 +354,7 @@ export default function DocumentationPage() {
 
 
     <Link
-      href="/documentation/homepage-setup"
+      href="/customize-your-site/homepage-setup"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute

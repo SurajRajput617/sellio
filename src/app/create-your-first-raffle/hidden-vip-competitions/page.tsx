@@ -730,7 +730,7 @@ export default function HiddenVipCompetitionsPage() {
 
 
               <Link
-                href="/create-your-first-raffle/add-logo"
+                href="/customize-your-site/add-logo"
                 className="
                 rounded-xl
                 border
