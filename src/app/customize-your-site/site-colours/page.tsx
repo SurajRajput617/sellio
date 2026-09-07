@@ -441,7 +441,7 @@ export default function SiteColoursPage() {
 
 
               <a
-                href="https://sellio-seven.vercel.app/documentation/add-logo"
+                href="/customize-your-site/add-logo"
                 className="
                 rounded-2xl
                 border border-border
@@ -475,17 +475,11 @@ export default function SiteColoursPage() {
               </a>
 
 
-
-
-
-
-
-
               {/* NEXT */}
 
 
               <Link
-                href="/documentation/homepage-setup"
+                href="/customize-your-site/homepage-setup"
                 className="
                 rounded-2xl
                 border border-border
