@@ -1850,7 +1850,7 @@ export default function DocumentationPage() {
                 </div>
 
                 <Link
-                  href="/documentation/buy-domain"
+                  href="/getting-started/buy-domain"
                   className="inline-flex shrink-0 items-center gap-2 self-start rounded-xl border border-border bg-white px-4 py-2 text-sm font-semibold text-navy transition-colors hover:border-coral/40 hover:text-coral"
                 >
                   Get started
