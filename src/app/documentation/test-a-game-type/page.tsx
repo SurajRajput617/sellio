@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
@@ -13,6 +16,43 @@ import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
 export default function TestGameTypePage() {
+  const sections = [
+    { id: "overview", label: "Test a Game Type" },
+    { id: "testing", label: "How Testing Works" },
+    { id: "steps", label: "Step by Step" },
+    { id: "view-test", label: "View and Play Your Test" },
+    { id: "replay", label: "Replay Without Creating Again" },
+    { id: "finished", label: "When You Are Finished" },
+  ];
+
+  const [activeSection, setActiveSection] = useState("overview");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
+      let currentSection = sections[0].id;
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = section.id;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -807,131 +847,32 @@ export default function TestGameTypePage() {
 
 </article>
 
+{/* RIGHT SIDEBAR */}
 
+<aside className="hidden xl:block">
+  <div className="sticky top-28 border-l border-border pl-6">
+    <p className="text-xs font-bold uppercase text-navy-mute">
+      On This Page
+    </p>
 
-          {/* RIGHT SIDEBAR */}
-
-
-
-          <aside className="hidden xl:block">
-
-
-            <div
-              className="
-              sticky top-28
-              border-l border-border
-              pl-6
-              "
-            >
-
-
-              <p
-                className="
-                text-xs
-                font-bold
-                uppercase
-                text-navy-mute
-                "
-              >
-                On This Page
-              </p>
-
-
-
-
-              <nav className="mt-5 space-y-4">
-
-
-                <a
-                  href="#overview"
-                  className="
-                  text-sm
-                  text-coral
-                  "
-                >
-                  Test a Game Type
-                </a>
-
-
-
-
-                <a
-                  href="#testing"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  How Testing Works
-                </a>
-
-
-
-
-                <a
-                  href="#steps"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Step by Step
-                </a>
-
-
-
-
-                <a
-                  href="#view-test"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  View and Play Your Test
-                </a>
-
-
-
-
-                <a
-                  href="#replay"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Replay Without Creating Again
-                </a>
-
-
-
-
-                <a
-                  href="#finished"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  When You Are Finished
-                </a>
-
-
-              </nav>
-
-
-            </div>
-
-
-          </aside>
-
-
+    <nav className="mt-5 space-y-4">
+      {sections.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          onClick={() => setActiveSection(item.id)}
+          className={`block text-sm transition-colors ${
+            activeSection === item.id
+              ? "font-semibold text-coral"
+              : "text-navy-mute hover:text-coral"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</aside>
 
         </div>
 

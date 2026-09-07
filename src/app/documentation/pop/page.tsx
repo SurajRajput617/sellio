@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
@@ -13,8 +16,45 @@ import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
 export default function PopPage() {
+  const sections = [
+    { id: "what-is-it", label: "What is it?" },
+    { id: "how-it-works", label: "How It Works" },
+    { id: "customisation", label: "Customisation Options" },
+    { id: "ticket-numbers", label: "Ticket Numbers" },
+    { id: "preview", label: "Preview" },
+    { id: "try-first", label: "Want to try it first?" },
+  ];
 
-return (
+  const [activeSection, setActiveSection] = useState("what-is-it");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
+      let currentSection = sections[0].id;
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = section.id;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
 <>
 <Navbar />
 
@@ -772,134 +812,32 @@ Piñata
 </article>
 
 
-
-
-
 {/* RIGHT SIDEBAR */}
 
-
-
 <aside className="hidden xl:block">
+  <div className="sticky top-28 border-l border-border pl-6">
+    <p className="text-xs font-bold uppercase text-navy-mute">
+      On This Page
+    </p>
 
-
-<div
-className="
-sticky
-top-28
-border-l
-border-border
-pl-6
-"
->
-
-
-<p
-className="
-text-xs
-font-bold
-uppercase
-text-navy-mute
-"
->
-On This Page
-</p>
-
-
-
-
-<nav className="mt-5 space-y-4">
-
-
-<a
-href="#what-is-it"
-className="
-text-sm
-text-coral
-"
->
-What is it?
-</a>
-
-
-
-
-<a
-href="#how-it-works"
-className="
-block
-text-sm
-text-navy-mute
-"
->
-How It Works
-</a>
-
-
-
-
-<a
-href="#customisation"
-className="
-block
-text-sm
-text-navy-mute
-"
->
-Customisation Options
-</a>
-
-
-
-
-<a
-href="#ticket-numbers"
-className="
-block
-text-sm
-text-navy-mute
-"
->
-Ticket Numbers
-</a>
-
-
-
-
-<a
-href="#preview"
-className="
-block
-text-sm
-text-navy-mute
-"
->
-Preview
-</a>
-
-
-
-
-<a
-href="#try-first"
-className="
-block
-text-sm
-text-navy-mute
-"
->
-Want to try it first?
-</a>
-
-
-</nav>
-
-
-</div>
-
-
+    <nav className="mt-5 space-y-4">
+      {sections.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          onClick={() => setActiveSection(item.id)}
+          className={`block text-sm transition-colors ${
+            activeSection === item.id
+              ? "font-semibold text-coral"
+              : "text-navy-mute hover:text-coral"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
 </aside>
-
-
 
 </div>
 

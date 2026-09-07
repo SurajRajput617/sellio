@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -19,6 +22,44 @@ export default function InteractiveGridPage() {
     "The customer continues through the available items.",
     "A summary appears when the interaction is complete.",
   ];
+
+  const sections = [
+    { id: "what-is-it", label: "What is It?", nested: false },
+    { id: "how-it-works", label: "How It Works", nested: false },
+    { id: "display-all", label: "Display All", nested: true },
+    { id: "customisation", label: "Customisation Options", nested: false },
+    { id: "custom-sound", label: "Custom Sound", nested: true },
+    { id: "try-first", label: "Want to try it first?", nested: false },
+  ];
+
+  const [activeSection, setActiveSection] = useState("what-is-it");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
+      let currentSection = sections[0].id;
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = section.id;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -316,98 +357,36 @@ export default function InteractiveGridPage() {
             </p>
           </article>
 
-          {/* ========================================
-              RIGHT SIDEBAR
-          ======================================== */}
-          <aside className="hidden xl:block">
-            <div
-              className="
-                sticky top-28
-                border-l border-border
-                pl-6
-              "
-            >
-              <p
-                className="
-                  text-xs
-                  font-bold
-                  uppercase
-                  tracking-wide
-                  text-navy-mute
-                "
-              >
-                On This Page
-              </p>
+      {/* ========================================
+    RIGHT SIDEBAR
+======================================== */}
 
-              <nav className="mt-5 space-y-4">
-                <a
-                  href="#what-is-it"
-                  className="
-                    block
-                    text-sm
-                    text-coral
-                  "
-                >
-                  What is It?
-                </a>
+<aside className="hidden xl:block">
+  <div className="sticky top-28 border-l border-border pl-6">
+    <p className="text-xs font-bold uppercase tracking-wide text-navy-mute">
+      On This Page
+    </p>
 
-                <a
-                  href="#how-it-works"
-                  className="
-                    block
-                    text-sm
-                    text-navy-mute
-                    transition
-                    hover:text-coral
-                  "
-                >
-                  How It Works
-                </a>
-
-                <a
-                  href="#display-all"
-                  className="
-                    block
-                    pl-3
-                    text-sm
-                    text-navy-mute
-                    transition
-                    hover:text-coral
-                  "
-                >
-                  Display All
-                </a>
-
-                <a
-                  href="#customisation"
-                  className="
-                    block
-                    text-sm
-                    text-navy-mute
-                    transition
-                    hover:text-coral
-                  "
-                >
-                  Customisation Options
-                </a>
-
-                <a
-                  href="#custom-sound"
-                  className="
-                    block
-                    pl-3
-                    text-sm
-                    text-navy-mute
-                    transition
-                    hover:text-coral
-                  "
-                >
-                  Custom Sound
-                </a>
-
-              </nav>
-            </div>
-          </aside>
+    <nav className="mt-5 space-y-4">
+      {sections.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          onClick={() => setActiveSection(item.id)}
+          className={`block text-sm transition-colors ${
+            item.nested ? "pl-3" : ""
+          } ${
+            activeSection === item.id
+              ? "font-semibold text-coral"
+              : "text-navy-mute hover:text-coral"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</aside>
         </div>
       </main>
 

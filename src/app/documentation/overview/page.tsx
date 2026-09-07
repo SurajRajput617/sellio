@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
@@ -13,6 +16,44 @@ import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
 export default function InstantWinGamesPage() {
+  const sections = [
+    { id: "overview", label: "Instant Win Games Overview" },
+    { id: "how-work", label: "How Games Work" },
+    { id: "game-type", label: "Set Game Type" },
+    { id: "configure-game", label: "Configure Game" },
+    { id: "preview", label: "Game Preview" },
+    { id: "test", label: "Test Before Launch" },
+    { id: "game-modes", label: "Available Game Modes" },
+  ];
+
+  const [activeSection, setActiveSection] = useState("overview");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
+      let currentSection = sections[0].id;
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = section.id;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -889,148 +930,32 @@ export default function InstantWinGamesPage() {
           </article>
 
 
+{/* RIGHT SIDEBAR */}
 
+<aside className="hidden xl:block">
+  <div className="sticky top-28 border-l border-border pl-6">
+    <p className="text-xs font-bold uppercase text-navy-mute">
+      On This Page
+    </p>
 
-
-
-
-          {/* RIGHT SIDEBAR */}
-
-
-
-          <aside className="hidden xl:block">
-
-
-            <div
-              className="
-              sticky top-28
-              border-l border-border
-              pl-6
-              "
-            >
-
-
-              <p
-                className="
-                text-xs
-                font-bold
-                uppercase
-                text-navy-mute
-                "
-              >
-                On This Page
-              </p>
-
-
-
-
-              <nav className="mt-5 space-y-4">
-
-
-                <a
-                  href="#overview"
-                  className="
-                  text-sm
-                  text-coral
-                  "
-                >
-                  Instant Win Games Overview
-                </a>
-
-
-
-
-                <a
-                  href="#how-work"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  How Games Work
-                </a>
-
-
-
-
-                <a
-                  href="#game-type"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Set Game Type
-                </a>
-
-
-
-
-                <a
-                  href="#configure-game"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Configure Game
-                </a>
-
-
-
-
-                <a
-                  href="#preview"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Game Preview
-                </a>
-
-
-
-
-                <a
-                  href="#test"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Test Before Launch
-                </a>
-
-
-
-
-                <a
-                  href="#game-modes"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Available Game Modes
-                </a>
-
-
-              </nav>
-
-
-            </div>
-
-
-          </aside>
-
-
+    <nav className="mt-5 space-y-4">
+      {sections.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          onClick={() => setActiveSection(item.id)}
+          className={`block text-sm transition-colors ${
+            activeSection === item.id
+              ? "font-semibold text-coral"
+              : "text-navy-mute hover:text-coral"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</aside>
 
         </div>
 
