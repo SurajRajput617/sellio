@@ -75,19 +75,44 @@ export default function DocumentationPage() {
        
 
         {/* DOCUMENTATION */}
-        <div className="container-xl grid gap-12 py-12 lg:grid-cols-[280px_minmax(0,1fr)] lg:py-16">
-          {/* ===================================================== */}
-          {/* LEFT SIDEBAR - KEPT FROM YOUR CURRENT DESIGN          */}
-          {/* ===================================================== */}
-          
-          <aside>
-            <div className="sticky top-28">
-              <Link
-                href="/documentation"
-                className="mb-8 block text-lg font-bold text-coral"
-              >
-                Welcome
-              </Link>
+        <div className="container-xl grid gap-12 py-12 lg:grid-cols-[280px_minmax(0,1fr)] lg:py-16"> 
+       <aside className="hidden lg:block">
+  <div className="sticky top-28 max-h-[calc(100vh-7rem)] overflow-y-auto pr-2">
+
+    {/* BACK TO SELLIO */}
+    <div className="sticky top-0 z-50 bg-paper pb-5">
+      <Link
+        href="/"
+        className="
+          flex
+          w-[180px]
+          items-center
+          justify-center
+          gap-2
+          rounded-full
+          bg-coral
+          px-5
+          py-3
+          text-sm
+          font-bold
+          text-white
+          shadow-md
+          transition
+          duration-300
+          hover:-translate-y-1
+          hover:bg-[#e0432f]
+        "
+      >
+        Back To Sellio ↗
+      </Link>
+    </div>
+
+    <Link
+      href="/documentation"
+      className="mb-8 block text-lg font-bold text-coral"
+    >
+      Welcome
+    </Link>
 
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.15em] text-navy">
                 Getting Started
