@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
@@ -16,6 +19,45 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 export default function TermsPage() {
+  const sections = [
+    { id: "ways-to-add-terms", label: "Two Ways to Add Your Terms" },
+    { id: "policies", label: "Prepare Your Store Policies" },
+    { id: "adding-to-website", label: "Adding Terms to Your Website" },
+    { id: "example", label: "Example" },
+    { id: "review", label: "Review Before Publishing" },
+    { id: "complete", label: "Complete" },
+  ];
+
+  const [activeSection, setActiveSection] = useState("ways-to-add-terms");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
+
+      let currentSection = sections[0].id;
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = section.id;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -583,61 +625,34 @@ export default function TermsPage() {
           {/* RIGHT SIDEBAR */}
           {/* ===================================================== */}
 
-          <aside className="hidden xl:block">
-            <div className="sticky top-28 border-l border-border pl-6">
+        {/* ===================================================== */}
+{/* RIGHT SIDEBAR */}
+{/* ===================================================== */}
 
-              <p className="text-xs font-bold uppercase tracking-[0.12em] text-navy-mute">
-                On This Page
-              </p>
+<aside className="hidden xl:block">
+  <div className="sticky top-28 border-l border-border pl-6">
+    <p className="text-xs font-bold uppercase tracking-[0.12em] text-navy-mute">
+      On This Page
+    </p>
 
-              <nav className="mt-5 space-y-4">
-
-                <a
-                  href="#ways-to-add-terms"
-                  className="block text-sm font-semibold leading-6 text-coral"
-                >
-                  Two Ways to Add Your Terms
-                </a>
-
-                <a
-                  href="#policies"
-                  className="block text-sm leading-6 text-navy-mute transition-colors hover:text-coral"
-                >
-                  Prepare Your Store Policies
-                </a>
-
-                <a
-                  href="#adding-to-website"
-                  className="block text-sm leading-6 text-navy-mute transition-colors hover:text-coral"
-                >
-                  Adding Terms to Your Website
-                </a>
-
-                <a
-                  href="#example"
-                  className="block text-sm leading-6 text-navy-mute transition-colors hover:text-coral"
-                >
-                  Example
-                </a>
-
-                <a
-                  href="#review"
-                  className="block text-sm leading-6 text-navy-mute transition-colors hover:text-coral"
-                >
-                  Review Before Publishing
-                </a>
-
-                <a
-                  href="#complete"
-                  className="block text-sm leading-6 text-navy-mute transition-colors hover:text-coral"
-                >
-                  Complete
-                </a>
-
-              </nav>
-
-            </div>
-          </aside>
+    <nav className="mt-5 space-y-4">
+      {sections.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          onClick={() => setActiveSection(item.id)}
+          className={`block text-sm leading-6 transition-colors ${
+            activeSection === item.id
+              ? "font-semibold text-coral"
+              : "text-navy-mute hover:text-coral"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</aside>
 
         </div>
       </main>

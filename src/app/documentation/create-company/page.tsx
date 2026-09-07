@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
@@ -16,6 +19,45 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 export default function CreateCompanyPage() {
+  const sections = [
+    { id: "what-you-need", label: "What You'll Need" },
+    { id: "create-company", label: "Create Your Company" },
+    { id: "company-information", label: "Company Information" },
+    { id: "review-details", label: "Review Your Details" },
+    { id: "video-guide", label: "Video Guide" },
+    { id: "complete", label: "Complete" },
+  ];
+
+  const [activeSection, setActiveSection] = useState("what-you-need");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
+
+      let currentSection = sections[0].id;
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = section.id;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -533,63 +575,34 @@ export default function CreateCompanyPage() {
           {/* RIGHT SIDEBAR */}
           {/* ===================================================== */}
 
-          <aside className="hidden xl:block">
+         {/* ===================================================== */}
+{/* RIGHT SIDEBAR */}
+{/* ===================================================== */}
 
-            <div className="sticky top-28 border-l border-border pl-6">
+<aside className="hidden xl:block">
+  <div className="sticky top-28 border-l border-border pl-6">
+    <p className="text-xs font-bold uppercase tracking-[0.12em] text-navy-mute">
+      On This Page
+    </p>
 
-              <p className="text-xs font-bold uppercase tracking-[0.12em] text-navy-mute">
-                On This Page
-              </p>
-
-              <nav className="mt-5 space-y-4">
-
-                <a
-                  href="#what-you-need"
-                  className="block text-sm font-semibold leading-6 text-coral"
-                >
-                  What You&apos;ll Need
-                </a>
-
-                <a
-                  href="#create-company"
-                  className="block text-sm leading-6 text-navy-mute transition-colors hover:text-coral"
-                >
-                  Create Your Company
-                </a>
-
-                <a
-                  href="#company-information"
-                  className="block text-sm leading-6 text-navy-mute transition-colors hover:text-coral"
-                >
-                  Company Information
-                </a>
-
-                <a
-                  href="#review-details"
-                  className="block text-sm leading-6 text-navy-mute transition-colors hover:text-coral"
-                >
-                  Review Your Details
-                </a>
-
-                <a
-                  href="#video-guide"
-                  className="block text-sm leading-6 text-navy-mute transition-colors hover:text-coral"
-                >
-                  Video Guide
-                </a>
-
-                <a
-                  href="#complete"
-                  className="block text-sm leading-6 text-navy-mute transition-colors hover:text-coral"
-                >
-                  Complete
-                </a>
-
-              </nav>
-
-            </div>
-
-          </aside>
+    <nav className="mt-5 space-y-4">
+      {sections.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          onClick={() => setActiveSection(item.id)}
+          className={`block text-sm leading-6 transition-colors ${
+            activeSection === item.id
+              ? "font-semibold text-coral"
+              : "text-navy-mute hover:text-coral"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</aside>
 
         </div>
       </main>
