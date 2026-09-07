@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
@@ -14,6 +17,46 @@ import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
 export default function IntegrationsPage() {
+  const sections = [
+    { id: "overview", label: "Integrations Overview" },
+    { id: "n8n", label: "n8n Automations" },
+    { id: "configuration", label: "Configuration" },
+    { id: "webhook", label: "Webhook Structure" },
+    { id: "headers", label: "Headers" },
+    { id: "events", label: "Event Reference" },
+    { id: "content", label: "Content Representation" },
+    { id: "payload", label: "Payload Example" },
+    { id: "delivery", label: "Delivery & Retries" },
+  ];
+
+  const [activeSection, setActiveSection] = useState("overview");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
+      let currentSection = sections[0].id;
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = section.id;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -50,7 +93,7 @@ export default function IntegrationsPage() {
             <section>
 
               <p className="text-sm font-semibold text-coral">
-                Settings
+                Settings 
               </p>
 
 
@@ -1275,159 +1318,32 @@ text-navy-mute
           </article>
 
 
+{/* RIGHT SIDEBAR */}
 
+<aside className="hidden xl:block">
+  <div className="sticky top-28 border-l border-border pl-6">
+    <p className="text-xs font-bold uppercase text-navy-mute">
+      On This Page
+    </p>
 
-
-
-
-
-
-          {/* RIGHT SIDEBAR */}
-
-
-          <aside className="hidden xl:block">
-
-
-            <div
-              className="
-              sticky top-28
-              border-l border-border
-              pl-6
-              "
-            >
-
-
-              <p
-                className="
-                text-xs
-                font-bold
-                uppercase
-                text-navy-mute
-                "
-              >
-                On This Page
-              </p>
-
-
-
-
-              <nav className="mt-5 space-y-4">
-
-
-                <a
-                  href="#overview"
-                  className="text-sm text-coral"
-                >
-                  Integrations Overview
-                </a>
-
-
-
-                <a
-                  href="#n8n"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  n8n Automations
-                </a>
-
-
-
-
-                <a
-                  href="#configuration"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Configuration
-                </a>
-
-
-
-
-                <a
-                  href="#webhook"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Webhook Structure
-                </a>
-
-
-
-
-                <a
-                  href="#events"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Event Reference
-                </a>
-
-
-
-
-                <a
-                  href="#content"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Content Representation
-                </a>
-
-
-
-
-                <a
-                  href="#payload"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Payload Example
-                </a>
-
-
-
-
-                <a
-                  href="#delivery"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Delivery & Retries
-                </a>
-
-
-              </nav>
-
-
-            </div>
-
-
-          </aside>
-
-
+    <nav className="mt-5 space-y-4">
+      {sections.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          onClick={() => setActiveSection(item.id)}
+          className={`block text-sm transition-colors ${
+            activeSection === item.id
+              ? "font-semibold text-coral"
+              : "text-navy-mute hover:text-coral"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</aside>
 
         </div>
 

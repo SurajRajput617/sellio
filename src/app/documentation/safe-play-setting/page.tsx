@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
@@ -13,6 +16,43 @@ import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
 export default function SafePlaySettingPage() {
+  const sections = [
+    { id: "overview", label: "Safe Play Overview" },
+    { id: "customer-controls", label: "Customer Controls" },
+    { id: "spending-limit", label: "Spending Limit" },
+    { id: "rules", label: "Spending Rules" },
+    { id: "operator-settings", label: "Operator Settings" },
+    { id: "update", label: "Update Settings" },
+  ];
+
+  const [activeSection, setActiveSection] = useState("overview");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
+      let currentSection = sections[0].id;
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = section.id;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -725,104 +765,32 @@ export default function SafePlaySettingPage() {
 
           </article>
 
+{/* RIGHT SIDEBAR */}
 
+<aside className="hidden xl:block">
+  <div className="sticky top-28 border-l border-border pl-6">
+    <p className="text-xs font-bold uppercase tracking-wide text-navy-mute">
+      On This Page
+    </p>
 
-
-
-
-
-
-
-          {/* RIGHT SIDEBAR */}
-
-
-          <aside className="hidden xl:block">
-
-
-            <div
-              className="
-              sticky top-28
-              border-l border-border
-              pl-6
-              "
-            >
-
-
-              <p
-                className="
-                text-xs
-                font-bold
-                uppercase
-                tracking-wide
-                text-navy-mute
-                "
-              >
-                On This Page
-              </p>
-
-
-
-
-              <nav className="mt-5 space-y-4">
-
-
-                <a
-                  href="#overview"
-                  className="text-sm text-coral"
-                >
-                  Safe Play Overview
-                </a>
-
-
-                <a
-                  href="#customer-controls"
-                  className="block text-sm text-navy-mute"
-                >
-                  Customer Controls
-                </a>
-
-
-                <a
-                  href="#spending-limit"
-                  className="block text-sm text-navy-mute"
-                >
-                  Spending Limit
-                </a>
-
-
-                <a
-                  href="#rules"
-                  className="block text-sm text-navy-mute"
-                >
-                  Spending Rules
-                </a>
-
-
-                <a
-                  href="#operator-settings"
-                  className="block text-sm text-navy-mute"
-                >
-                  Operator Settings
-                </a>
-
-
-                <a
-                  href="#update"
-                  className="block text-sm text-navy-mute"
-                >
-                  Update Settings
-                </a>
-
-
-              </nav>
-
-
-            </div>
-
-
-          </aside>
-
-
+    <nav className="mt-5 space-y-4">
+      {sections.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          onClick={() => setActiveSection(item.id)}
+          className={`block text-sm transition-colors ${
+            activeSection === item.id
+              ? "font-semibold text-coral"
+              : "text-navy-mute hover:text-coral"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</aside>
 
         </div>
 

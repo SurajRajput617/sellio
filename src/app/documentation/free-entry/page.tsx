@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
@@ -13,6 +16,43 @@ import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
 export default function FreeEntryPage() {
+  const sections = [
+    { id: "overview", label: "Free Entry Overview" },
+    { id: "terms", label: "Set Up Free Entry Terms" },
+    { id: "free-entry-tab", label: "Free Entry Tab" },
+    { id: "add-free-entrant", label: "Add Free Entrant" },
+    { id: "create-free-entry", label: "Create Free Entry Competition" },
+  ];
+
+  const [activeSection, setActiveSection] = useState("overview");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
+
+      let currentSection = sections[0].id;
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = section.id;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -715,125 +755,32 @@ export default function FreeEntryPage() {
           </article>
 
 
+{/* RIGHT SIDEBAR */}
 
+<aside className="hidden xl:block">
+  <div className="sticky top-28 border-l border-border pl-6">
+    <p className="text-xs font-bold uppercase tracking-wide text-navy-mute">
+      On This Page
+    </p>
 
-
-
-
-
-
-          {/* RIGHT SIDEBAR */}
-
-
-
-          <aside className="hidden xl:block">
-
-
-            <div
-              className="
-              sticky top-28
-              border-l border-border
-              pl-6
-              "
-            >
-
-
-              <p
-                className="
-                text-xs
-                font-bold
-                uppercase
-                tracking-wide
-                text-navy-mute
-                "
-              >
-                On This Page
-              </p>
-
-
-
-
-              <nav className="mt-5 space-y-4">
-
-
-
-                <a
-                  href="#overview"
-                  className="
-                  text-sm
-                  text-coral
-                  "
-                >
-                  Free Entry Overview
-                </a>
-
-
-
-
-                <a
-                  href="#terms"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Set Up Free Entry Terms
-                </a>
-
-
-
-
-                <a
-                  href="#free-entry-tab"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Free Entry Tab
-                </a>
-
-
-
-
-                <a
-                  href="#add-free-entrant"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Add Free Entrant
-                </a>
-
-
-
-
-                <a
-                  href="#create-free-entry"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Create Free Entry Competition
-                </a>
-
-
-
-              </nav>
-
-
-            </div>
-
-
-          </aside>
-
-
+    <nav className="mt-5 space-y-4">
+      {sections.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          onClick={() => setActiveSection(item.id)}
+          className={`block text-sm transition-colors ${
+            activeSection === item.id
+              ? "font-semibold text-coral"
+              : "text-navy-mute hover:text-coral"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</aside>
 
         </div>
 

@@ -1,4 +1,7 @@
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";  
 
 import {
   ArrowRight,
@@ -13,6 +16,42 @@ import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
 export default function PayoutsPage() {
+  const sections = [
+    { id: "overview", label: "Payouts Overview" },
+    { id: "manual", label: "Manual Payouts" },
+    { id: "automatic", label: "Automatic Payouts" },
+    { id: "provider", label: "Payment Provider" },
+    { id: "customer-process", label: "Customer Process" },
+  ];
+
+  const [activeSection, setActiveSection] = useState("overview");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
+      let currentSection = sections[0].id;
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = section.id;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -679,123 +718,32 @@ export default function PayoutsPage() {
           </article>
 
 
+{/* RIGHT SIDEBAR */}
 
+<aside className="hidden xl:block">
+  <div className="sticky top-28 border-l border-border pl-6">
+    <p className="text-xs font-bold uppercase tracking-wide text-navy-mute">
+      On This Page
+    </p>
 
-
-
-
-
-
-          {/* RIGHT SIDEBAR */}
-
-
-
-          <aside className="hidden xl:block">
-
-
-            <div
-              className="
-              sticky top-28
-              border-l border-border
-              pl-6
-              "
-            >
-
-
-              <p
-                className="
-                text-xs
-                font-bold
-                uppercase
-                tracking-wide
-                text-navy-mute
-                "
-              >
-                On This Page
-              </p>
-
-
-
-
-              <nav className="mt-5 space-y-4">
-
-
-                <a
-                  href="#overview"
-                  className="
-                  text-sm
-                  text-coral
-                  "
-                >
-                  Payouts Overview
-                </a>
-
-
-
-                <a
-                  href="#manual"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Manual Payouts
-                </a>
-
-
-
-
-                <a
-                  href="#automatic"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Automatic Payouts
-                </a>
-
-
-
-
-                <a
-                  href="#provider"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Payment Provider
-                </a>
-
-
-
-
-                <a
-                  href="#customer-process"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Customer Process
-                </a>
-
-
-
-              </nav>
-
-
-            </div>
-
-
-          </aside>
-
-
+    <nav className="mt-5 space-y-4">
+      {sections.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          onClick={() => setActiveSection(item.id)}
+          className={`block text-sm transition-colors ${
+            activeSection === item.id
+              ? "font-semibold text-coral"
+              : "text-navy-mute hover:text-coral"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</aside>
 
         </div>
 

@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
@@ -13,6 +16,48 @@ import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
 export default function LeaderboardsPage() {
+  const sections = [
+    { id: "overview", label: "Leaderboards Overview" },
+    { id: "how-work", label: "How Leaderboards Work" },
+    { id: "enable", label: "Enable Leaderboard" },
+    { id: "duration", label: "Choose Duration" },
+    { id: "timeframe", label: "Leaderboard Timeframe" },
+    { id: "prizes", label: "Add Prizes" },
+    { id: "configure-prizes", label: "Configure Rewards" },
+    { id: "customer-view", label: "Customer View" },
+    { id: "manage-winners", label: "Managing Winners" },
+    { id: "automatic-payouts", label: "Automatic Prize Payouts" },
+    { id: "how-this-works", label: "How This Works" },
+  ];
+
+  const [activeSection, setActiveSection] = useState("overview");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
+      let currentSection = sections[0].id;
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = section.id;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -1315,179 +1360,32 @@ export default function LeaderboardsPage() {
           </article>
 
 
+{/* RIGHT SIDEBAR */}
 
+<aside className="hidden xl:block">
+  <div className="sticky top-28 border-l border-border pl-6">
+    <p className="text-xs font-bold uppercase tracking-wide text-navy-mute">
+      On This Page
+    </p>
 
-
-
-
-
-
-          {/* RIGHT SIDEBAR */}
-
-
-          <aside className="hidden xl:block">
-
-
-            <div
-              className="
-              sticky top-28
-              border-l border-border
-              pl-6
-              "
-            >
-
-
-              <p
-                className="
-                text-xs
-                font-bold
-                uppercase
-                tracking-wide
-                text-navy-mute
-                "
-              >
-                On This Page
-              </p>
-
-
-
-
-              <nav className="mt-5 space-y-4">
-
-
-                <a
-                  href="#overview"
-                  className="
-                  text-sm
-                  text-coral
-                  "
-                >
-                  Leaderboards Overview
-                </a>
-
-
-
-                <a
-                  href="#how-work"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  How Leaderboards Work
-                </a>
-
-
-
-
-                <a
-                  href="#enable"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Enable Leaderboard
-                </a>
-
-
-
-
-                <a
-                  href="#duration"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Choose Duration
-                </a>
-
-
-
-
-                <a
-                  href="#timeframe"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Leaderboard Timeframe
-                </a>
-
-
-
-
-                <a
-                  href="#prizes"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Add Prizes
-                </a>
-
-
-
-
-                <a
-                  href="#customer-view"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Customer View
-                </a>
-
-
-
-
-                <a
-                  href="#managing-winners"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Managing Winners
-                </a>
-
-
-
-
-                <a
-                  href="#automatic-prizes"
-                  className="
-                  block
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Automatic Prize Payouts
-                </a>
-
-
-
-
-              </nav>
-
-
-            </div>
-
-
-          </aside>
-
-
+    <nav className="mt-5 space-y-4">
+      {sections.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          onClick={() => setActiveSection(item.id)}
+          className={`block text-sm transition-colors ${
+            activeSection === item.id
+              ? "font-semibold text-coral"
+              : "text-navy-mute hover:text-coral"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</aside>
 
         </div>
 

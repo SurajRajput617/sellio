@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
@@ -13,6 +16,42 @@ import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
 export default function OrderCartSettingsPage() {
+  const sections = [
+    { id: "overview", label: "Overview" },
+    { id: "max-orders", label: "Maximum Tickets Per Order" },
+    { id: "pending-order", label: "Single Pending Order" },
+    { id: "update", label: "Update Settings" },
+  ];
+
+  const [activeSection, setActiveSection] = useState("overview");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
+
+      let currentSection = sections[0].id;
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = section.id;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -536,78 +575,32 @@ export default function OrderCartSettingsPage() {
           </article>
 
 
+{/* RIGHT SIDEBAR */}
 
+<aside className="hidden xl:block">
+  <div className="sticky top-28 border-l border-border pl-6">
+    <p className="text-xs font-bold uppercase tracking-wide text-navy-mute">
+      On This Page
+    </p>
 
-
-
-
-
-
-          {/* RIGHT SIDEBAR */}
-
-
-          <aside className="hidden xl:block">
-
-
-            <div
-              className="
-              sticky top-28
-              border-l border-border
-              pl-6
-              "
-            >
-
-
-              <p
-                className="
-                text-xs font-bold
-                uppercase
-                text-navy-mute
-                "
-              >
-                On This Page
-              </p>
-
-
-
-
-              <nav className="mt-5 space-y-4">
-
-
-                <a href="#overview"
-                className="text-sm text-coral">
-                  Overview
-                </a>
-
-
-                <a href="#max-orders"
-                className="block text-sm text-navy-mute">
-                  Maximum Tickets Per Order
-                </a>
-
-
-                <a href="#pending-order"
-                className="block text-sm text-navy-mute">
-                  Single Pending Order
-                </a>
-
-
-                <a href="#update"
-                className="block text-sm text-navy-mute">
-                  Update Settings
-                </a>
-
-
-              </nav>
-
-
-            </div>
-
-
-          </aside>
-
-
-
+    <nav className="mt-5 space-y-4">
+      {sections.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          onClick={() => setActiveSection(item.id)}
+          className={`block text-sm transition-colors ${
+            activeSection === item.id
+              ? "font-semibold text-coral"
+              : "text-navy-mute hover:text-coral"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</aside>
         </div>
 
 
