@@ -6,8 +6,7 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle2,
-  CreditCard,
-  Wallet,
+  ShieldCheck,
   Settings,
 } from "lucide-react";
 
@@ -16,16 +15,17 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-export default function SiteCreditWalletsPage() {
+export default function SafePlaySettingPage() {
   const sections = [
-    { id: "earn-credit", label: "Earn Site Credit" },
-    { id: "withdraw-wallet", label: "Wallet Withdrawals" },
-    { id: "add-credit", label: "Add Site Credit" },
-    { id: "cashback", label: "Cashback" },
-    { id: "wallet-icon", label: "Wallet Icon" },
+    { id: "overview", label: "Safe Play Overview" },
+    { id: "customer-controls", label: "Customer Controls" },
+    { id: "spending-limit", label: "Spending Limit" },
+    { id: "rules", label: "Spending Rules" },
+    { id: "operator-settings", label: "Operator Settings" },
+    { id: "update", label: "Update Settings" },
   ];
 
-  const [activeSection, setActiveSection] = useState("earn-credit");
+  const [activeSection, setActiveSection] = useState("overview");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,7 +88,6 @@ export default function SiteCreditWalletsPage() {
 
 
 
-
             {/* HEADER */}
 
 
@@ -98,7 +97,6 @@ export default function SiteCreditWalletsPage() {
               <p className="text-sm font-semibold text-coral">
                 Additional Settings
               </p>
-
 
 
 
@@ -114,9 +112,8 @@ export default function SiteCreditWalletsPage() {
                   text-white
                   "
                 >
-                  4
+                  6
                 </span>
-
 
 
 
@@ -127,7 +124,7 @@ export default function SiteCreditWalletsPage() {
                   text-navy
                   "
                 >
-                  Site Credit & Wallets
+                  Safe Play Setting
                 </h1>
 
 
@@ -143,10 +140,10 @@ export default function SiteCreditWalletsPage() {
                 text-navy-mute
                 "
               >
-                Manage customer site credit, wallet balances
-                and rewards on your Sellio website. Configure
-                how customers earn credit and how wallet
-                features work.
+                Give customers control over their spending
+                activity with Sellio Safe Play settings.
+                Customers can set limits and manage their
+                competition spending preferences.
               </p>
 
 
@@ -160,12 +157,11 @@ export default function SiteCreditWalletsPage() {
 
 
 
-            {/* EARN SITE CREDIT */}
-
+            {/* OVERVIEW */}
 
 
             <section
-              id="earn-credit"
+              id="overview"
               className="
               scroll-mt-28
               border-b border-border
@@ -177,7 +173,7 @@ export default function SiteCreditWalletsPage() {
               <div className="flex items-center gap-3">
 
 
-                <CreditCard
+                <ShieldCheck
                   className="
                   h-6 w-6
                   text-coral
@@ -192,7 +188,7 @@ export default function SiteCreditWalletsPage() {
                   font-bold
                   "
                 >
-                  How Customers Can Earn Site Credit
+                  Safe Play Setting Overview
                 </h2>
 
 
@@ -208,113 +204,11 @@ export default function SiteCreditWalletsPage() {
                 text-navy-mute
                 "
               >
-                Customers can receive site credit through
-                different reward methods available on your
-                Sellio platform.
+                Safe Play settings help customers manage their
+                spending by allowing them to create personal
+                limits. These controls support responsible use
+                of your Sellio platform.
               </p>
-
-
-
-
-
-
-              {/* INSTANT WINS */}
-
-
-              <div className="mt-8">
-
-
-                <h3 className="text-xl font-bold">
-                  Instant Wins
-                </h3>
-
-
-
-                <p
-                  className="
-                  mt-3
-                  leading-7
-                  text-navy-mute
-                  "
-                >
-                  Add site credit as a reward option for
-                  instant win prizes. Customers can receive
-                  credit directly into their wallet after
-                  winning.
-                </p>
-
-
-              </div>
-
-
-
-
-
-
-
-              {/* CREDIT COMPETITIONS */}
-
-
-
-              <div className="mt-8">
-
-
-                <h3 className="text-xl font-bold">
-                  Site Credit Competitions
-                </h3>
-
-
-
-                <p
-                  className="
-                  mt-3
-                  leading-7
-                  text-navy-mute
-                  "
-                >
-                  Create competitions where the prize is
-                  awarded as site credit. Winners can use
-                  this balance for future purchases.
-                </p>
-
-
-              </div>
-
-
-
-
-
-
-
-
-              {/* CASHBACK */}
-
-
-
-              <div className="mt-8">
-
-
-                <h3 className="text-xl font-bold">
-                  Cashback
-                </h3>
-
-
-
-
-                <p
-                  className="
-                  mt-3
-                  leading-7
-                  text-navy-mute
-                  "
-                >
-                  Enable cashback rewards so customers earn
-                  site credit based on their purchases.
-                </p>
-
-
-              </div>
-
 
 
             </section>
@@ -327,12 +221,11 @@ export default function SiteCreditWalletsPage() {
 
 
 
-            {/* WITHDRAW WALLET */}
-
+            {/* CUSTOMER CONTROLS */}
 
 
             <section
-              id="withdraw-wallet"
+              id="customer-controls"
               className="
               scroll-mt-28
               border-b border-border
@@ -341,30 +234,15 @@ export default function SiteCreditWalletsPage() {
             >
 
 
-              <div className="flex items-center gap-3">
-
-
-                <Wallet
-                  className="
-                  h-6 w-6
-                  text-coral
-                  "
-                />
-
-
-
-                <h2
-                  className="
-                  font-display
-                  text-3xl
-                  font-bold
-                  "
-                >
-                  Allow Customers to Withdraw from Wallet
-                </h2>
-
-
-              </div>
+              <h2
+                className="
+                font-display
+                text-3xl
+                font-bold
+                "
+              >
+                What Customers Can Do
+              </h2>
 
 
 
@@ -376,9 +254,8 @@ export default function SiteCreditWalletsPage() {
                 text-navy-mute
                 "
               >
-                Enable wallet withdrawals so customers can
-                request payouts from their available wallet
-                balance.
+                Customers can manage their own spending
+                preferences directly from their account.
               </p>
 
 
@@ -388,10 +265,9 @@ export default function SiteCreditWalletsPage() {
 
 
                 {[
-                  "Open Sellio admin settings.",
-                  "Go to checkout wallet options.",
-                  "Enable customer wallet withdrawals.",
-                  "Save your changes."
+                  "Set a personal spending limit.",
+                  "Choose a preferred time period for limits.",
+                  "Review their current spending settings."
                 ].map((item)=>(
 
 
@@ -424,28 +300,51 @@ export default function SiteCreditWalletsPage() {
 
 
             </section>
-                        {/* ADD SITE CREDIT */}
+
+
+
+
+
+
+
+
+
+            {/* SPENDING LIMIT */}
 
 
             <section
-              id="add-credit"
+              id="spending-limit"
               className="
               scroll-mt-28
-              border-b border-border
               py-12
               "
             >
 
 
-              <h2
-                className="
-                font-display
-                text-3xl
-                font-bold
-                "
-              >
-                Add Site Credit to a Customer Account
-              </h2>
+              <div className="flex items-center gap-3">
+
+
+                <Settings
+                  className="
+                  h-6 w-6
+                  text-coral
+                  "
+                />
+
+
+                <h2
+                  className="
+                  font-display
+                  text-3xl
+                  font-bold
+                  "
+                >
+                  How Customers Set Their Spending Limit
+                </h2>
+
+
+              </div>
+
 
 
 
@@ -456,8 +355,10 @@ export default function SiteCreditWalletsPage() {
                 text-navy-mute
                 "
               >
-                Admins can manually add site credit to a
-                customer's Sellio wallet when required.
+                Customers can choose a maximum amount they
+                want to spend during a selected period. Once
+                the limit is reached, additional purchases
+                will be restricted.
               </p>
 
 
@@ -467,10 +368,10 @@ export default function SiteCreditWalletsPage() {
 
 
                 {[
-                  "Open the customer profile from your dashboard.",
-                  "Select the wallet or credit option.",
-                  "Choose Add Site Credit.",
-                  "Enter the credit amount.",
+                  "Open the customer account area.",
+                  "Go to Safe Play settings.",
+                  "Choose a spending limit.",
+                  "Select the required time period.",
                   "Save the changes."
                 ].map((item,index)=>(
 
@@ -510,53 +411,13 @@ export default function SiteCreditWalletsPage() {
               </div>
 
 
-
-
-              <div
-                className="
-                mt-7
-                rounded-xl
-                border border-border
-                bg-white
-                p-5
-                "
-              >
-
-                <p className="font-bold">
-                  Note
-                </p>
-
-
-                <p
-                  className="
-                  mt-2
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Added site credit can be used by customers
-                  during future purchases on your Sellio store.
-                </p>
-
-
-              </div>
-
-
             </section>
-
-
-
-
-
-
-
-
-
-            {/* SETUP CASHBACK */}
+            
+            {/* SPENDING LIMIT RULES */}
 
 
             <section
-              id="cashback"
+              id="rules"
               className="
               scroll-mt-28
               border-b border-border
@@ -572,7 +433,7 @@ export default function SiteCreditWalletsPage() {
                 font-bold
                 "
               >
-                Set Up Cashback
+                Spending Limit Rules
               </h2>
 
 
@@ -585,9 +446,10 @@ export default function SiteCreditWalletsPage() {
                 text-navy-mute
                 "
               >
-                Create cashback rewards to encourage repeat
-                purchases and reward customers with wallet
-                credit.
+                Spending limits help customers control their
+                account activity. Once a limit is reached,
+                Sellio will prevent additional purchases until
+                the selected period resets.
               </p>
 
 
@@ -597,11 +459,10 @@ export default function SiteCreditWalletsPage() {
 
 
                 {[
-                  "Open Sellio settings.",
-                  "Go to cashback options.",
-                  "Choose the cashback percentage.",
-                  "Save your cashback settings."
-                ].map((item,index)=>(
+                  "Customers can choose daily, weekly, or monthly limits.",
+                  "Limits apply automatically after saving.",
+                  "Customers can update limits from their account settings."
+                ].map((item)=>(
 
 
                   <div
@@ -610,19 +471,12 @@ export default function SiteCreditWalletsPage() {
                   >
 
 
-                    <span
+                    <CheckCircle2
                       className="
-                      flex h-6 w-6
-                      items-center justify-center
-                      rounded-full
-                      bg-coral
-                      text-xs
-                      font-bold
-                      text-white
+                      h-5 w-5
+                      text-coral
                       "
-                    >
-                      {index + 1}
-                    </span>
+                    />
 
 
                     <p className="text-navy-mute">
@@ -649,11 +503,11 @@ export default function SiteCreditWalletsPage() {
 
 
 
-            {/* WALLET ICON */}
+            {/* OPERATOR SETTINGS */}
 
 
             <section
-              id="wallet-icon"
+              id="operator-settings"
               className="
               scroll-mt-28
               border-b border-border
@@ -669,7 +523,7 @@ export default function SiteCreditWalletsPage() {
                 font-bold
                 "
               >
-                Change Wallet Icon (Optional)
+                Operator Settings
               </h2>
 
 
@@ -682,8 +536,9 @@ export default function SiteCreditWalletsPage() {
                 text-navy-mute
                 "
               >
-                Customize the wallet icon displayed to
-                customers in your Sellio website interface.
+                Admins can manage Safe Play options from
+                Sellio settings and control which customer
+                features are available.
               </p>
 
 
@@ -693,10 +548,84 @@ export default function SiteCreditWalletsPage() {
 
 
                 {[
-                  "Open website branding settings.",
-                  "Select wallet appearance options.",
-                  "Upload or choose your icon.",
-                  "Save changes."
+                  "Enable or disable Safe Play controls.",
+                  "Manage available customer spending options.",
+                  "Review settings before applying changes."
+                ].map((item)=>(
+
+
+                  <div
+                    key={item}
+                    className="flex gap-3"
+                  >
+
+
+                    <CheckCircle2
+                      className="
+                      h-5 w-5
+                      text-coral
+                      "
+                    />
+
+
+                    <p className="text-navy-mute">
+                      {item}
+                    </p>
+
+
+                  </div>
+
+
+                ))}
+
+
+              </div>
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+            {/* UPDATE SETTINGS */}
+
+
+            <section
+              id="update"
+              className="
+              scroll-mt-28
+              py-12
+              "
+            >
+
+
+              <h2
+                className="
+                font-display
+                text-3xl
+                font-bold
+                "
+              >
+                How to Update These Settings
+              </h2>
+
+
+
+
+              <div className="mt-7 space-y-4">
+
+
+                {[
+                  "Login to your Sellio admin panel.",
+                  "Open Settings from the dashboard.",
+                  "Go to Safe Play settings.",
+                  "Update your required options.",
+                  "Click Save."
                 ].map((item,index)=>(
 
 
@@ -759,7 +688,7 @@ export default function SiteCreditWalletsPage() {
 
 
               <Link
-                href="/documentation/free-entry"
+                href="/additional-settings/payouts"
                 className="
                 rounded-2xl
                 border border-border
@@ -768,13 +697,14 @@ export default function SiteCreditWalletsPage() {
                 "
               >
 
+
                 <p className="text-xs uppercase text-navy-mute">
                   Previous
                 </p>
 
 
                 <p className="mt-2 font-bold">
-                  Free Entry
+                  Payouts
                 </p>
 
 
@@ -782,10 +712,8 @@ export default function SiteCreditWalletsPage() {
 
 
 
-
-
               <Link
-                href="/documentation/payouts"
+                href="/additional-settings/leaderboards"
                 className="
                 rounded-2xl
                 border border-border
@@ -795,9 +723,11 @@ export default function SiteCreditWalletsPage() {
                 "
               >
 
+
                 <p className="text-xs uppercase text-navy-mute">
                   Next
                 </p>
+
 
 
                 <div
@@ -811,7 +741,7 @@ export default function SiteCreditWalletsPage() {
                 >
 
                   <p className="font-bold">
-                    Payouts
+                    Leaderboards
                   </p>
 
 
@@ -830,7 +760,6 @@ export default function SiteCreditWalletsPage() {
 
 
           </article>
-
 
 {/* RIGHT SIDEBAR */}
 
@@ -858,6 +787,7 @@ export default function SiteCreditWalletsPage() {
     </nav>
   </div>
 </aside>
+
         </div>
 
 

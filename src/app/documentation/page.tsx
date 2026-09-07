@@ -504,7 +504,7 @@ export default function DocumentationPage() {
   <nav className="mt-1 space-y-1">
 
     <Link
-      href="/documentation/entry-list-display"
+      href="/additional-settings/entry-list-display"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -517,7 +517,7 @@ export default function DocumentationPage() {
 
 
     <Link
-      href="/documentation/order-cart-settings"
+      href="/additional-settings/order-cart-settings"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -530,7 +530,7 @@ export default function DocumentationPage() {
 
 
     <Link
-      href="/documentation/free-entry"
+      href="/additional-settings/free-entry"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -543,7 +543,7 @@ export default function DocumentationPage() {
 
 
     <Link
-      href="/documentation/site-credit-wallets"
+      href="/additional-settings/site-credit-wallets"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -556,7 +556,7 @@ export default function DocumentationPage() {
 
 
     <Link
-      href="/documentation/payouts"
+      href="/additional-settings/payouts"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -569,7 +569,7 @@ export default function DocumentationPage() {
 
 
     <Link
-      href="/documentation/safe-play-setting"
+      href="/additional-settings/safe-play-setting"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -582,7 +582,7 @@ export default function DocumentationPage() {
 
 
     <Link
-      href="/documentation/leaderboards"
+      href="/additional-settings/leaderboards"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -636,7 +636,7 @@ export default function DocumentationPage() {
   <nav className="ml-3 mt-1 border-l border-border pl-5">
 
     <Link
-      href="/documentation/integrations"
+      href="/additional-settings/integrations"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute

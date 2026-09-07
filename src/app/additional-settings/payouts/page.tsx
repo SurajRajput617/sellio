@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import Link from "next/link";  
 
 import {
   ArrowRight,
   CheckCircle2,
-  FileText,
+  CreditCard,
   Settings,
 } from "lucide-react";
 
@@ -15,13 +15,13 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-export default function FreeEntryPage() {
+export default function PayoutsPage() {
   const sections = [
-    { id: "overview", label: "Free Entry Overview" },
-    { id: "terms", label: "Set Up Free Entry Terms" },
-    { id: "free-entry-tab", label: "Free Entry Tab" },
-    { id: "add-free-entrant", label: "Add Free Entrant" },
-    { id: "create-free-entry", label: "Create Free Entry Competition" },
+    { id: "overview", label: "Payouts Overview" },
+    { id: "manual", label: "Manual Payouts" },
+    { id: "automatic", label: "Automatic Payouts" },
+    { id: "provider", label: "Payment Provider" },
+    { id: "customer-process", label: "Customer Process" },
   ];
 
   const [activeSection, setActiveSection] = useState("overview");
@@ -29,7 +29,6 @@ export default function FreeEntryPage() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 180;
-
       let currentSection = sections[0].id;
 
       for (const section of sections) {
@@ -58,6 +57,7 @@ export default function FreeEntryPage() {
     <>
       <Navbar />
 
+
       <main className="min-h-screen bg-paper text-navy">
 
 
@@ -80,8 +80,8 @@ export default function FreeEntryPage() {
 
           {/* MAIN CONTENT */}
 
-          <article className="min-w-0">
 
+          <article className="min-w-0">
 
 
 
@@ -111,7 +111,7 @@ export default function FreeEntryPage() {
                   text-white
                   "
                 >
-                  3
+                  5
                 </span>
 
 
@@ -123,7 +123,7 @@ export default function FreeEntryPage() {
                   text-navy
                   "
                 >
-                  Free Entry
+                  Payouts
                 </h1>
 
 
@@ -139,10 +139,10 @@ export default function FreeEntryPage() {
                 text-navy-mute
                 "
               >
-                Allow customers to participate in your Sellio
-                competitions using free entry options. Manage
-                free entry instructions, customer access and
-                participation settings from your dashboard.
+                Manage how customer rewards and balances are
+                processed on your Sellio platform. Configure
+                manual or automatic payout methods depending
+                on your business requirements.
               </p>
 
 
@@ -156,8 +156,7 @@ export default function FreeEntryPage() {
 
 
 
-            {/* FREE ENTRY OVERVIEW */}
-
+            {/* OVERVIEW */}
 
 
             <section
@@ -170,11 +169,10 @@ export default function FreeEntryPage() {
             >
 
 
-
               <div className="flex items-center gap-3">
 
 
-                <FileText
+                <CreditCard
                   className="
                   h-6 w-6
                   text-coral
@@ -189,7 +187,7 @@ export default function FreeEntryPage() {
                   font-bold
                   "
                 >
-                  Free Entry Overview
+                  Payouts Overview
                 </h2>
 
 
@@ -205,10 +203,61 @@ export default function FreeEntryPage() {
                 text-navy-mute
                 "
               >
-                Free Entry gives customers another way to join
-                competitions without completing a paid purchase.
-                You can configure your free entry rules and show
-                customers how they can participate.
+                Payouts allow you to send customer rewards,
+                winnings, or wallet balances using your chosen
+                payment process. Sellio gives you control over
+                reviewing and completing payout requests.
+              </p>
+
+
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+            {/* MANUAL PAYOUTS */}
+
+
+            <section
+              id="manual"
+              className="
+              scroll-mt-28
+              border-b border-border
+              py-12
+              "
+            >
+
+
+              <h2
+                className="
+                font-display
+                text-3xl
+                font-bold
+                "
+              >
+                Manual Payouts (Default)
+              </h2>
+
+
+
+
+              <p
+                className="
+                mt-5
+                leading-8
+                text-navy-mute
+                "
+              >
+                Manual payouts allow you to review customer
+                payout requests and complete payments yourself.
+                This gives you full control before sending funds.
               </p>
 
 
@@ -218,9 +267,106 @@ export default function FreeEntryPage() {
 
 
                 {[
-                  "Create a free participation option.",
-                  "Add instructions for customers.",
-                  "Manage free entries from your Sellio dashboard."
+                  "Open payout requests from your Sellio dashboard.",
+                  "Review customer payment details.",
+                  "Confirm the payout amount.",
+                  "Complete the payment manually.",
+                  "Update the payout status."
+                ].map((item,index)=>(
+
+
+                  <div
+                    key={item}
+                    className="flex gap-3"
+                  >
+
+
+                    <span
+                      className="
+                      flex h-6 w-6
+                      items-center justify-center
+                      rounded-full
+                      bg-coral
+                      text-xs
+                      font-bold
+                      text-white
+                      "
+                    >
+                      {index + 1}
+                    </span>
+
+
+                    <p className="text-navy-mute">
+                      {item}
+                    </p>
+
+
+                  </div>
+
+
+                ))}
+
+
+              </div>
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+            {/* AUTOMATIC PAYOUTS */}
+
+
+            <section
+              id="automatic"
+              className="
+              scroll-mt-28
+              py-12
+              "
+            >
+
+
+              <h2
+                className="
+                font-display
+                text-3xl
+                font-bold
+                "
+              >
+                Automatic Payouts
+              </h2>
+
+
+
+
+              <p
+                className="
+                mt-5
+                leading-8
+                text-navy-mute
+                "
+              >
+                Automatic payouts allow payments to be handled
+                through connected payment services without
+                manually processing every request.
+              </p>
+
+
+
+
+              <div className="mt-7 space-y-4">
+
+
+                {[
+                  "Connect your supported payment provider.",
+                  "Enable automatic payout processing.",
+                  "Review payout settings before activation."
                 ].map((item)=>(
 
 
@@ -253,28 +399,18 @@ export default function FreeEntryPage() {
 
 
             </section>
-
-
-
-
-
-
-
-
-
-            {/* SETUP TERMS */}
-
+            
+            {/* PAYMENT PROVIDER */}
 
 
             <section
-              id="terms"
+              id="provider"
               className="
               scroll-mt-28
               border-b border-border
               py-12
               "
             >
-
 
 
               <div className="flex items-center gap-3">
@@ -295,7 +431,7 @@ export default function FreeEntryPage() {
                   font-bold
                   "
                 >
-                  How to Set Up Free Entry Terms
+                  Payment Provider Setup
                 </h2>
 
 
@@ -311,9 +447,10 @@ export default function FreeEntryPage() {
                 text-navy-mute
                 "
               >
-                Add clear free entry instructions so customers
-                understand the requirements before joining your
-                competition.
+                Connect your preferred payment service to
+                support automatic payout processing. Make sure
+                your account details are correctly configured
+                before enabling automatic payouts.
               </p>
 
 
@@ -323,11 +460,10 @@ export default function FreeEntryPage() {
 
 
                 {[
-                  "Open your Sellio admin dashboard.",
-                  "Navigate to competition settings.",
-                  "Open the Free Entry section.",
-                  "Add your free entry instructions.",
-                  "Save your changes."
+                  "Open Sellio payment settings.",
+                  "Choose your supported payment provider.",
+                  "Connect your payment account.",
+                  "Save your payout configuration."
                 ].map((item,index)=>(
 
 
@@ -366,32 +502,6 @@ export default function FreeEntryPage() {
               </div>
 
 
-
-
-              <div
-                className="
-                mt-7
-                rounded-xl
-                border border-border
-                bg-white
-                p-5
-                "
-              >
-
-                <p className="font-bold">
-                  Note
-                </p>
-
-
-                <p className="mt-2 text-sm text-navy-mute">
-                  Free entry instructions will appear on your
-                  competition page for customers to view.
-                </p>
-
-
-              </div>
-
-
             </section>
 
 
@@ -402,12 +512,12 @@ export default function FreeEntryPage() {
 
 
 
-            {/* FREE ENTRY TAB */}
+            {/* CUSTOMER PAYOUT PROCESS */}
 
 
 
             <section
-              id="free-entry-tab"
+              id="customer-process"
               className="
               scroll-mt-28
               py-12
@@ -422,56 +532,7 @@ export default function FreeEntryPage() {
                 font-bold
                 "
               >
-                The Free Entry Tab
-              </h2>
-
-
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                When enabled, the Free Entry option will be
-                displayed on your Sellio competition page.
-                Customers can follow the provided instructions
-                to complete their free participation.
-              </p>
-              
-            </section>
-
-
-
-
-
-
-
-
-
-            {/* ADD FREE ENTRANT */}
-
-
-
-            <section
-              id="add-free-entrant"
-              className="
-              scroll-mt-28
-              border-b border-border
-              py-12
-              "
-            >
-
-
-              <h2
-                className="
-                font-display
-                text-3xl
-                font-bold
-                "
-              >
-                How to Add a Free Entrant to Your Competition
+                Customer Payout Process
               </h2>
 
 
@@ -484,10 +545,10 @@ export default function FreeEntryPage() {
                 text-navy-mute
                 "
               >
-                Add customers manually as free entrants from
-                your Sellio competition management area.
-                This allows you to manage special entries and
-                keep your competition records updated.
+                Customers can request payouts from their
+                available balance. Admins can review requests
+                and complete payments through the Sellio
+                dashboard.
               </p>
 
 
@@ -497,11 +558,10 @@ export default function FreeEntryPage() {
 
 
                 {[
-                  "Open the competition from your Sellio dashboard.",
-                  "Go to the entrant management section.",
-                  "Select the Add Free Entrant option.",
-                  "Enter customer information.",
-                  "Confirm and save the free entry."
+                  "Customer submits a payout request.",
+                  "Admin reviews customer details.",
+                  "Payment is processed.",
+                  "Payout status is updated."
                 ].map((item,index)=>(
 
 
@@ -538,91 +598,6 @@ export default function FreeEntryPage() {
 
 
               </div>
-
-
-
-
-              <div
-                className="
-                mt-7
-                rounded-xl
-                border border-border
-                bg-white
-                p-5
-                "
-              >
-
-
-                <p className="font-bold">
-                  Important
-                </p>
-
-
-                <p
-                  className="
-                  mt-2
-                  text-sm
-                  text-navy-mute
-                  "
-                >
-                  Make sure free entrants follow the same
-                  competition rules and requirements as
-                  other participants.
-                </p>
-
-
-              </div>
-
-
-            </section>
-
-
-
-
-
-
-
-
-
-            {/* CREATE FREE ENTRY COMPETITION */}
-
-
-
-            <section
-              id="create-free-entry"
-              className="
-              scroll-mt-28
-              py-12
-              "
-            >
-
-
-              <h2
-                className="
-                font-display
-                text-3xl
-                font-bold
-                "
-              >
-                Creating a Free Entry Competition
-              </h2>
-
-
-
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                When creating a competition in Sellio, enable
-                free entry options and configure the required
-                details before publishing your competition.
-              </p>
-
-
 
 
             </section>
@@ -654,7 +629,7 @@ export default function FreeEntryPage() {
 
 
               <Link
-                href="/documentation/order-cart-settings"
+                href="/additional-settings/site-credit-wallets"
                 className="
                 rounded-2xl
                 border border-border
@@ -664,19 +639,13 @@ export default function FreeEntryPage() {
               >
 
 
-                <p
-                  className="
-                  text-xs
-                  uppercase
-                  text-navy-mute
-                  "
-                >
+                <p className="text-xs uppercase text-navy-mute">
                   Previous
                 </p>
 
 
                 <p className="mt-2 font-bold">
-                  Order & Cart Settings
+                  Site Credit & Wallets
                 </p>
 
 
@@ -684,16 +653,11 @@ export default function FreeEntryPage() {
 
 
 
-
-
-
-
               {/* NEXT */}
 
 
-
               <Link
-                href="/documentation/site-credit-wallets"
+                href="/additional-settings/safe-play-setting"
                 className="
                 rounded-2xl
                 border border-border
@@ -704,13 +668,7 @@ export default function FreeEntryPage() {
               >
 
 
-                <p
-                  className="
-                  text-xs
-                  uppercase
-                  text-navy-mute
-                  "
-                >
+                <p className="text-xs uppercase text-navy-mute">
                   Next
                 </p>
 
@@ -726,8 +684,9 @@ export default function FreeEntryPage() {
                   "
                 >
 
+
                   <p className="font-bold">
-                    Site Credit & Wallets
+                    Safe Play Setting
                   </p>
 
 
@@ -745,8 +704,6 @@ export default function FreeEntryPage() {
 
 
             </div>
-
-
 
 
 

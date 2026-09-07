@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";  
+import Link from "next/link";
 
 import {
   ArrowRight,
   CheckCircle2,
-  CreditCard,
+  FileText,
   Settings,
 } from "lucide-react";
 
@@ -15,13 +15,13 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-export default function PayoutsPage() {
+export default function FreeEntryPage() {
   const sections = [
-    { id: "overview", label: "Payouts Overview" },
-    { id: "manual", label: "Manual Payouts" },
-    { id: "automatic", label: "Automatic Payouts" },
-    { id: "provider", label: "Payment Provider" },
-    { id: "customer-process", label: "Customer Process" },
+    { id: "overview", label: "Free Entry Overview" },
+    { id: "terms", label: "Set Up Free Entry Terms" },
+    { id: "free-entry-tab", label: "Free Entry Tab" },
+    { id: "add-free-entrant", label: "Add Free Entrant" },
+    { id: "create-free-entry", label: "Create Free Entry Competition" },
   ];
 
   const [activeSection, setActiveSection] = useState("overview");
@@ -29,6 +29,7 @@ export default function PayoutsPage() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 180;
+
       let currentSection = sections[0].id;
 
       for (const section of sections) {
@@ -57,7 +58,6 @@ export default function PayoutsPage() {
     <>
       <Navbar />
 
-
       <main className="min-h-screen bg-paper text-navy">
 
 
@@ -80,8 +80,8 @@ export default function PayoutsPage() {
 
           {/* MAIN CONTENT */}
 
-
           <article className="min-w-0">
+
 
 
 
@@ -111,7 +111,7 @@ export default function PayoutsPage() {
                   text-white
                   "
                 >
-                  5
+                  3
                 </span>
 
 
@@ -123,7 +123,7 @@ export default function PayoutsPage() {
                   text-navy
                   "
                 >
-                  Payouts
+                  Free Entry
                 </h1>
 
 
@@ -139,10 +139,10 @@ export default function PayoutsPage() {
                 text-navy-mute
                 "
               >
-                Manage how customer rewards and balances are
-                processed on your Sellio platform. Configure
-                manual or automatic payout methods depending
-                on your business requirements.
+                Allow customers to participate in your Sellio
+                competitions using free entry options. Manage
+                free entry instructions, customer access and
+                participation settings from your dashboard.
               </p>
 
 
@@ -156,7 +156,8 @@ export default function PayoutsPage() {
 
 
 
-            {/* OVERVIEW */}
+            {/* FREE ENTRY OVERVIEW */}
+
 
 
             <section
@@ -169,10 +170,11 @@ export default function PayoutsPage() {
             >
 
 
+
               <div className="flex items-center gap-3">
 
 
-                <CreditCard
+                <FileText
                   className="
                   h-6 w-6
                   text-coral
@@ -187,7 +189,7 @@ export default function PayoutsPage() {
                   font-bold
                   "
                 >
-                  Payouts Overview
+                  Free Entry Overview
                 </h2>
 
 
@@ -203,61 +205,10 @@ export default function PayoutsPage() {
                 text-navy-mute
                 "
               >
-                Payouts allow you to send customer rewards,
-                winnings, or wallet balances using your chosen
-                payment process. Sellio gives you control over
-                reviewing and completing payout requests.
-              </p>
-
-
-
-
-            </section>
-
-
-
-
-
-
-
-
-
-            {/* MANUAL PAYOUTS */}
-
-
-            <section
-              id="manual"
-              className="
-              scroll-mt-28
-              border-b border-border
-              py-12
-              "
-            >
-
-
-              <h2
-                className="
-                font-display
-                text-3xl
-                font-bold
-                "
-              >
-                Manual Payouts (Default)
-              </h2>
-
-
-
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                Manual payouts allow you to review customer
-                payout requests and complete payments yourself.
-                This gives you full control before sending funds.
+                Free Entry gives customers another way to join
+                competitions without completing a paid purchase.
+                You can configure your free entry rules and show
+                customers how they can participate.
               </p>
 
 
@@ -267,106 +218,9 @@ export default function PayoutsPage() {
 
 
                 {[
-                  "Open payout requests from your Sellio dashboard.",
-                  "Review customer payment details.",
-                  "Confirm the payout amount.",
-                  "Complete the payment manually.",
-                  "Update the payout status."
-                ].map((item,index)=>(
-
-
-                  <div
-                    key={item}
-                    className="flex gap-3"
-                  >
-
-
-                    <span
-                      className="
-                      flex h-6 w-6
-                      items-center justify-center
-                      rounded-full
-                      bg-coral
-                      text-xs
-                      font-bold
-                      text-white
-                      "
-                    >
-                      {index + 1}
-                    </span>
-
-
-                    <p className="text-navy-mute">
-                      {item}
-                    </p>
-
-
-                  </div>
-
-
-                ))}
-
-
-              </div>
-
-
-            </section>
-
-
-
-
-
-
-
-
-
-            {/* AUTOMATIC PAYOUTS */}
-
-
-            <section
-              id="automatic"
-              className="
-              scroll-mt-28
-              py-12
-              "
-            >
-
-
-              <h2
-                className="
-                font-display
-                text-3xl
-                font-bold
-                "
-              >
-                Automatic Payouts
-              </h2>
-
-
-
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                Automatic payouts allow payments to be handled
-                through connected payment services without
-                manually processing every request.
-              </p>
-
-
-
-
-              <div className="mt-7 space-y-4">
-
-
-                {[
-                  "Connect your supported payment provider.",
-                  "Enable automatic payout processing.",
-                  "Review payout settings before activation."
+                  "Create a free participation option.",
+                  "Add instructions for customers.",
+                  "Manage free entries from your Sellio dashboard."
                 ].map((item)=>(
 
 
@@ -399,18 +253,28 @@ export default function PayoutsPage() {
 
 
             </section>
-            
-            {/* PAYMENT PROVIDER */}
+
+
+
+
+
+
+
+
+
+            {/* SETUP TERMS */}
+
 
 
             <section
-              id="provider"
+              id="terms"
               className="
               scroll-mt-28
               border-b border-border
               py-12
               "
             >
+
 
 
               <div className="flex items-center gap-3">
@@ -431,7 +295,7 @@ export default function PayoutsPage() {
                   font-bold
                   "
                 >
-                  Payment Provider Setup
+                  How to Set Up Free Entry Terms
                 </h2>
 
 
@@ -447,10 +311,9 @@ export default function PayoutsPage() {
                 text-navy-mute
                 "
               >
-                Connect your preferred payment service to
-                support automatic payout processing. Make sure
-                your account details are correctly configured
-                before enabling automatic payouts.
+                Add clear free entry instructions so customers
+                understand the requirements before joining your
+                competition.
               </p>
 
 
@@ -460,10 +323,11 @@ export default function PayoutsPage() {
 
 
                 {[
-                  "Open Sellio payment settings.",
-                  "Choose your supported payment provider.",
-                  "Connect your payment account.",
-                  "Save your payout configuration."
+                  "Open your Sellio admin dashboard.",
+                  "Navigate to competition settings.",
+                  "Open the Free Entry section.",
+                  "Add your free entry instructions.",
+                  "Save your changes."
                 ].map((item,index)=>(
 
 
@@ -497,6 +361,32 @@ export default function PayoutsPage() {
 
 
                 ))}
+
+
+              </div>
+
+
+
+
+              <div
+                className="
+                mt-7
+                rounded-xl
+                border border-border
+                bg-white
+                p-5
+                "
+              >
+
+                <p className="font-bold">
+                  Note
+                </p>
+
+
+                <p className="mt-2 text-sm text-navy-mute">
+                  Free entry instructions will appear on your
+                  competition page for customers to view.
+                </p>
 
 
               </div>
@@ -512,12 +402,12 @@ export default function PayoutsPage() {
 
 
 
-            {/* CUSTOMER PAYOUT PROCESS */}
+            {/* FREE ENTRY TAB */}
 
 
 
             <section
-              id="customer-process"
+              id="free-entry-tab"
               className="
               scroll-mt-28
               py-12
@@ -532,7 +422,56 @@ export default function PayoutsPage() {
                 font-bold
                 "
               >
-                Customer Payout Process
+                The Free Entry Tab
+              </h2>
+
+
+
+              <p
+                className="
+                mt-5
+                leading-8
+                text-navy-mute
+                "
+              >
+                When enabled, the Free Entry option will be
+                displayed on your Sellio competition page.
+                Customers can follow the provided instructions
+                to complete their free participation.
+              </p>
+              
+            </section>
+
+
+
+
+
+
+
+
+
+            {/* ADD FREE ENTRANT */}
+
+
+
+            <section
+              id="add-free-entrant"
+              className="
+              scroll-mt-28
+              border-b border-border
+              py-12
+              "
+            >
+
+
+              <h2
+                className="
+                font-display
+                text-3xl
+                font-bold
+                "
+              >
+                How to Add a Free Entrant to Your Competition
               </h2>
 
 
@@ -545,10 +484,10 @@ export default function PayoutsPage() {
                 text-navy-mute
                 "
               >
-                Customers can request payouts from their
-                available balance. Admins can review requests
-                and complete payments through the Sellio
-                dashboard.
+                Add customers manually as free entrants from
+                your Sellio competition management area.
+                This allows you to manage special entries and
+                keep your competition records updated.
               </p>
 
 
@@ -558,10 +497,11 @@ export default function PayoutsPage() {
 
 
                 {[
-                  "Customer submits a payout request.",
-                  "Admin reviews customer details.",
-                  "Payment is processed.",
-                  "Payout status is updated."
+                  "Open the competition from your Sellio dashboard.",
+                  "Go to the entrant management section.",
+                  "Select the Add Free Entrant option.",
+                  "Enter customer information.",
+                  "Confirm and save the free entry."
                 ].map((item,index)=>(
 
 
@@ -598,6 +538,91 @@ export default function PayoutsPage() {
 
 
               </div>
+
+
+
+
+              <div
+                className="
+                mt-7
+                rounded-xl
+                border border-border
+                bg-white
+                p-5
+                "
+              >
+
+
+                <p className="font-bold">
+                  Important
+                </p>
+
+
+                <p
+                  className="
+                  mt-2
+                  text-sm
+                  text-navy-mute
+                  "
+                >
+                  Make sure free entrants follow the same
+                  competition rules and requirements as
+                  other participants.
+                </p>
+
+
+              </div>
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+            {/* CREATE FREE ENTRY COMPETITION */}
+
+
+
+            <section
+              id="create-free-entry"
+              className="
+              scroll-mt-28
+              py-12
+              "
+            >
+
+
+              <h2
+                className="
+                font-display
+                text-3xl
+                font-bold
+                "
+              >
+                Creating a Free Entry Competition
+              </h2>
+
+
+
+
+              <p
+                className="
+                mt-5
+                leading-8
+                text-navy-mute
+                "
+              >
+                When creating a competition in Sellio, enable
+                free entry options and configure the required
+                details before publishing your competition.
+              </p>
+
+
 
 
             </section>
@@ -629,7 +654,7 @@ export default function PayoutsPage() {
 
 
               <Link
-                href="/documentation/site-credit-wallets"
+                href="/additional-settings/order-cart-settings"
                 className="
                 rounded-2xl
                 border border-border
@@ -639,13 +664,19 @@ export default function PayoutsPage() {
               >
 
 
-                <p className="text-xs uppercase text-navy-mute">
+                <p
+                  className="
+                  text-xs
+                  uppercase
+                  text-navy-mute
+                  "
+                >
                   Previous
                 </p>
 
 
                 <p className="mt-2 font-bold">
-                  Site Credit & Wallets
+                  Order & Cart Settings
                 </p>
 
 
@@ -653,17 +684,10 @@ export default function PayoutsPage() {
 
 
 
-
-
-
-
-
               {/* NEXT */}
 
-
-
               <Link
-                href="/documentation/safe-play-setting"
+                href="/additional-settings/site-credit-wallets"
                 className="
                 rounded-2xl
                 border border-border
@@ -673,8 +697,13 @@ export default function PayoutsPage() {
                 "
               >
 
-
-                <p className="text-xs uppercase text-navy-mute">
+                <p
+                  className="
+                  text-xs
+                  uppercase
+                  text-navy-mute
+                  "
+                >
                   Next
                 </p>
 
@@ -690,9 +719,8 @@ export default function PayoutsPage() {
                   "
                 >
 
-
                   <p className="font-bold">
-                    Safe Play Setting
+                    Site Credit & Wallets
                   </p>
 
 
@@ -710,6 +738,8 @@ export default function PayoutsPage() {
 
 
             </div>
+
+
 
 
 

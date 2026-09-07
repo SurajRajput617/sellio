@@ -501,7 +501,7 @@ export default function OrderCartSettingsPage() {
 
 
               <Link
-                href="/documentation/entry-list-display"
+                href="/additional-settings/entry-list-display"
                 className="
                 rounded-2xl
                 border border-border
@@ -527,7 +527,7 @@ export default function OrderCartSettingsPage() {
 
 
               <Link
-                href="/documentation/free-entry"
+                href="/additional-settings/free-entry"
                 className="
                 rounded-2xl
                 border border-border

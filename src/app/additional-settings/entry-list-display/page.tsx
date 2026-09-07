@@ -6,8 +6,9 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle2,
-  ShieldCheck,
+  List,
   Settings,
+  Users,
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
@@ -15,14 +16,13 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-export default function SafePlaySettingPage() {
+export default function EntryListDisplayPage() {
   const sections = [
-    { id: "overview", label: "Safe Play Overview" },
-    { id: "customer-controls", label: "Customer Controls" },
-    { id: "spending-limit", label: "Spending Limit" },
-    { id: "rules", label: "Spending Rules" },
-    { id: "operator-settings", label: "Operator Settings" },
-    { id: "update", label: "Update Settings" },
+    { id: "overview", label: "Entry List Overview" },
+    { id: "enable", label: "Enable Entry List" },
+    { id: "settings", label: "Entry List Settings" },
+    { id: "name", label: "Name Display" },
+    { id: "visibility", label: "Visibility Settings" },
   ];
 
   const [activeSection, setActiveSection] = useState("overview");
@@ -30,6 +30,7 @@ export default function SafePlaySettingPage() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 180;
+
       let currentSection = sections[0].id;
 
       for (const section of sections) {
@@ -58,9 +59,7 @@ export default function SafePlaySettingPage() {
     <>
       <Navbar />
 
-
       <main className="min-h-screen bg-paper text-navy">
-
 
         <div
           className="
@@ -78,14 +77,9 @@ export default function SafePlaySettingPage() {
 
 
 
-
-          {/* MAIN CONTENT */}
-
+          {/* CONTENT */}
 
           <article className="min-w-0">
-
-
-
 
 
             {/* HEADER */}
@@ -93,28 +87,23 @@ export default function SafePlaySettingPage() {
 
             <section>
 
-
               <p className="text-sm font-semibold text-coral">
                 Additional Settings
               </p>
 
 
-
               <div className="mt-4 flex items-center gap-4">
-
 
                 <span
                   className="
                   flex h-11 w-11
                   items-center justify-center
                   rounded-xl bg-coral
-                  text-xl font-bold
-                  text-white
+                  text-xl font-bold text-white
                   "
                 >
-                  6
+                  1
                 </span>
-
 
 
                 <h1
@@ -124,13 +113,11 @@ export default function SafePlaySettingPage() {
                   text-navy
                   "
                 >
-                  Safe Play Setting
+                  Entry List Display
                 </h1>
 
 
               </div>
-
-
 
 
               <p
@@ -140,10 +127,9 @@ export default function SafePlaySettingPage() {
                 text-navy-mute
                 "
               >
-                Give customers control over their spending
-                activity with Sellio Safe Play settings.
-                Customers can set limits and manage their
-                competition spending preferences.
+                Display customer entries on your Sellio website
+                to improve transparency and help customers
+                view competition participation details.
               </p>
 
 
@@ -173,22 +159,11 @@ export default function SafePlaySettingPage() {
               <div className="flex items-center gap-3">
 
 
-                <ShieldCheck
-                  className="
-                  h-6 w-6
-                  text-coral
-                  "
-                />
+                <List className="h-6 w-6 text-coral" />
 
 
-                <h2
-                  className="
-                  font-display
-                  text-3xl
-                  font-bold
-                  "
-                >
-                  Safe Play Setting Overview
+                <h2 className="font-display text-3xl font-bold">
+                  Entry List Overview
                 </h2>
 
 
@@ -196,18 +171,12 @@ export default function SafePlaySettingPage() {
 
 
 
+              <p className="mt-5 leading-8 text-navy-mute">
 
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                Safe Play settings help customers manage their
-                spending by allowing them to create personal
-                limits. These controls support responsible use
-                of your Sellio platform.
+                Entry List Display allows customers to view
+                competition participation information and
+                improves trust on your Sellio website.
+
               </p>
 
 
@@ -221,101 +190,14 @@ export default function SafePlaySettingPage() {
 
 
 
-            {/* CUSTOMER CONTROLS */}
+            {/* ENABLE */}
 
 
             <section
-              id="customer-controls"
+              id="enable"
               className="
               scroll-mt-28
               border-b border-border
-              py-12
-              "
-            >
-
-
-              <h2
-                className="
-                font-display
-                text-3xl
-                font-bold
-                "
-              >
-                What Customers Can Do
-              </h2>
-
-
-
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                Customers can manage their own spending
-                preferences directly from their account.
-              </p>
-
-
-
-
-              <div className="mt-7 space-y-4">
-
-
-                {[
-                  "Set a personal spending limit.",
-                  "Choose a preferred time period for limits.",
-                  "Review their current spending settings."
-                ].map((item)=>(
-
-
-                  <div
-                    key={item}
-                    className="flex gap-3"
-                  >
-
-
-                    <CheckCircle2
-                      className="
-                      h-5 w-5
-                      text-coral
-                      "
-                    />
-
-
-                    <p className="text-navy-mute">
-                      {item}
-                    </p>
-
-
-                  </div>
-
-
-                ))}
-
-
-              </div>
-
-
-            </section>
-
-
-
-
-
-
-
-
-
-            {/* SPENDING LIMIT */}
-
-
-            <section
-              id="spending-limit"
-              className="
-              scroll-mt-28
               py-12
               "
             >
@@ -324,22 +206,11 @@ export default function SafePlaySettingPage() {
               <div className="flex items-center gap-3">
 
 
-                <Settings
-                  className="
-                  h-6 w-6
-                  text-coral
-                  "
-                />
+                <Settings className="h-6 w-6 text-coral"/>
 
 
-                <h2
-                  className="
-                  font-display
-                  text-3xl
-                  font-bold
-                  "
-                >
-                  How Customers Set Their Spending Limit
+                <h2 className="font-display text-3xl font-bold">
+                  How to Enable Entry List
                 </h2>
 
 
@@ -348,17 +219,11 @@ export default function SafePlaySettingPage() {
 
 
 
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                Customers can choose a maximum amount they
-                want to spend during a selected period. Once
-                the limit is reached, additional purchases
-                will be restricted.
+              <p className="mt-5 leading-8 text-navy-mute">
+
+                Enable entry list display from your Sellio
+                competition settings.
+
               </p>
 
 
@@ -368,100 +233,11 @@ export default function SafePlaySettingPage() {
 
 
                 {[
-                  "Open the customer account area.",
-                  "Go to Safe Play settings.",
-                  "Choose a spending limit.",
-                  "Select the required time period.",
-                  "Save the changes."
-                ].map((item,index)=>(
-
-
-                  <div
-                    key={item}
-                    className="flex gap-3"
-                  >
-
-
-                    <span
-                      className="
-                      flex h-6 w-6
-                      items-center justify-center
-                      rounded-full
-                      bg-coral
-                      text-xs
-                      font-bold
-                      text-white
-                      "
-                    >
-                      {index + 1}
-                    </span>
-
-
-                    <p className="text-navy-mute">
-                      {item}
-                    </p>
-
-
-                  </div>
-
-
-                ))}
-
-
-              </div>
-
-
-            </section>
-            
-            {/* SPENDING LIMIT RULES */}
-
-
-            <section
-              id="rules"
-              className="
-              scroll-mt-28
-              border-b border-border
-              py-12
-              "
-            >
-
-
-              <h2
-                className="
-                font-display
-                text-3xl
-                font-bold
-                "
-              >
-                Spending Limit Rules
-              </h2>
-
-
-
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                Spending limits help customers control their
-                account activity. Once a limit is reached,
-                Sellio will prevent additional purchases until
-                the selected period resets.
-              </p>
-
-
-
-
-              <div className="mt-7 space-y-4">
-
-
-                {[
-                  "Customers can choose daily, weekly, or monthly limits.",
-                  "Limits apply automatically after saving.",
-                  "Customers can update limits from their account settings."
+                  "Open Sellio admin dashboard.",
+                  "Go to Competition settings.",
+                  "Select your competition.",
+                  "Enable Entry List option.",
+                  "Save changes."
                 ].map((item)=>(
 
 
@@ -503,11 +279,47 @@ export default function SafePlaySettingPage() {
 
 
 
-            {/* OPERATOR SETTINGS */}
+            {/* SETTINGS */}
 
 
             <section
-              id="operator-settings"
+              id="settings"
+              className="
+              scroll-mt-28
+              border-b border-border
+              py-12
+              "
+            >
+
+
+              <div className="flex items-center gap-3">
+
+
+                <Users className="h-6 w-6 text-coral"/>
+
+
+                <h2 className="font-display text-3xl font-bold">
+                  Entry List Settings
+                </h2>
+
+
+              </div>
+
+
+              <p className="mt-5 leading-8 text-navy-mute">
+
+                Customize how customer entry information is
+                displayed on your competition pages.
+
+              </p>
+
+
+            </section>
+                        {/* NAME DISPLAY */}
+
+
+            <section
+              id="name"
               className="
               scroll-mt-28
               border-b border-border
@@ -523,9 +335,8 @@ export default function SafePlaySettingPage() {
                 font-bold
                 "
               >
-                Operator Settings
+                Entry List Name Display
               </h2>
-
 
 
 
@@ -536,47 +347,32 @@ export default function SafePlaySettingPage() {
                 text-navy-mute
                 "
               >
-                Admins can manage Safe Play options from
-                Sellio settings and control which customer
-                features are available.
+                Choose how customer names appear in the entry
+                list. You can display limited customer details
+                to maintain privacy while showing participation.
               </p>
 
 
 
 
-              <div className="mt-7 space-y-4">
+              <div
+                className="
+                mt-7
+                rounded-xl
+                border border-border
+                bg-white
+                p-5
+                "
+              >
+
+                <p className="font-bold">
+                  Example
+                </p>
 
 
-                {[
-                  "Enable or disable Safe Play controls.",
-                  "Manage available customer spending options.",
-                  "Review settings before applying changes."
-                ].map((item)=>(
-
-
-                  <div
-                    key={item}
-                    className="flex gap-3"
-                  >
-
-
-                    <CheckCircle2
-                      className="
-                      h-5 w-5
-                      text-coral
-                      "
-                    />
-
-
-                    <p className="text-navy-mute">
-                      {item}
-                    </p>
-
-
-                  </div>
-
-
-                ))}
+                <p className="mt-2 text-sm text-navy-mute">
+                  John Smith → John S.
+                </p>
 
 
               </div>
@@ -592,11 +388,11 @@ export default function SafePlaySettingPage() {
 
 
 
-            {/* UPDATE SETTINGS */}
+            {/* VISIBILITY SETTINGS */}
 
 
             <section
-              id="update"
+              id="visibility"
               className="
               scroll-mt-28
               py-12
@@ -611,8 +407,24 @@ export default function SafePlaySettingPage() {
                 font-bold
                 "
               >
-                How to Update These Settings
+                Disable Entry List Unless Entered
               </h2>
+
+
+
+
+              <p
+                className="
+                mt-5
+                leading-8
+                text-navy-mute
+                "
+              >
+                Control who can view the competition entry
+                list. You can restrict visibility for privacy
+                and allow access only to customers who have
+                entered the competition.
+              </p>
 
 
 
@@ -621,12 +433,10 @@ export default function SafePlaySettingPage() {
 
 
                 {[
-                  "Login to your Sellio admin panel.",
-                  "Open Settings from the dashboard.",
-                  "Go to Safe Play settings.",
-                  "Update your required options.",
-                  "Click Save."
-                ].map((item,index)=>(
+                  "Enable restricted visibility when required.",
+                  "Only entered customers can view the list.",
+                  "Improve privacy for competition participants."
+                ].map((item)=>(
 
 
                   <div
@@ -635,19 +445,12 @@ export default function SafePlaySettingPage() {
                   >
 
 
-                    <span
+                    <CheckCircle2
                       className="
-                      flex h-6 w-6
-                      items-center justify-center
-                      rounded-full
-                      bg-coral
-                      text-xs
-                      font-bold
-                      text-white
+                      h-5 w-5
+                      text-coral
                       "
-                    >
-                      {index + 1}
-                    </span>
+                    />
 
 
                     <p className="text-navy-mute">
@@ -687,8 +490,11 @@ export default function SafePlaySettingPage() {
             >
 
 
+              {/* PREVIOUS */}
+
+
               <Link
-                href="/documentation/payouts"
+                href="/essential-settings/terms-conditions"
                 className="
                 rounded-2xl
                 border border-border
@@ -704,20 +510,18 @@ export default function SafePlaySettingPage() {
 
 
                 <p className="mt-2 font-bold">
-                  Payouts
+                  Add Terms & Conditions
                 </p>
 
 
               </Link>
 
 
-
-
-
+              {/* NEXT */}
 
 
               <Link
-                href="/documentation/leaderboards"
+                href="/additional-settings/order-cart-settings"
                 className="
                 rounded-2xl
                 border border-border
@@ -744,12 +548,18 @@ export default function SafePlaySettingPage() {
                   "
                 >
 
+
                   <p className="font-bold">
-                    Leaderboards
+                    Order & Cart Settings
                   </p>
 
 
-                  <ArrowRight className="h-4 w-4"/>
+                  <ArrowRight
+                    className="
+                    h-4 w-4
+                    "
+                  />
+
 
                 </div>
 
@@ -764,6 +574,7 @@ export default function SafePlaySettingPage() {
 
 
           </article>
+
 
 {/* RIGHT SIDEBAR */}
 

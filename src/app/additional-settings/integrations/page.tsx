@@ -1241,7 +1241,7 @@ text-navy-mute
 
 
               <Link
-                href="/documentation/leaderboards"
+                href="/additional-settings/leaderboards"
                 className="
                 rounded-2xl
                 border border-border
@@ -1265,12 +1265,8 @@ text-navy-mute
 
 
 
-
-
-
-
               <Link
-                href="/documentation/overview"
+                href="/instant-win-games/overview"
                 className="
                 rounded-2xl
                 border border-border

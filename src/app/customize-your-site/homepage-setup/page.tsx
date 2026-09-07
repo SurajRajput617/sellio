@@ -674,8 +674,6 @@ export default function HomepageSetupPage() {
 
 
 
-
-
               <Link
                 href="/essential-settings/connect-social-accounts"
                 className="

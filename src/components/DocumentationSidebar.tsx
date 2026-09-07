@@ -378,54 +378,54 @@ export default function DocumentationSidebar() {
           <nav className="mt-1 space-y-1">
 
             <Link
-              href="/documentation/entry-list-display"
-              className={subLinkClass("/documentation/entry-list-display")}
+              href="/additional-settings/entry-list-display"
+              className={subLinkClass("/additional-settings/entry-list-display")}
             >
               Entry List Display
             </Link>
 
             <Link
-              href="/documentation/order-cart-settings"
+              href="/additional-settings/order-cart-settings"
               className={subLinkClass(
-                "/documentation/order-cart-settings"
+                "/additional-settings/order-cart-settings"
               )}
             >
               Order & Cart Settings
             </Link>
 
             <Link
-              href="/documentation/free-entry"
-              className={subLinkClass("/documentation/free-entry")}
+              href="/additional-settings/free-entry"
+              className={subLinkClass("/additional-settings/free-entry")}
             >
               Free Entry
             </Link>
 
             <Link
-              href="/documentation/site-credit-wallets"
+              href="/additional-settings/site-credit-wallets"
               className={subLinkClass(
-                "/documentation/site-credit-wallets"
+                "/additional-settings/site-credit-wallets"
               )}
             >
               Site Credit & Wallets
             </Link>
 
             <Link
-              href="/documentation/payouts"
-              className={subLinkClass("/documentation/payouts")}
+              href="/additional-settings/payouts"
+              className={subLinkClass("/additional-settings/payouts")}
             >
               Payouts
             </Link>
 
             <Link
-              href="/documentation/safe-play-setting"
-              className={subLinkClass("/documentation/safe-play-setting")}
+              href="/additional-settings/safe-play-setting"
+              className={subLinkClass("/additional-settings/safe-play-setting")}
             >
               Safe Play Setting
             </Link>
 
             <Link
-              href="/documentation/leaderboards"
-              className={subLinkClass("/documentation/leaderboards")}
+              href="/additional-settings/leaderboards"
+              className={subLinkClass("/additional-settings/leaderboards")}
             >
               Leaderboards
             </Link>
@@ -471,8 +471,8 @@ export default function DocumentationSidebar() {
 
           <nav className="ml-3 mt-1 border-l border-border pl-5">
             <Link
-              href="/documentation/integrations"
-              className={subLinkClass("/documentation/integrations")}
+              href="/additional-settings/integrations"
+              className={subLinkClass("/additional-settings/integrations")}
             >
               Integrations
             </Link>

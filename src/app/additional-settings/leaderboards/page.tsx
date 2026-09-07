@@ -1273,7 +1273,7 @@ export default function LeaderboardsPage() {
 
 
               <Link
-                href="/documentation/safe-play-setting"
+                href="/additional-settings/safe-play-setting"
                 className="
                 rounded-2xl
                 border border-border
@@ -1297,15 +1297,11 @@ export default function LeaderboardsPage() {
 
 
 
-
-
-
-
               {/* NEXT */}
 
 
               <Link
-                href="/documentation/integrations"
+                href="/additional-settings/integrations"
                 className="
                 rounded-2xl
                 border border-border
