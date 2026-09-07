@@ -6,7 +6,8 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle2,
-  FileText,
+  Mail,
+  Play,
   Settings,
 } from "lucide-react";
 
@@ -15,15 +16,16 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-export default function TermsConditionsPage() {
+export default function EmailSetupPage() {
   const sections = [
-    { id: "editor", label: "Pages Editor" },
-    { id: "content", label: "Add Content" },
-    { id: "publish", label: "Save & Publish" },
-    { id: "footer", label: "Customer Access" },
+    { id: "video", label: "Video Guide" },
+    { id: "email-settings", label: "Email Settings" },
+    { id: "customer-emails", label: "Customer Emails" },
+    { id: "admin-emails", label: "Admin Notifications" },
+    { id: "branding", label: "Email Branding" },
   ];
 
-  const [activeSection, setActiveSection] = useState("editor");
+  const [activeSection, setActiveSection] = useState("video");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,9 +79,7 @@ export default function TermsConditionsPage() {
 
 
 
-
           {/* MAIN CONTENT */}
-
 
           <article className="min-w-0">
 
@@ -89,14 +89,11 @@ export default function TermsConditionsPage() {
 
             {/* HEADER */}
 
-
             <section>
-
 
               <p className="text-sm font-semibold text-coral">
                 Essential Settings
               </p>
-
 
 
               <div className="mt-4 flex items-center gap-4">
@@ -111,10 +108,8 @@ export default function TermsConditionsPage() {
                   text-white
                   "
                 >
-                  4
+                  2
                 </span>
-
-
 
 
                 <h1
@@ -124,12 +119,11 @@ export default function TermsConditionsPage() {
                   text-navy sm:text-5xl
                   "
                 >
-                  Add Terms & Conditions
+                  Email Setup
                 </h1>
 
 
               </div>
-
 
 
 
@@ -140,9 +134,9 @@ export default function TermsConditionsPage() {
                 text-navy-mute
                 "
               >
-                Add your Sellio Terms & Conditions page to
-                provide customers with important information
-                about your store policies and rules.
+                Configure your Sellio email settings to send
+                professional notifications and keep customers
+                updated.
               </p>
 
 
@@ -156,11 +150,11 @@ export default function TermsConditionsPage() {
 
 
 
-            {/* ACCESS PAGE EDITOR */}
+            {/* VIDEO GUIDE */}
 
 
             <section
-              id="editor"
+              id="video"
               className="
               scroll-mt-28
               border-b border-border
@@ -172,221 +166,117 @@ export default function TermsConditionsPage() {
               <div className="flex items-center gap-3">
 
 
-                <FileText
+                <Play className="h-5 w-5 text-coral"/>
+
+
+                <p
                   className="
-                  h-6 w-6
+                  text-sm font-bold
+                  uppercase tracking-wide
                   text-coral
                   "
-                />
-
-
-                <h2
-                  className="
-                  font-display
-                  text-3xl
-                  font-bold
-                  "
                 >
-                  Access Pages Editor
-                </h2>
+                  Video Guide
+                </p>
 
 
               </div>
 
 
-
-
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                Open your Sellio dashboard and go to the
-                Pages section. Select the Terms & Conditions
-                page to edit your store policy content.
-              </p>
-
-
-
-
-              <div className="mt-7 space-y-4">
-
-
-                {[
-                  "Open your Sellio admin dashboard.",
-                  "Navigate to Pages settings.",
-                  "Select Terms & Conditions page."
-                ].map((item)=>(
-
-
-                  <div
-                    key={item}
-                    className="flex gap-3"
-                  >
-
-
-                    <CheckCircle2
-                      className="
-                      h-5 w-5
-                      text-coral
-                      "
-                    />
-
-
-                    <p className="text-navy-mute">
-                      {item}
-                    </p>
-
-
-                  </div>
-
-
-                ))}
-
-
-              </div>
-
-
-            </section>
-
-
-
-
-
-
-
-
-
-            {/* ADD CONTENT */}
-
-
-            <section
-              id="content"
-              className="
-              scroll-mt-28
-              border-b border-border
-              py-12
-              "
-            >
 
 
               <h2
                 className="
-                font-display
-                text-3xl
-                font-bold
+                mt-4 font-display
+                text-3xl font-bold
                 "
               >
-                Add Your Terms & Conditions Content
+                Email Setup Walkthrough
               </h2>
 
-
-
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                Add your store policies, customer rules,
-                payment information, returns policy and any
-                important legal details using the Sellio editor.
-              </p>
-
-
-
-
-              <div className="mt-7 space-y-4">
-
-
-                {[
-                  "Write your Terms & Conditions information.",
-                  "Add store rules and customer responsibilities.",
-                  "Review your content before publishing."
-                ].map((item)=>(
-
-
-                  <div
-                    key={item}
-                    className="flex gap-3"
-                  >
-
-
-                    <CheckCircle2
-                      className="
-                      h-5 w-5
-                      text-coral
-                      "
-                    />
-
-
-                    <p className="text-navy-mute">
-                      {item}
-                    </p>
-
-
-                  </div>
-
-
-                ))}
-
-
-              </div>
-
-
-            </section>
-            
-
-
-
-
-
-
-
-
-            {/* SAVE & PUBLISH */}
-
-
-            <section
-              id="publish"
-              className="
-              scroll-mt-28
-              border-b border-border
-              py-12
-              "
-            >
 
 
               <div
                 className="
-                flex
-                items-center
-                gap-3
+                mt-8 rounded-2xl
+                border border-border
+                bg-black
                 "
               >
 
 
-                <Settings
+                <div
                   className="
-                  h-6 w-6
-                  text-coral
+                  aspect-video
+                  flex items-center
+                  justify-center
                   "
-                />
+                >
+
+
+                  <div className="text-center">
+
+
+                    <Play
+                      className="
+                      mx-auto
+                      h-14 w-14
+                      text-coral
+                      "
+                    />
+
+
+                    <p className="mt-4 text-white">
+                      Add your email tutorial video
+                    </p>
+
+
+                  </div>
+
+
+                </div>
+
+
+              </div>
+
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+            {/* EMAIL SETTINGS */}
+
+
+            <section
+              id="email-settings"
+              className="
+              scroll-mt-28
+              border-b border-border
+              py-12
+              "
+            >
+
+
+              <div className="flex items-center gap-3">
+
+
+                <Mail className="h-6 w-6 text-coral"/>
 
 
                 <h2
                   className="
-                  font-display
-                  text-3xl
+                  font-display text-3xl
                   font-bold
                   "
                 >
-                  Save & Publish
+                  Configure Email Settings
                 </h2>
 
 
@@ -397,15 +287,15 @@ export default function TermsConditionsPage() {
 
               <p
                 className="
-                mt-5
-                leading-8
+                mt-5 leading-8
                 text-navy-mute
                 "
               >
-                After adding your Terms & Conditions content,
-                save your changes. The page will become live
-                on your Sellio website.
+                Add your business email address and configure
+                where Sellio sends important messages.
               </p>
+
+
 
 
 
@@ -413,9 +303,105 @@ export default function TermsConditionsPage() {
 
 
                 {[
-                  "Review your policy content.",
-                  "Click save changes.",
-                  "Check your live website page."
+                  "Open Sellio dashboard.",
+                  "Go to Email Settings.",
+                  "Add your sender email address.",
+                  "Save your changes."
+                ].map((item)=>(
+
+
+                  <div
+                    key={item}
+                    className="flex gap-3"
+                  >
+
+
+                    <CheckCircle2
+                      className="
+                      mt-1
+                      h-5 w-5
+                      text-coral
+                      "
+                    />
+
+
+                    <p className="text-navy-mute">
+                      {item}
+                    </p>
+
+
+                  </div>
+
+
+                ))}
+
+
+              </div>
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+            {/* CUSTOMER EMAILS */}
+
+
+            <section
+              id="customer-emails"
+              className="
+              scroll-mt-28
+              border-b border-border
+              py-12
+              "
+            >
+
+
+              <div className="flex items-center gap-3">
+
+
+                <Settings className="h-6 w-6 text-coral"/>
+
+
+                <h2
+                  className="
+                  font-display text-3xl
+                  font-bold
+                  "
+                >
+                  Customer Email Notifications
+                </h2>
+
+
+              </div>
+
+
+
+              <p
+                className="
+                mt-5 leading-8
+                text-navy-mute
+                "
+              >
+                Manage automatic emails customers receive
+                after important actions.
+              </p>
+
+
+
+
+              <div className="mt-7 space-y-4">
+
+
+                {[
+                  "Order confirmation emails.",
+                  "Account notifications.",
+                  "Customer updates."
                 ].map((item)=>(
 
 
@@ -457,11 +443,56 @@ export default function TermsConditionsPage() {
 
 
 
-            {/* FOOTER VISIBILITY */}
+            {/* ADMIN EMAILS */}
 
 
             <section
-              id="footer"
+              id="admin-emails"
+              className="
+              scroll-mt-28
+              border-b border-border
+              py-12
+              "
+            >
+
+
+              <h2
+                className="
+                font-display text-3xl
+                font-bold
+                "
+              >
+                Admin Notifications
+              </h2>
+
+
+
+              <p
+                className="
+                mt-5 leading-8
+                text-navy-mute
+                "
+              >
+                Receive important Sellio alerts directly to
+                your admin email.
+              </p>
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+            {/* EMAIL BRANDING */}
+
+
+            <section
+              id="branding"
               className="
               scroll-mt-28
               py-12
@@ -471,29 +502,24 @@ export default function TermsConditionsPage() {
 
               <h2
                 className="
-                font-display
-                text-3xl
+                font-display text-3xl
                 font-bold
                 "
               >
-                Customer Access
+                Email Branding
               </h2>
-
 
 
 
               <p
                 className="
-                mt-5
-                leading-8
+                mt-5 leading-8
                 text-navy-mute
                 "
               >
-                Once published, customers can access your
-                Terms & Conditions page from your Sellio
-                website footer.
+                Add your logo and keep email communication
+                consistent with your Sellio brand.
               </p>
-
 
 
             </section>
@@ -507,7 +533,6 @@ export default function TermsConditionsPage() {
 
 
             {/* PREVIOUS NEXT */}
-
 
 
             <div
@@ -525,29 +550,24 @@ export default function TermsConditionsPage() {
 
 
               <Link
-                href="/documentation/wallet-withdrawals"
+                href="/essential-settings/connect-social-accounts"
                 className="
                 rounded-2xl
                 border border-border
                 bg-white
                 p-5
+                hover:border-coral/40
                 "
               >
 
 
-                <p
-                  className="
-                  text-xs
-                  uppercase
-                  text-navy-mute
-                  "
-                >
+                <p className="text-xs uppercase text-navy-mute">
                   Previous
                 </p>
 
 
                 <p className="mt-2 font-bold">
-                  Wallet & Withdrawals
+                  Connect Your Social Accounts
                 </p>
 
 
@@ -555,37 +575,25 @@ export default function TermsConditionsPage() {
 
 
 
-
-
-
-
-
               {/* NEXT */}
 
 
-
               <Link
-                href="/documentation/entry-list-display"
+                href="/essential-settings/wallet-withdrawals"
                 className="
                 rounded-2xl
                 border border-border
                 bg-white
                 p-5
                 text-right
+                hover:border-coral/40
                 "
               >
 
 
-                <p
-                  className="
-                  text-xs
-                  uppercase
-                  text-navy-mute
-                  "
-                >
+                <p className="text-xs uppercase text-navy-mute">
                   Next
                 </p>
-
 
 
 
@@ -593,23 +601,19 @@ export default function TermsConditionsPage() {
                   className="
                   mt-2
                   flex
-                  items-center
                   justify-end
+                  items-center
                   gap-2
                   "
                 >
 
 
                   <p className="font-bold">
-                    Entry-List-Display
+                    Wallet & Withdrawals
                   </p>
 
 
-                  <ArrowRight
-                    className="
-                    h-4 w-4
-                    "
-                  />
+                  <ArrowRight className="h-4 w-4"/>
 
 
                 </div>
@@ -618,10 +622,7 @@ export default function TermsConditionsPage() {
               </Link>
 
 
-
             </div>
-
-
 
 
 
@@ -655,6 +656,8 @@ export default function TermsConditionsPage() {
   </div>
 </aside>
 
+
+
         </div>
 
 
@@ -662,7 +665,6 @@ export default function TermsConditionsPage() {
 
 
       <Footer />
-
 
     </>
   );

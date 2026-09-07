@@ -6,9 +6,9 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle2,
-  Mail,
   Play,
   Settings,
+  Share2,
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
@@ -16,13 +16,12 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-export default function EmailSetupPage() {
+export default function ConnectSocialAccountsPage() {
   const sections = [
     { id: "video", label: "Video Guide" },
-    { id: "email-settings", label: "Email Settings" },
-    { id: "customer-emails", label: "Customer Emails" },
-    { id: "admin-emails", label: "Admin Notifications" },
-    { id: "branding", label: "Email Branding" },
+    { id: "settings", label: "Social Settings" },
+    { id: "social", label: "Social Accounts" },
+    { id: "complete", label: "Complete Setup" },
   ];
 
   const [activeSection, setActiveSection] = useState("video");
@@ -59,9 +58,7 @@ export default function EmailSetupPage() {
     <>
       <Navbar />
 
-
       <main className="min-h-screen bg-paper text-navy">
-
 
         <div
           className="
@@ -79,7 +76,9 @@ export default function EmailSetupPage() {
 
 
 
-          {/* MAIN CONTENT */}
+
+
+          {/* MAIN ARTICLE */}
 
           <article className="min-w-0">
 
@@ -108,8 +107,9 @@ export default function EmailSetupPage() {
                   text-white
                   "
                 >
-                  2
+                  1
                 </span>
+
 
 
                 <h1
@@ -119,11 +119,12 @@ export default function EmailSetupPage() {
                   text-navy sm:text-5xl
                   "
                 >
-                  Email Setup
+                  Connect Your Social Accounts
                 </h1>
 
 
               </div>
+
 
 
 
@@ -134,9 +135,8 @@ export default function EmailSetupPage() {
                 text-navy-mute
                 "
               >
-                Configure your Sellio email settings to send
-                professional notifications and keep customers
-                updated.
+                Connect your social profiles with Sellio so
+                customers can follow your brand and stay updated.
               </p>
 
 
@@ -162,18 +162,15 @@ export default function EmailSetupPage() {
               "
             >
 
-
               <div className="flex items-center gap-3">
-
 
                 <Play className="h-5 w-5 text-coral"/>
 
 
                 <p
                   className="
-                  text-sm font-bold
-                  uppercase tracking-wide
-                  text-coral
+                  text-sm font-bold uppercase
+                  tracking-wide text-coral
                   "
                 >
                   Video Guide
@@ -191,19 +188,20 @@ export default function EmailSetupPage() {
                 text-3xl font-bold
                 "
               >
-                Email Setup Walkthrough
+                Connect Social Accounts
               </h2>
+
 
 
 
               <div
                 className="
-                mt-8 rounded-2xl
+                mt-8 overflow-hidden
+                rounded-2xl
                 border border-border
-                bg-black
+                bg-navy
                 "
               >
-
 
                 <div
                   className="
@@ -212,7 +210,6 @@ export default function EmailSetupPage() {
                   justify-center
                   "
                 >
-
 
                   <div className="text-center">
 
@@ -227,7 +224,7 @@ export default function EmailSetupPage() {
 
 
                     <p className="mt-4 text-white">
-                      Add your email tutorial video
+                      Add your social setup video
                     </p>
 
 
@@ -240,7 +237,6 @@ export default function EmailSetupPage() {
               </div>
 
 
-
             </section>
 
 
@@ -251,109 +247,11 @@ export default function EmailSetupPage() {
 
 
 
-            {/* EMAIL SETTINGS */}
+            {/* SETTINGS */}
 
 
             <section
-              id="email-settings"
-              className="
-              scroll-mt-28
-              border-b border-border
-              py-12
-              "
-            >
-
-
-              <div className="flex items-center gap-3">
-
-
-                <Mail className="h-6 w-6 text-coral"/>
-
-
-                <h2
-                  className="
-                  font-display text-3xl
-                  font-bold
-                  "
-                >
-                  Configure Email Settings
-                </h2>
-
-
-              </div>
-
-
-
-
-              <p
-                className="
-                mt-5 leading-8
-                text-navy-mute
-                "
-              >
-                Add your business email address and configure
-                where Sellio sends important messages.
-              </p>
-
-
-
-
-
-              <div className="mt-7 space-y-4">
-
-
-                {[
-                  "Open Sellio dashboard.",
-                  "Go to Email Settings.",
-                  "Add your sender email address.",
-                  "Save your changes."
-                ].map((item)=>(
-
-
-                  <div
-                    key={item}
-                    className="flex gap-3"
-                  >
-
-
-                    <CheckCircle2
-                      className="
-                      mt-1
-                      h-5 w-5
-                      text-coral
-                      "
-                    />
-
-
-                    <p className="text-navy-mute">
-                      {item}
-                    </p>
-
-
-                  </div>
-
-
-                ))}
-
-
-              </div>
-
-
-            </section>
-
-
-
-
-
-
-
-
-
-            {/* CUSTOMER EMAILS */}
-
-
-            <section
-              id="customer-emails"
+              id="settings"
               className="
               scroll-mt-28
               border-b border-border
@@ -370,11 +268,12 @@ export default function EmailSetupPage() {
 
                 <h2
                   className="
-                  font-display text-3xl
+                  font-display
+                  text-3xl
                   font-bold
                   "
                 >
-                  Customer Email Notifications
+                  Open Social Settings
                 </h2>
 
 
@@ -388,9 +287,170 @@ export default function EmailSetupPage() {
                 text-navy-mute
                 "
               >
-                Manage automatic emails customers receive
-                after important actions.
+                Open your Sellio dashboard and go to the
+                social account settings section.
               </p>
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+            {/* ADD SOCIAL ACCOUNTS */}
+
+
+
+            <section
+              id="social"
+              className="
+              scroll-mt-28
+              border-b border-border
+              py-12
+              "
+            >
+
+
+              <div className="flex items-center gap-3">
+
+
+                <Share2 className="h-6 w-6 text-coral"/>
+
+
+                <h2
+                  className="
+                  font-display
+                  text-3xl
+                  font-bold
+                  "
+                >
+                  Add Social Accounts
+                </h2>
+
+
+              </div>
+
+
+
+
+
+
+              <div
+                className="
+                mt-8 grid gap-5
+                sm:grid-cols-3
+                "
+              >
+
+
+                {[
+                  {
+                    name:"Facebook",
+                    icon:"F",
+                    text:"Add your Facebook page link."
+                  },
+                  {
+                    name:"Instagram",
+                    icon:"IG",
+                    text:"Connect your Instagram profile."
+                  },
+                  {
+                    name:"YouTube",
+                    icon:"YT",
+                    text:"Add your YouTube channel."
+                  }
+
+                ].map((item)=>(
+
+
+                  <div
+                    key={item.name}
+                    className="
+                    rounded-xl
+                    border border-border
+                    bg-white
+                    p-5
+                    "
+                  >
+
+
+                    <div
+                      className="
+                      flex h-10 w-10
+                      items-center justify-center
+                      rounded-lg
+                      bg-coral/10
+                      font-bold
+                      text-coral
+                      "
+                    >
+                      {item.icon}
+                    </div>
+
+
+
+                    <h3 className="mt-4 font-bold">
+                      {item.name}
+                    </h3>
+
+
+
+                    <p
+                      className="
+                      mt-2 text-sm
+                      text-navy-mute
+                      "
+                    >
+                      {item.text}
+                    </p>
+
+
+                  </div>
+
+
+                ))}
+
+
+              </div>
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+            {/* COMPLETE */}
+
+
+
+            <section
+              id="complete"
+              className="
+              scroll-mt-28
+              py-12
+              "
+            >
+
+
+              <h2
+                className="
+                font-display
+                text-3xl
+                font-bold
+                "
+              >
+                Complete Setup
+              </h2>
 
 
 
@@ -399,9 +459,10 @@ export default function EmailSetupPage() {
 
 
                 {[
-                  "Order confirmation emails.",
-                  "Account notifications.",
-                  "Customer updates."
+                  "Add your social media URLs.",
+                  "Check all links are correct.",
+                  "Save your settings.",
+                  "Your social icons are now live."
                 ].map((item)=>(
 
 
@@ -443,96 +504,8 @@ export default function EmailSetupPage() {
 
 
 
-            {/* ADMIN EMAILS */}
-
-
-            <section
-              id="admin-emails"
-              className="
-              scroll-mt-28
-              border-b border-border
-              py-12
-              "
-            >
-
-
-              <h2
-                className="
-                font-display text-3xl
-                font-bold
-                "
-              >
-                Admin Notifications
-              </h2>
-
-
-
-              <p
-                className="
-                mt-5 leading-8
-                text-navy-mute
-                "
-              >
-                Receive important Sellio alerts directly to
-                your admin email.
-              </p>
-
-
-            </section>
-
-
-
-
-
-
-
-
-
-            {/* EMAIL BRANDING */}
-
-
-            <section
-              id="branding"
-              className="
-              scroll-mt-28
-              py-12
-              "
-            >
-
-
-              <h2
-                className="
-                font-display text-3xl
-                font-bold
-                "
-              >
-                Email Branding
-              </h2>
-
-
-
-              <p
-                className="
-                mt-5 leading-8
-                text-navy-mute
-                "
-              >
-                Add your logo and keep email communication
-                consistent with your Sellio brand.
-              </p>
-
-
-            </section>
-
-
-
-
-
-
-
-
-
             {/* PREVIOUS NEXT */}
+
 
 
             <div
@@ -548,9 +521,8 @@ export default function EmailSetupPage() {
 
               {/* PREVIOUS */}
 
-
               <Link
-                href="/documentation/connect-social-accounts"
+                href="/customize-your-site/homepage-setup"
                 className="
                 rounded-2xl
                 border border-border
@@ -560,14 +532,13 @@ export default function EmailSetupPage() {
                 "
               >
 
-
                 <p className="text-xs uppercase text-navy-mute">
                   Previous
                 </p>
 
 
                 <p className="mt-2 font-bold">
-                  Connect Your Social Accounts
+                  Set Up Your Homepage
                 </p>
 
 
@@ -575,16 +546,12 @@ export default function EmailSetupPage() {
 
 
 
+              {/* NEXT EMAIL SETUP */}
 
-
-
-
-
-              {/* NEXT */}
 
 
               <Link
-                href="/documentation/wallet-withdrawals"
+                href="/essential-settings/email-setup"
                 className="
                 rounded-2xl
                 border border-border
@@ -604,17 +571,15 @@ export default function EmailSetupPage() {
 
                 <div
                   className="
-                  mt-2
-                  flex
-                  justify-end
+                  mt-2 flex
                   items-center
+                  justify-end
                   gap-2
                   "
                 >
 
-
                   <p className="font-bold">
-                    Wallet & Withdrawals
+                    Email Setup
                   </p>
 
 
@@ -627,12 +592,14 @@ export default function EmailSetupPage() {
               </Link>
 
 
+
             </div>
 
 
 
-          </article>
 
+
+          </article>
 
 {/* RIGHT SIDEBAR */}
 

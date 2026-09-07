@@ -677,7 +677,7 @@ export default function HomepageSetupPage() {
 
 
               <Link
-                href="/documentation/connect-social-accounts"
+                href="/essential-settings/connect-social-accounts"
                 className="
                 rounded-2xl
                 border border-border

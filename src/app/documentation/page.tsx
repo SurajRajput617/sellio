@@ -411,7 +411,7 @@ export default function DocumentationPage() {
   <nav className="mt-1 space-y-1">
 
     <Link
-      href="/documentation/connect-social-accounts"
+      href="/essential-settings/connect-social-accounts"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -424,7 +424,7 @@ export default function DocumentationPage() {
 
 
     <Link
-      href="/documentation/email-setup"
+      href="/essential-settings/email-setup"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -437,7 +437,7 @@ export default function DocumentationPage() {
 
 
     <Link
-      href="/documentation/wallet-withdrawals"
+      href="/essential-settings/wallet-withdrawals"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -450,7 +450,7 @@ export default function DocumentationPage() {
 
 
     <Link
-      href="/documentation/terms-conditions"
+      href="/essential-settings/terms-conditions"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute

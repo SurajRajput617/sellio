@@ -901,7 +901,7 @@ export default function WalletWithdrawalsPage() {
 
 
               <Link
-                href="/documentation/email-setup"
+                href="/essential-settings/email-setup"
                 className="
                 rounded-2xl
                 border border-border
@@ -928,7 +928,7 @@ export default function WalletWithdrawalsPage() {
 
 
               <Link
-                href="/documentation/terms-conditions"
+                href="/essential-settings/terms-conditions"
                 className="
                 rounded-2xl
                 border border-border

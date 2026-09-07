@@ -307,31 +307,31 @@ export default function DocumentationSidebar() {
           <nav className="mt-1 space-y-1">
 
             <Link
-              href="/documentation/connect-social-accounts"
+              href="/essential-settings/connect-social-accounts"
               className={subLinkClass(
-                "/documentation/connect-social-accounts"
+                "/essential-settings/connect-social-accounts"
               )}
             >
               Connect Your Social Accounts
             </Link>
 
             <Link
-              href="/documentation/email-setup"
-              className={subLinkClass("/documentation/email-setup")}
+              href="/essential-settings/email-setup"
+              className={subLinkClass("/essential-settings/email-setup")}
             >
               Email Setup
             </Link>
 
             <Link
-              href="/documentation/wallet-withdrawals"
-              className={subLinkClass("/documentation/wallet-withdrawals")}
+              href="/essential-settings/wallet-withdrawals"
+              className={subLinkClass("/essential-settings/wallet-withdrawals")}
             >
               Wallet & Withdrawals
             </Link>
 
             <Link
-              href="/documentation/terms-conditions"
-              className={subLinkClass("/documentation/terms-conditions")}
+              href="/essential-settings/terms-conditions"
+              className={subLinkClass("/essential-settings/terms-conditions")}
             >
               Add Terms & Conditions
             </Link>

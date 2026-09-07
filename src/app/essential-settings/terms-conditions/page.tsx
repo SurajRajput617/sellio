@@ -6,9 +6,8 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle2,
-  Play,
+  FileText,
   Settings,
-  Share2,
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
@@ -16,15 +15,15 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-export default function ConnectSocialAccountsPage() {
+export default function TermsConditionsPage() {
   const sections = [
-    { id: "video", label: "Video Guide" },
-    { id: "settings", label: "Social Settings" },
-    { id: "social", label: "Social Accounts" },
-    { id: "complete", label: "Complete Setup" },
+    { id: "editor", label: "Pages Editor" },
+    { id: "content", label: "Add Content" },
+    { id: "publish", label: "Save & Publish" },
+    { id: "footer", label: "Customer Access" },
   ];
 
-  const [activeSection, setActiveSection] = useState("video");
+  const [activeSection, setActiveSection] = useState("editor");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,7 +57,9 @@ export default function ConnectSocialAccountsPage() {
     <>
       <Navbar />
 
+
       <main className="min-h-screen bg-paper text-navy">
+
 
         <div
           className="
@@ -77,8 +78,8 @@ export default function ConnectSocialAccountsPage() {
 
 
 
+          {/* MAIN CONTENT */}
 
-          {/* MAIN ARTICLE */}
 
           <article className="min-w-0">
 
@@ -88,11 +89,14 @@ export default function ConnectSocialAccountsPage() {
 
             {/* HEADER */}
 
+
             <section>
+
 
               <p className="text-sm font-semibold text-coral">
                 Essential Settings
               </p>
+
 
 
               <div className="mt-4 flex items-center gap-4">
@@ -107,8 +111,9 @@ export default function ConnectSocialAccountsPage() {
                   text-white
                   "
                 >
-                  1
+                  4
                 </span>
+
 
 
 
@@ -119,7 +124,7 @@ export default function ConnectSocialAccountsPage() {
                   text-navy sm:text-5xl
                   "
                 >
-                  Connect Your Social Accounts
+                  Add Terms & Conditions
                 </h1>
 
 
@@ -135,8 +140,9 @@ export default function ConnectSocialAccountsPage() {
                 text-navy-mute
                 "
               >
-                Connect your social profiles with Sellio so
-                customers can follow your brand and stay updated.
+                Add your Sellio Terms & Conditions page to
+                provide customers with important information
+                about your store policies and rules.
               </p>
 
 
@@ -150,108 +156,11 @@ export default function ConnectSocialAccountsPage() {
 
 
 
-            {/* VIDEO GUIDE */}
+            {/* ACCESS PAGE EDITOR */}
 
 
             <section
-              id="video"
-              className="
-              scroll-mt-28
-              border-b border-border
-              py-12
-              "
-            >
-
-              <div className="flex items-center gap-3">
-
-                <Play className="h-5 w-5 text-coral"/>
-
-
-                <p
-                  className="
-                  text-sm font-bold uppercase
-                  tracking-wide text-coral
-                  "
-                >
-                  Video Guide
-                </p>
-
-
-              </div>
-
-
-
-
-              <h2
-                className="
-                mt-4 font-display
-                text-3xl font-bold
-                "
-              >
-                Connect Social Accounts
-              </h2>
-
-
-
-
-              <div
-                className="
-                mt-8 overflow-hidden
-                rounded-2xl
-                border border-border
-                bg-navy
-                "
-              >
-
-                <div
-                  className="
-                  aspect-video
-                  flex items-center
-                  justify-center
-                  "
-                >
-
-                  <div className="text-center">
-
-
-                    <Play
-                      className="
-                      mx-auto
-                      h-14 w-14
-                      text-coral
-                      "
-                    />
-
-
-                    <p className="mt-4 text-white">
-                      Add your social setup video
-                    </p>
-
-
-                  </div>
-
-
-                </div>
-
-
-              </div>
-
-
-            </section>
-
-
-
-
-
-
-
-
-
-            {/* SETTINGS */}
-
-
-            <section
-              id="settings"
+              id="editor"
               className="
               scroll-mt-28
               border-b border-border
@@ -263,7 +172,12 @@ export default function ConnectSocialAccountsPage() {
               <div className="flex items-center gap-3">
 
 
-                <Settings className="h-6 w-6 text-coral"/>
+                <FileText
+                  className="
+                  h-6 w-6
+                  text-coral
+                  "
+                />
 
 
                 <h2
@@ -273,184 +187,27 @@ export default function ConnectSocialAccountsPage() {
                   font-bold
                   "
                 >
-                  Open Social Settings
+                  Access Pages Editor
                 </h2>
 
 
               </div>
+
+
 
 
 
               <p
                 className="
-                mt-5 leading-8
+                mt-5
+                leading-8
                 text-navy-mute
                 "
               >
                 Open your Sellio dashboard and go to the
-                social account settings section.
+                Pages section. Select the Terms & Conditions
+                page to edit your store policy content.
               </p>
-
-
-            </section>
-
-
-
-
-
-
-
-
-
-            {/* ADD SOCIAL ACCOUNTS */}
-
-
-
-            <section
-              id="social"
-              className="
-              scroll-mt-28
-              border-b border-border
-              py-12
-              "
-            >
-
-
-              <div className="flex items-center gap-3">
-
-
-                <Share2 className="h-6 w-6 text-coral"/>
-
-
-                <h2
-                  className="
-                  font-display
-                  text-3xl
-                  font-bold
-                  "
-                >
-                  Add Social Accounts
-                </h2>
-
-
-              </div>
-
-
-
-
-
-
-              <div
-                className="
-                mt-8 grid gap-5
-                sm:grid-cols-3
-                "
-              >
-
-
-                {[
-                  {
-                    name:"Facebook",
-                    icon:"F",
-                    text:"Add your Facebook page link."
-                  },
-                  {
-                    name:"Instagram",
-                    icon:"IG",
-                    text:"Connect your Instagram profile."
-                  },
-                  {
-                    name:"YouTube",
-                    icon:"YT",
-                    text:"Add your YouTube channel."
-                  }
-
-                ].map((item)=>(
-
-
-                  <div
-                    key={item.name}
-                    className="
-                    rounded-xl
-                    border border-border
-                    bg-white
-                    p-5
-                    "
-                  >
-
-
-                    <div
-                      className="
-                      flex h-10 w-10
-                      items-center justify-center
-                      rounded-lg
-                      bg-coral/10
-                      font-bold
-                      text-coral
-                      "
-                    >
-                      {item.icon}
-                    </div>
-
-
-
-                    <h3 className="mt-4 font-bold">
-                      {item.name}
-                    </h3>
-
-
-
-                    <p
-                      className="
-                      mt-2 text-sm
-                      text-navy-mute
-                      "
-                    >
-                      {item.text}
-                    </p>
-
-
-                  </div>
-
-
-                ))}
-
-
-              </div>
-
-
-            </section>
-
-
-
-
-
-
-
-
-
-            {/* COMPLETE */}
-
-
-
-            <section
-              id="complete"
-              className="
-              scroll-mt-28
-              py-12
-              "
-            >
-
-
-              <h2
-                className="
-                font-display
-                text-3xl
-                font-bold
-                "
-              >
-                Complete Setup
-              </h2>
 
 
 
@@ -459,10 +216,9 @@ export default function ConnectSocialAccountsPage() {
 
 
                 {[
-                  "Add your social media URLs.",
-                  "Check all links are correct.",
-                  "Save your settings.",
-                  "Your social icons are now live."
+                  "Open your Sellio admin dashboard.",
+                  "Navigate to Pages settings.",
+                  "Select Terms & Conditions page."
                 ].map((item)=>(
 
 
@@ -504,6 +260,252 @@ export default function ConnectSocialAccountsPage() {
 
 
 
+            {/* ADD CONTENT */}
+
+
+            <section
+              id="content"
+              className="
+              scroll-mt-28
+              border-b border-border
+              py-12
+              "
+            >
+
+
+              <h2
+                className="
+                font-display
+                text-3xl
+                font-bold
+                "
+              >
+                Add Your Terms & Conditions Content
+              </h2>
+
+
+
+
+              <p
+                className="
+                mt-5
+                leading-8
+                text-navy-mute
+                "
+              >
+                Add your store policies, customer rules,
+                payment information, returns policy and any
+                important legal details using the Sellio editor.
+              </p>
+
+
+
+
+              <div className="mt-7 space-y-4">
+
+
+                {[
+                  "Write your Terms & Conditions information.",
+                  "Add store rules and customer responsibilities.",
+                  "Review your content before publishing."
+                ].map((item)=>(
+
+
+                  <div
+                    key={item}
+                    className="flex gap-3"
+                  >
+
+
+                    <CheckCircle2
+                      className="
+                      h-5 w-5
+                      text-coral
+                      "
+                    />
+
+
+                    <p className="text-navy-mute">
+                      {item}
+                    </p>
+
+
+                  </div>
+
+
+                ))}
+
+
+              </div>
+
+
+            </section>
+            
+
+
+
+
+
+
+
+
+            {/* SAVE & PUBLISH */}
+
+
+            <section
+              id="publish"
+              className="
+              scroll-mt-28
+              border-b border-border
+              py-12
+              "
+            >
+
+
+              <div
+                className="
+                flex
+                items-center
+                gap-3
+                "
+              >
+
+
+                <Settings
+                  className="
+                  h-6 w-6
+                  text-coral
+                  "
+                />
+
+
+                <h2
+                  className="
+                  font-display
+                  text-3xl
+                  font-bold
+                  "
+                >
+                  Save & Publish
+                </h2>
+
+
+              </div>
+
+
+
+
+              <p
+                className="
+                mt-5
+                leading-8
+                text-navy-mute
+                "
+              >
+                After adding your Terms & Conditions content,
+                save your changes. The page will become live
+                on your Sellio website.
+              </p>
+
+
+
+              <div className="mt-7 space-y-4">
+
+
+                {[
+                  "Review your policy content.",
+                  "Click save changes.",
+                  "Check your live website page."
+                ].map((item)=>(
+
+
+                  <div
+                    key={item}
+                    className="flex gap-3"
+                  >
+
+
+                    <CheckCircle2
+                      className="
+                      h-5 w-5
+                      text-coral
+                      "
+                    />
+
+
+                    <p className="text-navy-mute">
+                      {item}
+                    </p>
+
+
+                  </div>
+
+
+                ))}
+
+
+              </div>
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+            {/* FOOTER VISIBILITY */}
+
+
+            <section
+              id="footer"
+              className="
+              scroll-mt-28
+              py-12
+              "
+            >
+
+
+              <h2
+                className="
+                font-display
+                text-3xl
+                font-bold
+                "
+              >
+                Customer Access
+              </h2>
+
+
+
+
+              <p
+                className="
+                mt-5
+                leading-8
+                text-navy-mute
+                "
+              >
+                Once published, customers can access your
+                Terms & Conditions page from your Sellio
+                website footer.
+              </p>
+
+
+
+            </section>
+
+
+
+
+
+
+
+
+
             {/* PREVIOUS NEXT */}
 
 
@@ -521,24 +523,31 @@ export default function ConnectSocialAccountsPage() {
 
               {/* PREVIOUS */}
 
+
               <Link
-                href="/documentation/homepage-setup"
+                href="/essential-settings/wallet-withdrawals"
                 className="
                 rounded-2xl
                 border border-border
                 bg-white
                 p-5
-                hover:border-coral/40
                 "
               >
 
-                <p className="text-xs uppercase text-navy-mute">
+
+                <p
+                  className="
+                  text-xs
+                  uppercase
+                  text-navy-mute
+                  "
+                >
                   Previous
                 </p>
 
 
                 <p className="mt-2 font-bold">
-                  Set Up Your Homepage
+                  Wallet & Withdrawals
                 </p>
 
 
@@ -551,44 +560,56 @@ export default function ConnectSocialAccountsPage() {
 
 
 
-              {/* NEXT EMAIL SETUP */}
+              {/* NEXT */}
 
 
 
               <Link
-                href="/documentation/email-setup"
+                href="/additional-settings/entry-list-display"
                 className="
                 rounded-2xl
                 border border-border
                 bg-white
                 p-5
                 text-right
-                hover:border-coral/40
                 "
               >
 
 
-                <p className="text-xs uppercase text-navy-mute">
+                <p
+                  className="
+                  text-xs
+                  uppercase
+                  text-navy-mute
+                  "
+                >
                   Next
                 </p>
 
 
 
+
                 <div
                   className="
-                  mt-2 flex
+                  mt-2
+                  flex
                   items-center
                   justify-end
                   gap-2
                   "
                 >
 
+
                   <p className="font-bold">
-                    Email Setup
+                    Entry-List-Display
                   </p>
 
 
-                  <ArrowRight className="h-4 w-4"/>
+                  <ArrowRight
+                    className="
+                    h-4 w-4
+                    "
+                  />
 
 
                 </div>
@@ -605,6 +626,7 @@ export default function ConnectSocialAccountsPage() {
 
 
           </article>
+
 
 {/* RIGHT SIDEBAR */}
 
@@ -633,8 +655,6 @@ export default function ConnectSocialAccountsPage() {
   </div>
 </aside>
 
-
-
         </div>
 
 
@@ -642,6 +662,7 @@ export default function ConnectSocialAccountsPage() {
 
 
       <Footer />
+
 
     </>
   );
