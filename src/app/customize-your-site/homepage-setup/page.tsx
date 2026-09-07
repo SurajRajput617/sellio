@@ -651,7 +651,7 @@ export default function HomepageSetupPage() {
 
 
               <a
-                href="https://sellio-seven.vercel.app/documentation/site-colours"
+                href="/customize-your-site/site-colours"
                 className="
                 rounded-2xl
                 border border-border
