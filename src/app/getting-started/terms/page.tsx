@@ -7,28 +7,28 @@ import {
   AlertTriangle,
   ArrowLeft,
   ArrowRight,
-  Building2,
   CheckCircle2,
+  FileText,
   Info,
-  Play,
   Rocket,
+  Scale,
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
-export default function CreateCompanyPage() {
+export default function TermsPage() {
   const sections = [
-    { id: "what-you-need", label: "What You'll Need" },
-    { id: "create-company", label: "Create Your Company" },
-    { id: "company-information", label: "Company Information" },
-    { id: "review-details", label: "Review Your Details" },
-    { id: "video-guide", label: "Video Guide" },
+    { id: "ways-to-add-terms", label: "Two Ways to Add Your Terms" },
+    { id: "policies", label: "Prepare Your Store Policies" },
+    { id: "adding-to-website", label: "Adding Terms to Your Website" },
+    { id: "example", label: "Example" },
+    { id: "review", label: "Review Before Publishing" },
     { id: "complete", label: "Complete" },
   ];
 
-  const [activeSection, setActiveSection] = useState("what-you-need");
+  const [activeSection, setActiveSection] = useState("ways-to-add-terms");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,8 +69,8 @@ export default function CreateCompanyPage() {
           {/* LEFT SIDEBAR */}
           {/* ===================================================== */}
 
-      <DocumentationSidebar />
-
+       <DocumentationSidebar />
+       
           {/* ===================================================== */}
           {/* MAIN CONTENT */}
           {/* ===================================================== */}
@@ -78,7 +78,7 @@ export default function CreateCompanyPage() {
           <article className="min-w-0">
 
             {/* =================================================== */}
-            {/* PAGE HEADER */}
+            {/* HEADER */}
             {/* =================================================== */}
 
             <section>
@@ -87,32 +87,27 @@ export default function CreateCompanyPage() {
               </p>
 
               <div className="mt-4 flex items-center gap-4">
-
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-coral text-xl font-bold text-white">
-                  3
+                  4
                 </span>
 
                 <h1 className="font-display text-4xl font-bold tracking-[-0.04em] text-navy sm:text-5xl">
-                  Creating Your Company
+                  Adding Your Terms
                 </h1>
-
               </div>
 
               <p className="mt-5 max-w-3xl text-lg leading-8 text-navy-mute">
-                Set up your company information so your Sellio store has the
-                correct business details before you continue with the rest of
-                your store setup.
+                Add the important policy and terms pages your customers may
+                need when using or purchasing from your Sellio store.
               </p>
             </section>
 
             {/* =================================================== */}
-            {/* IMPORTANT NOTICE */}
+            {/* NOTICE */}
             {/* =================================================== */}
 
             <section className="pt-8">
-
               <div className="flex gap-4 rounded-xl border border-coral/20 bg-coral/5 p-5">
-
                 <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-coral" />
 
                 <div>
@@ -121,42 +116,108 @@ export default function CreateCompanyPage() {
                   </p>
 
                   <p className="mt-2 text-sm leading-6 text-navy-mute">
-                    Make sure the company information you enter is accurate.
-                    Your business details may be used throughout your Sellio
-                    store and related account settings.
+                    Sellio does not provide legal advice. Your terms and
+                    policies should reflect your own business, products and
+                    customer requirements. Consider getting appropriate
+                    professional advice if you are unsure what your business
+                    needs.
                   </p>
                 </div>
-
               </div>
-
             </section>
 
             {/* =================================================== */}
-            {/* WHAT YOU NEED */}
+            {/* TWO WAYS */}
             {/* =================================================== */}
 
             <section
-              id="what-you-need"
+              id="ways-to-add-terms"
               className="scroll-mt-28 border-b border-border py-12"
             >
-
               <h2 className="font-display text-3xl font-bold tracking-[-0.03em] text-navy">
-                What You&apos;ll Need
+                Two Ways to Add Your Terms
               </h2>
 
               <p className="mt-5 leading-8 text-navy-mute">
-                Before creating your company profile, have your basic business
-                information ready.
+                You can prepare your store policies yourself or use
+                professionally prepared documents that are appropriate for
+                your business.
+              </p>
+
+              {/* OPTION 1 */}
+
+              <div className="mt-10">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-coral text-sm font-bold text-white">
+                    1
+                  </span>
+
+                  <h3 className="font-display text-2xl font-bold text-navy">
+                    Create Your Own Terms
+                  </h3>
+                </div>
+
+                <p className="mt-5 leading-8 text-navy-mute">
+                  You can create the policy pages needed for your Sellio store
+                  based on how your business operates.
+                </p>
+
+                <p className="mt-4 leading-8 text-navy-mute">
+                  Make sure the information is accurate, easy for customers to
+                  understand and relevant to the products or services you
+                  provide.
+                </p>
+              </div>
+
+              {/* OPTION 2 */}
+
+              <div className="mt-10">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-coral text-sm font-bold text-white">
+                    2
+                  </span>
+
+                  <h3 className="font-display text-2xl font-bold text-navy">
+                    Use Professionally Prepared Terms
+                  </h3>
+                </div>
+
+                <p className="mt-5 leading-8 text-navy-mute">
+                  You may choose to have your policies prepared or reviewed by
+                  an appropriate professional.
+                </p>
+
+                <p className="mt-4 leading-8 text-navy-mute">
+                  This can help make sure the documents you publish are
+                  suitable for your particular business.
+                </p>
+              </div>
+            </section>
+
+            {/* =================================================== */}
+            {/* POLICIES */}
+            {/* =================================================== */}
+
+            <section
+              id="policies"
+              className="scroll-mt-28 border-b border-border py-12"
+            >
+              <h2 className="font-display text-3xl font-bold tracking-[-0.03em] text-navy">
+                Prepare Your Store Policies
+              </h2>
+
+              <p className="mt-5 leading-8 text-navy-mute">
+                The exact policies you need depend on your business. Common
+                pages you may want to prepare include:
               </p>
 
               <div className="mt-7 space-y-3">
-
                 {[
-                  "Your company or business name.",
-                  "Your business contact email.",
-                  "Your company address.",
-                  "Your main contact information.",
-                  "Any other business information required during setup.",
+                  "Terms and Conditions",
+                  "Privacy Policy",
+                  "Refund or Returns Policy",
+                  "Shipping or Delivery Information",
+                  "Contact Information",
                 ].map((item) => (
                   <div
                     key={item}
@@ -169,327 +230,329 @@ export default function CreateCompanyPage() {
                     </p>
                   </div>
                 ))}
-
               </div>
-
             </section>
 
             {/* =================================================== */}
-            {/* CREATE COMPANY */}
+            {/* ADDING TO WEBSITE */}
             {/* =================================================== */}
 
             <section
-              id="create-company"
+              id="adding-to-website"
               className="scroll-mt-28 border-b border-border py-12"
             >
-
               <h2 className="font-display text-3xl font-bold tracking-[-0.03em] text-navy">
-                Create Your Company
+                Adding the Terms to Your Website
               </h2>
+
+              <p className="mt-5 leading-8 text-navy-mute">
+                Once your policy content is ready, add each document to the
+                appropriate page in your Sellio store.
+              </p>
 
               {/* STEP 1 */}
 
-              <div className="mt-8 grid grid-cols-[44px_minmax(0,1fr)]">
-
+              <div className="mt-10 grid grid-cols-[44px_minmax(0,1fr)]">
                 <div className="flex flex-col items-center">
-
                   <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-coral text-sm font-bold text-white">
                     1
                   </span>
 
                   <div className="mt-2 h-full w-px bg-border" />
-
                 </div>
 
                 <div className="pb-10">
-
                   <h3 className="font-display text-2xl font-bold text-navy">
-                    Open your company settings
+                    Open your Sellio dashboard
                   </h3>
 
                   <p className="mt-5 leading-8 text-navy-mute">
-                    Sign in to your Sellio account and open the company or
-                    business settings for your store.
+                    Sign in to Sellio and open the dashboard for the store you
+                    want to update.
                   </p>
-
                 </div>
-
               </div>
 
               {/* STEP 2 */}
 
               <div className="grid grid-cols-[44px_minmax(0,1fr)]">
-
                 <div className="flex flex-col items-center">
-
                   <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-coral text-sm font-bold text-white">
                     2
                   </span>
 
                   <div className="mt-2 h-full w-px bg-border" />
-
                 </div>
 
                 <div className="pb-10">
-
                   <h3 className="font-display text-2xl font-bold text-navy">
-                    Enter your company name
+                    Go to your pages
                   </h3>
 
                   <p className="mt-5 leading-8 text-navy-mute">
-                    Enter the business or company name you want associated
-                    with your Sellio store.
+                    Open the area where you manage the content pages displayed
+                    on your Sellio website.
                   </p>
-
                 </div>
-
               </div>
 
               {/* STEP 3 */}
 
               <div className="grid grid-cols-[44px_minmax(0,1fr)]">
-
                 <div className="flex flex-col items-center">
-
                   <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-coral text-sm font-bold text-white">
                     3
                   </span>
 
                   <div className="mt-2 h-full w-px bg-border" />
-
                 </div>
 
                 <div className="pb-10">
-
                   <h3 className="font-display text-2xl font-bold text-navy">
-                    Add your company details
+                    Choose the policy page
                   </h3>
 
                   <p className="mt-5 leading-8 text-navy-mute">
-                    Complete the required business information, including your
-                    contact and company details.
+                    Select the page you want to edit, such as your Terms,
+                    Privacy Policy or Returns Policy.
                   </p>
-
                 </div>
-
               </div>
 
               {/* STEP 4 */}
 
               <div className="grid grid-cols-[44px_minmax(0,1fr)]">
-
                 <div className="flex flex-col items-center">
-
                   <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-coral text-sm font-bold text-white">
                     4
                   </span>
-
                 </div>
 
                 <div>
-
                   <h3 className="font-display text-2xl font-bold text-navy">
-                    Save your company
+                    Add your content and save
                   </h3>
 
                   <p className="mt-5 leading-8 text-navy-mute">
-                    Review the information you entered and save your company
-                    details when everything is correct.
+                    Add the relevant policy content, review it carefully and
+                    save your changes.
                   </p>
-
                 </div>
-
               </div>
-
             </section>
 
             {/* =================================================== */}
-            {/* COMPANY INFORMATION */}
+            {/* SELLIO DEMO ILLUSTRATION */}
             {/* =================================================== */}
 
             <section
-              id="company-information"
+              id="example"
               className="scroll-mt-28 border-b border-border py-12"
             >
-
               <h2 className="font-display text-3xl font-bold tracking-[-0.03em] text-navy">
-                Company Information
+                Example: Adding a Terms Page
               </h2>
 
               <p className="mt-5 leading-8 text-navy-mute">
-                When completing your company profile, carefully check each
-                field before saving.
+                Your Sellio dashboard may look similar to the example below
+                when managing your website pages.
               </p>
 
-              {/* ITEM 1 */}
+              {/* ================================================= */}
+              {/* DEMO SELLIO DASHBOARD IMAGE / UI */}
+              {/* ================================================= */}
 
-              <div className="mt-8">
+              <div className="mt-8 overflow-hidden rounded-xl border border-border bg-white shadow-sm">
 
-                <h3 className="font-display text-xl font-bold text-navy">
-                  Company Name
-                </h3>
+                {/* TOP BAR */}
 
-                <p className="mt-3 leading-7 text-navy-mute">
-                  Enter the name of the company or business operating your
-                  Sellio store.
-                </p>
+                <div className="flex items-center justify-between border-b border-border px-5 py-4">
+                  <div className="flex items-center gap-3">
 
+                    {/* SELLIO LOGO DEMO */}
+
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-coral text-sm font-bold text-white">
+                      S
+                    </div>
+
+                    <div>
+                      <p className="font-display text-base font-bold text-navy">
+                        Sellio
+                      </p>
+
+                      <p className="text-[11px] text-navy-mute">
+                        Store Dashboard
+                      </p>
+                    </div>
+                  </div>
+
+                  <span className="rounded-lg bg-coral/10 px-3 py-1.5 text-xs font-semibold text-coral">
+                    Admin
+                  </span>
+                </div>
+
+                {/* DASHBOARD */}
+
+                <div className="grid min-h-[440px] grid-cols-[150px_minmax(0,1fr)] sm:grid-cols-[190px_minmax(0,1fr)]">
+
+                  {/* DEMO LEFT MENU */}
+
+                  <div className="border-r border-border bg-navy/[0.025] p-4">
+
+                    <p className="px-3 text-[10px] font-bold uppercase tracking-[0.15em] text-navy-mute">
+                      Website
+                    </p>
+
+                    <div className="mt-3 space-y-1">
+
+                      <div className="rounded-lg px-3 py-2 text-xs text-navy-mute">
+                        Dashboard
+                      </div>
+
+                      <div className="flex items-center gap-2 rounded-lg bg-coral/10 px-3 py-2 text-xs font-semibold text-coral">
+                        <FileText className="h-3.5 w-3.5" />
+                        Pages
+                      </div>
+
+                      <div className="rounded-lg px-3 py-2 text-xs text-navy-mute">
+                        Navigation
+                      </div>
+
+                      <div className="rounded-lg px-3 py-2 text-xs text-navy-mute">
+                        Settings
+                      </div>
+
+                    </div>
+                  </div>
+
+                  {/* DEMO PAGE EDITOR */}
+
+                  <div className="p-5 sm:p-7">
+
+                    <div className="flex items-center justify-between">
+
+                      <div>
+                        <p className="text-xs font-medium text-coral">
+                          Website
+                        </p>
+
+                        <h3 className="mt-1 font-display text-2xl font-bold text-navy">
+                          Pages
+                        </h3>
+                      </div>
+
+                      <button
+                        type="button"
+                        className="rounded-lg bg-coral px-3 py-2 text-xs font-semibold text-white"
+                      >
+                        Save
+                      </button>
+
+                    </div>
+
+                    <div className="mt-7">
+
+                      <label className="text-xs font-semibold text-navy">
+                        Page
+                      </label>
+
+                      <div className="mt-2 rounded-lg border border-border bg-paper px-4 py-3 text-sm text-navy">
+                        Terms & Conditions
+                      </div>
+
+                    </div>
+
+                    <div className="mt-5">
+
+                      <label className="text-xs font-semibold text-navy">
+                        Page title
+                      </label>
+
+                      <div className="mt-2 rounded-lg border border-border bg-paper px-4 py-3 text-sm text-navy">
+                        Terms & Conditions
+                      </div>
+
+                    </div>
+
+                    <div className="mt-5">
+
+                      <label className="text-xs font-semibold text-navy">
+                        Content
+                      </label>
+
+                      <div className="mt-2 min-h-[135px] rounded-lg border border-border bg-paper p-4">
+
+                        <div className="h-2 w-4/5 rounded bg-navy/10" />
+
+                        <div className="mt-3 h-2 w-full rounded bg-navy/10" />
+
+                        <div className="mt-3 h-2 w-11/12 rounded bg-navy/10" />
+
+                        <div className="mt-3 h-2 w-3/4 rounded bg-navy/10" />
+
+                        <div className="mt-6 h-2 w-1/2 rounded bg-coral/20" />
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
               </div>
 
-              {/* ITEM 2 */}
-
-              <div className="mt-8">
-
-                <h3 className="font-display text-xl font-bold text-navy">
-                  Business Email
-                </h3>
-
-                <p className="mt-3 leading-7 text-navy-mute">
-                  Add an email address that can be used for your business
-                  communications.
-                </p>
-
-              </div>
-
-              {/* ITEM 3 */}
-
-              <div className="mt-8">
-
-                <h3 className="font-display text-xl font-bold text-navy">
-                  Business Address
-                </h3>
-
-                <p className="mt-3 leading-7 text-navy-mute">
-                  Enter your company address carefully and check that all
-                  details are correct.
-                </p>
-
-              </div>
-
-              {/* ITEM 4 */}
-
-              <div className="mt-8">
-
-                <h3 className="font-display text-xl font-bold text-navy">
-                  Contact Information
-                </h3>
-
-                <p className="mt-3 leading-7 text-navy-mute">
-                  Complete any additional contact details required for your
-                  company profile.
-                </p>
-
-              </div>
-
+              <p className="mt-3 text-xs leading-5 text-navy-mute">
+                Demo illustration for documentation purposes. Replace this
+                with a real Sellio dashboard screenshot when available.
+              </p>
             </section>
 
             {/* =================================================== */}
-            {/* REVIEW DETAILS */}
+            {/* REVIEW */}
             {/* =================================================== */}
 
             <section
-              id="review-details"
+              id="review"
               className="scroll-mt-28 border-b border-border py-12"
             >
-
               <h2 className="font-display text-3xl font-bold tracking-[-0.03em] text-navy">
-                Review Your Details
+                Review Before Publishing
               </h2>
 
               <p className="mt-5 leading-8 text-navy-mute">
-                Before continuing, review your company information and make
-                sure everything has been entered correctly.
+                Before publishing your policy pages, check that the content is
+                complete and that customers can easily find it.
               </p>
 
               <div className="mt-7 space-y-3">
-
                 {[
-                  "Check the spelling of your company name.",
-                  "Make sure your business email is correct.",
-                  "Review your company address.",
-                  "Check your contact information.",
-                  "Save any changes before leaving the page.",
+                  "Check each policy page for missing information.",
+                  "Make sure the page titles are clear.",
+                  "Check that the content is readable on mobile.",
+                  "Make sure customers can navigate to the pages.",
+                  "Save and publish your latest changes.",
                 ].map((item) => (
                   <div
                     key={item}
                     className="flex items-start gap-3"
                   >
-
                     <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-coral" />
 
                     <p className="leading-7 text-navy-mute">
                       {item}
                     </p>
-
                   </div>
                 ))}
-
               </div>
 
               <div className="mt-8 flex gap-4 rounded-xl border border-border bg-white p-5">
-
-                <Info className="mt-0.5 h-5 w-5 shrink-0 text-coral" />
+                <Scale className="mt-0.5 h-5 w-5 shrink-0 text-coral" />
 
                 <p className="text-sm leading-6 text-navy-mute">
-                  If any of your company information changes later, make sure
-                  you update your Sellio company profile so your store details
-                  remain accurate.
+                  Review your policies whenever your business, products,
+                  delivery methods or customer processes change.
                 </p>
-
               </div>
-
-            </section>
-
-            {/* =================================================== */}
-            {/* VIDEO GUIDE */}
-            {/* =================================================== */}
-
-            <section
-              id="video-guide"
-              className="scroll-mt-28 border-b border-border py-12"
-            >
-
-              <div className="flex items-center gap-3">
-
-                <Play className="h-5 w-5 text-coral" />
-
-                <p className="text-sm font-bold uppercase tracking-[0.14em] text-coral">
-                  Video Guide
-                </p>
-
-              </div>
-
-              <h2 className="mt-4 font-display text-3xl font-bold tracking-[-0.03em] text-navy">
-                Learn How to Create Your Company
-              </h2>
-
-              <p className="mt-5 leading-8 text-navy-mute">
-                Watch the video below for a walkthrough of setting up your
-                company information for your Sellio store.
-              </p>
-
-              {/* YOUTUBE DEMO */}
-
-              <div className="mt-8 overflow-hidden rounded-xl border border-border bg-navy">
-
-                <div className="aspect-video">
-
-                  <iframe
-                    className="h-full w-full"
-                    src="https://www.youtube.com/embed/VIDEO_ID"
-                    title="How to create your company in Sellio"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-
-                </div>
-
-              </div>
-
-              <p className="mt-3 text-xs text-navy-mute">
-                Replace VIDEO_ID with your YouTube video ID.
-              </p>
-
             </section>
 
             {/* =================================================== */}
@@ -500,27 +563,22 @@ export default function CreateCompanyPage() {
               id="complete"
               className="scroll-mt-28 py-12"
             >
-
               <div className="flex gap-4">
 
                 <CheckCircle2 className="mt-1 h-6 w-6 shrink-0 text-coral" />
 
                 <div>
-
                   <h2 className="font-display text-2xl font-bold text-navy">
-                    Company setup complete
+                    Terms added
                   </h2>
 
                   <p className="mt-3 max-w-2xl leading-7 text-navy-mute">
-                    Once your company information has been added and checked,
-                    you&apos;re ready to continue to the next part of your
-                    Sellio store setup.
+                    Once your required policy pages are ready and available on
+                    your store, continue to the payment gateway setup.
                   </p>
-
                 </div>
 
               </div>
-
             </section>
 
             {/* =================================================== */}
@@ -530,41 +588,33 @@ export default function CreateCompanyPage() {
             <div className="grid gap-4 border-t border-border py-10 sm:grid-cols-2">
 
               <Link
-                href="/documentation/add-domain"
+                href="/getting-started/create-company"
                 className="group rounded-2xl border border-border bg-white p-5 transition-colors hover:border-coral/40"
               >
-
                 <span className="flex items-center gap-2 text-xs font-bold uppercase text-navy-mute">
-
                   <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
 
                   Previous
-
                 </span>
 
                 <p className="mt-2 font-display text-lg font-bold">
-                  Add Your Domain to Sellio
+                  Creating Your Company
                 </p>
-
               </Link>
 
               <Link
-                href="/documentation/terms"
+                href="/getting-started/payment-gateway"
                 className="group rounded-2xl border border-border bg-white p-5 text-right transition-colors hover:border-coral/40"
               >
-
                 <span className="flex items-center justify-end gap-2 text-xs font-bold uppercase text-navy-mute">
-
                   Next
 
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-
                 </span>
 
                 <p className="mt-2 font-display text-lg font-bold">
-                  Adding Your Terms
+                  Payment Gateway
                 </p>
-
               </Link>
 
             </div>
@@ -575,7 +625,7 @@ export default function CreateCompanyPage() {
           {/* RIGHT SIDEBAR */}
           {/* ===================================================== */}
 
-         {/* ===================================================== */}
+        {/* ===================================================== */}
 {/* RIGHT SIDEBAR */}
 {/* ===================================================== */}
 

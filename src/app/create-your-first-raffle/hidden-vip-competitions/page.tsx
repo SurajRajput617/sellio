@@ -703,7 +703,7 @@ export default function HiddenVipCompetitionsPage() {
 
 
               <Link
-                href="/documentation/product-categories"
+                href="/create-your-first-raffle/product-categories"
                 className="
                 rounded-xl
                 border
@@ -730,7 +730,7 @@ export default function HiddenVipCompetitionsPage() {
 
 
               <Link
-                href="/documentation/add-logo"
+                href="/create-your-first-raffle/add-logo"
                 className="
                 rounded-xl
                 border

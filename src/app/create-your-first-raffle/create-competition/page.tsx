@@ -521,7 +521,7 @@ export default function CreateCompetitionPage() {
 
             <div className="grid gap-4 py-10 sm:grid-cols-2">
               <Link
-                href="/documentation/payment-gateway"
+                href="/getting-started/payment-gateway"
                 className="group rounded-2xl border border-border bg-white p-5 transition-colors hover:border-coral/40"
               >
                 <span className="flex items-center gap-2 text-xs font-bold uppercase text-navy-mute">
@@ -535,7 +535,7 @@ export default function CreateCompetitionPage() {
               </Link>
 
               <Link
-                href="/documentation/instant-wins"
+                href="/create-your-first-raffle/instant-wins"
                 className="group rounded-2xl border border-border bg-white p-5 text-right transition-colors hover:border-coral/40"
               >
                 <span className="flex items-center justify-end gap-2 text-xs font-bold uppercase text-navy-mute">

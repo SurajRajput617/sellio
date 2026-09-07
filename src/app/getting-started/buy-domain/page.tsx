@@ -306,7 +306,7 @@ export default function BuyDomainPage() {
               </Link>
 
               <Link
-                href="/documentation/add-domain"
+                href="/getting-started/add-domain"
                 className="group rounded-2xl border border-border bg-white p-5 text-right transition-colors hover:border-coral/40"
               >
                 <span className="flex items-center justify-end gap-2 text-xs font-bold uppercase text-navy-mute">

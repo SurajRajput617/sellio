@@ -422,7 +422,7 @@ export default function PaymentGatewayPage() {
               {/* PREVIOUS */}
 
               <Link
-                href="/documentation/terms"
+                href="/getting-started/terms"
                 className="group rounded-2xl border border-border bg-white p-5 transition-colors hover:border-coral/40"
               >
 
@@ -443,7 +443,7 @@ export default function PaymentGatewayPage() {
               {/* NEXT */}
 
               <Link
-                href="create-competition"
+                href="/create-your-first-raffle/create-competition"
                 className="group rounded-2xl border border-border bg-white p-5 text-right transition-colors hover:border-coral/40"
               >
 

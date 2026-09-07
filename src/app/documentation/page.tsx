@@ -131,7 +131,7 @@ export default function DocumentationPage() {
 
                 {/* 1 */}
                 <Link
-                  href="/documentation/buy-domain"
+                  href="/getting-started/buy-domain"
                   className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-coral"
                 >
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-coral text-xs font-bold text-white">
@@ -143,7 +143,7 @@ export default function DocumentationPage() {
 
                 {/* 2 */}
                 <Link
-                  href="/documentation/add-domain"
+                  href="/getting-started/buy-domain"
                   className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-coral"
                 >
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-coral text-xs font-bold text-white">
@@ -155,7 +155,7 @@ export default function DocumentationPage() {
 
                 {/* 3 */}
                 <Link
-                  href="/documentation/create-company"
+                  href="/getting-started/create-company"
                   className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-coral"
                 >
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-coral text-xs font-bold text-white">
@@ -167,7 +167,7 @@ export default function DocumentationPage() {
 
                 {/* 4 */}
                 <Link
-                  href="/documentation/terms"
+                  href="/getting-started/terms"
                   className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-coral"
                 >
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-coral text-xs font-bold text-white">
@@ -179,7 +179,7 @@ export default function DocumentationPage() {
 
                 {/* 5 */}
                 <Link
-                  href="/documentation/payment-gateway"
+                  href="/getting-started/payment-gateway"
                   className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-coral"
                 >
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-coral text-xs font-bold text-white">
@@ -227,7 +227,7 @@ export default function DocumentationPage() {
   <nav className="mt-1 space-y-1">
 
     <Link
-      href="/documentation/create-competition"
+      href="/create-your-first-raffle/create-competition"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -239,7 +239,7 @@ export default function DocumentationPage() {
     </Link>
 
     <Link
-      href="/documentation/instant-wins"
+      href="/create-your-first-raffle/instant-wins"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -251,7 +251,7 @@ export default function DocumentationPage() {
     </Link>
 
     <Link
-      href="/documentation/product-categories"
+      href="/create-your-first-raffle/product-categories"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -263,7 +263,7 @@ export default function DocumentationPage() {
     </Link>
 
     <Link
-      href="/documentation/hidden-vip-competitions"
+      href="/create-your-first-raffle/hidden-vip-competitions"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute

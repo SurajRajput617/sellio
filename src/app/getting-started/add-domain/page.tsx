@@ -568,7 +568,7 @@ export default function AddDomainPage() {
 
             <div className="grid gap-4 border-t border-border py-10 sm:grid-cols-2">
               <Link
-                href="/documentation/buy-domain"
+                href="/getting-started/buy-domain"
                 className="group rounded-2xl border border-border bg-white p-5 transition-colors hover:border-coral/40"
               >
                 <span className="flex items-center gap-2 text-xs font-bold uppercase text-navy-mute">
@@ -583,7 +583,7 @@ export default function AddDomainPage() {
               </Link>
 
               <Link
-                href="/documentation/create-company"
+                href="/getting-started/create-company"
                 className="group rounded-2xl border border-border bg-white p-5 text-right transition-colors hover:border-coral/40"
               >
                 <span className="flex items-center justify-end gap-2 text-xs font-bold uppercase text-navy-mute">

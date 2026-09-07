@@ -10,7 +10,6 @@ import {
   ImageIcon,
   Info,
   Play,
-  Sparkles,
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
@@ -18,17 +17,16 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-export default function InstantWinsPage() {
+export default function ProductCategoriesPage() {
   const sections = [
-    { id: "competition", label: "Competition Manager" },
-    { id: "setup", label: "Create Instant Wins" },
-    { id: "media", label: "Prize Media" },
-    { id: "working", label: "How It Works" },
-    { id: "games", label: "Reveal Experiences" },
+    { id: "access", label: "Open Categories" },
+    { id: "create", label: "Create Category" },
+    { id: "image", label: "Category Image" },
+    { id: "assign", label: "Assign Competitions" },
     { id: "video", label: "Video Guide" },
   ];
 
-  const [activeSection, setActiveSection] = useState("competition");
+  const [activeSection, setActiveSection] = useState("access");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -78,6 +76,7 @@ export default function InstantWinsPage() {
           <DocumentationSidebar />
 
 
+
           {/* MAIN CONTENT */}
 
           <article className="min-w-0">
@@ -101,18 +100,18 @@ export default function InstantWinsPage() {
                   text-xl font-bold text-white
                   "
                 >
-                  2
+                  3
                 </span>
 
 
                 <h1
                   className="
-                  font-display text-4xl
-                  font-bold tracking-tight
+                  font-display text-4xl font-bold
+                  tracking-tight
                   sm:text-5xl
                   "
                 >
-                  Add Instant Wins
+                  Product Categories
                 </h1>
 
               </div>
@@ -125,10 +124,11 @@ export default function InstantWinsPage() {
                 text-navy-mute
                 "
               >
-                Add exciting instant reward experiences to your Sellio
-                competitions. Give customers a faster way to discover prizes
-                and create a more engaging competition journey.
+                Organize your Sellio competitions with product categories.
+                Categories help customers discover competitions faster and
+                create a cleaner browsing experience.
               </p>
+
 
             </section>
 
@@ -152,13 +152,15 @@ export default function InstantWinsPage() {
 
                 <Info className="h-5 w-5 text-coral shrink-0" />
 
+
                 <p className="text-sm leading-6 text-navy-mute">
-                  Instant Wins are designed to work with Sellio competitions,
-                  allowing admins to create special prizes and manage reward
-                  experiences from the dashboard.
+                  Categories are optional but recommended when your Sellio
+                  store contains multiple competition types.
                 </p>
 
+
               </div>
+
 
             </section>
 
@@ -167,22 +169,21 @@ export default function InstantWinsPage() {
 
 
 
-
-            {/* STEP 1 */}
+            {/* ACCESS CATEGORY */}
 
             <section
-              id="competition"
+              id="access"
               className="scroll-mt-28 border-b border-border py-12"
             >
 
               <h2 className="text-3xl font-bold">
-                Open Competition Manager
+                Open Product Categories
               </h2>
 
 
               <p className="mt-5 leading-8 text-navy-mute">
-                Start by opening the competition you want to enhance with
-                Instant Wins from your Sellio admin dashboard.
+                From your Sellio admin dashboard, open the Product Categories
+                section to manage your competition organisation.
               </p>
 
 
@@ -196,13 +197,15 @@ export default function InstantWinsPage() {
               >
 
                 <h3 className="font-bold">
-                  Competition Dashboard
+                  Categories Dashboard
                 </h3>
 
+
                 <p className="mt-2 text-navy-mute">
-                  Select an existing competition and open the Instant Wins
-                  management section.
+                  View existing categories or create new categories for your
+                  competitions.
                 </p>
+
 
               </div>
 
@@ -214,22 +217,21 @@ export default function InstantWinsPage() {
 
 
 
-
-            {/* STEP 2 */}
+            {/* CREATE CATEGORY */}
 
             <section
-              id="setup"
+              id="create"
               className="scroll-mt-28 border-b border-border py-12"
             >
 
               <h2 className="text-3xl font-bold">
-                Create Instant Win Prizes
+                Create a New Category
               </h2>
 
 
               <p className="mt-5 text-navy-mute leading-8">
-                Add prizes that customers can unlock during their competition
-                experience.
+                Add categories that match the type of competitions available
+                on your Sellio website.
               </p>
 
 
@@ -237,13 +239,14 @@ export default function InstantWinsPage() {
 
 
                 {[
-                  "Prize name",
-                  "Prize image",
-                  "Prize value",
-                  "Number of available wins",
-                  "Reward type",
-                  "Prize description",
+                  "Category name",
+                  "Short description",
+                  "Category image",
+                  "Display order",
+                  "Category visibility",
+                  "Competition assignment",
                 ].map((item)=>(
+
                   <div
                     key={item}
                     className="
@@ -255,6 +258,7 @@ export default function InstantWinsPage() {
                   >
                     {item}
                   </div>
+
                 ))}
 
 
@@ -272,18 +276,18 @@ export default function InstantWinsPage() {
             {/* IMAGE */}
 
             <section
-              id="media"
+              id="image"
               className="scroll-mt-28 border-b border-border py-12"
             >
 
               <h2 className="text-3xl font-bold">
-                Add Prize Media
+                Add Category Image
               </h2>
 
 
               <p className="mt-5 leading-8 text-navy-mute">
-                Upload attractive prize images to make your Instant Win offers
-                clear and engaging for customers.
+                Add visual images to make your categories easier for customers
+                to identify.
               </p>
 
 
@@ -293,26 +297,27 @@ export default function InstantWinsPage() {
                 border border-dashed
                 border-border
                 bg-white
-                p-12 text-center
+                p-12
+                text-center
                 "
               >
 
                 <ImageIcon
                   className="
-                  mx-auto
-                  h-10 w-10
+                  mx-auto h-10 w-10
                   text-coral
                   "
                 />
 
 
                 <h3 className="mt-4 font-bold">
-                  Sellio Prize Image Preview
+                  Sellio Category Image Preview
                 </h3>
 
 
                 <p className="mt-2 text-sm text-navy-mute">
-                  Demo image area. Replace with your Sellio prize image.
+                  Demo image area. Replace this with your Sellio category
+                  artwork.
                 </p>
 
 
@@ -327,28 +332,34 @@ export default function InstantWinsPage() {
 
 
 
-
-            {/* HOW WORK */}
+            {/* ASSIGN COMPETITIONS */}
 
             <section
-              id="working"
+              id="assign"
               className="scroll-mt-28 border-b border-border py-12"
             >
 
               <h2 className="text-3xl font-bold">
-                How Instant Wins Work
+                Assign Competitions to Categories
               </h2>
 
 
-              <div className="mt-6 space-y-4">
+              <p className="mt-5 leading-8 text-navy-mute">
+                Connect competitions with the correct category so customers
+                can easily browse related entries.
+              </p>
+
+
+              <div className="mt-7 space-y-4">
 
 
               {[
-                "Customer purchases competition entries",
-                "Sellio checks available Instant Win rewards",
-                "Winning results are generated automatically",
-                "Customer receives their reward information",
+                "Open competition settings",
+                "Select category option",
+                "Choose one or multiple categories",
+                "Save competition changes",
               ].map((item)=>(
+
                 <div
                   key={item}
                   className="flex gap-3"
@@ -358,7 +369,6 @@ export default function InstantWinsPage() {
                     className="
                     h-5 w-5
                     text-coral
-                    shrink-0
                     "
                   />
 
@@ -367,65 +377,7 @@ export default function InstantWinsPage() {
                   </p>
 
                 </div>
-              ))}
 
-
-              </div>
-
-
-            </section>
-
-
-
-
-
-
-
-
-            {/* GAME MODES */}
-
-            <section
-              id="games"
-              className="scroll-mt-28 border-b border-border py-12"
-            >
-
-              <div className="flex gap-3">
-
-                <Sparkles className="text-coral"/>
-
-                <h2 className="text-3xl font-bold">
-                  Interactive Reveal Experiences
-                </h2>
-
-              </div>
-
-
-              <p className="mt-5 text-navy-mute leading-8">
-                Sellio can support interactive reward experiences that make
-                prize reveals more memorable.
-              </p>
-
-
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-
-
-              {[
-                "Spin Wheel",
-                "Scratch Card",
-                "Mystery Box",
-                "Prize Reveal",
-              ].map((item)=>(
-                <div
-                  key={item}
-                  className="
-                  rounded-xl
-                  border border-border
-                  bg-white
-                  p-5
-                  "
-                >
-                  {item}
-                </div>
               ))}
 
 
@@ -452,6 +404,7 @@ export default function InstantWinsPage() {
 
                 <Play className="text-coral"/>
 
+
                 <span
                   className="
                   text-sm font-bold
@@ -464,14 +417,16 @@ export default function InstantWinsPage() {
               </div>
 
 
+
               <h2 className="mt-4 text-3xl font-bold">
-                How To Add Instant Wins
+                Managing Product Categories
               </h2>
 
 
+
               <p className="mt-4 text-navy-mute">
-                Watch the Sellio walkthrough for creating and managing Instant
-                Win prizes.
+                Watch the Sellio walkthrough for creating and managing
+                categories.
               </p>
 
 
@@ -488,14 +443,17 @@ export default function InstantWinsPage() {
                 <iframe
                   className="h-full w-full"
                   src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                  title="Sellio Instant Wins Guide"
+                  title="Sellio Product Categories Guide"
                   allowFullScreen
                 />
+
 
               </div>
 
 
             </section>
+
+
 
 
 
@@ -513,8 +471,9 @@ export default function InstantWinsPage() {
               "
             >
 
+
               <Link
-                href="/documentation/create-competition"
+                href="/create-your-first-raffle/instant-wins"
                 className="
                 rounded-xl
                 border border-border
@@ -533,7 +492,7 @@ export default function InstantWinsPage() {
 
 
                 <p className="mt-2 font-bold">
-                  Create a Competition
+                  Add Instant Wins
                 </p>
 
               </Link>
@@ -542,7 +501,7 @@ export default function InstantWinsPage() {
 
 
               <Link
-                href="/documentation/product-categories"
+                href="/create-your-first-raffle/hidden-vip-competitions"
                 className="
                 rounded-xl
                 border border-border
@@ -561,13 +520,15 @@ export default function InstantWinsPage() {
 
 
                 <p className="mt-2 font-bold">
-                  Product Categories
+                  Hidden VIP Competitions
                 </p>
+
 
               </Link>
 
 
             </div>
+
 
 
           </article>
@@ -599,6 +560,7 @@ export default function InstantWinsPage() {
     </nav>
   </div>
 </aside>
+
 
         </div>
 
