@@ -1100,7 +1100,7 @@ text-navy-mute
 
 
                 <Link
-                  href="/documentation/setting-up-the-scheme"
+                  href="/affiliate-referral-scheme/setting-up-the-scheme"
                   className="
                     flex
                     items-center
