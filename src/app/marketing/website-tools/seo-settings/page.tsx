@@ -718,7 +718,7 @@ and a seamless shopping experience.
 
 
                 <Link
-                  href="/documentation/promos-and-discounts"
+                  href="/marketing/website-tools/promos-and-discounts"
                   className="
                     flex
                     items-center
@@ -752,7 +752,7 @@ and a seamless shopping experience.
 
 
                 <Link
-                  href="/documentation/upsell"
+                  href="/marketing/website-tools/upsell"
                   className="
                     flex
                     items-center
