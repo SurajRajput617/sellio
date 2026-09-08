@@ -851,7 +851,7 @@ text-coral
 
 
                 <Link
-                  href="/documentation/sms"
+                  href="/marketing/sms-and-email/sms"
                   className="
                     flex
                     items-center
@@ -882,12 +882,8 @@ text-coral
 
 
 
-
-
-
-
                 <Link
-                  href="/documentation/top-banner-text"
+                  href="/marketing/website-tools/top-banner-text"
                   className="
                     flex
                     items-center
