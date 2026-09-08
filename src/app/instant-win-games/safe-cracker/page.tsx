@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-export default function LootBoxesPage() {
+export default function SafeCrackerPage() {
   const sections = [
     { id: "what-is-it", label: "What is It?" },
     { id: "how-it-works", label: "How It Works" },
@@ -74,7 +74,6 @@ export default function LootBoxesPage() {
 
             {/* HEADER */}
 
-
             <section>
 
               <p className="text-sm font-semibold text-coral">
@@ -83,13 +82,13 @@ export default function LootBoxesPage() {
 
 
               <h1 className="mt-4 text-4xl font-bold">
-                Loot Boxes
+                Safe Cracker
               </h1>
 
 
               <p className="mt-5 leading-8 text-navy-mute">
-                A loot box opening game with a scrolling
-                reveal animation.
+                A safe-cracking themed game where customers
+                crack open a digital safe to reveal prizes.
               </p>
 
 
@@ -107,57 +106,42 @@ export default function LootBoxesPage() {
               className="border-b border-border py-12"
             >
 
-
               <div className="flex items-center gap-3">
 
                 <CircleHelp className="h-6 w-6 text-coral"/>
-
 
                 <h2 className="text-3xl font-bold">
                   What is It?
                 </h2>
 
-
               </div>
 
 
-
               <p className="mt-5 leading-8 text-navy-mute">
-                Loot Boxes is an instant win game where
-                customers open a loot box to reveal their
-                ticket result.
+                Safe Cracker is an interactive instant win
+                game where customers crack open a digital
+                safe and discover their ticket result.
               </p>
-
-
 
 
               <div className="mt-6 space-y-4">
 
 
                 {[
-                  "Customer opens the loot box display.",
-                  "The reveal animation starts.",
-                  "The final result is displayed."
+                  "Customer opens the Safe Cracker game.",
+                  "Customer interacts with the safe.",
+                  "The safe reveals the final result."
                 ].map((item)=>(
+                  
+                  <div key={item} className="flex gap-3">
 
-
-                  <div
-                    key={item}
-                    className="flex gap-3"
-                  >
-
-                    <CheckCircle2
-                      className="h-5 w-5 text-coral"
-                    />
-
+                    <CheckCircle2 className="h-5 w-5 text-coral"/>
 
                     <p className="text-navy-mute">
                       {item}
                     </p>
 
-
                   </div>
-
 
                 ))}
 
@@ -166,27 +150,18 @@ export default function LootBoxesPage() {
 
 
             </section>
-            
-
-            {/* HOW IT WORKS */}
-
+                        {/* HOW IT WORKS */}
 
 
             <section
               id="how-it-works"
-              className="
-              border-b border-border
-              py-12
-              "
+              className="border-b border-border py-12"
             >
-
 
               <div className="flex items-center gap-3">
 
 
-                <PlayCircle
-                  className="h-6 w-6 text-coral"
-                />
+                <PlayCircle className="h-6 w-6 text-coral"/>
 
 
                 <h2 className="text-3xl font-bold">
@@ -198,11 +173,12 @@ export default function LootBoxesPage() {
 
 
 
-
               <p className="mt-5 leading-8 text-navy-mute">
-                Customers interact with the loot box
-                animation and discover their result.
+                Customers interact with the safe cracking
+                experience. The safe opens and shows the
+                ticket result.
               </p>
+
 
 
 
@@ -211,11 +187,11 @@ export default function LootBoxesPage() {
 
 
                 {[
-                  "Customer purchases a ticket.",
-                  "Loot box opening animation starts.",
-                  "Scrolling reveal animation begins.",
-                  "Prize or No Win result appears.",
-                  "Customer views final outcome."
+                  "Customer views the safe display.",
+                  "Customer starts the safe reveal.",
+                  "The safe opens with animation.",
+                  "The ticket result is displayed.",
+                  "Winning tickets reveal prizes."
                 ].map((item,index)=>(
 
 
@@ -264,17 +240,13 @@ export default function LootBoxesPage() {
 
 
 
-
             {/* CUSTOMISATION OPTIONS */}
 
 
 
             <section
               id="customisation"
-              className="
-              border-b border-border
-              py-12
-              "
+              className="border-b border-border py-12"
             >
 
 
@@ -285,20 +257,12 @@ export default function LootBoxesPage() {
 
 
 
-
               <p className="mt-5 leading-8 text-navy-mute">
-                Customize your Loot Boxes game using
-                prize images and visual settings.
+                Customize your Safe Cracker game with
+                custom sounds and visual settings.
               </p>
 
 
-
-
-
-
-
-
-              {/* PRIZE IMAGES */}
 
 
 
@@ -306,39 +270,27 @@ export default function LootBoxesPage() {
 
 
                 <h3 className="text-xl font-bold">
-                  Prize Images
+                  Custom Sounds
                 </h3>
-
-
-
-
-                <p className="mt-3 leading-7 text-navy-mute">
-                  Each instant win prize can have a
-                  featured image uploaded. These images
-                  appear during the reveal animation.
-                </p>
-
 
 
 
                 <div className="mt-6 space-y-6">
 
 
+
                   <div>
 
-
                     <h4 className="font-bold">
-                      Upload Prize Images
+                      Open Sound
                     </h4>
 
 
-
                     <p className="mt-2 text-navy-mute">
-                      Upload images for prizes that
-                      customers can reveal inside the
-                      loot box.
+                      Upload an MP3 sound that plays
+                      when the safe opening animation
+                      starts.
                     </p>
-
 
                   </div>
 
@@ -349,21 +301,19 @@ export default function LootBoxesPage() {
 
                   <div>
 
-
                     <h4 className="font-bold">
-                      Default Image
+                      Win Sound
                     </h4>
 
 
-
                     <p className="mt-2 text-navy-mute">
-                      If no custom image is added,
-                      the default placeholder image
-                      is displayed.
+                      Add a winning sound effect that
+                      plays when a customer receives
+                      a prize.
                     </p>
 
-
                   </div>
+
 
 
                 </div>
@@ -371,6 +321,85 @@ export default function LootBoxesPage() {
 
               </div>
               
+
+              {/* DESIGN SETTINGS */}
+
+
+
+              <div className="mt-12">
+
+
+                <h3 className="text-xl font-bold">
+                  Design Settings
+                </h3>
+
+
+
+
+                <p className="mt-3 leading-7 text-navy-mute">
+                  Configure the Safe Cracker appearance
+                  to fit your campaign and branding.
+                </p>
+
+
+
+
+
+                <div className="mt-6 space-y-4">
+
+
+                  {[
+                    "Use branded graphics and visuals.",
+                    "Create a themed safe experience.",
+                    "Preview changes before publishing."
+                  ].map((item,index)=>(
+
+
+                    <div
+                      key={item}
+                      className="flex gap-3"
+                    >
+
+
+                      <span
+                        className="
+                        flex h-6 w-6
+                        items-center justify-center
+                        rounded-full
+                        bg-coral
+                        text-xs
+                        font-bold
+                        text-white
+                        "
+                      >
+                        {index + 1}
+                      </span>
+
+
+
+
+                      <p className="text-navy-mute">
+                        {item}
+                      </p>
+
+
+                    </div>
+
+
+                  ))}
+
+
+                </div>
+
+
+              </div>
+
+
+
+
+
+
+
 
               {/* PREVIEW */}
 
@@ -380,25 +409,20 @@ export default function LootBoxesPage() {
 
 
                 <h3 className="text-xl font-bold">
-                  Loot Boxes Preview
+                  Safe Cracker Preview
                 </h3>
 
 
 
-                <p
-                  className="
-                  mt-3
-                  leading-7
-                  text-navy-mute
-                  "
-                >
-                  Test the scrolling reveal animation
-                  and prize display before launching
-                  the game.
+                <p className="mt-3 leading-7 text-navy-mute">
+                  Test the safe opening animation,
+                  sounds and result display before
+                  publishing the game.
                 </p>
 
 
               </div>
+
 
 
 
@@ -418,34 +442,20 @@ export default function LootBoxesPage() {
 
             <section
               id="try-first"
-              className="
-              py-12
-              "
+              className="py-12"
             >
 
 
-              <h2
-                className="
-                text-3xl
-                font-bold
-                "
-              >
+              <h2 className="text-3xl font-bold">
                 Want to try it first?
               </h2>
 
 
 
 
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                Test your Loot Boxes game before launch.
-                Check the reveal animation and prize
-                results.
+              <p className="mt-5 leading-8 text-navy-mute">
+                Test your Safe Cracker game before launch.
+                Check the animation, sounds and result.
               </p>
 
 
@@ -455,10 +465,10 @@ export default function LootBoxesPage() {
 
 
                 {[
-                  "Open Loot Boxes preview mode.",
-                  "Start the scrolling reveal animation.",
-                  "Check the revealed prize result.",
-                  "Update settings if required."
+                  "Open Safe Cracker preview mode.",
+                  "Start the safe cracking interaction.",
+                  "Check the revealed ticket result.",
+                  "Adjust settings if needed."
                 ].map((item,index)=>(
 
 
@@ -506,33 +516,22 @@ export default function LootBoxesPage() {
 
 
 
-
-
             {/* PREVIOUS NEXT */}
 
 
 
             <div
               className="
-              grid
-              gap-4
-              border-t
-              border-border
+              grid gap-4
+              border-t border-border
               py-10
               sm:grid-cols-2
               "
             >
 
 
-
-
-
-              {/* PREVIOUS */}
-
-
-
               <Link
-                href="/documentation/safe-cracker"
+                href="/instant-win-games/pinata"
                 className="
                 rounded-2xl
                 border
@@ -541,21 +540,13 @@ export default function LootBoxesPage() {
                 "
               >
 
-
-                <p
-                  className="
-                  text-xs
-                  uppercase
-                  text-navy-mute
-                  "
-                >
+                <p className="text-xs uppercase text-navy-mute">
                   Previous
                 </p>
 
 
-
                 <p className="mt-2 font-bold">
-                  Safe Cracker
+                  Piñata
                 </p>
 
 
@@ -564,17 +555,8 @@ export default function LootBoxesPage() {
 
 
 
-
-
-
-
-
-              {/* NEXT */}
-
-
-
               <Link
-                href="/documentation/instant-reveal"
+                href="/instant-win-games/loot-boxes"
                 className="
                 rounded-2xl
                 border
@@ -584,44 +566,19 @@ export default function LootBoxesPage() {
                 "
               >
 
-
-                <p
-                  className="
-                  text-xs
-                  uppercase
-                  text-navy-mute
-                  "
-                >
+                <p className="text-xs uppercase text-navy-mute">
                   Next
                 </p>
 
 
-
-
-                <div
-                  className="
-                  mt-2
-                  flex
-                  justify-end
-                  items-center
-                  gap-2
-                  "
-                >
-
+                <div className="mt-2 flex justify-end gap-2 items-center">
 
                   <p className="font-bold">
-                    Instant Reveal
+                    Loot Boxes
                   </p>
 
 
-
-
-                  <ArrowRight
-                    className="
-                    h-4
-                    w-4
-                    "
-                  />
+                  <ArrowRight className="h-4 w-4"/>
 
 
                 </div>
@@ -630,10 +587,11 @@ export default function LootBoxesPage() {
               </Link>
 
 
-            </div>
-            
 
-          </article>
+      </div>
+
+
+</article>
 
 {/* RIGHT SIDEBAR */}
 

@@ -15,13 +15,12 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-export default function SlotsPage() {
+export default function ScratchCardPage() {
   const sections = [
     { id: "what-is-it", label: "What is it?" },
-    { id: "how-it-works", label: "How it Works" },
+    { id: "how-it-works", label: "How It Works" },
+    { id: "preview", label: "Scratch Card Preview" },
     { id: "customisation", label: "Customisation Options" },
-    { id: "upload-sellio", label: "Upload to Sellio" },
-    { id: "test-slots", label: "Test Your Slots Game" },
     { id: "try-first", label: "Want to try it first?" },
   ];
 
@@ -77,7 +76,6 @@ export default function SlotsPage() {
 
 
 
-
           {/* CONTENT */}
 
 
@@ -108,7 +106,7 @@ export default function SlotsPage() {
                 tracking-[-0.04em]
                 "
               >
-                Slots
+                Scratch Card
               </h1>
 
 
@@ -123,9 +121,9 @@ export default function SlotsPage() {
                 text-navy-mute
                 "
               >
-                Create an engaging slot game experience where
-                customers can spin reels and discover instant
-                results based on your configured rewards.
+                Create an interactive Scratch Card game where
+                customers reveal hidden results by scratching
+                the card and discovering their reward.
               </p>
 
 
@@ -187,9 +185,10 @@ export default function SlotsPage() {
                 text-navy-mute
                 "
               >
-                Slots is an instant win game that allows
-                customers to spin reels and reveal their
-                result through an interactive game experience.
+                Scratch Card is an instant win game that
+                gives customers a fun reveal experience.
+                Customers scratch a digital card to discover
+                whether they have received a reward.
               </p>
 
 
@@ -199,9 +198,9 @@ export default function SlotsPage() {
 
 
                 {[
-                  "Customers start the slot game.",
-                  "Reels spin to generate a result.",
-                  "The winning result is displayed instantly."
+                  "Customer opens the Scratch Card game.",
+                  "Customer scratches the covered area.",
+                  "The result is revealed instantly."
                 ].map((item)=>(
 
 
@@ -267,6 +266,7 @@ export default function SlotsPage() {
                 />
 
 
+
                 <h2
                   className="
                   font-display
@@ -274,7 +274,7 @@ export default function SlotsPage() {
                   font-bold
                   "
                 >
-                  How it Works
+                  How It Works
                 </h2>
 
 
@@ -290,9 +290,9 @@ export default function SlotsPage() {
                 text-navy-mute
                 "
               >
-                Customers play the slot game by spinning the
-                reels. The system checks the generated result
-                and displays the outcome instantly.
+                Customers interact with the Scratch Card by
+                revealing the hidden area. The system then
+                displays the configured result.
               </p>
 
 
@@ -302,10 +302,10 @@ export default function SlotsPage() {
 
 
                 {[
-                  "Open the Slots game.",
-                  "Click spin to start the reels.",
-                  "Wait for the result animation.",
-                  "View the reward or no-win result."
+                  "Customer selects the Scratch Card.",
+                  "The scratch area becomes available.",
+                  "Customer reveals the hidden content.",
+                  "Reward or result is displayed."
                 ].map((item,index)=>(
 
 
@@ -346,6 +346,71 @@ export default function SlotsPage() {
 
             </section>
             
+            {/* PREVIEW SECTION */}
+
+
+            <section
+              id="preview"
+              className="
+              scroll-mt-28
+              border-b border-border
+              py-12
+              "
+            >
+
+
+              <h2
+                className="
+                font-display
+                text-3xl
+                font-bold
+                "
+              >
+                Scratch Card Preview
+              </h2>
+
+
+
+
+              <p
+                className="
+                mt-5
+                leading-8
+                text-navy-mute
+                "
+              >
+                Preview your Scratch Card experience before
+                publishing it. Check the design, scratch area
+                and customer interaction flow.
+              </p>
+
+
+
+
+              <div
+                className="
+                mt-7
+                overflow-hidden
+                rounded-xl
+                border border-border
+                "
+              >
+
+
+
+              </div>
+
+
+            </section>
+
+
+
+
+
+
+
+
+
             {/* CUSTOMISATION OPTIONS */}
 
 
@@ -379,9 +444,9 @@ export default function SlotsPage() {
                 text-navy-mute
                 "
               >
-                Customize your Slots game by creating your
-                own theme, images and visual style to match
-                your brand.
+                Customize your Scratch Card design by adding
+                your own images and creating a unique customer
+                experience.
               </p>
 
 
@@ -392,7 +457,8 @@ export default function SlotsPage() {
 
 
 
-              {/* PRE-BUILT THEMES */}
+              {/* OVERLAY IMAGE */}
+
 
 
               <div className="mt-10">
@@ -404,7 +470,7 @@ export default function SlotsPage() {
                   font-bold
                   "
                 >
-                  Pre-Built Themes
+                  Custom Overlay Image
                 </h3>
 
 
@@ -417,209 +483,9 @@ export default function SlotsPage() {
                   text-navy-mute
                   "
                 >
-                  Select from available themes or create a
-                  custom design for your slot game.
-                </p>
-
-
-
-                <div className="mt-5 space-y-3">
-
-
-                  {[
-                    "Choose a suitable game style.",
-                    "Select colours and visual elements.",
-                    "Preview the final appearance."
-                  ].map((item)=>(
-
-
-                    <div
-                      key={item}
-                      className="flex gap-3"
-                    >
-
-
-                      <CheckCircle2
-                        className="
-                        h-5 w-5
-                        text-coral
-                        "
-                      />
-
-
-                      <p className="text-navy-mute">
-                        {item}
-                      </p>
-
-
-                    </div>
-
-
-                  ))}
-
-
-                </div>
-
-
-              </div>
-
-
-
-
-
-
-
-
-
-              {/* CREATE CUSTOM SLOT THEME */}
-
-
-
-              <div className="mt-12">
-
-
-                <h3
-                  className="
-                  text-xl
-                  font-bold
-                  "
-                >
-                  Creating a Custom Slot Theme
-                </h3>
-
-
-
-
-                <p
-                  className="
-                  mt-3
-                  leading-7
-                  text-navy-mute
-                  "
-                >
-                  Create a unique Slots design by preparing
-                  your images and uploading them into Sellio.
-                </p>
-
-
-
-
-                <div className="mt-7 space-y-6">
-
-
-                  {[
-                    {
-                      title:"Upload Your Images",
-                      text:"Prepare slot images, symbols and backgrounds according to your game design."
-                    },
-                    {
-                      title:"Set Background",
-                      text:"Choose a background image that matches your slot theme."
-                    },
-                    {
-                      title:"Add Your Reel Images",
-                      text:"Upload symbols that will appear on the spinning reels."
-                    },
-                    {
-                      title:"Download Your Design",
-                      text:"Review your final theme before uploading it."
-                    }
-                  ].map((item,index)=>(
-
-
-                    <div
-                      key={item.title}
-                      className="flex gap-4"
-                    >
-
-
-                      <span
-                        className="
-                        flex h-7 w-7
-                        shrink-0
-                        items-center justify-center
-                        rounded-full
-                        bg-coral
-                        text-xs
-                        font-bold
-                        text-white
-                        "
-                      >
-                        {index + 1}
-                      </span>
-
-
-
-                      <div>
-
-
-                        <h4 className="font-bold">
-                          {item.title}
-                        </h4>
-
-
-                        <p
-                          className="
-                          mt-1
-                          text-sm
-                          leading-6
-                          text-navy-mute
-                          "
-                        >
-                          {item.text}
-                        </p>
-
-
-                      </div>
-
-
-                    </div>
-
-
-                  ))}
-
-
-                </div>
-
-
-              </div>
-
-
-
-
-
-
-
-
-
-              {/* CANVA GUIDE */}
-
-
-
-              <div className="mt-12">
-
-
-                <h3
-                  className="
-                  text-xl
-                  font-bold
-                  "
-                >
-                  Upload Your Images to Canva
-                </h3>
-
-
-
-
-                <p
-                  className="
-                  mt-3
-                  leading-7
-                  text-navy-mute
-                  "
-                >
-                  Create or edit your slot graphics using a
-                  design tool before adding them to Sellio.
+                  Upload a custom overlay image that covers
+                  the hidden reward area. Customers scratch
+                  this layer to reveal their result.
                 </p>
 
 
@@ -629,10 +495,10 @@ export default function SlotsPage() {
 
 
                   {[
-                    "Create your slot design template.",
-                    "Add symbols and background images.",
-                    "Export your completed graphics.",
-                    "Prepare files for uploading."
+                    "Prepare your scratch overlay design.",
+                    "Upload the image in Scratch Card settings.",
+                    "Preview the scratch effect.",
+                    "Save your custom design."
                   ].map((item,index)=>(
 
 
@@ -675,204 +541,75 @@ export default function SlotsPage() {
               </div>
 
 
+
+
+
+
+
+
+
+              {/* DESIGN TIPS */}
+
+
+
+              <div className="mt-10">
+
+
+                <h3
+                  className="
+                  text-xl
+                  font-bold
+                  "
+                >
+                  Design Tips
+                </h3>
+
+
+
+
+                <div className="mt-5 space-y-3">
+
+
+                  {[
+                    "Use clear and attractive visuals.",
+                    "Keep scratch areas easy to identify.",
+                    "Match the design with your brand."
+                  ].map((item)=>(
+
+
+                    <div
+                      key={item}
+                      className="flex gap-3"
+                    >
+
+
+                      <CheckCircle2
+                        className="
+                        h-5 w-5
+                        text-coral
+                        "
+                      />
+
+
+                      <p className="text-navy-mute">
+                        {item}
+                      </p>
+
+
+                    </div>
+
+
+                  ))}
+
+
+                </div>
+
+
+              </div>
+
+
             </section>
             
-            {/* UPLOAD TO SELLIO */}
-
-
-
-            <section
-              id="upload-sellio"
-              className="
-              scroll-mt-28
-              border-b border-border
-              py-12
-              "
-            >
-
-
-              <h2
-                className="
-                font-display
-                text-3xl
-                font-bold
-                "
-              >
-                Upload to Sellio
-              </h2>
-
-
-
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                After preparing your slot theme files, upload
-                them into Sellio and configure your game
-                appearance.
-              </p>
-
-
-
-
-              <div className="mt-7 space-y-5">
-
-
-                {[
-                  "Open your Slots game settings.",
-                  "Upload background and symbol images.",
-                  "Review the slot preview.",
-                  "Save your custom theme."
-                ].map((item,index)=>(
-
-
-                  <div
-                    key={item}
-                    className="flex gap-3"
-                  >
-
-
-                    <span
-                      className="
-                      flex h-6 w-6
-                      items-center justify-center
-                      rounded-full
-                      bg-coral
-                      text-xs
-                      font-bold
-                      text-white
-                      "
-                    >
-                      {index + 1}
-                    </span>
-
-
-                    <p className="text-navy-mute">
-                      {item}
-                    </p>
-
-
-                  </div>
-
-
-                ))}
-
-
-              </div>
-
-
-            </section>
-
-
-
-
-
-
-
-
-
-            {/* TEST SLOTS */}
-
-
-
-            <section
-              id="test-slots"
-              className="
-              scroll-mt-28
-              border-b border-border
-              py-12
-              "
-            >
-
-
-              <h2
-                className="
-                font-display
-                text-3xl
-                font-bold
-                "
-              >
-                Test Your Slots Game
-              </h2>
-
-
-
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                Before launching your Slots game, test the
-                complete experience to make sure the reels,
-                images and results work correctly.
-              </p>
-
-
-
-
-              <div className="mt-7 space-y-4">
-
-
-                {[
-                  "Open the game preview.",
-                  "Spin the reels as a customer.",
-                  "Check symbols and rewards.",
-                  "Publish when everything is ready."
-                ].map((item,index)=>(
-
-
-                  <div
-                    key={item}
-                    className="flex gap-3"
-                  >
-
-
-                    <span
-                      className="
-                      flex h-6 w-6
-                      items-center justify-center
-                      rounded-full
-                      bg-coral
-                      text-xs
-                      font-bold
-                      text-white
-                      "
-                    >
-                      {index + 1}
-                    </span>
-
-
-                    <p className="text-navy-mute">
-                      {item}
-                    </p>
-
-
-                  </div>
-
-
-                ))}
-
-
-              </div>
-
-
-            </section>
-
-
-
-
-
-
-
-
-
             {/* WANT TO TRY FIRST */}
 
 
@@ -906,9 +643,10 @@ export default function SlotsPage() {
                 text-navy-mute
                 "
               >
-                Preview your Slots game before publishing it.
-                This allows you to check the customer
-                experience and update your settings if needed.
+                Test your Scratch Card before launching it.
+                Preview the customer experience and make sure
+                the scratch effect, design and rewards work
+                correctly.
               </p>
 
 
@@ -918,10 +656,10 @@ export default function SlotsPage() {
 
 
                 {[
-                  "Open Slots preview mode.",
-                  "Play the game experience.",
-                  "Check the final appearance.",
-                  "Make required changes."
+                  "Open the Scratch Card preview.",
+                  "Scratch the card as a customer.",
+                  "Check the revealed result.",
+                  "Update settings if required."
                 ].map((item,index)=>(
 
 
@@ -944,6 +682,7 @@ export default function SlotsPage() {
                     >
                       {index + 1}
                     </span>
+
 
 
                     <p className="text-navy-mute">
@@ -985,8 +724,13 @@ export default function SlotsPage() {
 
 
 
+
+              {/* PREVIOUS */}
+
+
+
               <Link
-                href="/documentation/spin-the-wheel"
+                href="/instant-win-games/slots"
                 className="
                 rounded-2xl
                 border border-border
@@ -1007,8 +751,9 @@ export default function SlotsPage() {
                 </p>
 
 
+
                 <p className="mt-2 font-bold">
-                  Spin the Wheel
+                  Slots
                 </p>
 
 
@@ -1016,12 +761,12 @@ export default function SlotsPage() {
 
 
 
-
+              {/* NEXT */}
 
 
 
               <Link
-                href="/documentation/scratch-card"
+                href="/instant-win-games/pop"
                 className="
                 rounded-2xl
                 border border-border
@@ -1057,13 +802,15 @@ export default function SlotsPage() {
 
 
                   <p className="font-bold">
-                    Scratch Card
+                    Pop
                   </p>
 
 
 
                   <ArrowRight
-                    className="h-4 w-4"
+                    className="
+                    h-4 w-4
+                    "
                   />
 
 
@@ -1079,6 +826,7 @@ export default function SlotsPage() {
 
           </article>
           
+
 {/* RIGHT SIDEBAR */}
 
 <aside className="hidden xl:block">

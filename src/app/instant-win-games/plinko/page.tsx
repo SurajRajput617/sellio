@@ -339,7 +339,7 @@ export default function InteractiveBoardPage() {
               "
             >
               <Link
-                href="/documentation/one-line-bingo"
+                href="/instant-win-games/one-line-bingo"
                 className="
                   group rounded-xl
                   border border-border
@@ -368,7 +368,7 @@ export default function InteractiveBoardPage() {
               </Link>
 
               <Link
-                href="/documentation/gems"
+                href="/instant-win-games/gems"
                 className="
                   group rounded-xl
                   border border-border

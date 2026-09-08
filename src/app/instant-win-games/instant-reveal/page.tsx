@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+
 import {
   ArrowRight,
   CheckCircle2,
@@ -15,11 +16,10 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-export default function ScratchCardPage() {
+export default function InstantRevealPage() {
   const sections = [
-    { id: "what-is-it", label: "What is it?" },
+    { id: "what-is-it", label: "What is It?" },
     { id: "how-it-works", label: "How It Works" },
-    { id: "preview", label: "Scratch Card Preview" },
     { id: "customisation", label: "Customisation Options" },
     { id: "try-first", label: "Want to try it first?" },
   ];
@@ -70,18 +70,11 @@ export default function ScratchCardPage() {
         >
 
 
-          {/* LEFT SIDEBAR */}
-
           <DocumentationSidebar />
 
 
 
-          {/* CONTENT */}
-
-
           <article className="min-w-0">
-
-
 
 
 
@@ -100,30 +93,24 @@ export default function ScratchCardPage() {
               <h1
                 className="
                 mt-4
-                font-display
                 text-4xl
                 font-bold
-                tracking-[-0.04em]
                 "
               >
-                Scratch Card
+                Instant Reveal
               </h1>
-
 
 
 
               <p
                 className="
                 mt-5
-                max-w-3xl
-                text-lg
                 leading-8
                 text-navy-mute
                 "
               >
-                Create an interactive Scratch Card game where
-                customers reveal hidden results by scratching
-                the card and discovering their reward.
+                A fast auto-reveal game that checks each
+                ticket and displays wins as they are found.
               </p>
 
 
@@ -140,11 +127,12 @@ export default function ScratchCardPage() {
             {/* WHAT IS IT */}
 
 
+
             <section
               id="what-is-it"
               className="
-              scroll-mt-28
-              border-b border-border
+              border-b
+              border-border
               py-12
               "
             >
@@ -155,7 +143,8 @@ export default function ScratchCardPage() {
 
                 <CircleHelp
                   className="
-                  h-6 w-6
+                  h-6
+                  w-6
                   text-coral
                   "
                 />
@@ -164,16 +153,16 @@ export default function ScratchCardPage() {
 
                 <h2
                   className="
-                  font-display
                   text-3xl
                   font-bold
                   "
                 >
-                  What is it?
+                  What is It?
                 </h2>
 
 
               </div>
+
 
 
 
@@ -185,11 +174,12 @@ export default function ScratchCardPage() {
                 text-navy-mute
                 "
               >
-                Scratch Card is an instant win game that
-                gives customers a fun reveal experience.
-                Customers scratch a digital card to discover
-                whether they have received a reward.
+                The instant reveal mechanic automatically
+                checks tickets one by one and shows the
+                results immediately. Customers can quickly
+                discover whether they have won.
               </p>
+
 
 
 
@@ -198,9 +188,9 @@ export default function ScratchCardPage() {
 
 
                 {[
-                  "Customer opens the Scratch Card game.",
-                  "Customer scratches the covered area.",
-                  "The result is revealed instantly."
+                  "Tickets are automatically checked.",
+                  "Each ticket result is revealed instantly.",
+                  "Winning tickets display prize information."
                 ].map((item)=>(
 
 
@@ -212,10 +202,12 @@ export default function ScratchCardPage() {
 
                     <CheckCircle2
                       className="
-                      h-5 w-5
+                      h-5
+                      w-5
                       text-coral
                       "
                     />
+
 
 
                     <p className="text-navy-mute">
@@ -233,23 +225,17 @@ export default function ScratchCardPage() {
 
 
             </section>
-
-
-
-
-
-
-
-
+            
 
             {/* HOW IT WORKS */}
+
 
 
             <section
               id="how-it-works"
               className="
-              scroll-mt-28
-              border-b border-border
+              border-b
+              border-border
               py-12
               "
             >
@@ -260,7 +246,8 @@ export default function ScratchCardPage() {
 
                 <PlayCircle
                   className="
-                  h-6 w-6
+                  h-6
+                  w-6
                   text-coral
                   "
                 />
@@ -269,7 +256,6 @@ export default function ScratchCardPage() {
 
                 <h2
                   className="
-                  font-display
                   text-3xl
                   font-bold
                   "
@@ -290,9 +276,8 @@ export default function ScratchCardPage() {
                 text-navy-mute
                 "
               >
-                Customers interact with the Scratch Card by
-                revealing the hidden area. The system then
-                displays the configured result.
+                Tickets are automatically checked and
+                results are displayed instantly.
               </p>
 
 
@@ -302,10 +287,12 @@ export default function ScratchCardPage() {
 
 
                 {[
-                  "Customer selects the Scratch Card.",
-                  "The scratch area becomes available.",
-                  "Customer reveals the hidden content.",
-                  "Reward or result is displayed."
+                  "Customer purchases tickets.",
+                  "Instant Reveal starts automatically.",
+                  "Each ticket is checked one by one.",
+                  "Winning tickets display prize details.",
+                  "No Win tickets show the final result.",
+                  "A summary of results is displayed."
                 ].map((item,index)=>(
 
 
@@ -317,7 +304,9 @@ export default function ScratchCardPage() {
 
                     <span
                       className="
-                      flex h-6 w-6
+                      flex
+                      h-6
+                      w-6
                       items-center justify-center
                       rounded-full
                       bg-coral
@@ -328,6 +317,7 @@ export default function ScratchCardPage() {
                     >
                       {index + 1}
                     </span>
+
 
 
                     <p className="text-navy-mute">
@@ -345,15 +335,23 @@ export default function ScratchCardPage() {
 
 
             </section>
-            
-            {/* PREVIEW SECTION */}
+
+
+
+
+
+
+
+
+
+            {/* DEMO VIDEO */}
+
 
 
             <section
-              id="preview"
               className="
-              scroll-mt-28
-              border-b border-border
+              border-b
+              border-border
               py-12
               "
             >
@@ -361,12 +359,11 @@ export default function ScratchCardPage() {
 
               <h2
                 className="
-                font-display
                 text-3xl
                 font-bold
                 "
               >
-                Scratch Card Preview
+                Instant Reveal Demo
               </h2>
 
 
@@ -379,9 +376,9 @@ export default function ScratchCardPage() {
                 text-navy-mute
                 "
               >
-                Preview your Scratch Card experience before
-                publishing it. Check the design, scratch area
-                and customer interaction flow.
+                Watch the Instant Reveal game experience
+                and see how tickets are checked and
+                results are displayed.
               </p>
 
 
@@ -389,13 +386,25 @@ export default function ScratchCardPage() {
 
               <div
                 className="
-                mt-7
+                mt-8
+                aspect-video
                 overflow-hidden
                 rounded-xl
-                border border-border
+                border
+                border-border
                 "
               >
 
+
+                <iframe
+                  className="
+                  h-full
+                  w-full
+                  "
+                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                  title="Instant Reveal Demo"
+                  allowFullScreen
+                />
 
 
               </div>
@@ -414,19 +423,20 @@ export default function ScratchCardPage() {
             {/* CUSTOMISATION OPTIONS */}
 
 
+
             <section
               id="customisation"
               className="
-              scroll-mt-28
-              border-b border-border
+              border-b
+              border-border
               py-12
               "
             >
 
 
+
               <h2
                 className="
-                font-display
                 text-3xl
                 font-bold
                 "
@@ -444,9 +454,8 @@ export default function ScratchCardPage() {
                 text-navy-mute
                 "
               >
-                Customize your Scratch Card design by adding
-                your own images and creating a unique customer
-                experience.
+                Customize your Instant Reveal game with
+                prize images and branded visuals.
               </p>
 
 
@@ -456,21 +465,15 @@ export default function ScratchCardPage() {
 
 
 
-
-              {/* OVERLAY IMAGE */}
+              {/* PRIZE IMAGES */}
 
 
 
               <div className="mt-10">
 
 
-                <h3
-                  className="
-                  text-xl
-                  font-bold
-                  "
-                >
-                  Custom Overlay Image
+                <h3 className="text-xl font-bold">
+                  Prize Images
                 </h3>
 
 
@@ -483,123 +486,71 @@ export default function ScratchCardPage() {
                   text-navy-mute
                   "
                 >
-                  Upload a custom overlay image that covers
-                  the hidden reward area. Customers scratch
-                  this layer to reveal their result.
+                  Each instant win prize can have a
+                  featured image uploaded. These images
+                  are displayed during the reveal.
                 </p>
 
 
 
 
-                <div className="mt-6 space-y-4">
+
+                <div className="mt-6 space-y-6">
 
 
-                  {[
-                    "Prepare your scratch overlay design.",
-                    "Upload the image in Scratch Card settings.",
-                    "Preview the scratch effect.",
-                    "Save your custom design."
-                  ].map((item,index)=>(
+
+                  <div>
 
 
-                    <div
-                      key={item}
-                      className="flex gap-3"
+                    <h4 className="font-bold">
+                      Upload Prize Images
+                    </h4>
+
+
+
+
+                    <p
+                      className="
+                      mt-2
+                      text-navy-mute
+                      "
                     >
+                      Upload prize images through the
+                      instant win prize settings in your
+                      competition.
+                    </p>
 
 
-                      <span
-                        className="
-                        flex h-6 w-6
-                        items-center justify-center
-                        rounded-full
-                        bg-coral
-                        text-xs
-                        font-bold
-                        text-white
-                        "
-                      >
-                        {index + 1}
-                      </span>
-
-
-
-                      <p className="text-navy-mute">
-                        {item}
-                      </p>
-
-
-                    </div>
-
-
-                  ))}
-
-
-                </div>
-
-
-              </div>
+                  </div>
 
 
 
 
 
 
+                  <div>
 
 
-
-              {/* DESIGN TIPS */}
-
-
-
-              <div className="mt-10">
-
-
-                <h3
-                  className="
-                  text-xl
-                  font-bold
-                  "
-                >
-                  Design Tips
-                </h3>
+                    <h4 className="font-bold">
+                      Default Images
+                    </h4>
 
 
 
 
-                <div className="mt-5 space-y-3">
-
-
-                  {[
-                    "Use clear and attractive visuals.",
-                    "Keep scratch areas easy to identify.",
-                    "Match the design with your brand."
-                  ].map((item)=>(
-
-
-                    <div
-                      key={item}
-                      className="flex gap-3"
+                    <p
+                      className="
+                      mt-2
+                      text-navy-mute
+                      "
                     >
+                      If no custom image is uploaded,
+                      default images can be displayed.
+                    </p>
 
 
-                      <CheckCircle2
-                        className="
-                        h-5 w-5
-                        text-coral
-                        "
-                      />
+                  </div>
 
-
-                      <p className="text-navy-mute">
-                        {item}
-                      </p>
-
-
-                    </div>
-
-
-                  ))}
 
 
                 </div>
@@ -610,6 +561,7 @@ export default function ScratchCardPage() {
 
             </section>
             
+
             {/* WANT TO TRY FIRST */}
 
 
@@ -617,7 +569,6 @@ export default function ScratchCardPage() {
             <section
               id="try-first"
               className="
-              scroll-mt-28
               py-12
               "
             >
@@ -625,7 +576,6 @@ export default function ScratchCardPage() {
 
               <h2
                 className="
-                font-display
                 text-3xl
                 font-bold
                 "
@@ -643,11 +593,11 @@ export default function ScratchCardPage() {
                 text-navy-mute
                 "
               >
-                Test your Scratch Card before launching it.
-                Preview the customer experience and make sure
-                the scratch effect, design and rewards work
-                correctly.
+                Test your Instant Reveal game before
+                publishing. Check the ticket checking
+                flow and result display.
               </p>
+
 
 
 
@@ -656,10 +606,10 @@ export default function ScratchCardPage() {
 
 
                 {[
-                  "Open the Scratch Card preview.",
-                  "Scratch the card as a customer.",
-                  "Check the revealed result.",
-                  "Update settings if required."
+                  "Open Instant Reveal preview mode.",
+                  "Run the automatic ticket checking.",
+                  "Check winning and No Win results.",
+                  "Adjust settings if required."
                 ].map((item,index)=>(
 
 
@@ -671,7 +621,9 @@ export default function ScratchCardPage() {
 
                     <span
                       className="
-                      flex h-6 w-6
+                      flex
+                      h-6
+                      w-6
                       items-center justify-center
                       rounded-full
                       bg-coral
@@ -682,6 +634,7 @@ export default function ScratchCardPage() {
                     >
                       {index + 1}
                     </span>
+
 
 
 
@@ -715,12 +668,15 @@ export default function ScratchCardPage() {
 
             <div
               className="
-              grid gap-4
-              border-t border-border
+              grid
+              gap-4
+              border-t
+              border-border
               py-10
               sm:grid-cols-2
               "
             >
+
 
 
 
@@ -730,11 +686,11 @@ export default function ScratchCardPage() {
 
 
               <Link
-                href="/documentation/slots"
+                href="/instant-win-games/loot-boxes"
                 className="
                 rounded-2xl
-                border border-border
-                bg-white
+                border
+                border-border
                 p-5
                 "
               >
@@ -753,15 +709,11 @@ export default function ScratchCardPage() {
 
 
                 <p className="mt-2 font-bold">
-                  Slots
+                  Loot Boxes
                 </p>
 
 
               </Link>
-
-
-
-
 
 
 
@@ -771,11 +723,11 @@ export default function ScratchCardPage() {
 
 
               <Link
-                href="/documentation/pop"
+                href="/instant-win-games/pot-drop"
                 className="
                 rounded-2xl
-                border border-border
-                bg-white
+                border
+                border-border
                 p-5
                 text-right
                 "
@@ -807,14 +759,16 @@ export default function ScratchCardPage() {
 
 
                   <p className="font-bold">
-                    Pop
+                    Pot Drop
                   </p>
+
 
 
 
                   <ArrowRight
                     className="
-                    h-4 w-4
+                    h-4
+                    w-4
                     "
                   />
 
@@ -825,12 +779,12 @@ export default function ScratchCardPage() {
               </Link>
 
 
+
             </div>
-
-
+            
 
           </article>
-          
+
 
 {/* RIGHT SIDEBAR */}
 
@@ -859,10 +813,15 @@ export default function ScratchCardPage() {
   </div>
 </aside>
 
+
+
         </div>
 
 
       </main>
+
+
+
 
 
       <Footer />

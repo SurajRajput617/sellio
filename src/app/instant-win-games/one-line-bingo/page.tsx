@@ -283,7 +283,7 @@ export default function InteractiveGridPage() {
             >
               {/* PREVIOUS */}
               <Link
-                href="/documentation/whack-a-mole"
+                href="/instant-win-games/whack-a-mole"
                 className="
                   group
                   rounded-xl
@@ -314,7 +314,7 @@ export default function InteractiveGridPage() {
 
               {/* NEXT */}
               <Link
-                href="/documentation/plinko"
+                href="/instant-win-games/plinko"
                 className="
                   group
                   rounded-xl

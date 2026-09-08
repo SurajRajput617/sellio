@@ -709,7 +709,7 @@ export default function PinataPage() {
 
 
   <Link
-    href="/documentation/pop"
+    href="/instant-win-games/pop"
     className="
     rounded-2xl
     border
@@ -749,7 +749,7 @@ export default function PinataPage() {
 
 
   <Link
-    href="/documentation/safe-cracker"
+    href="/instant-win-games/safe-cracker"
     className="
     rounded-2xl
     border

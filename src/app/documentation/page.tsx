@@ -692,105 +692,105 @@ export default function DocumentationPage() {
 
   <nav className="mt-1 space-y-1">
 
-    <Link href="/documentation/overview"
+    <Link href="/instant-win-games/overview"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Overview
     </Link>
 
 
-    <Link href="/documentation/test-a-game-type"
+    <Link href="/instant-win-games/test-a-game-type"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Test a Game Type
     </Link>
 
 
-    <Link href="/documentation/spin-the-wheel"
+    <Link href="/instant-win-games/spin-the-wheel"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Spin the Wheel
     </Link>
 
 
-    <Link href="/documentation/slots"
+    <Link href="/instant-win-games/slots"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Slots
     </Link>
 
 
-    <Link href="/documentation/scratch-card"
+    <Link href="/instant-win-games/scratch-card"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Scratch Card
     </Link>
 
 
-    <Link href="/documentation/pop"
+    <Link href="/instant-win-games/pop"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Pop
     </Link>
 
 
-    <Link href="/documentation/pinata"
+    <Link href="/instant-win-games/pinata"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Piñata
     </Link>
 
 
-    <Link href="/documentation/safe-cracker"
+    <Link href="/instant-win-games/safe-cracker"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Safe Cracker
     </Link>
 
 
-    <Link href="/documentation/loot-boxes"
+    <Link href="/instant-win-games/loot-boxes"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Loot Boxes
     </Link>
 
 
-    <Link href="/documentation/instant-reveal"
+    <Link href="/instant-win-games/instant-reveal"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Instant Reveal
     </Link>
 
 
-    <Link href="/documentation/pot-drop"
+    <Link href="/instant-win-games/pot-drop"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Pot Drop
     </Link>
 
 
-    <Link href="/documentation/whack-a-mole"
+    <Link href="/instant-win-games/whack-a-mole"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Whack-a-Mole
     </Link>
 
 
-    <Link href="/documentation/one-line-bingo"
+    <Link href="/instant-win-games/one-line-bingo"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       One Line Bingo
     </Link>
 
 
-    <Link href="/documentation/plinko"
+    <Link href="/instant-win-games/plinko"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Plinko
     </Link>
 
 
-    <Link href="/documentation/gems"
+    <Link href="/instant-win-games/gems"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute hover:bg-coral/10 hover:text-coral"
     >
       Gems

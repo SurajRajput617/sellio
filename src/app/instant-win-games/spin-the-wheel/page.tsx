@@ -796,7 +796,7 @@ export default function SpinTheWheelPage() {
 
 
               <Link
-                href="/documentation/test-a-game-type"
+                href="/instant-win-games/test-a-game-type"
                 className="
                 rounded-2xl
                 border border-border
@@ -829,11 +829,8 @@ export default function SpinTheWheelPage() {
 
 
 
-
-
-
               <Link
-                href="/documentation/slots"
+                href="/instant-win-games/slots"
                 className="
                 rounded-2xl
                 border border-border

@@ -518,106 +518,106 @@ export default function DocumentationSidebar() {
           <nav className="mt-1 space-y-1">
 
             <Link
-              href="/documentation/overview"
-              className={subLinkClass("/documentation/overview")}
+              href="/instant-win-games/overview"
+              className={subLinkClass("/instant-win-games/overview")}
             >
               Overview
             </Link>
 
             <Link
-              href="/documentation/test-a-game-type"
-              className={subLinkClass("/documentation/test-a-game-type")}
+              href="/instant-win-games/test-a-game-type"
+              className={subLinkClass("/instant-win-games/test-a-game-type")}
             >
               Test a Game Type
             </Link>
 
             <Link
-              href="/documentation/spin-the-wheel"
-              className={subLinkClass("/documentation/spin-the-wheel")}
+              href="/instant-win-games/spin-the-wheel"
+              className={subLinkClass("/instant-win-games/spin-the-wheel")}
             >
               Spin the Wheel
             </Link>
 
             <Link
-              href="/documentation/slots"
-              className={subLinkClass("/documentation/slots")}
+              href="/instant-win-games/slots"
+              className={subLinkClass("/instant-win-games/slots")}
             >
               Slots
             </Link>
 
             <Link
-              href="/documentation/scratch-card"
-              className={subLinkClass("/documentation/scratch-card")}
+              href="/instant-win-games/scratch-card"
+              className={subLinkClass("/instant-win-games/scratch-card")}
             >
               Scratch Card
             </Link>
 
             <Link
-              href="/documentation/pop"
-              className={subLinkClass("/documentation/pop")}
+              href="/instant-win-games/pop"
+              className={subLinkClass("/instant-win-games/pop")}
             >
               Pop
             </Link>
 
             <Link
-              href="/documentation/pinata"
-              className={subLinkClass("/documentation/pinata")}
+              href="/instant-win-games/pinata"
+              className={subLinkClass("/instant-win-games/pinata")}
             >
               Piñata
             </Link>
 
             <Link
-              href="/documentation/safe-cracker"
-              className={subLinkClass("/documentation/safe-cracker")}
+              href="/instant-win-games/safe-cracker"
+              className={subLinkClass("/instant-win-games/safe-cracker")}
             >
               Safe Cracker
             </Link>
 
             <Link
-              href="/documentation/loot-boxes"
-              className={subLinkClass("/documentation/loot-boxes")}
+              href="/instant-win-games/loot-boxes"
+              className={subLinkClass("/instant-win-games/loot-boxes")}
             >
               Loot Boxes
             </Link>
 
             <Link
-              href="/documentation/instant-reveal"
-              className={subLinkClass("/documentation/instant-reveal")}
+              href="/instant-win-games/instant-reveal"
+              className={subLinkClass("/instant-win-games/instant-reveal")}
             >
               Instant Reveal
             </Link>
 
             <Link
-              href="/documentation/pot-drop"
-              className={subLinkClass("/documentation/pot-drop")}
+              href="/instant-win-games/pot-drop"
+              className={subLinkClass("/instant-win-games/pot-drop")}
             >
               Pot Drop
             </Link>
 
             <Link
-              href="/documentation/whack-a-mole"
-              className={subLinkClass("/documentation/whack-a-mole")}
+              href="/instant-win-games/whack-a-mole"
+              className={subLinkClass("/instant-win-games/whack-a-mole")}
             >
               Whack-a-Mole
             </Link>
 
             <Link
-              href="/documentation/one-line-bingo"
-              className={subLinkClass("/documentation/one-line-bingo")}
+              href="/instant-win-games/one-line-bingo"
+              className={subLinkClass("/instant-win-games/one-line-bingo")}
             >
               One Line Bingo
             </Link>
 
             <Link
-              href="/documentation/plinko"
-              className={subLinkClass("/documentation/plinko")}
+              href="/instant-win-games/plinko"
+              className={subLinkClass("/instant-win-games/plinko")}
             >
               Plinko
             </Link>
 
             <Link
-              href="/documentation/gems"
-              className={subLinkClass("/documentation/gems")}
+              href="/instant-win-games/gems"
+              className={subLinkClass("/instant-win-games/gems")}
             >
               Gems
             </Link>

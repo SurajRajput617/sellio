@@ -259,7 +259,7 @@ export default function InteractiveGamePage() {
               "
             >
               <Link
-                href="/documentation/pot-drop"
+                href="/instant-win-games/pot-drop"
                 className="
                   group
                   rounded-xl
@@ -283,7 +283,7 @@ export default function InteractiveGamePage() {
               </Link>
 
               <Link
-                href="/documentation/one-line-bingo"
+                href="/instant-win-games/one-line-bingo"
                 className="
                   group
                   rounded-xl

@@ -741,7 +741,7 @@ sm:grid-cols-2
 
 
 <Link
-href="/documentation/scratch-card"
+href="/instant-win-games/scratch-card"
 className="
 rounded-2xl
 border
@@ -770,7 +770,7 @@ Scratch Card
 
 
 <Link
-href="/documentation/pinata"
+href="/instant-win-games/pinata"
 className="
 rounded-2xl
 border

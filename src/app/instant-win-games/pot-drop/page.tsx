@@ -263,7 +263,7 @@ export default function InteractiveDropPage() {
             >
               {/* PREVIOUS */}
               <Link
-                href="/documentation/instant-reveal"
+                href="/instant-win-games/instant-reveal"
                 className="
                   group
                   rounded-xl
@@ -294,7 +294,7 @@ export default function InteractiveDropPage() {
 
               {/* NEXT */}
               <Link
-                href="/documentation/whack-a-mole"
+                href="/instant-win-games/whack-a-mole"
                 className="
                   group
                   rounded-xl

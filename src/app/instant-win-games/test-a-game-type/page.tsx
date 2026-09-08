@@ -7,7 +7,7 @@ import {
   ArrowRight,
   CheckCircle2,
   Gamepad2,
-  PlayCircle,
+  Settings,
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
@@ -15,14 +15,15 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-export default function TestGameTypePage() {
+export default function InstantWinGamesPage() {
   const sections = [
-    { id: "overview", label: "Test a Game Type" },
-    { id: "testing", label: "How Testing Works" },
-    { id: "steps", label: "Step by Step" },
-    { id: "view-test", label: "View and Play Your Test" },
-    { id: "replay", label: "Replay Without Creating Again" },
-    { id: "finished", label: "When You Are Finished" },
+    { id: "overview", label: "Instant Win Games Overview" },
+    { id: "how-work", label: "How Games Work" },
+    { id: "game-type", label: "Set Game Type" },
+    { id: "configure-game", label: "Configure Game" },
+    { id: "preview", label: "Game Preview" },
+    { id: "test", label: "Test Before Launch" },
+    { id: "game-modes", label: "Available Game Modes" },
   ];
 
   const [activeSection, setActiveSection] = useState("overview");
@@ -58,6 +59,7 @@ export default function TestGameTypePage() {
     <>
       <Navbar />
 
+
       <main className="min-h-screen bg-paper text-navy">
 
 
@@ -77,6 +79,7 @@ export default function TestGameTypePage() {
 
 
           {/* CONTENT */}
+
 
           <article className="min-w-0">
 
@@ -105,7 +108,7 @@ export default function TestGameTypePage() {
                 tracking-[-0.04em]
                 "
               >
-                Test a Game Type
+                Instant Win Games
               </h1>
 
 
@@ -120,10 +123,10 @@ export default function TestGameTypePage() {
                 text-navy-mute
                 "
               >
-                Test your instant win game setup before
-                launching it live. Preview the customer
-                experience and make sure your game settings
-                work correctly.
+                Create instant win experiences where customers
+                can participate and discover results instantly.
+                Sellio allows you to configure different game
+                formats and reward customers quickly.
               </p>
 
 
@@ -138,7 +141,6 @@ export default function TestGameTypePage() {
 
 
             {/* OVERVIEW */}
-
 
 
             <section
@@ -162,6 +164,7 @@ export default function TestGameTypePage() {
                 />
 
 
+
                 <h2
                   className="
                   font-display
@@ -169,7 +172,7 @@ export default function TestGameTypePage() {
                   font-bold
                   "
                 >
-                  Test a Game Type
+                  Instant Win Games Overview
                 </h2>
 
 
@@ -185,10 +188,10 @@ export default function TestGameTypePage() {
                 text-navy-mute
                 "
               >
-                Testing allows you to check how your selected
-                instant win game behaves before customers use
-                it. You can verify the design, gameplay and
-                result flow.
+                Instant Win Games let customers play a game
+                and receive an immediate result. These games
+                are designed to increase engagement and create
+                interactive customer experiences.
               </p>
 
 
@@ -198,9 +201,9 @@ export default function TestGameTypePage() {
 
 
                 {[
-                  "Preview your selected game mode.",
-                  "Check the customer interaction flow.",
-                  "Confirm rewards display correctly."
+                  "Create instant reward experiences.",
+                  "Choose different game formats.",
+                  "Engage customers with interactive games."
                 ].map((item)=>(
 
 
@@ -216,6 +219,7 @@ export default function TestGameTypePage() {
                       text-coral
                       "
                     />
+
 
 
                     <p className="text-navy-mute">
@@ -242,12 +246,12 @@ export default function TestGameTypePage() {
 
 
 
-            {/* HOW TESTING WORKS */}
+            {/* HOW IT WORKS */}
 
 
 
             <section
-              id="testing"
+              id="how-work"
               className="
               scroll-mt-28
               border-b border-border
@@ -256,29 +260,15 @@ export default function TestGameTypePage() {
             >
 
 
-              <div className="flex items-center gap-3">
-
-
-                <PlayCircle
-                  className="
-                  h-6 w-6
-                  text-coral
-                  "
-                />
-
-
-                <h2
-                  className="
-                  font-display
-                  text-3xl
-                  font-bold
-                  "
-                >
-                  How Testing Works
-                </h2>
-
-
-              </div>
+              <h2
+                className="
+                font-display
+                text-3xl
+                font-bold
+                "
+              >
+                How Instant Win Games Work
+              </h2>
 
 
 
@@ -290,9 +280,9 @@ export default function TestGameTypePage() {
                 text-navy-mute
                 "
               >
-                When you test a game, Sellio creates a preview
-                experience where you can play the selected game
-                and check the outcome before publishing.
+                Customers participate in an instant game and
+                receive a result based on your configured game
+                settings.
               </p>
 
 
@@ -302,10 +292,10 @@ export default function TestGameTypePage() {
 
 
                 {[
-                  "Open the instant win game settings.",
-                  "Select the game type you want to test.",
-                  "Launch the preview mode.",
-                  "Review the complete customer experience."
+                  "Customer opens an available instant win game.",
+                  "Customer plays the selected game.",
+                  "System checks the game result.",
+                  "Reward or outcome is displayed instantly."
                 ].map((item,index)=>(
 
 
@@ -354,12 +344,12 @@ export default function TestGameTypePage() {
 
 
 
-            {/* STEP BY STEP */}
+            {/* SET GAME TYPE */}
 
 
 
             <section
-              id="steps"
+              id="game-type"
               className="
               scroll-mt-28
               py-12
@@ -367,28 +357,57 @@ export default function TestGameTypePage() {
             >
 
 
-              <h2
+              <div className="flex items-center gap-3">
+
+
+                <Settings
+                  className="
+                  h-6 w-6
+                  text-coral
+                  "
+                />
+
+
+
+                <h2
+                  className="
+                  font-display
+                  text-3xl
+                  font-bold
+                  "
+                >
+                  How to Set a Game Type
+                </h2>
+
+
+              </div>
+
+
+
+
+              <p
                 className="
-                font-display
-                text-3xl
-                font-bold
+                mt-5
+                leading-8
+                text-navy-mute
                 "
               >
-                Step by Step
-              </h2>
+                Select the type of instant win game you want
+                to create from your Sellio dashboard.
+              </p>
 
 
 
 
-              <div className="mt-7 space-y-5">
+              <div className="mt-7 space-y-4">
 
 
                 {[
-                  "Create or open your instant win competition.",
-                  "Choose the required game type.",
-                  "Open the test or preview option.",
-                  "Play through the game as a customer.",
-                  "Check that results and rewards display correctly."
+                  "Open the Sellio admin panel.",
+                  "Go to Instant Win Games settings.",
+                  "Create a new game.",
+                  "Select your preferred game type.",
+                  "Save your configuration."
                 ].map((item,index)=>(
 
 
@@ -429,11 +448,11 @@ export default function TestGameTypePage() {
 
             </section>
             
-            {/* VIEW AND PLAY YOUR TEST */}
+            {/* ADD / CONFIGURE GAME */}
 
 
             <section
-              id="view-test"
+              id="configure-game"
               className="
               scroll-mt-28
               border-b border-border
@@ -449,7 +468,7 @@ export default function TestGameTypePage() {
                 font-bold
                 "
               >
-                View and Play Your Test
+                Configure Instant Win Game
               </h2>
 
 
@@ -462,9 +481,9 @@ export default function TestGameTypePage() {
                 text-navy-mute
                 "
               >
-                After starting a test, you can view the game
-                exactly as customers will see it. Use this
-                preview to confirm everything works correctly.
+                After selecting a game type, configure the
+                rules, rewards and settings for your instant
+                win experience.
               </p>
 
 
@@ -474,10 +493,10 @@ export default function TestGameTypePage() {
 
 
                 {[
-                  "Open the generated test preview.",
-                  "Play the game from the customer view.",
-                  "Check the displayed result.",
-                  "Confirm rewards and messages appear correctly."
+                  "Add the game name and description.",
+                  "Configure available rewards.",
+                  "Set participation rules.",
+                  "Review settings before publishing."
                 ].map((item,index)=>(
 
 
@@ -514,6 +533,54 @@ export default function TestGameTypePage() {
 
 
               </div>
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+            {/* GAME PREVIEW */}
+
+
+            <section
+              id="preview"
+              className="
+              scroll-mt-28
+              border-b border-border
+              py-12
+              "
+            >
+
+
+              <h2
+                className="
+                font-display
+                text-3xl
+                font-bold
+                "
+              >
+                Game Preview
+              </h2>
+
+
+
+
+              <p
+                className="
+                mt-5
+                leading-8
+                text-navy-mute
+                "
+              >
+                Use the preview option to check how the game
+                will appear to customers before making it live.
+              </p>
 
 
 
@@ -530,23 +597,36 @@ export default function TestGameTypePage() {
 
 
                 <p className="font-bold">
-                  Testing Tip
+                  Preview Checklist
                 </p>
 
 
 
-                <p
+                <ul
                   className="
-                  mt-2
+                  mt-4
+                  space-y-3
                   text-sm
-                  leading-6
                   text-navy-mute
                   "
                 >
-                  Test different outcomes to make sure all
-                  possible customer experiences are working
-                  before launching the game.
-                </p>
+
+                  <li>
+                    • Check game appearance.
+                  </li>
+
+
+                  <li>
+                    • Verify reward information.
+                  </li>
+
+
+                  <li>
+                    • Confirm customer experience.
+                  </li>
+
+
+                </ul>
 
 
               </div>
@@ -562,12 +642,12 @@ export default function TestGameTypePage() {
 
 
 
-            {/* REPLAY WITHOUT CREATING AGAIN */}
+            {/* TEST BEFORE LAUNCH */}
 
 
 
             <section
-              id="replay"
+              id="test"
               className="
               scroll-mt-28
               border-b border-border
@@ -583,7 +663,7 @@ export default function TestGameTypePage() {
                 font-bold
                 "
               >
-                Replay Without Creating Again
+                Test Before You Launch
               </h2>
 
 
@@ -596,9 +676,9 @@ export default function TestGameTypePage() {
                 text-navy-mute
                 "
               >
-                You can replay your test game without creating
-                a new competition each time. This helps you
-                quickly check different scenarios.
+                Before publishing your instant win game,
+                test the complete customer journey to make
+                sure everything works correctly.
               </p>
 
 
@@ -608,10 +688,10 @@ export default function TestGameTypePage() {
 
 
                 {[
-                  "Open the existing game test.",
-                  "Restart the preview session.",
-                  "Try another result scenario.",
-                  "Continue adjusting settings if required."
+                  "Open the game preview.",
+                  "Test customer participation flow.",
+                  "Check rewards and results.",
+                  "Publish when everything is ready."
                 ].map((item,index)=>(
 
 
@@ -660,12 +740,12 @@ export default function TestGameTypePage() {
 
 
 
-            {/* WHEN FINISHED */}
+            {/* AVAILABLE GAME MODES */}
 
 
 
             <section
-              id="finished"
+              id="game-modes"
               className="
               scroll-mt-28
               py-12
@@ -680,7 +760,7 @@ export default function TestGameTypePage() {
                 font-bold
                 "
               >
-                When You Are Finished
+                Available Game Modes
               </h2>
 
 
@@ -693,42 +773,40 @@ export default function TestGameTypePage() {
                 text-navy-mute
                 "
               >
-                Once testing is complete and everything works
-                correctly, you can publish your instant win
-                game for customers.
+                Choose from different instant win formats
+                available in Sellio to create unique customer
+                experiences.
               </p>
 
 
 
 
-              <div className="mt-7 space-y-4">
+              <div className="mt-7 space-y-3">
 
 
                 {[
-                  "Review all game settings.",
-                  "Confirm rewards and results.",
-                  "Publish the game when ready."
+                  "Spin Wheel",
+                  "Scratch Card",
+                  "Pick a Prize",
+                  "Lucky Draw",
+                  "Mystery Reward",
+                  "Instant Choice"
                 ].map((item)=>(
 
 
                   <div
                     key={item}
-                    className="flex gap-3"
+                    className="
+                    rounded-xl
+                    border border-border
+                    bg-white
+                    px-5
+                    py-4
+                    font-medium
+                    "
                   >
 
-
-                    <CheckCircle2
-                      className="
-                      h-5 w-5
-                      text-coral
-                      "
-                    />
-
-
-                    <p className="text-navy-mute">
-                      {item}
-                    </p>
-
+                    {item}
 
                   </div>
 
@@ -741,111 +819,116 @@ export default function TestGameTypePage() {
 
             </section>
             
-  {/* PREVIOUS NEXT */}
+            {/* PREVIOUS NEXT */}
 
 
-<div
-  className="
-  grid gap-4
-  border-t border-border
-  py-10
-  sm:grid-cols-2
-  "
->
+            <div
+              className="
+              grid gap-4
+              border-t border-border
+              py-10
+              sm:grid-cols-2
+              "
+            >
 
 
-  {/* PREVIOUS */}
-
-  <Link
-    href="/documentation/overview"
-    className="
-    rounded-2xl
-    border border-border
-    bg-white
-    p-5
-    "
-  >
-
-    <p
-      className="
-      text-xs
-      uppercase
-      text-navy-mute
-      "
-    >
-      Previous
-    </p>
+              {/* PREVIOUS */}
 
 
-    <p className="mt-2 font-bold">
-      Overview
-    </p>
+              <Link
+                href="/instant-win-games/overview"
+                className="
+                rounded-2xl
+                border border-border
+                bg-white
+                p-5
+                "
+              >
+
+                <p
+                  className="
+                  text-xs
+                  uppercase
+                  text-navy-mute
+                  "
+                >
+                  Previous
+                </p>
 
 
-  </Link>
+                <p className="mt-2 font-bold">
+                 Overview
+                </p>
 
 
-
-
-
-  {/* NEXT */}
-
-
-  <Link
-    href="/documentation/spin-the-wheel"
-    className="
-    rounded-2xl
-    border border-border
-    bg-white
-    p-5
-    text-right
-    "
-  >
-
-    <p
-      className="
-      text-xs
-      uppercase
-      text-navy-mute
-      "
-    >
-      Next
-    </p>
+              </Link>
 
 
 
-    <div
-      className="
-      mt-2
-      flex
-      justify-end
-      items-center
-      gap-2
-      "
-    >
-
-      <p className="font-bold">
-        Spin the Wheel
-      </p>
+              {/* NEXT */}
 
 
-      <ArrowRight
-        className="
-        h-4 w-4
-        "
-      />
+
+              <Link
+                href="/instant-win-games/spin-the-wheel"
+                className="
+                rounded-2xl
+                border border-border
+                bg-white
+                p-5
+                text-right
+                "
+              >
 
 
-    </div>
+                <p
+                  className="
+                  text-xs
+                  uppercase
+                  text-navy-mute
+                  "
+                >
+                  Next
+                </p>
 
 
-  </Link>
+
+                <div
+                  className="
+                  mt-2
+                  flex
+                  justify-end
+                  items-center
+                  gap-2
+                  "
+                >
 
 
-</div>
+                  <p className="font-bold">
+                 Spin-the-wheel
+                  </p>
 
 
-</article>
+
+                  <ArrowRight
+                    className="
+                    h-4 w-4
+                    "
+                  />
+
+
+                </div>
+
+
+              </Link>
+
+
+            </div>
+
+
+
+          </article>
+
 
 {/* RIGHT SIDEBAR */}
 

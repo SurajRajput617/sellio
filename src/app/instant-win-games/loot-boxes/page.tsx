@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-
 import {
   ArrowRight,
   CheckCircle2,
@@ -16,7 +15,7 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-export default function InstantRevealPage() {
+export default function LootBoxesPage() {
   const sections = [
     { id: "what-is-it", label: "What is It?" },
     { id: "how-it-works", label: "How It Works" },
@@ -57,9 +56,7 @@ export default function InstantRevealPage() {
     <>
       <Navbar />
 
-
       <main className="min-h-screen bg-paper text-navy">
-
 
         <div
           className="
@@ -69,13 +66,10 @@ export default function InstantRevealPage() {
           "
         >
 
-
           <DocumentationSidebar />
 
 
-
           <article className="min-w-0">
-
 
 
             {/* HEADER */}
@@ -83,34 +77,19 @@ export default function InstantRevealPage() {
 
             <section>
 
-
               <p className="text-sm font-semibold text-coral">
                 Instant Win Games
               </p>
 
 
-
-              <h1
-                className="
-                mt-4
-                text-4xl
-                font-bold
-                "
-              >
-                Instant Reveal
+              <h1 className="mt-4 text-4xl font-bold">
+                Loot Boxes
               </h1>
 
 
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                A fast auto-reveal game that checks each
-                ticket and displays wins as they are found.
+              <p className="mt-5 leading-8 text-navy-mute">
+                A loot box opening game with a scrolling
+                reveal animation.
               </p>
 
 
@@ -120,43 +99,21 @@ export default function InstantRevealPage() {
 
 
 
-
-
-
-
             {/* WHAT IS IT */}
-
 
 
             <section
               id="what-is-it"
-              className="
-              border-b
-              border-border
-              py-12
-              "
+              className="border-b border-border py-12"
             >
 
 
               <div className="flex items-center gap-3">
 
-
-                <CircleHelp
-                  className="
-                  h-6
-                  w-6
-                  text-coral
-                  "
-                />
+                <CircleHelp className="h-6 w-6 text-coral"/>
 
 
-
-                <h2
-                  className="
-                  text-3xl
-                  font-bold
-                  "
-                >
+                <h2 className="text-3xl font-bold">
                   What is It?
                 </h2>
 
@@ -165,32 +122,22 @@ export default function InstantRevealPage() {
 
 
 
-
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                The instant reveal mechanic automatically
-                checks tickets one by one and shows the
-                results immediately. Customers can quickly
-                discover whether they have won.
+              <p className="mt-5 leading-8 text-navy-mute">
+                Loot Boxes is an instant win game where
+                customers open a loot box to reveal their
+                ticket result.
               </p>
 
 
 
 
-
-              <div className="mt-7 space-y-4">
+              <div className="mt-6 space-y-4">
 
 
                 {[
-                  "Tickets are automatically checked.",
-                  "Each ticket result is revealed instantly.",
-                  "Winning tickets display prize information."
+                  "Customer opens the loot box display.",
+                  "The reveal animation starts.",
+                  "The final result is displayed."
                 ].map((item)=>(
 
 
@@ -199,15 +146,9 @@ export default function InstantRevealPage() {
                     className="flex gap-3"
                   >
 
-
                     <CheckCircle2
-                      className="
-                      h-5
-                      w-5
-                      text-coral
-                      "
+                      className="h-5 w-5 text-coral"
                     />
-
 
 
                     <p className="text-navy-mute">
@@ -234,8 +175,7 @@ export default function InstantRevealPage() {
             <section
               id="how-it-works"
               className="
-              border-b
-              border-border
+              border-b border-border
               py-12
               "
             >
@@ -245,21 +185,11 @@ export default function InstantRevealPage() {
 
 
                 <PlayCircle
-                  className="
-                  h-6
-                  w-6
-                  text-coral
-                  "
+                  className="h-6 w-6 text-coral"
                 />
 
 
-
-                <h2
-                  className="
-                  text-3xl
-                  font-bold
-                  "
-                >
+                <h2 className="text-3xl font-bold">
                   How It Works
                 </h2>
 
@@ -269,15 +199,9 @@ export default function InstantRevealPage() {
 
 
 
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                Tickets are automatically checked and
-                results are displayed instantly.
+              <p className="mt-5 leading-8 text-navy-mute">
+                Customers interact with the loot box
+                animation and discover their result.
               </p>
 
 
@@ -287,12 +211,11 @@ export default function InstantRevealPage() {
 
 
                 {[
-                  "Customer purchases tickets.",
-                  "Instant Reveal starts automatically.",
-                  "Each ticket is checked one by one.",
-                  "Winning tickets display prize details.",
-                  "No Win tickets show the final result.",
-                  "A summary of results is displayed."
+                  "Customer purchases a ticket.",
+                  "Loot box opening animation starts.",
+                  "Scrolling reveal animation begins.",
+                  "Prize or No Win result appears.",
+                  "Customer views final outcome."
                 ].map((item,index)=>(
 
 
@@ -304,9 +227,7 @@ export default function InstantRevealPage() {
 
                     <span
                       className="
-                      flex
-                      h-6
-                      w-6
+                      flex h-6 w-6
                       items-center justify-center
                       rounded-full
                       bg-coral
@@ -344,82 +265,6 @@ export default function InstantRevealPage() {
 
 
 
-            {/* DEMO VIDEO */}
-
-
-
-            <section
-              className="
-              border-b
-              border-border
-              py-12
-              "
-            >
-
-
-              <h2
-                className="
-                text-3xl
-                font-bold
-                "
-              >
-                Instant Reveal Demo
-              </h2>
-
-
-
-
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                Watch the Instant Reveal game experience
-                and see how tickets are checked and
-                results are displayed.
-              </p>
-
-
-
-
-              <div
-                className="
-                mt-8
-                aspect-video
-                overflow-hidden
-                rounded-xl
-                border
-                border-border
-                "
-              >
-
-
-                <iframe
-                  className="
-                  h-full
-                  w-full
-                  "
-                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                  title="Instant Reveal Demo"
-                  allowFullScreen
-                />
-
-
-              </div>
-
-
-            </section>
-
-
-
-
-
-
-
-
-
             {/* CUSTOMISATION OPTIONS */}
 
 
@@ -427,35 +272,23 @@ export default function InstantRevealPage() {
             <section
               id="customisation"
               className="
-              border-b
-              border-border
+              border-b border-border
               py-12
               "
             >
 
 
 
-              <h2
-                className="
-                text-3xl
-                font-bold
-                "
-              >
+              <h2 className="text-3xl font-bold">
                 Customisation Options
               </h2>
 
 
 
 
-              <p
-                className="
-                mt-5
-                leading-8
-                text-navy-mute
-                "
-              >
-                Customize your Instant Reveal game with
-                prize images and branded visuals.
+              <p className="mt-5 leading-8 text-navy-mute">
+                Customize your Loot Boxes game using
+                prize images and visual settings.
               </p>
 
 
@@ -479,24 +312,16 @@ export default function InstantRevealPage() {
 
 
 
-                <p
-                  className="
-                  mt-3
-                  leading-7
-                  text-navy-mute
-                  "
-                >
+                <p className="mt-3 leading-7 text-navy-mute">
                   Each instant win prize can have a
                   featured image uploaded. These images
-                  are displayed during the reveal.
+                  appear during the reveal animation.
                 </p>
 
 
 
 
-
                 <div className="mt-6 space-y-6">
-
 
 
                   <div>
@@ -508,16 +333,10 @@ export default function InstantRevealPage() {
 
 
 
-
-                    <p
-                      className="
-                      mt-2
-                      text-navy-mute
-                      "
-                    >
-                      Upload prize images through the
-                      instant win prize settings in your
-                      competition.
+                    <p className="mt-2 text-navy-mute">
+                      Upload images for prizes that
+                      customers can reveal inside the
+                      loot box.
                     </p>
 
 
@@ -532,35 +351,66 @@ export default function InstantRevealPage() {
 
 
                     <h4 className="font-bold">
-                      Default Images
+                      Default Image
                     </h4>
 
 
 
-
-                    <p
-                      className="
-                      mt-2
-                      text-navy-mute
-                      "
-                    >
-                      If no custom image is uploaded,
-                      default images can be displayed.
+                    <p className="mt-2 text-navy-mute">
+                      If no custom image is added,
+                      the default placeholder image
+                      is displayed.
                     </p>
 
 
                   </div>
 
 
-
                 </div>
+
+
+              </div>
+              
+
+              {/* PREVIEW */}
+
+
+
+              <div className="mt-12">
+
+
+                <h3 className="text-xl font-bold">
+                  Loot Boxes Preview
+                </h3>
+
+
+
+                <p
+                  className="
+                  mt-3
+                  leading-7
+                  text-navy-mute
+                  "
+                >
+                  Test the scrolling reveal animation
+                  and prize display before launching
+                  the game.
+                </p>
 
 
               </div>
 
 
+
             </section>
-            
+
+
+
+
+
+
+
+
 
             {/* WANT TO TRY FIRST */}
 
@@ -593,11 +443,10 @@ export default function InstantRevealPage() {
                 text-navy-mute
                 "
               >
-                Test your Instant Reveal game before
-                publishing. Check the ticket checking
-                flow and result display.
+                Test your Loot Boxes game before launch.
+                Check the reveal animation and prize
+                results.
               </p>
-
 
 
 
@@ -606,10 +455,10 @@ export default function InstantRevealPage() {
 
 
                 {[
-                  "Open Instant Reveal preview mode.",
-                  "Run the automatic ticket checking.",
-                  "Check winning and No Win results.",
-                  "Adjust settings if required."
+                  "Open Loot Boxes preview mode.",
+                  "Start the scrolling reveal animation.",
+                  "Check the revealed prize result.",
+                  "Update settings if required."
                 ].map((item,index)=>(
 
 
@@ -621,9 +470,7 @@ export default function InstantRevealPage() {
 
                     <span
                       className="
-                      flex
-                      h-6
-                      w-6
+                      flex h-6 w-6
                       items-center justify-center
                       rounded-full
                       bg-coral
@@ -634,7 +481,6 @@ export default function InstantRevealPage() {
                     >
                       {index + 1}
                     </span>
-
 
 
 
@@ -686,7 +532,7 @@ export default function InstantRevealPage() {
 
 
               <Link
-                href="/documentation/loot-boxes"
+                href="/instant-win-games/safe-cracker"
                 className="
                 rounded-2xl
                 border
@@ -709,17 +555,11 @@ export default function InstantRevealPage() {
 
 
                 <p className="mt-2 font-bold">
-                  Loot Boxes
+                  Safe Cracker
                 </p>
 
 
               </Link>
-
-
-
-
-
-
 
 
 
@@ -728,7 +568,7 @@ export default function InstantRevealPage() {
 
 
               <Link
-                href="/documentation/pot-drop"
+                href="/instant-win-games/instant-reveal"
                 className="
                 rounded-2xl
                 border
@@ -764,7 +604,7 @@ export default function InstantRevealPage() {
 
 
                   <p className="font-bold">
-                    Pot Drop
+                    Instant Reveal
                   </p>
 
 
@@ -784,12 +624,10 @@ export default function InstantRevealPage() {
               </Link>
 
 
-
             </div>
             
 
           </article>
-
 
 {/* RIGHT SIDEBAR */}
 
@@ -818,13 +656,10 @@ export default function InstantRevealPage() {
   </div>
 </aside>
 
-
-
         </div>
 
 
       </main>
-
 
 
 

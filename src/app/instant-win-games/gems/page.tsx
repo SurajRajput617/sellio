@@ -749,7 +749,7 @@ useEffect(() => {
               "
             >
               <Link
-                href="/documentation/plinko"
+                href="/instant-win-games/plinko"
                 className="
                   group rounded-xl
                   border border-border
