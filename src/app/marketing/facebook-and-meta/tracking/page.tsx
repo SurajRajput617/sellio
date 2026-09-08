@@ -989,8 +989,6 @@ export default function TrackingPage() {
 
 
 
-
-
                 <Link
                   href="/marketing/sms-and-email/klaviyo-integration"
                   className="

@@ -1367,7 +1367,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/downloads-reports-overview"
+        href="/downloads-and-reports/downloads-reports-overview"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute

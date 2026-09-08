@@ -981,10 +981,6 @@ w-4
 
 
 
-
-
-
-
 <Link
 href="/marketing/facebook-and-meta/advertising"
 className="

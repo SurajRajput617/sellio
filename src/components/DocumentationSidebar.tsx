@@ -2,10 +2,40 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
 import { Rocket } from "lucide-react";
 
 export default function DocumentationSidebar() {
   const pathname = usePathname();
+
+  const sidebarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const savedScroll = sessionStorage.getItem("sidebar-scroll");
+
+    if (sidebarRef.current && savedScroll) {
+      sidebarRef.current.scrollTop = Number(savedScroll);
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    const sidebar = sidebarRef.current;
+
+    if (!sidebar) return;
+
+    const saveScroll = () => {
+      sessionStorage.setItem(
+        "sidebar-scroll",
+        sidebar.scrollTop.toString()
+      );
+    };
+
+    sidebar.addEventListener("scroll", saveScroll);
+
+    return () => {
+      sidebar.removeEventListener("scroll", saveScroll);
+    };
+  }, []);
 
   const mainLinkClass = (path: string) => {
     const active = pathname === path;
@@ -15,17 +45,20 @@ export default function DocumentationSidebar() {
       : "flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-coral";
   };
 
-  const subLinkClass = (path: string) => {
-    const active = pathname === path;
+const subLinkClass = (path: string) => {
+  const active = pathname === path;
 
-    return active
-      ? "block rounded-lg bg-coral/10 px-3 py-2.5 text-sm font-semibold text-coral"
-      : "block rounded-lg px-3 py-2.5 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-coral";
-  };
+  return active
+    ? "active-sidebar-item block rounded-lg bg-coral/10 px-3 py-2.5 text-sm font-semibold text-coral"
+    : "block rounded-lg px-3 py-2.5 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-coral";
+};
 
   return (
     <aside className="hidden lg:block">
-      <div className="sticky top-28 max-h-[calc(100vh-7rem)] overflow-y-auto pr-2">
+      <div
+  ref={sidebarRef}
+  className="sticky top-28 max-h-[calc(100vh-7rem)] overflow-y-auto pr-2"
+>
         {/* Fixed Sidebar Button */}
         <div className="sticky top-0 z-50 bg-[#faf6ee] pt-5 pb-5">
           <div className="flex justify-start bg-[#faf6ee]">
