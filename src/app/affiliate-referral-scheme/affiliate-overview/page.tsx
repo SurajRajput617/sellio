@@ -950,7 +950,7 @@ space-y-3
 
 
 <Link
-href="/documentation/product-catalogue"
+href="/create-your-first-raffle/product-categories"
 className="
 flex
 items-center
@@ -966,7 +966,7 @@ hover:border-coral
 "
 >
 
-Product Catalogue
+Product Categories
 
 
 <ChevronRight
@@ -986,7 +986,7 @@ w-4
 
 
 <Link
-href="/documentation/advertising"
+href="/marketing/facebook-and-meta/advertising"
 className="
 flex
 items-center
