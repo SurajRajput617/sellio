@@ -1065,7 +1065,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/sms"
+        href="/marketing/sms-and-email/sms"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1078,7 +1078,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/setup-email-marketing"
+        href="/marketing/sms-and-email/setup-email-marketing"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1091,7 +1091,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/sending-an-email-with-notify"
+        href="/marketing/sms-and-email/sending-an-email-with-notify"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1104,7 +1104,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/klaviyo-integration"
+        href="/marketing/sms-and-email/klaviyo-integration"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1170,7 +1170,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/advertising"
+        href="/marketing/facebook-and-meta/advertising"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1183,7 +1183,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/tracking"
+        href="/marketing/facebook-and-meta/tracking"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1196,7 +1196,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/product-catalogue"
+        href="/marketing/facebook-and-meta/product-catalogue"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute

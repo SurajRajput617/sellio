@@ -1010,7 +1010,7 @@ SEO Settings
 
 
 <Link
-href="/documentation/sms"
+href="/marketing/sms-and-email/sms"
 className="
 rounded-lg
 border

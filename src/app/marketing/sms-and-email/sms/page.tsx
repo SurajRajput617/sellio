@@ -896,7 +896,7 @@ sm:grid-cols-2
 
 
 <Link
-href="/documentation/top-banner-text"
+href="/marketing/website-tools/top-banner-text"
 className="
 rounded-lg
 border
@@ -957,7 +957,7 @@ Top-Banner-Text
 
 
 <Link
-href="/documentation/setup-email-marketing"
+href="/marketing/sms-and-email/setup-email-marketing"
 className="
 rounded-lg
 border

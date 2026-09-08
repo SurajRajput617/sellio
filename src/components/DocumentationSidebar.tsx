@@ -884,17 +884,17 @@ export default function DocumentationSidebar() {
 
 
                 <Link
-                  href="/documentation/sms"
-                  className={subLinkClass("/documentation/sms")}
+                  href="/marketing/sms-and-email/sms"
+                  className={subLinkClass("/marketing/sms-and-email/sms")}
                 >
                   SMS
                 </Link>
 
 
                 <Link
-                  href="/documentation/setup-email-marketing"
+                  href="/marketing/sms-and-email/setup-email-marketing"
                   className={subLinkClass(
-                    "/documentation/setup-email-marketing"
+                    "/marketing/sms-and-email/setup-email-marketing"
                   )}
                 >
                   Set Up Email Marketing
@@ -902,9 +902,9 @@ export default function DocumentationSidebar() {
 
 
                 <Link
-                  href="/documentation/sending-an-email-with-notify"
+                  href="/marketing/sms-and-email/sending-an-email-with-notify"
                   className={subLinkClass(
-                    "/documentation/sending-an-email-with-notify"
+                    "/marketing/sms-and-email/sending-an-email-with-notify"
                   )}
                 >
                   Sending an Email with Notify
@@ -912,9 +912,9 @@ export default function DocumentationSidebar() {
 
 
                 <Link
-                  href="/documentation/klaviyo-integration"
+                  href="/marketing/sms-and-email/klaviyo-integration"
                   className={subLinkClass(
-                    "/documentation/klaviyo-integration"
+                    "/marketing/sms-and-email/klaviyo-integration"
                   )}
                 >
                   Klaviyo Integration
@@ -976,9 +976,9 @@ export default function DocumentationSidebar() {
                 <nav className="mt-2 space-y-1">
 
                   <Link
-                    href="/documentation/advertising"
+                    href="/marketing/facebook-and-meta/advertising"
                     className={subLinkClass(
-                      "/documentation/advertising"
+                      "/marketing/facebook-and-meta/advertising"
                     )}
                   >
                     Advertising
@@ -986,9 +986,9 @@ export default function DocumentationSidebar() {
 
 
                   <Link
-                    href="/documentation/tracking"
+                    href="/marketing/facebook-and-meta/tracking"
                     className={subLinkClass(
-                      "/documentation/tracking"
+                      "/marketing/facebook-and-meta/tracking"
                     )}
                   >
                     Tracking
@@ -996,9 +996,9 @@ export default function DocumentationSidebar() {
 
 
                   <Link
-                    href="/documentation/product-catalogue"
+                    href="/marketing/facebook-and-meta/product-catalogue"
                     className={subLinkClass(
-                      "/documentation/product-catalogue"
+                      "/marketing/facebook-and-meta/product-catalogue"
                     )}
                   >
                     Product Catalogue

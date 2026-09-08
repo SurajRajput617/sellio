@@ -8,7 +8,8 @@ import {
   ArrowRight,
   ChevronRight,
   Info,
-  Mail,
+  Megaphone,
+  CheckCircle,
 } from "lucide-react";
 
 
@@ -17,18 +18,19 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
+
 const sections = [
   {
-    id:"connect",
-    label:"How to Connect Your Email Marketing Provider",
+    id:"needs",
+    label:"What You Need to Advertise",
   },
   {
-    id:"notify",
-    label:"Sellio Email Campaigns",
+    id:"setup",
+    label:"How to Create Ads",
   },
   {
-    id:"integration",
-    label:"Email Provider Integration",
+    id:"rules",
+    label:"Rules for Your Ads",
   },
   {
     id:"related",
@@ -38,11 +40,12 @@ const sections = [
 
 
 
-export default function SetUpEmailMarketingPage(){
+
+export default function AdvertisingPage(){
 
 
 const [activeSection,setActiveSection] =
-useState("connect");
+useState("needs");
 
 
 
@@ -56,6 +59,7 @@ let current =
 sections[0].id;
 
 
+
 sections.forEach((item)=>{
 
 
@@ -63,7 +67,9 @@ const element =
 document.getElementById(item.id);
 
 
+
 if(!element) return;
+
 
 
 if(
@@ -77,6 +83,7 @@ current=item.id;
 
 
 });
+
 
 
 setActiveSection(current);
@@ -95,7 +102,9 @@ passive:true
 );
 
 
+
 handleScroll();
+
 
 
 return()=>{
@@ -112,11 +121,15 @@ handleScroll
 
 
 
+
+
+
 return(
 
 <>
 
 <Navbar />
+
 
 
 <main
@@ -143,11 +156,14 @@ lg:grid-cols-[250px_minmax(0,1fr)_210px]
 
 
 
+
+
 <article
 className="
 min-w-0
 "
 >
+
 
 
 
@@ -181,8 +197,9 @@ text-3xl
 font-bold
 "
 >
-Set Up Email Marketing
+Advertising
 </h1>
+
 
 
 
@@ -195,9 +212,10 @@ leading-7
 text-navy-mute
 "
 >
-Connect your email marketing tools with Sellio
-to create campaigns, share updates, and build
-stronger communication with your customers.
+Create and manage advertising campaigns for your
+Sellio store. Connect your marketing channels,
+promote products, and reach more customers with
+targeted campaigns.
 </p>
 
 
@@ -212,7 +230,7 @@ stronger communication with your customers.
 
 
 <section
-id="connect"
+id="needs"
 className="
 scroll-mt-28
 border-b
@@ -228,7 +246,7 @@ text-xl
 font-bold
 "
 >
-How to Connect Your Email Marketing Provider
+What You Need to Advertise
 </h2>
 
 
@@ -242,15 +260,16 @@ leading-7
 text-navy-mute
 "
 >
-Connect an email provider to send marketing
-campaigns and manage customer communication
-from your Sellio dashboard.
+Before creating an advertising campaign in Sellio,
+make sure you have the required marketing details
+ready.
 </p>
 
 
 
 
-<ol
+
+<ul
 className="
 mt-5
 space-y-3
@@ -262,36 +281,32 @@ text-navy-mute
 
 
 <li>
-1. Login to your Sellio dashboard.
+• Sellio store account
 </li>
 
 
 <li>
-2. Open Marketing settings.
+• Connected advertising platform
 </li>
 
 
 <li>
-3. Select Email Marketing Provider.
+• Product information and images
 </li>
 
 
 <li>
-4. Choose your email service.
+• Customer audience details
 </li>
 
 
 <li>
-5. Add your connection details.
+• Campaign goals and budget settings
 </li>
 
 
-<li>
-6. Save your changes.
-</li>
+</ul>
 
-
-</ol>
 
 
 
@@ -300,15 +315,21 @@ text-navy-mute
 <div
 className="
 mt-6
-flex
-items-start
-gap-3
 rounded-lg
 border
 border-border
 bg-black/5
-px-4
-py-3
+px-5
+py-4
+"
+>
+
+
+<div
+className="
+flex
+items-start
+gap-3
 "
 >
 
@@ -331,10 +352,12 @@ leading-6
 text-navy-mute
 "
 >
-A connected email provider allows Sellio to
-organize customer communication and marketing
-campaigns.
+Prepare your campaign details before launching
+ads to make setup faster and easier.
 </p>
+
+
+</div>
 
 
 
@@ -352,7 +375,7 @@ campaigns.
 
 
 <section
-id="notify"
+id="setup"
 className="
 scroll-mt-28
 border-b
@@ -368,8 +391,9 @@ text-xl
 font-bold
 "
 >
-Sellio Email Campaigns
+How to Create Ads
 </h2>
+
 
 
 
@@ -381,9 +405,60 @@ leading-7
 text-navy-mute
 "
 >
-Create customer emails for promotions, updates,
-new products, and important store announcements.
+Follow these steps to create advertising campaigns
+through your Sellio marketing dashboard.
 </p>
+
+
+
+
+
+<ol
+className="
+mt-5
+space-y-3
+text-sm
+leading-6
+text-navy-mute
+"
+>
+
+
+<li>
+1. Open your Sellio dashboard.
+</li>
+
+
+<li>
+2. Go to Marketing tools.
+</li>
+
+
+<li>
+3. Select Advertising.
+</li>
+
+
+<li>
+4. Choose your campaign objective.
+</li>
+
+
+<li>
+5. Add products and creative content.
+</li>
+
+
+<li>
+6. Review and launch your campaign.
+</li>
+
+
+</ol>
+
+
+
+
 
 
 
@@ -391,9 +466,10 @@ new products, and important store announcements.
 <div
 className="
 mt-6
-rounded-lg
+rounded-xl
 border
 border-border
+bg-white
 p-5
 "
 >
@@ -408,7 +484,7 @@ gap-3
 >
 
 
-<Mail
+<Megaphone
 className="
 h-5
 w-5
@@ -423,11 +499,12 @@ className="
 font-semibold
 "
 >
-Email Campaign Dashboard
+Sellio Ads Dashboard
 </p>
 
 
 </div>
+
 
 
 
@@ -455,8 +532,9 @@ text-xs
 text-navy-mute
 "
 >
-Subscribers
+Active Campaigns
 </p>
+
 
 <p
 className="
@@ -465,10 +543,13 @@ text-xl
 font-bold
 "
 >
-2,450
+12
 </p>
 
+
 </div>
+
+
 
 
 
@@ -486,8 +567,9 @@ text-xs
 text-navy-mute
 "
 >
-Campaigns
+Reach
 </p>
+
 
 <p
 className="
@@ -496,10 +578,13 @@ text-xl
 font-bold
 "
 >
-36
+24K
 </p>
 
+
 </div>
+
+
 
 
 
@@ -517,8 +602,9 @@ text-xs
 text-navy-mute
 "
 >
-Open Rate
+Conversions
 </p>
+
 
 <p
 className="
@@ -528,23 +614,27 @@ font-bold
 text-coral
 "
 >
-72%
+486
 </p>
 
-</div>
-
 
 </div>
 
 
 
 </div>
+
+
+
+</div>
+
+
 
 
 
 </section>
             <section
-              id="integration"
+              id="rules"
               className="
                 scroll-mt-28
                 border-b
@@ -560,7 +650,7 @@ text-coral
                   font-bold
                 "
               >
-                Email Provider Integration
+                Rules for Your Ads
               </h2>
 
 
@@ -574,10 +664,52 @@ text-coral
                   text-navy-mute
                 "
               >
-                Connect your preferred email service with
-                Sellio to manage campaigns and customer
-                communication from one place.
+                Follow these guidelines when creating
+                advertising campaigns with Sellio.
               </p>
+
+
+
+
+              <ul
+                className="
+                  mt-5
+                  space-y-3
+                  text-sm
+                  leading-6
+                  text-navy-mute
+                "
+              >
+
+
+                <li>
+                  • Use clear and accurate product information.
+                </li>
+
+
+                <li>
+                  • Add high-quality images and creative assets.
+                </li>
+
+
+                <li>
+                  • Avoid misleading promotional messages.
+                </li>
+
+
+                <li>
+                  • Target the right customer audience.
+                </li>
+
+
+                <li>
+                  • Review campaigns before publishing.
+                </li>
+
+
+              </ul>
+
+
 
 
 
@@ -585,76 +717,41 @@ text-coral
               <div
                 className="
                   mt-6
+                  flex
+                  items-start
+                  gap-3
                   rounded-lg
                   border
                   border-border
-                  p-5
+                  bg-black/5
+                  px-5
+                  py-4
                 "
               >
+
+
+                <CheckCircle
+                  className="
+                    mt-0.5
+                    h-4
+                    w-4
+                    text-coral
+                  "
+                />
+
 
 
                 <p
                   className="
                     text-sm
-                    font-semibold
+                    leading-6
+                    text-navy-mute
                   "
                 >
-                  Connected Provider
+                  Well-optimized ads help customers find
+                  relevant products and improve campaign
+                  performance.
                 </p>
-
-
-
-                <div
-                  className="
-                    mt-4
-                    rounded-lg
-                    bg-black/5
-                    p-4
-                  "
-                >
-
-
-                  <p
-                    className="
-                      text-sm
-                      font-bold
-                    "
-                  >
-                    Email Marketing Service
-                  </p>
-
-
-                  <p
-                    className="
-                      mt-2
-                      text-xs
-                      text-navy-mute
-                    "
-                  >
-                    Connection Active
-                  </p>
-
-
-                </div>
-
-
-
-
-                <button
-                  className="
-                    mt-5
-                    rounded-md
-                    bg-coral
-                    px-5
-                    py-2
-                    text-sm
-                    font-semibold
-                    text-white
-                  "
-                >
-                  Manage Connection
-                </button>
-
 
 
               </div>
@@ -671,6 +768,7 @@ text-coral
 
 
 
+
             <section
               className="
                 border-b
@@ -680,14 +778,13 @@ text-coral
             >
 
 
-
               <h2
                 className="
                   text-xl
                   font-bold
                 "
               >
-                Email Marketing Performance
+                Campaign Preview
               </h2>
 
 
@@ -701,8 +798,8 @@ text-coral
                   text-navy-mute
                 "
               >
-                Monitor campaign activity and understand
-                how customers interact with your emails.
+                Preview how your Sellio advertising
+                campaign can appear to customers.
               </p>
 
 
@@ -712,77 +809,65 @@ text-coral
               <div
                 className="
                   mt-6
-                  rounded-lg
+                  rounded-xl
                   border
                   border-border
+                  bg-white
                   p-5
                 "
               >
 
 
-
                 <div
                   className="
-                    flex
-                    h-44
-                    items-end
-                    gap-3
+                    rounded-lg
+                    bg-black/5
+                    p-5
                   "
                 >
 
 
-                  {
-                    [
-                      35,
-                      55,
-                      45,
-                      70,
-                      65,
-                      85,
-                      75
-                    ].map((value,index)=>(
-
-
-                      <div
-                        key={index}
-                        className="
-                          flex-1
-                          rounded-t-md
-                          bg-coral
-                        "
-                        style={{
-                          height:`${value}%`
-                        }}
-                      />
+                  <p
+                    className="
+                      text-sm
+                      font-bold
+                    "
+                  >
+                    New Product Collection
+                  </p>
 
 
 
-                    ))
-                  }
-
-
-                </div>
+                  <p
+                    className="
+                      mt-2
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+                    Discover our latest products with
+                    special offers available today.
+                  </p>
 
 
 
 
-                <div
-                  className="
-                    mt-3
-                    flex
-                    justify-between
-                    text-xs
-                    text-navy-mute
-                  "
-                >
+                  <button
+                    className="
+                      mt-4
+                      rounded-md
+                      bg-coral
+                      px-5
+                      py-2
+                      text-sm
+                      font-semibold
+                      text-white
+                    "
+                  >
+                    Shop Now
+                  </button>
 
-                  <span>Mon</span>
-                  <span>Tue</span>
-                  <span>Wed</span>
-                  <span>Thu</span>
-                  <span>Fri</span>
-                  <span>Sat</span>
-                  <span>Sun</span>
 
                 </div>
 
@@ -811,7 +896,6 @@ text-coral
             >
 
 
-
               <h2
                 className="
                   text-xl
@@ -833,10 +917,8 @@ text-coral
                 "
               >
                 Explore more Sellio marketing tools and
-                customer communication features.
+                customer growth features.
               </p>
-
-
 
 
 
@@ -850,8 +932,9 @@ text-coral
 
 
 
+
                 <Link
-                  href="/documentation/sms"
+                  href="/documentation/klaviyo-integration"
                   className="
                     flex
                     items-center
@@ -867,7 +950,8 @@ text-coral
                   "
                 >
 
-                  SMS
+
+                  Klaviyo Integration
 
 
                   <ChevronRight
@@ -878,8 +962,8 @@ text-coral
                     "
                   />
 
-                </Link>
 
+                </Link>
 
 
 
@@ -903,6 +987,7 @@ text-coral
                   "
                 >
 
+
                   Top Banner Text
 
 
@@ -914,6 +999,7 @@ text-coral
                     "
                   />
 
+
                 </Link>
 
 
@@ -923,7 +1009,6 @@ text-coral
 
 
             </section>
-
 
 
 
@@ -946,7 +1031,7 @@ text-coral
 
 
               <Link
-                href="/documentation/sms"
+                href="/marketing/sms-and-email/klaviyo-integration"
                 className="
                   rounded-lg
                   border
@@ -990,7 +1075,7 @@ text-coral
                   />
 
 
-                  SMS
+                  Klaviyo-Integration
 
 
                 </div>
@@ -1004,8 +1089,9 @@ text-coral
 
 
 
+
               <Link
-                href="/documentation/sending-an-email-with-notify"
+                href="/marketing/facebook-and-meta/tracking"
                 className="
                   rounded-lg
                   border
@@ -1030,6 +1116,7 @@ text-coral
 
 
 
+
                 <div
                   className="
                     mt-2
@@ -1043,7 +1130,7 @@ text-coral
                 >
 
 
-                  Sending-an-Email-with-Notify
+                  Tracking
 
 
                   <ArrowRight
@@ -1060,14 +1147,15 @@ text-coral
               </Link>
 
 
+
             </div>
 
 
 
 
 
-          </article>
 
+          </article>
 
 
 
@@ -1171,6 +1259,7 @@ text-coral
 
 
       </main>
+
 
 
       <Footer />

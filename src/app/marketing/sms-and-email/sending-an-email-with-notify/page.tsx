@@ -936,7 +936,7 @@ export default function SendingEmailNotifyPage() {
 
 
               <Link
-                href="/documentation/setup-email-marketing"
+                href="/marketing/sms-and-email/setup-email-marketing"
                 className="
                 rounded-lg
                 border
@@ -997,7 +997,7 @@ export default function SendingEmailNotifyPage() {
 
 
               <Link
-                href="/documentation/klaviyo-integration"
+                href="/marketing/sms-and-email/klaviyo-integration"
                 className="
                 rounded-lg
                 border

@@ -1051,7 +1051,7 @@ export default function TrackingPage() {
 
 
               <Link
-                href="/documentation/advertising"
+                href="/marketing/facebook-and-meta/advertising"
                 className="
                 rounded-lg
                 border
@@ -1112,7 +1112,7 @@ export default function TrackingPage() {
 
 
               <Link
-                href="/documentation/product-catalogue"
+                href="/marketing/facebook-and-meta/product-catalogue"
                 className="
                 rounded-lg
                 border

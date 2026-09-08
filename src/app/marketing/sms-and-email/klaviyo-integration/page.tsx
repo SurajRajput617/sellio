@@ -8,8 +8,8 @@ import {
   ArrowRight,
   ChevronRight,
   Info,
-  Megaphone,
   CheckCircle,
+  KeyRound,
 } from "lucide-react";
 
 
@@ -21,16 +21,20 @@ import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 const sections = [
   {
-    id:"needs",
-    label:"What You Need to Advertise",
+    id:"intro",
+    label:"Klaviyo Integration",
   },
   {
-    id:"setup",
-    label:"How to Create Ads",
+    id:"api",
+    label:"Get Your API Keys",
   },
   {
-    id:"rules",
-    label:"Rules for Your Ads",
+    id:"connect",
+    label:"Add API Keys",
+  },
+  {
+    id:"sync",
+    label:"Sync Products",
   },
   {
     id:"related",
@@ -41,11 +45,11 @@ const sections = [
 
 
 
-export default function AdvertisingPage(){
+export default function KlaviyoIntegrationPage(){
 
 
 const [activeSection,setActiveSection] =
-useState("needs");
+useState("intro");
 
 
 
@@ -83,7 +87,6 @@ current=item.id;
 
 
 });
-
 
 
 setActiveSection(current);
@@ -131,7 +134,6 @@ return(
 <Navbar />
 
 
-
 <main
 className="
 min-h-screen
@@ -169,8 +171,11 @@ min-w-0
 
 
 
+
 <section
+id="intro"
 className="
+scroll-mt-28
 border-b
 border-border
 pb-8
@@ -190,6 +195,7 @@ Sellio Marketing Tools
 
 
 
+
 <h1
 className="
 mt-3
@@ -197,7 +203,7 @@ text-3xl
 font-bold
 "
 >
-Advertising
+Klaviyo Integration
 </h1>
 
 
@@ -212,124 +218,26 @@ leading-7
 text-navy-mute
 "
 >
-Create and manage advertising campaigns for your
-Sellio store. Connect your marketing channels,
-promote products, and reach more customers with
-targeted campaigns.
+Connect Sellio with Klaviyo to sync customers,
+products, and marketing data. Use this integration
+to create targeted campaigns and improve customer
+communication.
 </p>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-<section
-id="needs"
-className="
-scroll-mt-28
-border-b
-border-border
-py-8
-"
->
-
-
-<h2
-className="
-text-xl
-font-bold
-"
->
-What You Need to Advertise
-</h2>
-
-
-
-
-<p
-className="
-mt-4
-text-sm
-leading-7
-text-navy-mute
-"
->
-Before creating an advertising campaign in Sellio,
-make sure you have the required marketing details
-ready.
-</p>
-
-
-
-
-
-<ul
-className="
-mt-5
-space-y-3
-text-sm
-leading-6
-text-navy-mute
-"
->
-
-
-<li>
-• Sellio store account
-</li>
-
-
-<li>
-• Connected advertising platform
-</li>
-
-
-<li>
-• Product information and images
-</li>
-
-
-<li>
-• Customer audience details
-</li>
-
-
-<li>
-• Campaign goals and budget settings
-</li>
-
-
-</ul>
-
-
-
 
 
 
 <div
 className="
 mt-6
+flex
+items-start
+gap-3
 rounded-lg
 border
 border-border
 bg-black/5
 px-5
 py-4
-"
->
-
-
-<div
-className="
-flex
-items-start
-gap-3
 "
 >
 
@@ -352,13 +260,9 @@ leading-6
 text-navy-mute
 "
 >
-Prepare your campaign details before launching
-ads to make setup faster and easier.
+Make sure you have an active Klaviyo account
+before connecting it with Sellio.
 </p>
-
-
-</div>
-
 
 
 </div>
@@ -374,8 +278,9 @@ ads to make setup faster and easier.
 
 
 
+
 <section
-id="setup"
+id="api"
 className="
 scroll-mt-28
 border-b
@@ -391,7 +296,7 @@ text-xl
 font-bold
 "
 >
-How to Create Ads
+Step 1: Get Your API Keys
 </h2>
 
 
@@ -405,8 +310,8 @@ leading-7
 text-navy-mute
 "
 >
-Follow these steps to create advertising campaigns
-through your Sellio marketing dashboard.
+Create and copy your Klaviyo API credentials before
+connecting the service with Sellio.
 </p>
 
 
@@ -425,32 +330,27 @@ text-navy-mute
 
 
 <li>
-1. Open your Sellio dashboard.
+1. Login to your Klaviyo account.
 </li>
 
 
 <li>
-2. Go to Marketing tools.
+2. Open Account Settings.
 </li>
 
 
 <li>
-3. Select Advertising.
+3. Navigate to API Keys.
 </li>
 
 
 <li>
-4. Choose your campaign objective.
+4. Create a private API key.
 </li>
 
 
 <li>
-5. Add products and creative content.
-</li>
-
-
-<li>
-6. Review and launch your campaign.
+5. Copy the key for Sellio connection.
 </li>
 
 
@@ -458,6 +358,144 @@ text-navy-mute
 
 
 
+
+
+<div
+className="
+mt-6
+rounded-lg
+border
+border-border
+p-5
+"
+>
+
+
+<div
+className="
+flex
+items-center
+gap-3
+"
+>
+
+
+<KeyRound
+className="
+h-5
+w-5
+text-coral
+"
+/>
+
+
+
+<p
+className="
+font-semibold
+"
+>
+Klaviyo API Key Setup
+</p>
+
+
+</div>
+
+
+
+
+<div
+className="
+mt-4
+rounded-lg
+bg-black/5
+p-4
+"
+>
+
+
+<p
+className="
+text-sm
+font-semibold
+"
+>
+Private API Key
+</p>
+
+
+
+<div
+className="
+mt-3
+rounded-md
+border
+border-border
+bg-white
+px-4
+py-3
+text-xs
+text-navy-mute
+"
+>
+pk_live_xxxxxxxxxxxxx
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section
+id="connect"
+className="
+scroll-mt-28
+border-b
+border-border
+py-8
+"
+>
+
+
+<h2
+className="
+text-xl
+font-bold
+"
+>
+Step 2: Add API Keys
+</h2>
+
+
+
+
+<p
+className="
+mt-4
+text-sm
+leading-7
+text-navy-mute
+"
+>
+Add your Klaviyo API details inside your Sellio
+marketing settings to connect both platforms.
+</p>
 
 
 
@@ -475,35 +513,14 @@ p-5
 >
 
 
-<div
-className="
-flex
-items-center
-gap-3
-"
->
-
-
-<Megaphone
-className="
-h-5
-w-5
-text-coral
-"
-/>
-
-
-
 <p
 className="
-font-semibold
+text-sm
+font-bold
 "
 >
-Sellio Ads Dashboard
+Sellio Integration Settings
 </p>
-
-
-</div>
 
 
 
@@ -511,9 +528,7 @@ Sellio Ads Dashboard
 <div
 className="
 mt-5
-grid
-gap-4
-sm:grid-cols-3
+space-y-4
 "
 >
 
@@ -526,24 +541,25 @@ p-4
 "
 >
 
+
 <p
 className="
 text-xs
 text-navy-mute
 "
 >
-Active Campaigns
+Provider
 </p>
 
 
 <p
 className="
 mt-2
-text-xl
-font-bold
+text-sm
+font-semibold
 "
 >
-12
+Klaviyo
 </p>
 
 
@@ -552,7 +568,6 @@ font-bold
 
 
 
-
 <div
 className="
 rounded-lg
@@ -561,40 +576,6 @@ p-4
 "
 >
 
-<p
-className="
-text-xs
-text-navy-mute
-"
->
-Reach
-</p>
-
-
-<p
-className="
-mt-2
-text-xl
-font-bold
-"
->
-24K
-</p>
-
-
-</div>
-
-
-
-
-
-<div
-className="
-rounded-lg
-bg-black/5
-p-4
-"
->
 
 <p
 className="
@@ -602,19 +583,31 @@ text-xs
 text-navy-mute
 "
 >
-Conversions
+Connection Status
 </p>
 
 
 <p
 className="
 mt-2
-text-xl
-font-bold
+flex
+items-center
+gap-2
+text-sm
+font-semibold
 text-coral
 "
 >
-486
+
+<CheckCircle
+className="
+h-4
+w-4
+"
+/>
+
+Connected
+
 </p>
 
 
@@ -627,14 +620,12 @@ text-coral
 
 
 </div>
-
-
 
 
 
 </section>
             <section
-              id="rules"
+              id="sync"
               className="
                 scroll-mt-28
                 border-b
@@ -650,7 +641,7 @@ text-coral
                   font-bold
                 "
               >
-                Rules for Your Ads
+                Step 3: Sync Products
               </h2>
 
 
@@ -664,14 +655,15 @@ text-coral
                   text-navy-mute
                 "
               >
-                Follow these guidelines when creating
-                advertising campaigns with Sellio.
+                Sync your Sellio products with Klaviyo
+                so you can create targeted campaigns
+                based on customer activity.
               </p>
 
 
 
 
-              <ul
+              <ol
                 className="
                   mt-5
                   space-y-3
@@ -683,31 +675,26 @@ text-coral
 
 
                 <li>
-                  • Use clear and accurate product information.
+                  1. Open the Klaviyo integration settings.
                 </li>
 
 
                 <li>
-                  • Add high-quality images and creative assets.
+                  2. Select product sync options.
                 </li>
 
 
                 <li>
-                  • Avoid misleading promotional messages.
+                  3. Choose products you want to share.
                 </li>
 
 
                 <li>
-                  • Target the right customer audience.
+                  4. Save your synchronization settings.
                 </li>
 
 
-                <li>
-                  • Review campaigns before publishing.
-                </li>
-
-
-              </ul>
+              </ol>
 
 
 
@@ -717,9 +704,6 @@ text-coral
               <div
                 className="
                   mt-6
-                  flex
-                  items-start
-                  gap-3
                   rounded-lg
                   border
                   border-border
@@ -729,28 +713,25 @@ text-coral
                 "
               >
 
-
-                <CheckCircle
+                <p
                   className="
-                    mt-0.5
-                    h-4
-                    w-4
-                    text-coral
+                    text-sm
+                    font-semibold
                   "
-                />
-
+                >
+                  Product Sync Status
+                </p>
 
 
                 <p
                   className="
+                    mt-2
                     text-sm
-                    leading-6
                     text-navy-mute
                   "
                 >
-                  Well-optimized ads help customers find
-                  relevant products and improve campaign
-                  performance.
+                  Your Sellio products are ready to sync
+                  with your Klaviyo account.
                 </p>
 
 
@@ -758,9 +739,7 @@ text-coral
 
 
 
-
             </section>
-
 
 
 
@@ -784,7 +763,7 @@ text-coral
                   font-bold
                 "
               >
-                Campaign Preview
+                Test Integration
               </h2>
 
 
@@ -798,8 +777,8 @@ text-coral
                   text-navy-mute
                 "
               >
-                Preview how your Sellio advertising
-                campaign can appear to customers.
+                Check your connection before launching
+                customer campaigns.
               </p>
 
 
@@ -820,56 +799,68 @@ text-coral
 
                 <div
                   className="
-                    rounded-lg
-                    bg-black/5
-                    p-5
+                    flex
+                    items-center
+                    justify-between
                   "
                 >
 
+                  <div>
 
-                  <p
+                    <p
+                      className="
+                        text-sm
+                        font-bold
+                      "
+                    >
+                      Klaviyo Connection Test
+                    </p>
+
+
+                    <p
+                      className="
+                        mt-2
+                        text-xs
+                        text-navy-mute
+                      "
+                    >
+                      Verify API connection and data sync.
+                    </p>
+
+
+                  </div>
+
+
+
+
+                  <CheckCircle
                     className="
-                      text-sm
-                      font-bold
+                      h-6
+                      w-6
+                      text-coral
                     "
-                  >
-                    New Product Collection
-                  </p>
-
-
-
-                  <p
-                    className="
-                      mt-2
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-                    Discover our latest products with
-                    special offers available today.
-                  </p>
-
-
-
-
-                  <button
-                    className="
-                      mt-4
-                      rounded-md
-                      bg-coral
-                      px-5
-                      py-2
-                      text-sm
-                      font-semibold
-                      text-white
-                    "
-                  >
-                    Shop Now
-                  </button>
+                  />
 
 
                 </div>
+
+
+
+
+                <button
+                  className="
+                    mt-5
+                    rounded-md
+                    bg-coral
+                    px-5
+                    py-2
+                    text-sm
+                    font-semibold
+                    text-white
+                  "
+                >
+                  Test Connection
+                </button>
 
 
 
@@ -878,7 +869,6 @@ text-coral
 
 
             </section>
-
 
 
 
@@ -916,9 +906,10 @@ text-coral
                   text-navy-mute
                 "
               >
-                Explore more Sellio marketing tools and
-                customer growth features.
+                Explore more Sellio marketing integrations
+                and customer communication tools.
               </p>
+
 
 
 
@@ -932,9 +923,8 @@ text-coral
 
 
 
-
                 <Link
-                  href="/documentation/klaviyo-integration"
+                  href="/documentation/setup-email-marketing"
                   className="
                     flex
                     items-center
@@ -950,8 +940,7 @@ text-coral
                   "
                 >
 
-
-                  Klaviyo Integration
+                  Set Up Email Marketing
 
 
                   <ChevronRight
@@ -961,7 +950,6 @@ text-coral
                       text-navy-mute
                     "
                   />
-
 
                 </Link>
 
@@ -970,8 +958,9 @@ text-coral
 
 
 
+
                 <Link
-                  href="/documentation/top-banner-text"
+                  href="/documentation/sms"
                   className="
                     flex
                     items-center
@@ -987,8 +976,7 @@ text-coral
                   "
                 >
 
-
-                  Top Banner Text
+                  SMS
 
 
                   <ChevronRight
@@ -998,7 +986,6 @@ text-coral
                       text-navy-mute
                     "
                   />
-
 
                 </Link>
 
@@ -1031,7 +1018,7 @@ text-coral
 
 
               <Link
-                href="/documentation/klaviyo-integration"
+                href="/marketing/sms-and-email/sending-an-email-with-notify"
                 className="
                   rounded-lg
                   border
@@ -1055,6 +1042,7 @@ text-coral
 
 
 
+
                 <div
                   className="
                     mt-2
@@ -1075,7 +1063,7 @@ text-coral
                   />
 
 
-                  Klaviyo-Integration
+              Sending-an-Email-with-Notify
 
 
                 </div>
@@ -1084,14 +1072,8 @@ text-coral
               </Link>
 
 
-
-
-
-
-
-
               <Link
-                href="/documentation/tracking"
+                href="/marketing/facebook-and-meta/advertising"
                 className="
                   rounded-lg
                   border
@@ -1116,7 +1098,6 @@ text-coral
 
 
 
-
                 <div
                   className="
                     mt-2
@@ -1130,7 +1111,7 @@ text-coral
                 >
 
 
-                  Tracking
+                 Advertising
 
 
                   <ArrowRight
@@ -1141,6 +1122,7 @@ text-coral
                   />
 
 
+
                 </div>
 
 
@@ -1149,6 +1131,7 @@ text-coral
 
 
             </div>
+
 
 
 
@@ -1170,7 +1153,6 @@ text-coral
               xl:block
             "
           >
-
 
 
             <div
@@ -1243,9 +1225,7 @@ text-coral
                 }
 
 
-
               </nav>
-
 
 
             </div>

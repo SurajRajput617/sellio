@@ -1086,13 +1086,6 @@ Active
             </section>
 
 
-
-
-
-
-
-
-
             <div
               className="
                 grid
@@ -1107,7 +1100,7 @@ Active
 
 
               <Link
-                href="/documentation/tracking"
+                href="/marketing/facebook-and-meta/tracking"
                 className="
                   rounded-lg
                   border
@@ -1156,11 +1149,6 @@ Active
 
 
               </Link>
-
-
-
-
-
 
 
 
