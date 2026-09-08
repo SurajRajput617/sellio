@@ -956,7 +956,7 @@ export default function TrackingPage() {
 
 
                 <Link
-                  href="/documentation/advertising"
+                  href="/marketing/facebook-and-meta/advertising"
                   className="
                   flex
                   items-center
@@ -992,7 +992,7 @@ export default function TrackingPage() {
 
 
                 <Link
-                  href="/documentation/klaviyo-integration"
+                  href="/marketing/sms-and-email/klaviyo-integration"
                   className="
                   flex
                   items-center
