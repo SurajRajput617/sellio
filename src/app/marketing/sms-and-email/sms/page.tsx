@@ -836,7 +836,7 @@ space-y-3
 
 
 <Link
-href="/documentation/top-banner-text"
+href="/marketing/website-tools/top-banner-text"
 className="
 flex
 items-center
