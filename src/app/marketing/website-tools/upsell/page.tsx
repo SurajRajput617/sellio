@@ -753,7 +753,7 @@ export default function UpsellPage() {
 
 
                 <Link
-                  href="/documentation/promos-and-discounts"
+                  href="/marketing/website-tools/promos-and-discounts"
                   className="
                     flex
                     items-center
