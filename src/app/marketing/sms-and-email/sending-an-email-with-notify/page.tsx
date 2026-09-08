@@ -873,7 +873,7 @@ export default function SendingEmailNotifyPage() {
 
 
                 <Link
-                  href="/documentation/sms"
+                  href="/marketing/sms-and-email/sms"
                   className="
                   flex
                   items-center
