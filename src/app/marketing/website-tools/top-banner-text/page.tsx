@@ -859,7 +859,7 @@ space-y-3
 
 
 <Link
-href="/documentation/seo-settings"
+href="/marketing/website-tools/seo-settings"
 className="
 flex
 items-center
@@ -891,12 +891,8 @@ text-navy-mute
 
 
 
-
-
-
-
 <Link
-href="/documentation/promos-and-discounts"
+href="/marketing/website-tools/promos-and-discounts"
 className="
 flex
 items-center
