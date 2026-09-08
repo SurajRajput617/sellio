@@ -1262,7 +1262,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/affiliate-overview"
+        href="/affiliate-referral-scheme/affiliate-overview"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1275,7 +1275,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/setting-up-the-scheme"
+        href="/affiliate-referral-scheme/setting-up-the-scheme"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1288,7 +1288,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/how-users-participate"
+        href="/affiliate-referral-scheme/how-users-participate"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1301,7 +1301,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/managing-referrals"
+        href="/affiliate-referral-scheme/managing-referrals"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute

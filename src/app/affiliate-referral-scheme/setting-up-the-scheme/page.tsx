@@ -1522,7 +1522,7 @@ successful referral.
 
 
               <Link
-                href="/documentation/affiliate-overview"
+                href="/affiliate-referral-scheme/affiliate-overview"
                 className="
                   rounded-lg
                   border
@@ -1563,7 +1563,7 @@ successful referral.
 
 
               <Link
-                href="/documentation/how-users-participate"
+                href="/affiliate-referral-scheme/how-users-participate"
                 className="
                   rounded-lg
                   border

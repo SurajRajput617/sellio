@@ -1058,9 +1058,9 @@ export default function DocumentationSidebar() {
 
 
                     <Link
-                      href="/documentation/affiliate-overview"
+                      href="/affiliate-referral-scheme/affiliate-overview"
                       className={subLinkClass(
-                        "/documentation/affiliate-overview"
+                        "/affiliate-referral-scheme/affiliate-overview"
                       )}
                     >
                       Overview
@@ -1068,9 +1068,9 @@ export default function DocumentationSidebar() {
 
 
                     <Link
-                      href="/documentation/setting-up-the-scheme"
+                      href="/affiliate-referral-scheme/setting-up-the-scheme"
                       className={subLinkClass(
-                        "/documentation/setting-up-the-scheme"
+                        "/affiliate-referral-scheme/setting-up-the-scheme"
                       )}
                     >
                       Setting Up the Scheme
@@ -1078,9 +1078,9 @@ export default function DocumentationSidebar() {
 
 
                     <Link
-                      href="/documentation/how-users-participate"
+                      href="/affiliate-referral-scheme/how-users-participate"
                       className={subLinkClass(
-                        "/documentation/how-users-participate"
+                        "/affiliate-referral-scheme/how-users-participate"
                       )}
                     >
                       How Users Participate
@@ -1088,9 +1088,9 @@ export default function DocumentationSidebar() {
 
 
                     <Link
-                      href="/documentation/managing-referrals"
+                      href="/affiliate-referral-scheme/managing-referrals"
                       className={subLinkClass(
-                        "/documentation/managing-referrals"
+                        "/affiliate-referral-scheme/managing-referrals"
                       )}
                     >
                       Managing Referrals

@@ -1593,9 +1593,8 @@ space-y-3
 >
 
 
-
 <Link
-href="/documentation/how-users-participate"
+href="/affiliate-referral-scheme/how-users-participate"
 className="
 flex
 items-center
@@ -1630,7 +1629,7 @@ w-4
 
 
 <Link
-href="/documentation/setting-up-the-scheme"
+href="/affiliate-referral-scheme/setting-up-the-scheme"
 className="
 flex
 items-center
@@ -1688,7 +1687,7 @@ sm:grid-cols-2
 
 
 <Link
-href="/documentation/how-users-participate"
+href="/affiliate-referral-scheme/how-users-participate"
 className="
 rounded-lg
 border

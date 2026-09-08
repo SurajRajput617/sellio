@@ -1046,7 +1046,7 @@ sm:grid-cols-2
 
 
 <Link
-href="/documentation/product-catalogue"
+href="/marketing/facebook-and-meta/product-catalogue"
 className="
 rounded-lg
 border
@@ -1105,7 +1105,7 @@ Product-Catalogue
 
 
 <Link
-href="/documentation/setting-up-the-scheme"
+href="/affiliate-referral-scheme/setting-up-the-scheme"
 className="
 rounded-lg
 border

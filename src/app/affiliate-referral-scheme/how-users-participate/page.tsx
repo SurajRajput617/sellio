@@ -1159,7 +1159,7 @@ text-navy-mute
 
 
               <Link
-                href="/documentation/setting-up-the-scheme"
+                href="/affiliate-referral-scheme/setting-up-the-scheme"
                 className="
                   rounded-lg
                   border
@@ -1213,15 +1213,8 @@ text-navy-mute
 
               </Link>
 
-
-
-
-
-
-
-
               <Link
-                href="/documentation/managing-referrals"
+                href="/affiliate-referral-scheme/managing-referrals"
                 className="
                   rounded-lg
                   border
@@ -1280,9 +1273,6 @@ text-navy-mute
 
 
             </div>
-
-
-
 
 
 

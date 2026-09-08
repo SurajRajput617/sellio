@@ -1153,7 +1153,7 @@ Active
 
 
               <Link
-                href="/documentation/affiliate-overview"
+                href="/affiliate-referral-scheme/affiliate-overview"
                 className="
                   rounded-lg
                   border
