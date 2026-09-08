@@ -934,7 +934,7 @@ text-coral
 
 
                 <Link
-                  href="/documentation/klaviyo-integration"
+                  href="/marketing/sms-and-email/klaviyo-integration"
                   className="
                     flex
                     items-center
@@ -967,11 +967,8 @@ text-coral
 
 
 
-
-
-
                 <Link
-                  href="/documentation/top-banner-text"
+                  href="/marketing/website-tools/top-banner-text"
                   className="
                     flex
                     items-center
@@ -1082,11 +1079,6 @@ text-coral
 
 
               </Link>
-
-
-
-
-
 
 
 
