@@ -1741,10 +1741,6 @@ How Users Participate
 
 
 
-
-
-
-
 <Link
 href="/downloads-and-reports/downloads-reports-overview"
 className="
