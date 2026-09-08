@@ -924,7 +924,7 @@ Connected
 
 
                 <Link
-                  href="/documentation/setup-email-marketing"
+                  href="/marketing/sms-and-email/setup-email-marketing"
                   className="
                     flex
                     items-center
@@ -955,12 +955,8 @@ Connected
 
 
 
-
-
-
-
                 <Link
-                  href="/documentation/sms"
+                  href="/marketing/sms-and-email/sms"
                   className="
                     flex
                     items-center
