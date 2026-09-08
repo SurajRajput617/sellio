@@ -463,7 +463,7 @@ export default function TrueNorthAutomationPage() {
 
             <div className="grid gap-4 py-8 sm:grid-cols-2">
               <Link
-                href="/documentation/truenorth-setup"
+                href="/drawing-winners/truenorth-setup"
                 className="
                   group rounded-xl
                   border border-border
@@ -486,7 +486,7 @@ export default function TrueNorthAutomationPage() {
               </Link>
 
               <Link
-                href="/documentation/truenorth-live-stream-draws"
+                href="/drawing-winners/truenorth-live-stream-draws"
                 className="
                   group rounded-xl
                   border border-border

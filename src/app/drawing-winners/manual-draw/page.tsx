@@ -781,7 +781,7 @@ export default function ManualIntegrationPage() {
 
 
               <Link
-                href="/documentation/truenorth-live-stream-draws"
+                href="/drawing-winners/truenorth-live-stream-draws"
                 className="
                   rounded-lg
                   border
@@ -834,7 +834,7 @@ export default function ManualIntegrationPage() {
 
 
               <Link
-                href="/documentation/managing-instant-winners"
+                href="/drawing-winners/managing-instant-winners"
                 className="
                   rounded-lg
                   border

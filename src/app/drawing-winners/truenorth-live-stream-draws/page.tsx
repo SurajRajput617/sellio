@@ -1301,7 +1301,7 @@ text-navy-mute
   "
 >
   <Link
-    href="/documentation/truenorth-autodraws"
+    href="/drawing-winners/truenorth-autodraws"
     className="
       rounded-xl
       border border-border
@@ -1324,7 +1324,7 @@ text-navy-mute
   </Link>
 
   <Link
-    href="/documentation/manual-draw"
+    href="/drawing-winners/manual-draw"
     className="
       rounded-xl
       border border-border

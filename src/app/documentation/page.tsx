@@ -838,49 +838,49 @@ export default function DocumentationPage() {
   <nav className="mt-1 space-y-1">
 
     <Link
-      href="/documentation/truenorth-setup"
+      href="/drawing-winners/truenorth-setup"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-navy"
     >
       TrueNorth Setup
     </Link>
 
     <Link
-      href="/documentation/truenorth-autodraws"
+      href="/drawing-winners/truenorth-autodraws"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-navy"
     >
       TrueNorth Autodraws
     </Link>
 
     <Link
-      href="/documentation/truenorth-live-stream-draws"
+      href="/drawing-winners/truenorth-live-stream-draws"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-navy"
     >
       TrueNorth Live Stream Draws
     </Link>
 
     <Link
-      href="/documentation/manual-draw"
+      href="/drawing-winners/manual-draw"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-navy"
     >
       Manual Draw
     </Link>
 
     <Link
-      href="/documentation/managing-instant-winners"
+      href="/drawing-winners/managing-instant-winners"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-navy"
     >
       Managing Instant Winners
     </Link>
 
     <Link
-      href="/documentation/add-daily-instant-winner-stats"
+      href="/drawing-winners/add-daily-instant-winner-stats"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-navy"
     >
       Add Daily Instant Winner Stats
     </Link>
 
     <Link
-      href="/documentation/managing-layouts"
+      href="/drawing-winners/managing-layouts"
       className="block rounded-lg px-3 py-2 text-sm font-medium text-navy-mute transition-colors hover:bg-coral/10 hover:text-navy"
     >
       Managing Layouts

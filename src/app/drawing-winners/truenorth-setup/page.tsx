@@ -1455,7 +1455,7 @@ export default function TrueNorthSetupPage() {
             >
               {/* PREVIOUS */}
               <Link
-                href="/documentation/gems"
+                href="/instant-win-games/gems"
                 className="
                   group rounded-xl
                   border border-border
@@ -1486,7 +1486,7 @@ export default function TrueNorthSetupPage() {
 
               {/* NEXT */}
               <Link
-                href="/documentation/truenorth-autodraws"
+                href="/drawing-winners/truenorth-autodraws"
                 className="
                   group rounded-xl
                   border border-border

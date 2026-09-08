@@ -778,7 +778,7 @@ useEffect(() => {
               </Link>
 
               <Link
-                href="/documentation/truenorth-setup"
+                href="/drawing-winners/truenorth-setup"
                 className="
                   group rounded-xl
                   border border-border

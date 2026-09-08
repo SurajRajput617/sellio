@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
-  ChevronRight,
   ArrowLeft,
   ArrowRight,
+  ChevronRight,
   Info,
 } from "lucide-react";
 
@@ -15,18 +15,18 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-const pageSections = [
+const sections = [
   {
-    id: "manage",
-    label: "How to Manage Integrations",
+    id: "feed",
+    label: "The Sellio Activity Feed",
   },
   {
-    id: "dashboard",
-    label: "Dashboard Overview",
+    id: "settings",
+    label: "Navigate to Settings",
   },
   {
-    id: "activity",
-    label: "Activity Tracking",
+    id: "stats",
+    label: "Add Dashboard Stats",
   },
   {
     id: "related",
@@ -36,84 +36,82 @@ const pageSections = [
 
 
 
-export default function ManagingIntegrationsPage() {
+export default function AddDashboardStatsPage() {
 
 
-  const [activeSection, setActiveSection] =
-    useState("manage");
-
-
-
-  useEffect(() => {
-
-
-    const handleScroll = () => {
-
-
-      let current =
-        pageSections[0].id;
+const [activeSection,setActiveSection] =
+useState("feed");
 
 
 
-      pageSections.forEach((section)=>{
+useEffect(()=>{
 
 
-        const element =
-          document.getElementById(section.id);
+const handleScroll=()=>{
 
 
-
-        if(!element) return;
-
-
-
-        if(
-          element.offsetTop <=
-          window.scrollY + 160
-        ){
-
-          current = section.id;
-
-        }
-
-
-      });
+let current =
+sections[0].id;
 
 
 
-      setActiveSection(current);
+sections.forEach((section)=>{
 
 
-    };
-
-
-
-    handleScroll();
+const element =
+document.getElementById(section.id);
 
 
 
-    window.addEventListener(
-      "scroll",
-      handleScroll,
-      {
-        passive:true,
-      }
-    );
+if(!element) return;
 
 
 
-    return()=>{
+if(
+element.offsetTop <=
+window.scrollY + 150
+){
 
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
+current =
+section.id;
 
-    };
+}
 
 
-  },[]);
+});
 
+
+setActiveSection(current);
+
+
+};
+
+
+
+window.addEventListener(
+"scroll",
+handleScroll,
+{
+passive:true
+}
+);
+
+
+handleScroll();
+
+
+
+return()=>{
+
+window.removeEventListener(
+"scroll",
+handleScroll
+);
+
+};
+
+
+},[]);
 
 
 
@@ -148,13 +146,11 @@ lg:grid-cols-[250px_minmax(0,1fr)_210px]
 
 
 
-
 <article
 className="
 min-w-0
 "
 >
-
 
 
 
@@ -174,7 +170,7 @@ font-semibold
 text-coral
 "
 >
-Sellio Integrations
+Sellio Dashboard
 </p>
 
 
@@ -186,9 +182,8 @@ text-3xl
 font-bold
 "
 >
-Managing Integrations
+Add Dashboard Activity Stats
 </h1>
-
 
 
 <p
@@ -200,22 +195,18 @@ leading-7
 text-navy-mute
 "
 >
-Learn how to manage your Sellio integrations,
-review connected services, and keep your
-ecommerce workflow organized from one dashboard.
+Learn how to add activity statistics to your Sellio
+dashboard and display important store information
+in an organized view.
 </p>
-
 
 
 </section>
 
 
 
-
-
-
 <section
-id="manage"
+id="feed"
 className="
 scroll-mt-28
 border-b
@@ -231,7 +222,7 @@ text-xl
 font-bold
 "
 >
-How to Manage Integrations
+The Sellio Activity Feed
 </h2>
 
 
@@ -244,10 +235,52 @@ leading-7
 text-navy-mute
 "
 >
-Follow these steps to review and manage your
-connected Sellio services.
+This creates a dashboard area where you can view
+recent store activity, connected services and
+important updates.
 </p>
 
+
+
+
+</section>
+
+
+
+
+<section
+id="settings"
+className="
+scroll-mt-28
+border-b
+border-border
+py-8
+"
+>
+
+
+<h2
+className="
+text-xl
+font-bold
+"
+>
+Navigate to Settings
+</h2>
+
+
+
+<p
+className="
+mt-4
+text-sm
+leading-7
+text-navy-mute
+"
+>
+Follow these steps to access your Sellio dashboard
+settings and prepare your activity information.
+</p>
 
 
 
@@ -263,39 +296,113 @@ text-navy-mute
 
 
 <li>
-1. Open your Sellio dashboard.
+1. Login to your Sellio dashboard.
 </li>
 
 
 <li>
-2. Navigate to the integrations section.
+2. Open the dashboard settings area.
 </li>
 
 
 <li>
-3. Select the service you want to review.
+3. Select the analytics and activity options.
 </li>
 
 
 <li>
-4. Check the current connection details.
+4. Review available dashboard sections.
 </li>
 
 
 <li>
-5. Review available activity information.
+5. Save your preferred settings.
+</li>
+
+
+</ol>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<section
+id="stats"
+className="
+scroll-mt-28
+border-b
+border-border
+py-8
+"
+>
+
+
+<h2
+className="
+text-xl
+font-bold
+"
+>
+Add Dashboard Stats
+</h2>
+
+
+
+<p
+className="
+mt-4
+text-sm
+leading-7
+text-navy-mute
+"
+>
+Add useful statistics to your Sellio dashboard
+so store activity can be reviewed quickly.
+</p>
+
+
+
+<ol
+className="
+mt-5
+space-y-3
+text-sm
+leading-6
+text-navy-mute
+"
+>
+
+
+<li>
+1. Select the dashboard widget option.
 </li>
 
 
 <li>
-6. Update settings when required.
+2. Choose the statistic type.
 </li>
 
 
 <li>
-7. Save your integration preferences.
+3. Add the required information.
 </li>
 
+
+<li>
+4. Preview the dashboard update.
+</li>
+
+
+<li>
+5. Save the changes.
+</li>
 
 
 </ol>
@@ -325,6 +432,7 @@ gap-3
 "
 >
 
+
 <Info
 className="
 mt-0.5
@@ -343,9 +451,9 @@ leading-6
 text-navy-mute
 "
 >
-Your Sellio dashboard keeps your connected
-services organized so you can quickly review
-important integration information.
+Dashboard statistics help you understand store
+activity and review important information without
+checking multiple sections.
 </p>
 
 
@@ -356,20 +464,14 @@ important integration information.
 
 
 
+
 </section>
 
-
-
-
-
-
 <section
-id="dashboard"
 className="
-scroll-mt-28
+py-8
 border-b
 border-border
-py-8
 "
 >
 
@@ -380,7 +482,7 @@ text-xl
 font-bold
 "
 >
-Dashboard Overview
+Dashboard Preview
 </h2>
 
 
@@ -393,9 +495,10 @@ leading-7
 text-navy-mute
 "
 >
-Use the dashboard to view connected services,
-store information, and important workflow updates.
+Preview how activity statistics can appear inside
+your Sellio dashboard.
 </p>
+
 
 
 
@@ -418,14 +521,13 @@ py-4
 "
 >
 
-
 <p
 className="
 text-sm
 font-semibold
 "
 >
-Sellio Dashboard Preview
+Sellio Activity Dashboard
 </p>
 
 
@@ -436,7 +538,7 @@ text-xs
 text-navy-mute
 "
 >
-Demo interface example
+Demo dashboard component
 </p>
 
 
@@ -458,7 +560,7 @@ sm:grid-cols-3
 
 <div
 className="
-rounded-md
+rounded-lg
 border
 border-border
 p-4
@@ -471,18 +573,18 @@ text-xs
 text-navy-mute
 "
 >
-Connected Services
+Orders
 </p>
 
 
 <p
 className="
 mt-3
-text-lg
+text-xl
 font-bold
 "
 >
-12
+248
 </p>
 
 
@@ -491,9 +593,10 @@ font-bold
 
 
 
+
 <div
 className="
-rounded-md
+rounded-lg
 border
 border-border
 p-4
@@ -506,54 +609,55 @@ text-xs
 text-navy-mute
 "
 >
-Active Status
+Revenue
 </p>
 
 
 <p
 className="
 mt-3
-text-lg
+text-xl
+font-bold
+"
+>
+$12.4K
+</p>
+
+
+</div>
+
+
+
+
+
+<div
+className="
+rounded-lg
+border
+border-border
+p-4
+"
+>
+
+<p
+className="
+text-xs
+text-navy-mute
+"
+>
+Active Users
+</p>
+
+
+<p
+className="
+mt-3
+text-xl
 font-bold
 text-coral
 "
 >
-Online
-</p>
-
-
-</div>
-
-
-
-
-<div
-className="
-rounded-md
-border
-border-border
-p-4
-"
->
-
-<p
-className="
-text-xs
-text-navy-mute
-"
->
-Updates
-</p>
-
-
-<p
-className="
-mt-3
-text-lg
-font-bold
-"
->
-24
+96
 </p>
 
 
@@ -561,6 +665,8 @@ font-bold
 
 
 </div>
+
+
 
 
 </div>
@@ -568,10 +674,14 @@ font-bold
 
 </section>
 
+
+
+
+
+
+
 <section
-id="activity"
 className="
-scroll-mt-28
 border-b
 border-border
 py-8
@@ -585,7 +695,7 @@ text-xl
 font-bold
 "
 >
-Activity Tracking
+Activity Graph
 </h2>
 
 
@@ -598,8 +708,8 @@ leading-7
 text-navy-mute
 "
 >
-Monitor your Sellio workflow by reviewing recent
-integration activity and dashboard updates.
+Example visualization showing how Sellio can
+display dashboard activity trends.
 </p>
 
 
@@ -616,181 +726,10 @@ p-5
 >
 
 
-<p
-className="
-text-sm
-font-semibold
-"
->
-Activity Overview
-</p>
-
-
-
-
 <div
 className="
-mt-5
-grid
-gap-4
-sm:grid-cols-3
-"
->
-
-
-<div
-className="
-rounded-md
-border
-border-border
-p-4
-"
->
-
-<p
-className="
-text-xs
-text-navy-mute
-"
->
-Connections
-</p>
-
-
-<p
-className="
-mt-2
-text-xl
-font-bold
-"
->
-Active
-</p>
-
-
-</div>
-
-
-
-
-<div
-className="
-rounded-md
-border
-border-border
-p-4
-"
->
-
-<p
-className="
-text-xs
-text-navy-mute
-"
->
-Recent Updates
-</p>
-
-
-<p
-className="
-mt-2
-text-xl
-font-bold
-"
->
-18
-</p>
-
-
-</div>
-
-
-
-
-
-<div
-className="
-rounded-md
-border
-border-border
-p-4
-"
->
-
-<p
-className="
-text-xs
-text-navy-mute
-"
->
-System Status
-</p>
-
-
-<p
-className="
-mt-2
-text-xl
-font-bold
-text-coral
-"
->
-Ready
-</p>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div
-className="
-mt-6
-rounded-lg
-border
-border-border
-p-5
-"
->
-
-
-<p
-className="
-text-sm
-font-semibold
-"
->
-Activity Graph Preview
-</p>
-
-
-
-<p
-className="
-mt-1
-text-xs
-text-navy-mute
-"
->
-Example dashboard activity visualization
-</p>
-
-
-
-<div
-className="
-mt-6
 flex
-h-40
+h-44
 items-end
 gap-3
 "
@@ -799,14 +738,14 @@ gap-3
 
 {
 [
-40,
-65,
+35,
 55,
-85,
-70,
-95,
+45,
+80,
+65,
+90,
 75
-].map((height,index)=>(
+].map((item,index)=>(
 
 
 <div
@@ -817,7 +756,7 @@ rounded-t-md
 bg-coral
 "
 style={{
-height:`${height}%`
+height:`${item}%`
 }}
 />
 
@@ -825,7 +764,6 @@ height:`${height}%`
 ))
 
 }
-
 
 
 </div>
@@ -846,31 +784,25 @@ text-navy-mute
 Mon
 </span>
 
-
 <span>
 Tue
 </span>
-
 
 <span>
 Wed
 </span>
 
-
 <span>
 Thu
 </span>
-
 
 <span>
 Fri
 </span>
 
-
 <span>
 Sat
 </span>
-
 
 <span>
 Sun
@@ -880,11 +812,13 @@ Sun
 </div>
 
 
-
 </div>
 
 
+
 </section>
+
+
 
 
 
@@ -919,12 +853,30 @@ leading-6
 text-navy-mute
 "
 >
-Explore more Sellio documentation to understand
-store setup, integrations and dashboard features.
+Continue learning about Sellio dashboards,
+integrations and ecommerce management.
 </p>
 
 
+
+
+<div
+className="
+mt-5
+space-y-3
+"
+>
+
+
+
+</div>
+
+
 </section>
+
+
+
+
 
 
 <div
@@ -940,7 +892,7 @@ sm:grid-cols-2
 
 
 <Link
-href="/documentation/manual-draw"
+href="/drawing-winners/managing-instant-winners"
 className="
 rounded-lg
 border
@@ -983,7 +935,8 @@ w-4
 />
 
 
-Manual-draw
+Managing-instant-winners
+
 
 </div>
 
@@ -995,8 +948,9 @@ Manual-draw
 
 
 
+
 <Link
-href="/documentation/add-daily-instant-winner-stats"
+href="/drawing-winners/managing-layouts"
 className="
 rounded-lg
 border
@@ -1034,7 +988,8 @@ font-semibold
 >
 
 
-Add Daily Instant Winner Stats
+Managing Payouts
+
 
 <ArrowRight
 className="
@@ -1109,7 +1064,7 @@ space-y-4
 
 
 {
-pageSections.map((item)=>(
+sections.map((item)=>(
 
 
 <a
@@ -1144,9 +1099,7 @@ activeSection === item.id
 }
 
 
-
 </nav>
-
 
 
 </div>
@@ -1169,5 +1122,6 @@ activeSection === item.id
 </>
 
 );
+
 
 }
