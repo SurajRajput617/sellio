@@ -1974,7 +1974,7 @@ space-y-3
 
 
 <Link
-href="/documentation/product-catalogue"
+href="/create-your-first-raffle/product-categories"
 className="
 flex
 items-center
@@ -1990,7 +1990,7 @@ hover:border-coral
 >
 
 
-Product Catalogue
+Product Categories
 
 
 
@@ -2009,7 +2009,7 @@ w-4
 
 
 <Link
-href="/documentation/tracking"
+href="/marketing/facebook-and-meta/tracking"
 className="
 flex
 items-center
@@ -2068,7 +2068,7 @@ sm:grid-cols-2
 
 
 <Link
-href="/documentation/managing-referrals"
+href="/affiliate-referral-scheme/managing-referrals"
 className="
 rounded-lg
 border
@@ -2121,9 +2121,6 @@ Managing-Referrals
 
 
 </Link>
-
-
-
 
 
 
