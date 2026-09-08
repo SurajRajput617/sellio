@@ -1009,8 +1009,6 @@ SEO Settings
 
 
 
-
-
 <Link
 href="/documentation/sms"
 className="

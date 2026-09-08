@@ -917,7 +917,7 @@ Add-daily-instant-winner-stats
 
 
 <Link
-href="/documentation/promos-and-discounts"
+href="/marketing/website-tools/promos-and-discounts"
 className="
 rounded-lg
 border
