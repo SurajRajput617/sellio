@@ -531,7 +531,7 @@ export default function SafeCrackerPage() {
 
 
               <Link
-                href="/instant-win-games/pinata"
+                href="/instant-win-games/safe-cracker"
                 className="
                 rounded-2xl
                 border
@@ -556,7 +556,7 @@ export default function SafeCrackerPage() {
 
 
               <Link
-                href="/instant-win-games/loot-boxes"
+                href="/instant-win-games/instant-reveal"
                 className="
                 rounded-2xl
                 border

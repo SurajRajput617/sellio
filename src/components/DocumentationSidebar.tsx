@@ -785,9 +785,9 @@ export default function DocumentationSidebar() {
 
 
               <Link
-                href="/documentation/promos-and-discounts"
+                href="/marketing/website-tools/promos-and-discounts"
                 className={subLinkClass(
-                  "/documentation/promos-and-discounts"
+                  "/marketing/website-tools/promos-and-discounts"
                 )}
               >
                 Promos and Discounts
@@ -795,9 +795,9 @@ export default function DocumentationSidebar() {
 
 
               <Link
-                href="/documentation/upsell"
+                href="/marketing/website-tools/upsell"
                 className={subLinkClass(
-                  "/documentation/upsell"
+                  "/marketing/website-tools/upsell"
                 )}
               >
                 Upsell
@@ -805,9 +805,9 @@ export default function DocumentationSidebar() {
 
 
               <Link
-                href="/documentation/dropped-basket-recovery"
+                href="/marketing/website-tools/dropped-basket-recovery"
                 className={subLinkClass(
-                  "/documentation/dropped-basket-recovery"
+                  "/marketing/website-tools/dropped-basket-recovery"
                 )}
               >
                 Dropped Basket Recovery
@@ -815,9 +815,9 @@ export default function DocumentationSidebar() {
 
 
               <Link
-                href="/documentation/seo-settings"
+                href="/marketing/website-tools/seo-settings"
                 className={subLinkClass(
-                  "/documentation/seo-settings"
+                  "/marketing/website-tools/seo-settings"
                 )}
               >
                 SEO Settings
@@ -825,9 +825,9 @@ export default function DocumentationSidebar() {
 
 
               <Link
-                href="/documentation/top-banner-text"
+                href="/marketing/website-tools/top-banner-text"
                 className={subLinkClass(
-                  "/documentation/top-banner-text"
+                  "/marketing/website-tools/top-banner-text"
                 )}
               >
                 Top Banner Text

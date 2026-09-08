@@ -955,7 +955,7 @@ sm:grid-cols-2
 
 
 <Link
-href="/documentation/seo-settings"
+href="/marketing/website-tools/seo-settings"
 className="
 rounded-lg
 border

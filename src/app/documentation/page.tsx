@@ -950,7 +950,7 @@ export default function DocumentationPage() {
     <nav className="mt-1 space-y-1">
 
       <Link
-        href="/documentation/promos-and-discounts"
+        href="/marketing/website-tools/promos-and-discounts"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -963,7 +963,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/upsell"
+        href="/marketing/website-tools/upsell"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -976,7 +976,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/dropped-basket-recovery"
+        href="/marketing/website-tools/dropped-basket-recovery"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -989,7 +989,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/seo-settings"
+        href="/marketing/website-tools/seo-settings"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1002,7 +1002,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/top-banner-text"
+        href="/marketing/website-tools/top-banner-text"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute

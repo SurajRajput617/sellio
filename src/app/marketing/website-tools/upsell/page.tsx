@@ -807,7 +807,7 @@ export default function UpsellPage() {
 
 
               <Link
-                href="/documentation/promos-and-discounts"
+                href="/marketing/website-tools/promos-and-discounts"
                 className="
                   rounded-lg
                   border
@@ -858,13 +858,8 @@ export default function UpsellPage() {
               </Link>
 
 
-
-
-
-
-
               <Link
-                href="/documentation/dropped-basket-recovery"
+                href="/marketing/website-tools/dropped-basket-recovery"
                 className="
                   rounded-lg
                   border

@@ -8,7 +8,7 @@ import {
   ArrowRight,
   ChevronRight,
   Info,
-  Search,
+  ShoppingBasket,
 } from "lucide-react";
 
 
@@ -17,34 +17,32 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-
 const sections = [
   {
-    id:"page-seo",
-    label:"How to Set Your Page Title and Description",
+    id: "overview",
+    label: "How Dropped Basket Recovery Works",
   },
   {
-    id:"defaults",
-    label:"Setting SEO Defaults",
+    id: "enable",
+    label: "Turn On Recovery",
   },
   {
-    id:"competition",
-    label:"SEO for Competition Pages",
+    id: "settings",
+    label: "Settings",
   },
   {
-    id:"related",
-    label:"Related Guides",
+    id: "related",
+    label: "Related Guides",
   },
 ];
 
 
 
-
-export default function SEOSettingsPage(){
+export default function DroppedBasketRecoveryPage(){
 
 
 const [activeSection,setActiveSection] =
-useState("page-seo");
+useState("overview");
 
 
 
@@ -192,7 +190,7 @@ text-3xl
 font-bold
 "
 >
-SEO Settings
+Dropped Basket Recovery
 </h1>
 
 
@@ -206,10 +204,9 @@ leading-7
 text-navy-mute
 "
 >
-Manage your Sellio SEO settings to improve search
-visibility, control page information, and create a
-better experience for customers discovering your
-store online.
+Automatically reconnect with customers who leave
+items in their basket. Sellio helps remind customers
+to return and complete their purchase.
 </p>
 
 
@@ -224,7 +221,7 @@ store online.
 
 
 <section
-id="page-seo"
+id="overview"
 className="
 scroll-mt-28
 border-b
@@ -240,7 +237,7 @@ text-xl
 font-bold
 "
 >
-How to Set Your Page Title and Description
+How Dropped Basket Recovery Works
 </h2>
 
 
@@ -253,15 +250,15 @@ leading-7
 text-navy-mute
 "
 >
-Add SEO information for your Sellio pages so search
-engines understand your content and display the
-right information in search results.
+Sellio tracks incomplete checkouts and helps you
+send helpful reminders to customers who did not
+finish their order.
 </p>
 
 
 
 
-<ol
+<ul
 className="
 mt-5
 space-y-3
@@ -273,38 +270,31 @@ text-navy-mute
 
 
 <li>
-1. Login to your Sellio dashboard.
+• Customers add products to their basket.
 </li>
 
 
 <li>
-2. Open the page settings section.
+• Checkout is started but not completed.
 </li>
 
 
 <li>
-3. Select SEO settings.
+• Sellio identifies the incomplete purchase.
 </li>
 
 
 <li>
-4. Add your SEO page title.
+• Recovery reminders encourage customers to return.
 </li>
 
 
 <li>
-5. Write your meta description.
+• Customers complete their purchase through the reminder.
 </li>
 
 
-<li>
-6. Save your changes.
-</li>
-
-
-</ol>
-
-
+</ul>
 
 
 
@@ -349,111 +339,9 @@ leading-6
 text-navy-mute
 "
 >
-A clear page title and description helps customers
-understand your page before visiting your store.
+Recovery messages should be helpful and timely
+without overwhelming customers.
 </p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div
-className="
-mt-5
-rounded-lg
-border
-border-border
-p-5
-"
->
-
-
-<div
-className="
-flex
-items-center
-gap-3
-"
->
-
-<Search
-className="
-h-5
-w-5
-text-coral
-"
-/>
-
-
-
-<p
-className="
-text-sm
-font-semibold
-"
->
-SEO Preview
-</p>
-
-
-</div>
-
-
-
-
-<div
-className="
-mt-4
-rounded-lg
-bg-black/5
-p-4
-"
->
-
-
-<p
-className="
-text-sm
-font-semibold
-"
->
-Sellio Store | Premium Products
-</p>
-
-
-
-<p
-className="
-mt-2
-text-xs
-text-navy-mute
-"
->
-sellio.com/store/products
-</p>
-
-
-
-<p
-className="
-mt-2
-text-sm
-text-navy-mute
-"
->
-Discover premium products with easy checkout
-and a seamless shopping experience.
-</p>
-
 
 
 </div>
@@ -465,8 +353,192 @@ and a seamless shopping experience.
 
 
 </section>
+
+
+
+
+
+
+
+
+<section
+id="enable"
+className="
+scroll-mt-28
+border-b
+border-border
+py-8
+"
+>
+
+
+<h2
+className="
+text-xl
+font-bold
+"
+>
+Turn On Dropped Basket Recovery
+</h2>
+
+
+
+
+<p
+className="
+mt-4
+text-sm
+leading-7
+text-navy-mute
+"
+>
+Enable recovery reminders from your Sellio
+dashboard by following these steps.
+</p>
+
+
+
+
+
+<ol
+className="
+mt-5
+space-y-3
+text-sm
+leading-6
+text-navy-mute
+"
+>
+
+
+<li>
+1. Open your Sellio dashboard.
+</li>
+
+
+<li>
+2. Go to Marketing tools.
+</li>
+
+
+<li>
+3. Select Dropped Basket Recovery.
+</li>
+
+
+<li>
+4. Enable recovery reminders.
+</li>
+
+
+<li>
+5. Save your changes.
+</li>
+
+
+</ol>
+
+
+
+
+
+<div
+className="
+mt-6
+flex
+justify-center
+"
+>
+
+
+<div
+className="
+w-[320px]
+rounded-xl
+border
+border-border
+bg-white
+p-5
+"
+>
+
+
+<div
+className="
+flex
+items-center
+gap-3
+rounded-lg
+bg-black/5
+p-4
+"
+>
+
+
+<ShoppingBasket
+className="
+h-8
+w-8
+text-coral
+"
+/>
+
+
+<div>
+
+<p
+className="
+text-sm
+font-bold
+"
+>
+Basket Recovery
+</p>
+
+
+<p
+className="
+text-xs
+text-navy-mute
+"
+>
+Enabled
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<button
+className="
+mt-5
+w-full
+rounded-md
+bg-coral
+py-2
+text-sm
+font-semibold
+text-white
+"
+>
+Save Settings
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+</section>
             <section
-              id="defaults"
+              id="settings"
               className="
                 scroll-mt-28
                 border-b
@@ -482,7 +554,7 @@ and a seamless shopping experience.
                   font-bold
                 "
               >
-                Setting SEO Defaults
+                Settings
               </h2>
 
 
@@ -495,44 +567,179 @@ and a seamless shopping experience.
                   text-navy-mute
                 "
               >
-                Set default SEO information in Sellio so
-                your pages have consistent search settings.
+                Customize your Sellio basket recovery
+                settings to control when and how
+                customers receive reminders.
               </p>
 
 
 
-              <ul
+
+              <div
                 className="
-                  mt-5
-                  space-y-3
-                  text-sm
-                  leading-6
-                  text-navy-mute
+                  mt-6
+                  space-y-4
                 "
               >
 
-                <li>
-                  • Default page title settings
-                </li>
+
+                <div
+                  className="
+                    rounded-lg
+                    border
+                    border-border
+                    px-5
+                    py-4
+                  "
+                >
+
+                  <p
+                    className="
+                      text-sm
+                      font-semibold
+                    "
+                  >
+                    Reminder Timing
+                  </p>
 
 
-                <li>
-                  • Default meta description settings
-                </li>
+                  <p
+                    className="
+                      mt-2
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+                    Choose when recovery messages should
+                    be sent after a customer leaves items
+                    in their basket.
+                  </p>
 
 
-                <li>
-                  • Search preview information
-                </li>
+                </div>
 
 
-                <li>
-                  • Store branding details
-                </li>
 
 
-              </ul>
+                <div
+                  className="
+                    rounded-lg
+                    border
+                    border-border
+                    px-5
+                    py-4
+                  "
+                >
 
+                  <p
+                    className="
+                      text-sm
+                      font-semibold
+                    "
+                  >
+                    Message Customization
+                  </p>
+
+
+                  <p
+                    className="
+                      mt-2
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+                    Create customer-friendly reminders
+                    with your preferred messaging style.
+                  </p>
+
+
+                </div>
+
+
+
+
+                <div
+                  className="
+                    rounded-lg
+                    border
+                    border-border
+                    px-5
+                    py-4
+                  "
+                >
+
+                  <p
+                    className="
+                      text-sm
+                      font-semibold
+                    "
+                  >
+                    Recovery Tracking
+                  </p>
+
+
+                  <p
+                    className="
+                      mt-2
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+                    Review recovered orders and monitor
+                    basket recovery performance.
+                  </p>
+
+
+                </div>
+
+
+              </div>
+
+
+            </section>
+
+
+
+
+
+
+
+
+            <section
+              className="
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Basket Recovery Overview
+              </h2>
+
+
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                Example Sellio dashboard view showing
+                recovered baskets and customer activity.
+              </p>
 
 
 
@@ -543,37 +750,215 @@ and a seamless shopping experience.
                   rounded-lg
                   border
                   border-border
-                  bg-black/5
-                  px-5
-                  py-4
+                  p-5
                 "
               >
 
 
-                <p
+                <div
                   className="
-                    text-sm
-                    font-semibold
+                    grid
+                    gap-4
+                    sm:grid-cols-3
                   "
                 >
-                  Recommended SEO Setup
-                </p>
+
+
+                  <div
+                    className="
+                      rounded-lg
+                      border
+                      border-border
+                      p-4
+                    "
+                  >
+
+                    <p
+                      className="
+                        text-xs
+                        text-navy-mute
+                      "
+                    >
+                      Abandoned Baskets
+                    </p>
+
+
+                    <p
+                      className="
+                        mt-3
+                        text-xl
+                        font-bold
+                      "
+                    >
+                      156
+                    </p>
+
+
+                  </div>
 
 
 
-                <p
+
+
+                  <div
+                    className="
+                      rounded-lg
+                      border
+                      border-border
+                      p-4
+                    "
+                  >
+
+                    <p
+                      className="
+                        text-xs
+                        text-navy-mute
+                      "
+                    >
+                      Recovered Orders
+                    </p>
+
+
+                    <p
+                      className="
+                        mt-3
+                        text-xl
+                        font-bold
+                        text-coral
+                      "
+                    >
+                      82
+                    </p>
+
+
+                  </div>
+
+
+
+
+
+                  <div
+                    className="
+                      rounded-lg
+                      border
+                      border-border
+                      p-4
+                    "
+                  >
+
+                    <p
+                      className="
+                        text-xs
+                        text-navy-mute
+                      "
+                    >
+                      Recovery Rate
+                    </p>
+
+
+                    <p
+                      className="
+                        mt-3
+                        text-xl
+                        font-bold
+                      "
+                    >
+                      52%
+                    </p>
+
+
+                  </div>
+
+
+                </div>
+
+
+
+
+
+                <div
                   className="
-                    mt-2
-                    text-sm
-                    leading-6
+                    mt-8
+                    flex
+                    h-40
+                    items-end
+                    gap-3
+                  "
+                >
+
+                  {
+                    [
+                      30,
+                      45,
+                      60,
+                      50,
+                      75,
+                      85,
+                      70
+                    ].map((value,index)=>(
+
+
+                      <div
+                        key={index}
+                        className="
+                          flex-1
+                          rounded-t-md
+                          bg-coral
+                        "
+                        style={{
+                          height:`${value}%`
+                        }}
+                      />
+
+
+                    ))
+                  }
+
+
+                </div>
+
+
+
+
+                <div
+                  className="
+                    mt-3
+                    flex
+                    justify-between
+                    text-xs
                     text-navy-mute
                   "
                 >
-                  Use clear titles, useful descriptions,
-                  and relevant keywords to help customers
-                  find your Sellio store.
-                </p>
 
+                  <span>
+                    Mon
+                  </span>
+
+                  <span>
+                    Tue
+                  </span>
+
+                  <span>
+                    Wed
+                  </span>
+
+                  <span>
+                    Thu
+                  </span>
+
+                  <span>
+                    Fri
+                  </span>
+
+                  <span>
+                    Sat
+                  </span>
+
+                  <span>
+                    Sun
+                  </span>
+
+                </div>
 
 
               </div>
@@ -582,88 +967,6 @@ and a seamless shopping experience.
 
             </section>
 
-
-
-
-
-
-
-
-            <section
-              id="competition"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                SEO for Competition Pages
-              </h2>
-
-
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Optimize campaign and competition pages
-                in Sellio to improve visibility and help
-                customers discover your offers.
-              </p>
-
-
-
-
-              <ul
-                className="
-                  mt-5
-                  space-y-3
-                  text-sm
-                  leading-6
-                  text-navy-mute
-                "
-              >
-
-
-                <li>
-                  • Add unique page titles for campaigns.
-                </li>
-
-
-                <li>
-                  • Create useful descriptions for each page.
-                </li>
-
-
-                <li>
-                  • Include relevant search terms.
-                </li>
-
-
-                <li>
-                  • Keep content updated regularly.
-                </li>
-
-
-              </ul>
-
-
-
-
-            </section>
 
 
 
@@ -700,8 +1003,8 @@ and a seamless shopping experience.
                   text-navy-mute
                 "
               >
-                Continue learning about Sellio marketing,
-                website tools, and store optimization.
+                Explore more Sellio marketing tools and
+                ecommerce management guides.
               </p>
 
 
@@ -714,40 +1017,6 @@ and a seamless shopping experience.
                   space-y-3
                 "
               >
-
-
-
-                <Link
-                  href="/documentation/promos-and-discounts"
-                  className="
-                    flex
-                    items-center
-                    justify-between
-                    rounded-lg
-                    border
-                    border-border
-                    px-4
-                    py-3
-                    text-sm
-                    transition
-                    hover:border-coral
-                  "
-                >
-
-                  Promos and Discounts
-
-
-                  <ChevronRight
-                    className="
-                      h-4
-                      w-4
-                      text-navy-mute
-                    "
-                  />
-
-                </Link>
-
-
 
 
 
@@ -783,6 +1052,38 @@ and a seamless shopping experience.
 
 
 
+
+                <Link
+                  href="/documentation/promos-and-discounts"
+                  className="
+                    flex
+                    items-center
+                    justify-between
+                    rounded-lg
+                    border
+                    border-border
+                    px-4
+                    py-3
+                    text-sm
+                    transition
+                    hover:border-coral
+                  "
+                >
+
+                  Promos and Discounts
+
+
+                  <ChevronRight
+                    className="
+                      h-4
+                      w-4
+                      text-navy-mute
+                    "
+                  />
+
+                </Link>
+
+
               </div>
 
 
@@ -807,9 +1108,8 @@ and a seamless shopping experience.
             >
 
 
-
               <Link
-                href="/documentation/dropped-basket-recovery"
+                href="/marketing/website-tools/upsell"
                 className="
                   rounded-lg
                   border
@@ -852,11 +1152,10 @@ and a seamless shopping experience.
                   />
 
 
-                  Dropped Basket Recovery
+                  Upsell
 
 
                 </div>
-
 
 
               </Link>
@@ -867,9 +1166,8 @@ and a seamless shopping experience.
 
 
 
-
               <Link
-                href="/documentation/top-banner-text"
+                href="/marketing/website-tools/seo-settings"
                 className="
                   rounded-lg
                   border
@@ -907,7 +1205,7 @@ and a seamless shopping experience.
                   "
                 >
 
-                  Top Banner Text
+                  SEO Settings
 
 
                   <ArrowRight
@@ -918,16 +1216,14 @@ and a seamless shopping experience.
                   />
 
 
-
                 </div>
-
 
 
               </Link>
 
 
-
             </div>
+
 
 
 
@@ -949,7 +1245,6 @@ and a seamless shopping experience.
           >
 
 
-
             <div
               className="
                 sticky
@@ -959,7 +1254,6 @@ and a seamless shopping experience.
                 pl-6
               "
             >
-
 
 
               <p
@@ -1023,9 +1317,7 @@ and a seamless shopping experience.
               </nav>
 
 
-
             </div>
-
 
 
           </aside>
@@ -1035,9 +1327,7 @@ and a seamless shopping experience.
         </div>
 
 
-
       </main>
-
 
 
       <Footer />

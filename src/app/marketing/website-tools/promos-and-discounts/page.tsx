@@ -913,7 +913,7 @@ sm:grid-cols-2
 
 
 <Link
-href="/documentation/managing-layouts"
+href="/drawing-winners/managing-layouts"
 className="
 rounded-lg
 border
@@ -973,7 +973,7 @@ Managing-Layouts
 
 
 <Link
-href="/documentation/upsell"
+href="/marketing/website-tools/upsell"
 className="
 rounded-lg
 border
