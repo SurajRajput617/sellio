@@ -1013,7 +1013,7 @@ Active
 
 
                 <Link
-                  href="/documentation/tracking"
+                  href="/marketing/facebook-and-meta/tracking"
                   className="
                     flex
                     items-center
@@ -1048,7 +1048,7 @@ Active
 
 
                 <Link
-                  href="/documentation/advertising"
+                  href="/marketing/facebook-and-meta/advertising"
                   className="
                     flex
                     items-center
