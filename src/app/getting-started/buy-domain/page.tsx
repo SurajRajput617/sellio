@@ -246,7 +246,7 @@ export default function BuyDomainPage() {
                 </p>
 
                 <Link
-                  href="/documentation/add-domain"
+                  href="/getting-started/add-domain"
                   className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-coral"
                 >
                   Add Your Domain to Sellio
