@@ -3922,7 +3922,7 @@ export default function AccountabilityPage() {
             >
               {/* PREVIOUS */}
               <Link
-                href="/documentation/transparency"
+                href="/standards/transparency"
                 className="
                   group
                   rounded-lg

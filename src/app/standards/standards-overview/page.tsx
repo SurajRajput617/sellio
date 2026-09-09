@@ -1836,7 +1836,7 @@ export default function StandardsOverviewPage() {
               </Link>
 
               <Link
-                href="/documentation/player-protections"
+                href="/standards/player-protections"
                 className="
                   rounded-lg
                   border

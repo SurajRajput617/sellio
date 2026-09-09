@@ -4478,7 +4478,7 @@ export default function TransparencyPage() {
               "
             >
               <Link
-                href="/documentation/player-protections"
+                href="/standards/player-protections"
                 className="
                   group
                   rounded-lg
@@ -4525,7 +4525,7 @@ export default function TransparencyPage() {
               </Link>
 
               <Link
-                href="/documentation/accountability"
+                href="/standards/accountability"
                 className="
                   group
                   rounded-lg

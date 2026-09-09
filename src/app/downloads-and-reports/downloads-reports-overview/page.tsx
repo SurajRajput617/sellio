@@ -2125,7 +2125,7 @@ Managing-Referrals
 
 
 <Link
-href="/documentation/standards-overview"
+href="/standards/standards-overview"
 className="
 rounded-lg
 border

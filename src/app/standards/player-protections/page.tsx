@@ -1708,7 +1708,7 @@ export default function PlayerProtectionsPage() {
               </Link>
 
               <Link
-                href="/documentation/transparency"
+                href="/standards/transparency"
                 className="
                   group
                   rounded-lg
