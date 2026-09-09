@@ -8648,7 +8648,7 @@ export default function AnalyticsPage() {
                 {/* NEXT */}
 
                 <Link
-                  href="/documentation/google-analytics"
+                  href="/helpful-info/what-google-analytics-tracks"
                   className="
                     group
                     rounded-lg

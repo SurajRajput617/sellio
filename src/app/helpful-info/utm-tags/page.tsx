@@ -6,9 +6,11 @@ import Link from "next/link";
 import {
   ArrowRight,
   ArrowLeft,
+  ChevronRight,
+  Copy,
   Check,
   Info,
-  Copy,
+  Link2,
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
@@ -25,16 +27,20 @@ const sections = [
     label: "Overview",
   },
   {
-    id: "domain-record",
-    label: "Add a Domain Record",
+    id: "what-are-utms",
+    label: "What Are UTM Tags?",
   },
   {
-    id: "redirect-rules",
-    label: "Set Up Redirect Rules",
+    id: "create-utm-link",
+    label: "How to Create a UTM Link",
   },
   {
-    id: "https",
-    label: "Ensure HTTPS Is Enabled",
+    id: "using-utm",
+    label: "Using Your UTM Tag",
+  },
+  {
+    id: "utm-sms",
+    label: "Adding a UTM Link to SMS",
   },
 ];
 
@@ -43,7 +49,7 @@ const sections = [
    PAGE
 ============================================================ */
 
-export default function EnsureWWWLoadsYourSitePage() {
+export default function UTMTagsPage() {
 
   const [activeSection, setActiveSection] =
     useState("overview");
@@ -110,24 +116,23 @@ export default function EnsureWWWLoadsYourSitePage() {
 
 
   /* ============================================================
-     DNS EXAMPLE
+     UTM EXAMPLE
   ============================================================ */
 
-  const dnsExample = `Type: CNAME
-Name: www
-Target: your-sellio-domain.com`;
+  const utmExample =
+    `https://yourstore.com/product/example-product?utm_source=instagram&utm_medium=social&utm_campaign=spring-sale`;
 
 
   /* ============================================================
-     COPY DNS
+     COPY
   ============================================================ */
 
-  const copyDNS = async () => {
+  const copyUTM = async () => {
 
     try {
 
       await navigator.clipboard.writeText(
-        dnsExample
+        utmExample
       );
 
       setCopied(true);
@@ -174,6 +179,7 @@ Target: your-sellio-domain.com`;
           "
         >
 
+
           {/* ==================================================
               LEFT SIDEBAR
           ================================================== */}
@@ -190,6 +196,7 @@ Target: your-sellio-domain.com`;
               min-w-0
             "
           >
+
 
             {/* ==================================================
                 OVERVIEW
@@ -214,7 +221,7 @@ Target: your-sellio-domain.com`;
                   text-coral
                 "
               >
-                Helpful Info
+                Marketing & Analytics
               </p>
 
 
@@ -226,7 +233,7 @@ Target: your-sellio-domain.com`;
                   tracking-tight
                 "
               >
-                Ensure Your Website Loads Correctly
+                UTM Tags
               </h1>
 
 
@@ -239,11 +246,11 @@ Target: your-sellio-domain.com`;
                   text-navy-mute
                 "
               >
-                Make sure customers can reach your Sellio
-                storefront through the domain address you
-                expect them to use. Correct DNS records and
-                redirects help visitors reach the right
-                version of your website.
+                UTM tags help you understand where visitors
+                come from when they reach your Sellio store.
+                They add useful campaign information to a
+                website URL so you can measure the performance
+                of your marketing links.
               </p>
 
 
@@ -256,9 +263,10 @@ Target: your-sellio-domain.com`;
                   text-navy-mute
                 "
               >
-                This guide covers the basic domain
-                configuration steps to check when your
-                website address is not loading correctly.
+                By adding campaign parameters to links shared
+                through social media, email, advertising, or
+                other channels, you can make your traffic
+                reports more useful and easier to understand.
               </p>
 
 
@@ -304,10 +312,11 @@ Target: your-sellio-domain.com`;
                       text-navy-mute
                     "
                   >
-                    DNS changes can take some time to
-                    propagate. If you have just updated your
-                    domain records, allow time for the changes
-                    to become visible.
+                    UTM parameters do not change the page
+                    that a visitor reaches. They add
+                    information to the URL that analytics
+                    tools can use to identify the source
+                    and campaign.
                   </p>
 
                 </div>
@@ -318,11 +327,11 @@ Target: your-sellio-domain.com`;
 
 
             {/* ==================================================
-                DOMAIN RECORD
+                WHAT ARE UTM TAGS
             ================================================== */}
 
             <section
-              id="domain-record"
+              id="what-are-utms"
               className="
                 scroll-mt-28
                 border-b
@@ -337,7 +346,7 @@ Target: your-sellio-domain.com`;
                   font-bold
                 "
               >
-                Add a Domain Record
+                What Are UTM Tags?
               </h2>
 
 
@@ -349,10 +358,160 @@ Target: your-sellio-domain.com`;
                   text-navy-mute
                 "
               >
-                Your domain provider controls the DNS records
-                that tell browsers where your website should
-                load from. Check the DNS settings for the
-                domain connected to your Sellio store.
+                UTM tags are small parameters added to the
+                end of a URL. They tell analytics platforms
+                where a visitor came from and which campaign
+                or promotion introduced them to your store.
+              </p>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                For a Sellio store, you can use UTM tags to
+                compare traffic from different marketing
+                campaigns and understand which channels bring
+                visitors to your products.
+              </p>
+
+
+              {/* ==================================================
+                  UTM PARAMETERS
+              ================================================== */}
+
+              <div
+                className="
+                  mt-6
+                  grid
+                  gap-3
+                  sm:grid-cols-2
+                "
+              >
+
+                {[
+                  {
+                    name: "utm_source",
+                    text:
+                      "Identifies where the traffic came from, such as Instagram, email, or another marketing source.",
+                  },
+                  {
+                    name: "utm_medium",
+                    text:
+                      "Describes the marketing channel, such as social, email, or paid advertising.",
+                  },
+                  {
+                    name: "utm_campaign",
+                    text:
+                      "Identifies the specific campaign or promotion connected to the link.",
+                  },
+                  {
+                    name: "utm_content",
+                    text:
+                      "Can help distinguish between different links or creative versions within the same campaign.",
+                  },
+                ].map((item) => (
+
+                  <div
+                    key={item.name}
+                    className="
+                      rounded-lg
+                      border
+                      border-border
+                      p-5
+                    "
+                  >
+
+                    <div
+                      className="
+                        flex
+                        items-center
+                        gap-2
+                      "
+                    >
+
+                      <Link2
+                        className="
+                          h-4
+                          w-4
+                          text-coral
+                        "
+                      />
+
+
+                      <code
+                        className="
+                          text-xs
+                          font-semibold
+                          text-coral
+                        "
+                      >
+                        {item.name}
+                      </code>
+
+                    </div>
+
+
+                    <p
+                      className="
+                        mt-3
+                        text-sm
+                        leading-6
+                        text-navy-mute
+                      "
+                    >
+                      {item.text}
+                    </p>
+
+                  </div>
+
+                ))}
+
+              </div>
+
+            </section>
+
+
+            {/* ==================================================
+                CREATE UTM LINK
+            ================================================== */}
+
+            <section
+              id="create-utm-link"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                How to Create a UTM Link
+              </h2>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                Create a UTM link by starting with the Sellio
+                page you want visitors to open and then adding
+                campaign parameters that describe where the
+                link will be shared.
               </p>
 
 
@@ -364,11 +523,11 @@ Target: your-sellio-domain.com`;
               >
 
                 {[
-                  "Sign in to the account where your domain DNS is managed.",
-                  "Open the DNS or domain records section.",
-                  "Find the record used for your website address.",
-                  "Add or update the required record using the values provided by your Sellio setup.",
-                  "Save the DNS changes.",
+                  "Choose the Sellio product or storefront page you want to promote.",
+                  "Decide which marketing source will share the link.",
+                  "Choose a medium that describes the marketing channel.",
+                  "Give the campaign a clear and recognizable name.",
+                  "Add the UTM parameters to the destination URL.",
                 ].map((item, index) => (
 
                   <li
@@ -414,7 +573,7 @@ Target: your-sellio-domain.com`;
 
 
               {/* ==================================================
-                  DNS CODE BLOCK
+                  URL EXAMPLE
               ================================================== */}
 
               <div
@@ -446,13 +605,13 @@ Target: your-sellio-domain.com`;
                       text-white/70
                     "
                   >
-                    Example DNS record
+                    Example UTM URL
                   </span>
 
 
                   <button
                     type="button"
-                    onClick={copyDNS}
+                    onClick={copyUTM}
                     className="
                       flex
                       items-center
@@ -509,7 +668,7 @@ Target: your-sellio-domain.com`;
                   "
                 >
                   <code>
-                    {dnsExample}
+                    {utmExample}
                   </code>
                 </pre>
 
@@ -517,7 +676,7 @@ Target: your-sellio-domain.com`;
 
 
               {/* ==================================================
-                  WARNING
+                  URL BREAKDOWN
               ================================================== */}
 
               <div
@@ -527,56 +686,144 @@ Target: your-sellio-domain.com`;
                   border
                   border-border
                   bg-black/5
-                  px-5
-                  py-4
+                  p-5
                 "
               >
 
+                <p
+                  className="
+                    text-xs
+                    font-semibold
+                    uppercase
+                    tracking-wide
+                    text-navy-mute
+                  "
+                >
+                  Example breakdown
+                </p>
+
+
                 <div
                   className="
-                    flex
-                    items-start
-                    gap-3
+                    mt-4
+                    space-y-3
                   "
                 >
 
-                  <Info
+                  <div
                     className="
-                      mt-0.5
-                      h-4
-                      w-4
-                      shrink-0
-                      text-coral
-                    "
-                  />
-
-
-                  <p
-                    className="
-                      text-sm
-                      leading-6
-                      text-navy-mute
+                      flex
+                      flex-col
+                      gap-1
+                      sm:flex-row
+                      sm:items-center
+                      sm:gap-4
                     "
                   >
-                    Use the exact DNS values shown in your
-                    Sellio domain configuration. Do not
-                    replace a working DNS record unless you
-                    know which service currently uses it.
-                  </p>
+
+                    <code
+                      className="
+                        text-xs
+                        font-semibold
+                        text-coral
+                      "
+                    >
+                      utm_source=instagram
+                    </code>
+
+
+                    <span
+                      className="
+                        text-sm
+                        text-navy-mute
+                      "
+                    >
+                      Traffic came from Instagram.
+                    </span>
+
+                  </div>
+
+
+                  <div
+                    className="
+                      flex
+                      flex-col
+                      gap-1
+                      sm:flex-row
+                      sm:items-center
+                      sm:gap-4
+                    "
+                  >
+
+                    <code
+                      className="
+                        text-xs
+                        font-semibold
+                        text-coral
+                      "
+                    >
+                      utm_medium=social
+                    </code>
+
+
+                    <span
+                      className="
+                        text-sm
+                        text-navy-mute
+                      "
+                    >
+                      The link was shared through a social
+                      channel.
+                    </span>
+
+                  </div>
+
+
+                  <div
+                    className="
+                      flex
+                      flex-col
+                      gap-1
+                      sm:flex-row
+                      sm:items-center
+                      sm:gap-4
+                    "
+                  >
+
+                    <code
+                      className="
+                        text-xs
+                        font-semibold
+                        text-coral
+                      "
+                    >
+                      utm_campaign=spring-sale
+                    </code>
+
+
+                    <span
+                      className="
+                        text-sm
+                        text-navy-mute
+                      "
+                    >
+                      The link belongs to the Spring Sale
+                      campaign.
+                    </span>
+
+                  </div>
 
                 </div>
 
               </div>
 
             </section>
-
-
-                  {/* ==================================================
-                REDIRECT RULES
+                        {/* ==================================================
+                USING YOUR UTM TAG
             ================================================== */}
 
             <section
-              id="redirect-rules"
+              id="using-utm"
               className="
                 scroll-mt-28
                 border-b
@@ -591,7 +838,7 @@ Target: your-sellio-domain.com`;
                   font-bold
                 "
               >
-                Set Up Redirect Rules
+                Using Your UTM Tag
               </h2>
 
 
@@ -603,10 +850,11 @@ Target: your-sellio-domain.com`;
                   text-navy-mute
                 "
               >
-                A redirect sends visitors from one website
-                address to another. This can be useful when
-                you want customers to consistently reach the
-                preferred version of your Sellio storefront.
+                Once you have created a UTM link, use that
+                exact URL in the marketing channel you want
+                to measure. The parameters remain attached
+                when a visitor follows the link to your
+                Sellio store.
               </p>
 
 
@@ -618,30 +866,201 @@ Target: your-sellio-domain.com`;
                   text-navy-mute
                 "
               >
-                Before creating a redirect, check which
-                domain and URL should be the primary
-                destination for your store.
+                Keep your naming consistent across campaigns
+                so your analytics reports remain easier to
+                read and compare.
               </p>
 
 
               {/* ==================================================
-                  STEPS
+                  COMMON USES
               ================================================== */}
 
-              <ol
+              <div
                 className="
                   mt-6
-                  space-y-4
+                  space-y-3
                 "
               >
 
                 {[
-                  "Open the domain or DNS management area provided by your domain host.",
-                  "Locate the redirect or forwarding settings.",
-                  "Choose the source address that should redirect visitors.",
-                  "Enter the preferred destination address for your Sellio storefront.",
-                  "Save the redirect rule.",
-                  "Open the original address in a new browser window and confirm that it reaches the expected destination.",
+                  {
+                    title: "Social Media",
+                    text:
+                      "Add UTM parameters to links shared on social platforms so you can identify traffic generated by those posts.",
+                  },
+                  {
+                    title: "Email Campaigns",
+                    text:
+                      "Use campaign links in promotional emails to understand which messages drive visitors to your storefront.",
+                  },
+                  {
+                    title: "Paid Advertising",
+                    text:
+                      "Add appropriate campaign parameters to advertising destination URLs so traffic sources can be compared.",
+                  },
+                  {
+                    title: "Promotions",
+                    text:
+                      "Create separate links for different promotions when you want to compare their performance.",
+                  },
+                ].map((item) => (
+
+                  <div
+                    key={item.title}
+                    className="
+                      rounded-lg
+                      border
+                      border-border
+                      p-5
+                    "
+                  >
+
+                    <h3
+                      className="
+                        text-sm
+                        font-semibold
+                      "
+                    >
+                      {item.title}
+                    </h3>
+
+
+                    <p
+                      className="
+                        mt-2
+                        text-sm
+                        leading-6
+                        text-navy-mute
+                      "
+                    >
+                      {item.text}
+                    </p>
+
+                  </div>
+
+                ))}
+
+              </div>
+
+
+              {/* ==================================================
+                  NAMING TIPS
+              ================================================== */}
+
+              <div
+                className="
+                  mt-6
+                  rounded-lg
+                  border
+                  border-border
+                  bg-black/5
+                  px-5
+                  py-5
+                "
+              >
+
+                <p
+                  className="
+                    text-sm
+                    font-semibold
+                  "
+                >
+                  Keep your UTM names consistent
+                </p>
+
+
+                <ul
+                  className="
+                    mt-3
+                    list-disc
+                    space-y-2
+                    pl-5
+                    text-sm
+                    leading-6
+                    text-navy-mute
+                  "
+                >
+
+                  <li>
+                    Use clear names that describe the
+                    campaign.
+                  </li>
+
+                  <li>
+                    Use the same spelling and capitalization
+                    conventions across campaigns.
+                  </li>
+
+                  <li>
+                    Avoid unnecessary spaces or confusing
+                    parameter values.
+                  </li>
+
+                  <li>
+                    Make campaign names easy for your team
+                    to recognize later.
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </section>
+
+
+            {/* ==================================================
+                ADDING UTM LINK TO SMS
+            ================================================== */}
+
+            <section
+              id="utm-sms"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Adding a UTM Link to SMS
+              </h2>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                You can also use UTM-tagged URLs in SMS
+                campaigns. This lets you distinguish visits
+                generated by a text message from traffic
+                generated by other channels.
+              </p>
+
+
+              <ol
+                className="
+                  mt-6
+                  space-y-3
+                "
+              >
+
+                {[
+                  "Create the destination URL for the Sellio page you want to promote.",
+                  "Add the UTM source, medium, and campaign parameters.",
+                  "Copy the completed URL.",
+                  "Place the URL in your SMS campaign.",
+                  "Review your analytics reports after customers begin visiting the link.",
                 ].map((item, index) => (
 
                   <li
@@ -687,12 +1106,84 @@ Target: your-sellio-domain.com`;
 
 
               {/* ==================================================
-                  REDIRECT NOTE
+                  SMS EXAMPLE
               ================================================== */}
 
               <div
                 className="
                   mt-6
+                  rounded-lg
+                  border
+                  border-border
+                  bg-black/5
+                  p-5
+                "
+              >
+
+                <p
+                  className="
+                    text-xs
+                    font-semibold
+                    uppercase
+                    tracking-wide
+                    text-navy-mute
+                  "
+                >
+                  Example
+                </p>
+
+
+                <p
+                  className="
+                    mt-3
+                    text-sm
+                    leading-6
+                    text-navy-mute
+                  "
+                >
+                  A promotional SMS could direct customers
+                  to a Sellio product page using a campaign
+                  URL such as:
+                </p>
+
+
+                <div
+                  className="
+                    mt-4
+                    overflow-hidden
+                    rounded-md
+                    border
+                    border-border
+                    bg-[#101a2c]
+                  "
+                >
+
+                  <pre
+                    className="
+                      overflow-x-auto
+                      p-4
+                      text-xs
+                      leading-6
+                      text-white/85
+                    "
+                  >
+                    <code>
+                      {`https://yourstore.com/products/example-product?utm_source=sms&utm_medium=message&utm_campaign=spring-sale`}
+                    </code>
+                  </pre>
+
+                </div>
+
+              </div>
+
+
+              {/* ==================================================
+                  IMPORTANT NOTE
+              ================================================== */}
+
+              <div
+                className="
+                  mt-5
                   rounded-lg
                   border
                   border-border
@@ -728,10 +1219,10 @@ Target: your-sellio-domain.com`;
                       text-navy-mute
                     "
                   >
-                    Avoid creating multiple redirect rules
-                    for the same address. Keep one clear
-                    destination for each domain or URL
-                    whenever possible.
+                    Keep links reasonably short when using
+                    them in messages. If a URL becomes difficult
+                    to read, consider using a trusted link
+                    management solution.
                   </p>
 
                 </div>
@@ -742,11 +1233,11 @@ Target: your-sellio-domain.com`;
 
 
             {/* ==================================================
-                HTTPS
+                UTM NAMING BEST PRACTICES
             ================================================== */}
 
             <section
-              id="https"
+              id="utm-best-practices"
               className="
                 scroll-mt-28
                 border-b
@@ -761,7 +1252,7 @@ Target: your-sellio-domain.com`;
                   font-bold
                 "
               >
-                Ensure HTTPS Is Enabled
+                UTM Naming Best Practices
               </h2>
 
 
@@ -773,232 +1264,265 @@ Target: your-sellio-domain.com`;
                   text-navy-mute
                 "
               >
-                Your storefront should use a secure HTTPS
-                connection. HTTPS protects information
-                exchanged between a visitor's browser and
-                your website.
-              </p>
-
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                After connecting your domain, check that
-                your storefront opens with
-                <code
-                  className="
-                    mx-1
-                    rounded
-                    bg-black/5
-                    px-1.5
-                    py-0.5
-                    font-mono
-                    text-xs
-                    text-coral
-                  "
-                >
-                  https://
-                </code>
-                rather than an unsecured HTTP address.
+                Consistent naming is important because
+                analytics reports use your UTM values to
+                group and identify campaign traffic.
               </p>
 
 
               {/* ==================================================
-                  HTTPS CHECKLIST
+                  BEST PRACTICE TABLE
               ================================================== */}
 
               <div
                 className="
                   mt-6
-                  space-y-3
-                "
-              >
-
-                {[
-                  "Open your Sellio storefront using its main domain.",
-                  "Confirm that the browser address begins with https://.",
-                  "Check that the page loads without a certificate warning.",
-                  "Test the preferred domain and any configured alternate address.",
-                  "Confirm that visitors are sent to the correct secure destination.",
-                ].map((item) => (
-
-                  <div
-                    key={item}
-                    className="
-                      flex
-                      items-start
-                      gap-3
-                      rounded-lg
-                      border
-                      border-border
-                      px-4
-                      py-3
-                    "
-                  >
-
-                    <Check
-                      className="
-                        mt-0.5
-                        h-4
-                        w-4
-                        shrink-0
-                        text-coral
-                      "
-                    />
-
-
-                    <span
-                      className="
-                        text-sm
-                        leading-6
-                        text-navy-mute
-                      "
-                    >
-                      {item}
-                    </span>
-
-                  </div>
-
-                ))}
-
-              </div>
-
-
-              {/* ==================================================
-                  HTTPS CALLOUT
-              ================================================== */}
-
-              <div
-                className="
-                  mt-6
+                  overflow-x-auto
                   rounded-lg
                   border
                   border-border
-                  bg-black/5
-                  px-5
-                  py-5
                 "
               >
 
-                <p
+                <table
                   className="
+                    w-full
+                    min-w-[600px]
+                    text-left
                     text-sm
-                    font-semibold
                   "
                 >
-                  If HTTPS is not working
-                </p>
 
-
-                <p
-                  className="
-                    mt-2
-                    text-sm
-                    leading-6
-                    text-navy-mute
-                  "
-                >
-                  Check your domain configuration first.
-                  Make sure the domain points to the correct
-                  destination and that there are no conflicting
-                  DNS or redirect settings.
-                </p>
-
-              </div>
-
-            </section>
-
-
-            {/* ==================================================
-                DOMAIN CHECKLIST
-            ================================================== */}
-
-            <section
-              id="domain-checklist"
-              className="
-                scroll-mt-28
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Final Domain Checklist
-              </h2>
-
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Use this quick checklist after making your
-                domain changes.
-              </p>
-
-
-              <ul
-                className="
-                  mt-6
-                  space-y-3
-                "
-              >
-
-                {[
-                  "The correct DNS record is configured.",
-                  "Your preferred website address opens successfully.",
-                  "Redirect rules point visitors to the intended destination.",
-                  "Your storefront loads over HTTPS.",
-                  "The domain works on both desktop and mobile browsers.",
-                ].map((item) => (
-
-                  <li
-                    key={item}
+                  <thead
                     className="
-                      flex
-                      items-start
-                      gap-3
-                      text-sm
-                      leading-6
-                      text-navy-mute
+                      bg-black/5
                     "
                   >
 
-                    <Check
+                    <tr>
+
+                      <th
+                        className="
+                          px-4
+                          py-3
+                          font-semibold
+                        "
+                      >
+                        Parameter
+                      </th>
+
+                      <th
+                        className="
+                          px-4
+                          py-3
+                          font-semibold
+                        "
+                      >
+                        Good Example
+                      </th>
+
+                      <th
+                        className="
+                          px-4
+                          py-3
+                          font-semibold
+                        "
+                      >
+                        Purpose
+                      </th>
+
+                    </tr>
+
+                  </thead>
+
+
+                  <tbody>
+
+                    <tr
                       className="
-                        mt-0.5
-                        h-4
-                        w-4
-                        shrink-0
-                        text-coral
+                        border-t
+                        border-border
                       "
-                    />
+                    >
 
-                    <span>
-                      {item}
-                    </span>
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          font-mono
+                          text-xs
+                          text-coral
+                        "
+                      >
+                        source
+                      </td>
 
-                  </li>
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          font-mono
+                          text-xs
+                          text-navy-mute
+                        "
+                      >
+                        instagram
+                      </td>
 
-                ))}
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          text-navy-mute
+                        "
+                      >
+                        Identifies the traffic source.
+                      </td>
 
-              </ul>
+                    </tr>
+
+
+                    <tr
+                      className="
+                        border-t
+                        border-border
+                      "
+                    >
+
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          font-mono
+                          text-xs
+                          text-coral
+                        "
+                      >
+                        medium
+                      </td>
+
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          font-mono
+                          text-xs
+                          text-navy-mute
+                        "
+                      >
+                        social
+                      </td>
+
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          text-navy-mute
+                        "
+                      >
+                        Identifies the marketing channel.
+                      </td>
+
+                    </tr>
+
+
+                    <tr
+                      className="
+                        border-t
+                        border-border
+                      "
+                    >
+
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          font-mono
+                          text-xs
+                          text-coral
+                        "
+                      >
+                        campaign
+                      </td>
+
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          font-mono
+                          text-xs
+                          text-navy-mute
+                        "
+                      >
+                        spring-sale
+                      </td>
+
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          text-navy-mute
+                        "
+                      >
+                        Identifies the promotion or campaign.
+                      </td>
+
+                    </tr>
+
+
+                    <tr
+                      className="
+                        border-t
+                        border-border
+                      "
+                    >
+
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          font-mono
+                          text-xs
+                          text-coral
+                        "
+                      >
+                        content
+                      </td>
+
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          font-mono
+                          text-xs
+                          text-navy-mute
+                        "
+                      >
+                        hero-banner
+                      </td>
+
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          text-navy-mute
+                        "
+                      >
+                        Distinguishes different links or
+                        creatives.
+                      </td>
+
+                    </tr>
+
+                  </tbody>
+
+                </table>
+
+              </div>
 
 
               {/* ==================================================
-                  DNS PROPAGATION NOTE
+                  CONSISTENCY CALLOUT
               ================================================== */}
 
               <div
@@ -1013,44 +1537,29 @@ Target: your-sellio-domain.com`;
                 "
               >
 
-                <div
+                <p
                   className="
-                    flex
-                    items-start
-                    gap-3
+                    text-sm
+                    leading-6
+                    text-navy-mute
                   "
                 >
-
-                  <Info
-                    className="
-                      mt-0.5
-                      h-4
-                      w-4
-                      shrink-0
-                      text-coral
-                    "
-                  />
-
-
-                  <p
-                    className="
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-                    If a recent DNS change does not appear
-                    immediately, allow time for the change to
-                    propagate before making additional
-                    modifications.
-                  </p>
-
-                </div>
+                  For example, avoid using both
+                  <code className="mx-1 font-mono text-xs text-coral">
+                    Instagram
+                  </code>
+                  and
+                  <code className="mx-1 font-mono text-xs text-coral">
+                    instagram
+                  </code>
+                  for the same traffic source if your
+                  reporting convention expects one format.
+                </p>
 
               </div>
 
             </section>
- {/* ==================================================
+                        {/* ==================================================
                 NEED HELP
             ================================================== */}
 
@@ -1063,6 +1572,7 @@ Target: your-sellio-domain.com`;
                 py-8
               "
             >
+
               <div
                 className="
                   rounded-lg
@@ -1073,6 +1583,7 @@ Target: your-sellio-domain.com`;
                   py-6
                 "
               >
+
                 <p
                   className="
                     text-xs
@@ -1085,6 +1596,7 @@ Target: your-sellio-domain.com`;
                   Support
                 </p>
 
+
                 <h2
                   className="
                     mt-2
@@ -1095,19 +1607,6 @@ Target: your-sellio-domain.com`;
                   Need Help?
                 </h2>
 
-                <p
-                  className="
-                    mt-3
-                    max-w-2xl
-                    text-sm
-                    leading-7
-                    text-navy-mute
-                  "
-                >
-                  If your domain is not loading correctly,
-                  review the DNS record, redirect settings,
-                  and HTTPS configuration for your storefront.
-                </p>
 
                 <p
                   className="
@@ -1118,10 +1617,27 @@ Target: your-sellio-domain.com`;
                     text-navy-mute
                   "
                 >
-                  If everything looks correct but your website
-                  still does not load as expected, contact
-                  Sellio support for assistance.
+                  If your UTM links are not appearing as
+                  expected in your analytics reports, check
+                  that the parameters were added correctly
+                  and that the complete URL is being used.
                 </p>
+
+
+                <p
+                  className="
+                    mt-3
+                    max-w-2xl
+                    text-sm
+                    leading-7
+                    text-navy-mute
+                  "
+                >
+                  If you still need assistance with your
+                  analytics or campaign tracking setup,
+                  contact Sellio support.
+                </p>
+
 
                 <Link
                   href="/#contact"
@@ -1146,8 +1662,11 @@ Target: your-sellio-domain.com`;
                   <ArrowRight
                     className="h-4 w-4"
                   />
+
                 </Link>
+
               </div>
+
             </section>
 
 
@@ -1162,6 +1681,7 @@ Target: your-sellio-domain.com`;
                 py-8
               "
             >
+
               <p
                 className="
                   text-xs
@@ -1174,6 +1694,7 @@ Target: your-sellio-domain.com`;
                 Continue Learning
               </p>
 
+
               <h2
                 className="
                   mt-2
@@ -1184,6 +1705,7 @@ Target: your-sellio-domain.com`;
                 Related Guides
               </h2>
 
+
               <p
                 className="
                   mt-3
@@ -1192,9 +1714,9 @@ Target: your-sellio-domain.com`;
                   text-navy-mute
                 "
               >
-                Continue exploring Sellio documentation for
-                more information about domains, analytics,
-                and store setup.
+                Explore more Sellio documentation to learn
+                about analytics, campaigns, and customer
+                activity.
               </p>
 
 
@@ -1208,84 +1730,11 @@ Target: your-sellio-domain.com`;
               >
 
                 {/* ==================================================
-                    DOMAIN SETUP
-                ================================================== */}
-
-                <Link
-                  href="/documentation/add-domain"
-                  className="
-                    group
-                    rounded-lg
-                    border
-                    border-border
-                    p-5
-                    transition-colors
-                    hover:border-coral
-                  "
-                >
-                  <p
-                    className="
-                      text-xs
-                      text-navy-mute
-                    "
-                  >
-                    Getting Started
-                  </p>
-
-                  <h3
-                    className="
-                      mt-2
-                      text-sm
-                      font-semibold
-                      group-hover:text-coral
-                    "
-                  >
-                    Add Your Domain to Sellio
-                  </h3>
-
-                  <p
-                    className="
-                      mt-2
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-                    Learn more about connecting your domain
-                    to your Sellio store.
-                  </p>
-
-                  <span
-                    className="
-                      mt-4
-                      inline-flex
-                      items-center
-                      gap-1.5
-                      text-xs
-                      font-semibold
-                      text-coral
-                    "
-                  >
-                    Read guide
-
-                    <ArrowRight
-                      className="
-                        h-3.5
-                        w-3.5
-                        transition-transform
-                        group-hover:translate-x-1
-                      "
-                    />
-                  </span>
-                </Link>
-
-
-                {/* ==================================================
                     GOOGLE ANALYTICS
                 ================================================== */}
 
                 <Link
-                  href="/documentation/google-analytics"
+                  href="/helpful-info/google-analytics"
                   className="
                     group
                     rounded-lg
@@ -1296,6 +1745,7 @@ Target: your-sellio-domain.com`;
                     hover:border-coral
                   "
                 >
+
                   <p
                     className="
                       text-xs
@@ -1304,6 +1754,7 @@ Target: your-sellio-domain.com`;
                   >
                     Analytics
                   </p>
+
 
                   <h3
                     className="
@@ -1316,6 +1767,7 @@ Target: your-sellio-domain.com`;
                     Google Analytics
                   </h3>
 
+
                   <p
                     className="
                       mt-2
@@ -1324,9 +1776,11 @@ Target: your-sellio-domain.com`;
                       text-navy-mute
                     "
                   >
-                    Learn how to connect analytics and
-                    understand activity from your store.
+                    Learn how to connect analytics to your
+                    Sellio storefront and review visitor
+                    activity.
                   </p>
+
 
                   <span
                     className="
@@ -1341,7 +1795,7 @@ Target: your-sellio-domain.com`;
                   >
                     Read guide
 
-                    <ArrowRight
+                    <ChevronRight
                       className="
                         h-3.5
                         w-3.5
@@ -1349,10 +1803,92 @@ Target: your-sellio-domain.com`;
                         group-hover:translate-x-1
                       "
                     />
+
                   </span>
+
+                </Link>
+
+
+                {/* ==================================================
+                    GOOGLE ANALYTICS TRACKING
+                ================================================== */}
+
+                <Link
+                  href="/helpful-info/what-google-analytics-tracks"
+                  className="
+                    group
+                    rounded-lg
+                    border
+                    border-border
+                    p-5
+                    transition-colors
+                    hover:border-coral
+                  "
+                >
+
+                  <p
+                    className="
+                      text-xs
+                      text-navy-mute
+                    "
+                  >
+                    Analytics
+                  </p>
+
+
+                  <h3
+                    className="
+                      mt-2
+                      text-sm
+                      font-semibold
+                      group-hover:text-coral
+                    "
+                  >
+                    What Google Analytics Tracks
+                  </h3>
+
+
+                  <p
+                    className="
+                      mt-2
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+                    Understand the types of activity that
+                    analytics can measure on your storefront.
+                  </p>
+
+
+                  <span
+                    className="
+                      mt-4
+                      inline-flex
+                      items-center
+                      gap-1.5
+                      text-xs
+                      font-semibold
+                      text-coral
+                    "
+                  >
+                    Read guide
+
+                    <ChevronRight
+                      className="
+                        h-3.5
+                        w-3.5
+                        transition-transform
+                        group-hover:translate-x-1
+                      "
+                    />
+
+                  </span>
+
                 </Link>
 
               </div>
+
             </section>
 
 
@@ -1372,11 +1908,11 @@ Target: your-sellio-domain.com`;
             >
 
               {/* ==================================================
-                  PREVIOUS
+                  PREVIOUS PAGE
               ================================================== */}
 
               <Link
-                href="/documentation/creating-a-free-entry-competition"
+                href="/helpful-info/what-google-analytics-tracks"
                 className="
                   group
                   rounded-lg
@@ -1388,6 +1924,7 @@ Target: your-sellio-domain.com`;
                   hover:border-coral
                 "
               >
+
                 <p
                   className="
                     text-xs
@@ -1396,6 +1933,7 @@ Target: your-sellio-domain.com`;
                 >
                   Previous
                 </p>
+
 
                 <div
                   className="
@@ -1408,21 +1946,24 @@ Target: your-sellio-domain.com`;
                     group-hover:text-coral
                   "
                 >
+
                   <ArrowLeft
                     className="h-4 w-4"
                   />
 
-              Creating a Free Entry Competition
+                  What Google Analytics Tracks
+
                 </div>
+
               </Link>
 
 
               {/* ==================================================
-                  NEXT
+                  NEXT PAGE
               ================================================== */}
 
               <Link
-                href="/documentation/pci-compliance-scan"
+                href="/helpful-info/creating-a-free-entry-competition"
                 className="
                   group
                   rounded-lg
@@ -1435,6 +1976,7 @@ Target: your-sellio-domain.com`;
                   hover:border-coral
                 "
               >
+
                 <p
                   className="
                     text-xs
@@ -1443,6 +1985,7 @@ Target: your-sellio-domain.com`;
                 >
                   Next
                 </p>
+
 
                 <div
                   className="
@@ -1456,12 +1999,15 @@ Target: your-sellio-domain.com`;
                     group-hover:text-coral
                   "
                 >
-              Pci-Compliance-Scan
+
+                  Creating a Free Entry Competition
 
                   <ArrowRight
                     className="h-4 w-4"
                   />
+
                 </div>
+
               </Link>
 
             </div>
@@ -1481,12 +2027,11 @@ Target: your-sellio-domain.com`;
               Last updated recently
             </div>
 
-
           </article>
 
 
           {/* ==================================================
-              RIGHT SIDE TOC
+              RIGHT SIDE — ON THIS PAGE
           ================================================== */}
 
           <aside
@@ -1529,15 +2074,13 @@ Target: your-sellio-domain.com`;
                 {sections.map((section) => {
 
                   const isActive =
-                    activeSection ===
-                    section.id;
+                    activeSection === section.id;
 
                   return (
                     <a
                       key={section.id}
                       href={`#${section.id}`}
                       onClick={(event) => {
-
                         event.preventDefault();
 
                         document
@@ -1545,16 +2088,13 @@ Target: your-sellio-domain.com`;
                             section.id
                           )
                           ?.scrollIntoView({
-                            behavior:
-                              "smooth",
-                            block:
-                              "start",
+                            behavior: "smooth",
+                            block: "start",
                           });
 
                         setActiveSection(
                           section.id
                         );
-
                       }}
                       className={`
                         block

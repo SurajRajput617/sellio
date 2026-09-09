@@ -6,16 +6,15 @@ import Link from "next/link";
 import {
   ArrowRight,
   ArrowLeft,
-  Copy,
   Check,
   Info,
-  BarChart3,
-  ChevronRight,
+  Mail,
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
+
 
 /* ============================================================
    ON THIS PAGE
@@ -23,56 +22,46 @@ import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 const sections = [
   {
-    id: "overview",
-    label: "Overview",
+    id: "google-workspace",
+    label: "Go to Google Workspace",
   },
   {
-    id: "create-account",
-    label: "Create a Google Analytics Account",
+    id: "set-up-domain",
+    label: "Set Up Your Domain",
   },
   {
-    id: "create-property",
-    label: "Create a Property",
+    id: "create-email",
+    label: "Create Your First Email Address",
   },
   {
-    id: "business-details",
-    label: "Enter Business Details",
+    id: "subscription-plan",
+    label: "Choose a Subscription Plan",
   },
   {
-    id: "website-tracking",
-    label: "Set Up Website Tracking",
+    id: "verify-domain",
+    label: "Verify Your Domain",
   },
   {
-    id: "install-analytics",
-    label: "Install Google Analytics",
-  },
-  {
-    id: "confirm-tracking",
-    label: "Confirm Analytics Tracking",
-  },
-  {
-    id: "what-happens-next",
-    label: "What Happens Next?",
+    id: "access-email",
+    label: "Access Your Email",
   },
 ];
 
-/* ============================================================
-   PAGE
-============================================================ */
 
-export default function GoogleAnalyticsPage() {
+export default function SetUpEmailInboxPage() {
+
   const [activeSection, setActiveSection] =
-    useState("overview");
+    useState("google-workspace");
 
-  const [copied, setCopied] =
-    useState(false);
 
   /* ============================================================
      ACTIVE SECTION
   ============================================================ */
 
   useEffect(() => {
+
     const handleScroll = () => {
+
       const position =
         window.scrollY + 180;
 
@@ -80,6 +69,7 @@ export default function GoogleAnalyticsPage() {
         sections[0].id;
 
       sections.forEach((section) => {
+
         const element =
           document.getElementById(
             section.id
@@ -92,10 +82,12 @@ export default function GoogleAnalyticsPage() {
         ) {
           current = section.id;
         }
+
       });
 
       setActiveSection(current);
     };
+
 
     handleScroll();
 
@@ -107,60 +99,16 @@ export default function GoogleAnalyticsPage() {
       }
     );
 
+
     return () => {
       window.removeEventListener(
         "scroll",
         handleScroll
       );
     };
+
   }, []);
 
-  /* ============================================================
-     TRACKING CODE
-  ============================================================ */
-
-  const trackingCode = `<!-- Google Analytics -->
-
-<script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX">
-</script>
-
-<script>
-  window.dataLayer =
-    window.dataLayer || [];
-
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-
-  gtag("js", new Date());
-
-  gtag(
-    "config",
-    "G-XXXXXXXXXX"
-  );
-</script>`;
-
-  /* ============================================================
-     COPY
-  ============================================================ */
-
-  const copyCode = async () => {
-    try {
-      await navigator.clipboard.writeText(
-        trackingCode
-      );
-
-      setCopied(true);
-
-      setTimeout(() => {
-        setCopied(false);
-      }, 1800);
-    } catch {
-      setCopied(false);
-    }
-  };
 
   return (
     <>
@@ -172,7 +120,7 @@ export default function GoogleAnalyticsPage() {
 
 
       {/* ======================================================
-          DOCUMENTATION
+          MAIN DOCUMENTATION
       ====================================================== */}
 
       <main
@@ -201,7 +149,7 @@ export default function GoogleAnalyticsPage() {
 
 
           {/* ==================================================
-              MAIN CONTENT
+              MAIN ARTICLE
           ================================================== */}
 
           <article
@@ -211,13 +159,11 @@ export default function GoogleAnalyticsPage() {
           >
 
             {/* ==================================================
-                OVERVIEW
+                HEADER
             ================================================== */}
 
-            <section
-              id="overview"
+            <header
               className="
-                scroll-mt-28
                 border-b
                 border-border
                 pb-8
@@ -233,20 +179,41 @@ export default function GoogleAnalyticsPage() {
                   text-coral
                 "
               >
-                Analytics
+                Helpful Info
               </p>
 
 
-              <h1
+              <div
                 className="
                   mt-3
-                  text-3xl
-                  font-bold
-                  tracking-tight
+                  flex
+                  items-start
+                  gap-3
                 "
               >
-                Google Analytics
-              </h1>
+
+                <Mail
+                  className="
+                    mt-1
+                    h-6
+                    w-6
+                    shrink-0
+                    text-coral
+                  "
+                />
+
+
+                <h1
+                  className="
+                    text-3xl
+                    font-bold
+                    tracking-tight
+                  "
+                >
+                  Set Up Email Inbox
+                </h1>
+
+              </div>
 
 
               <p
@@ -258,736 +225,35 @@ export default function GoogleAnalyticsPage() {
                   text-navy-mute
                 "
               >
-                Connect Google Analytics to your Sellio
-                store to understand how visitors discover
-                your website and how they interact with
-                your products and pages.
-              </p>
-
-
-              <p
-                className="
-                  mt-4
-                  max-w-3xl
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                This guide walks you through creating your
-                analytics property, preparing website
-                tracking, and confirming that data is
-                reaching Google Analytics.
-              </p>
-
-
-              {/* ==================================================
-                  INFO BOX
-              ================================================== */}
-
-              <div
-                className="
-                  mt-6
-                  rounded-lg
-                  border
-                  border-border
-                  bg-black/5
-                  px-5
-                  py-4
-                "
-              >
-
-                <div
-                  className="
-                    flex
-                    items-start
-                    gap-3
-                  "
-                >
-
-                  <Info
-                    className="
-                      mt-0.5
-                      h-4
-                      w-4
-                      shrink-0
-                      text-coral
-                    "
-                  />
-
-                  <p
-                    className="
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-                    You will need access to your Google
-                    Analytics account and the Sellio store
-                    you want to connect.
-                  </p>
-
-                </div>
-
-              </div>
-
-            </section>
-
-
-            {/* ==================================================
-                CREATE ACCOUNT
-            ================================================== */}
-
-            <section
-              id="create-account"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Create a Google Analytics Account
-              </h2>
-
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Start by creating or signing in to the
-                Google Analytics account you want to use
-                for your Sellio store.
-              </p>
-
-
-              <ol
-                className="
-                  mt-5
-                  space-y-3
-                "
-              >
-
-                {[
-                  "Open Google Analytics and sign in with your Google account.",
-                  "Choose the option to create an Analytics account.",
-                  "Enter a name that clearly identifies your Sellio store.",
-                  "Review the account settings and continue.",
-                ].map((item, index) => (
-                  <li
-                    key={item}
-                    className="
-                      flex
-                      items-start
-                      gap-3
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-
-                    <span
-                      className="
-                        flex
-                        h-6
-                        w-6
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-md
-                        bg-black/5
-                        text-xs
-                        font-semibold
-                        text-coral
-                      "
-                    >
-                      {index + 1}
-                    </span>
-
-                    <span>
-                      {item}
-                    </span>
-
-                  </li>
-                ))}
-
-              </ol>
-
-
-              <div
-                className="
-                  mt-5
-                  rounded-lg
-                  border
-                  border-border
-                  bg-black/5
-                  px-5
-                  py-4
-                "
-              >
-
-                <p
-                  className="
-                    text-sm
-                    leading-6
-                    text-navy-mute
-                  "
-                >
-                  Use a recognizable account name so you
-                  can easily identify the correct store if
-                  you manage more than one website.
-                </p>
-
-              </div>
-
-            </section>
-
-
-            {/* ==================================================
-                CREATE PROPERTY
-            ================================================== */}
-
-            <section
-              id="create-property"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Create a Property
-              </h2>
-
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Create a Google Analytics property for the
-                Sellio website you want to measure.
-              </p>
-
-
-              <ol
-                className="
-                  mt-5
-                  space-y-3
-                "
-              >
-
-                {[
-                  "Enter the name of your Sellio store.",
-                  "Select the appropriate reporting settings.",
-                  "Choose the relevant business or website information.",
-                  "Continue to the data collection setup.",
-                ].map((item, index) => (
-                  <li
-                    key={item}
-                    className="
-                      flex
-                      items-start
-                      gap-3
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-
-                    <span
-                      className="
-                        flex
-                        h-6
-                        w-6
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-md
-                        bg-black/5
-                        text-xs
-                        font-semibold
-                        text-coral
-                      "
-                    >
-                      {index + 1}
-                    </span>
-
-                    <span>
-                      {item}
-                    </span>
-
-                  </li>
-                ))}
-
-              </ol>
-
-            </section>
-
-
-            {/* ==================================================
-                BUSINESS DETAILS
-            ================================================== */}
-
-            <section
-              id="business-details"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Enter Business Details
-              </h2>
-
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Provide the business information requested
-                during the property setup process. Use
-                information that accurately represents
+                Set up a professional email address using
+                your store domain so you can communicate
+                with customers from an address that matches
                 your Sellio store.
               </p>
 
 
-              <ul
-                className="
-                  mt-5
-                  list-disc
-                  space-y-2
-                  pl-5
-                  text-sm
-                  leading-6
-                  text-navy-mute
-                "
-              >
-
-                <li>
-                  Select the business category that best
-                  describes your store.
-                </li>
-
-                <li>
-                  Choose the business size that matches
-                  your operation.
-                </li>
-
-                <li>
-                  Select the goals that are most relevant
-                  to your analytics setup.
-                </li>
-
-              </ul>
-
-            </section>
-                        {/* ==================================================
-                SET UP WEBSITE TRACKING
-            ================================================== */}
-
-            <section
-              id="website-tracking"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Set Up Website Tracking
-              </h2>
-
-
               <p
                 className="
                   mt-4
+                  max-w-3xl
                   text-sm
                   leading-7
                   text-navy-mute
                 "
               >
-                After creating your property, set up a web
-                data stream for your Sellio storefront.
-                This gives Google Analytics a destination
-                from which it can collect website activity.
+                This guide walks you through the basic steps
+                for connecting a domain-based inbox and
+                accessing your business email.
               </p>
 
 
-              <ol
-                className="
-                  mt-5
-                  space-y-3
-                "
-              >
-
-                {[
-                  "Open the data collection or web stream setup.",
-                  "Choose Web as the platform.",
-                  "Enter the URL of your Sellio storefront.",
-                  "Give the stream a recognizable name.",
-                  "Complete the setup and locate your measurement ID.",
-                ].map((item, index) => (
-                  <li
-                    key={item}
-                    className="
-                      flex
-                      items-start
-                      gap-3
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-
-                    <span
-                      className="
-                        flex
-                        h-6
-                        w-6
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-md
-                        bg-black/5
-                        text-xs
-                        font-semibold
-                        text-coral
-                      "
-                    >
-                      {index + 1}
-                    </span>
-
-                    <span>
-                      {item}
-                    </span>
-
-                  </li>
-                ))}
-
-              </ol>
-
-
               {/* ==================================================
-                  MEASUREMENT ID
+                  INFO CALLOUT
               ================================================== */}
 
               <div
                 className="
                   mt-6
-                  rounded-lg
-                  border
-                  border-border
-                  bg-black/5
-                  px-5
-                  py-4
-                "
-              >
-
-                <p
-                  className="
-                    text-xs
-                    font-semibold
-                    uppercase
-                    tracking-wide
-                    text-navy-mute
-                  "
-                >
-                  Measurement ID
-                </p>
-
-
-                <p
-                  className="
-                    mt-2
-                    font-mono
-                    text-sm
-                    font-semibold
-                    text-coral
-                  "
-                >
-                  G-XXXXXXXXXX
-                </p>
-
-
-                <p
-                  className="
-                    mt-2
-                    text-sm
-                    leading-6
-                    text-navy-mute
-                  "
-                >
-                  Keep your measurement ID available for
-                  the tracking configuration.
-                </p>
-
-              </div>
-
-            </section>
-
-
-            {/* ==================================================
-                INSTALL GOOGLE ANALYTICS
-            ================================================== */}
-
-            <section
-              id="install-analytics"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Install Google Analytics on Your Sellio Site
-              </h2>
-
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Add your Google Analytics tracking
-                configuration to the appropriate location
-                in your Sellio site so Google can receive
-                visitor activity.
-              </p>
-
-
-              <ol
-                className="
-                  mt-5
-                  space-y-3
-                "
-              >
-
-                {[
-                  "Copy the tracking configuration from your Google Analytics property.",
-                  "Open the tracking or custom code area available for your Sellio site.",
-                  "Add the tracking configuration to the site's global head area.",
-                  "Save your changes.",
-                  "Open your storefront and test the connection.",
-                ].map((item, index) => (
-                  <li
-                    key={item}
-                    className="
-                      flex
-                      items-start
-                      gap-3
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-
-                    <span
-                      className="
-                        flex
-                        h-6
-                        w-6
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-md
-                        bg-black/5
-                        text-xs
-                        font-semibold
-                        text-coral
-                      "
-                    >
-                      {index + 1}
-                    </span>
-
-                    <span>
-                      {item}
-                    </span>
-
-                  </li>
-                ))}
-
-              </ol>
-
-
-              {/* ==================================================
-                  CODE BLOCK
-              ================================================== */}
-
-              <div
-                className="
-                  mt-6
-                  overflow-hidden
-                  rounded-lg
-                  border
-                  border-border
-                  bg-[#101a2c]
-                "
-              >
-
-                <div
-                  className="
-                    flex
-                    items-center
-                    justify-between
-                    border-b
-                    border-white/10
-                    px-4
-                    py-3
-                  "
-                >
-
-                  <div
-                    className="
-                      flex
-                      items-center
-                      gap-2
-                    "
-                  >
-
-                    <BarChart3
-                      className="
-                        h-4
-                        w-4
-                        text-white/60
-                      "
-                    />
-
-                    <span
-                      className="
-                        text-xs
-                        text-white/70
-                      "
-                    >
-                      Google Analytics
-                    </span>
-
-                  </div>
-
-
-                  <button
-                    type="button"
-                    onClick={copyCode}
-                    className="
-                      flex
-                      items-center
-                      gap-2
-                      rounded-md
-                      border
-                      border-white/10
-                      px-3
-                      py-1.5
-                      text-xs
-                      text-white/70
-                      transition-colors
-                      hover:border-white/30
-                      hover:text-white
-                    "
-                  >
-
-                    {copied ? (
-                      <>
-                        <Check
-                          className="
-                            h-3.5
-                            w-3.5
-                          "
-                        />
-
-                        Copied
-                      </>
-                    ) : (
-                      <>
-                        <Copy
-                          className="
-                            h-3.5
-                            w-3.5
-                          "
-                        />
-
-                        Copy
-                      </>
-                    )}
-
-                  </button>
-
-                </div>
-
-
-                <pre
-                  className="
-                    overflow-x-auto
-                    p-5
-                    text-sm
-                    leading-7
-                    text-white/85
-                  "
-                >
-                  <code>
-                    {trackingCode}
-                  </code>
-                </pre>
-
-              </div>
-
-
-              {/* ==================================================
-                  IMPORTANT NOTE
-              ================================================== */}
-
-              <div
-                className="
-                  mt-5
                   rounded-lg
                   border
                   border-border
@@ -1015,6 +281,7 @@ export default function GoogleAnalyticsPage() {
                     "
                   />
 
+
                   <p
                     className="
                       text-sm
@@ -1022,24 +289,24 @@ export default function GoogleAnalyticsPage() {
                       text-navy-mute
                     "
                   >
-                    Replace the example measurement ID with
-                    the ID assigned to your Google Analytics
-                    web stream.
+                    Your email provider manages the mailbox,
+                    while your domain settings determine how
+                    your domain is connected to that service.
                   </p>
 
                 </div>
 
               </div>
 
-            </section>
+            </header>
 
 
             {/* ==================================================
-                CONFIRM TRACKING
+                GO TO GOOGLE WORKSPACE
             ================================================== */}
 
             <section
-              id="confirm-tracking"
+              id="google-workspace"
               className="
                 scroll-mt-28
                 border-b
@@ -1054,7 +321,7 @@ export default function GoogleAnalyticsPage() {
                   font-bold
                 "
               >
-                Confirm Analytics Tracking
+                Go to Google Workspace
               </h2>
 
 
@@ -1066,41 +333,35 @@ export default function GoogleAnalyticsPage() {
                   text-navy-mute
                 "
               >
-                After adding the tracking configuration,
-                visit your Sellio storefront and confirm
-                that Google Analytics receives activity.
+                If you want to use Google Workspace for your
+                business inbox, start the setup from Google's
+                Workspace service.
               </p>
 
 
-              {/* ==================================================
-                  CHECKLIST
-              ================================================== */}
-
-              <div
+              <ol
                 className="
                   mt-6
-                  space-y-3
+                  space-y-4
                 "
               >
 
                 {[
-                  "Open your Sellio storefront in a browser.",
-                  "Visit several pages on the site.",
-                  "Open the reporting area in Google Analytics.",
-                  "Check the real-time or current activity view.",
-                  "Confirm that your visit is being detected.",
+                  "Open Google Workspace in your browser.",
+                  "Choose the option to get started.",
+                  "Enter your business information.",
+                  "Provide an existing contact email address that you can access.",
                 ].map((item, index) => (
-                  <div
+
+                  <li
                     key={item}
                     className="
                       flex
                       items-start
                       gap-3
-                      rounded-lg
-                      border
-                      border-border
-                      px-4
-                      py-3
+                      text-sm
+                      leading-6
+                      text-navy-mute
                     "
                   >
 
@@ -1112,7 +373,7 @@ export default function GoogleAnalyticsPage() {
                         shrink-0
                         items-center
                         justify-center
-                        rounded-full
+                        rounded-md
                         bg-black/5
                         text-xs
                         font-semibold
@@ -1123,25 +384,16 @@ export default function GoogleAnalyticsPage() {
                     </span>
 
 
-                    <span
-                      className="
-                        text-sm
-                        leading-6
-                        text-navy-mute
-                      "
-                    >
+                    <span>
                       {item}
                     </span>
 
-                  </div>
+                  </li>
+
                 ))}
 
-              </div>
+              </ol>
 
-
-              {/* ==================================================
-                  SUCCESS CALLOUT
-              ================================================== */}
 
               <div
                 className="
@@ -1173,32 +425,18 @@ export default function GoogleAnalyticsPage() {
                     "
                   />
 
-                  <div>
 
-                    <p
-                      className="
-                        text-sm
-                        font-semibold
-                      "
-                    >
-                      Tracking is connected
-                    </p>
-
-
-                    <p
-                      className="
-                        mt-1
-                        text-sm
-                        leading-6
-                        text-navy-mute
-                      "
-                    >
-                      Once your storefront activity appears
-                      in Google Analytics, the basic website
-                      tracking setup is complete.
-                    </p>
-
-                  </div>
+                  <p
+                    className="
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+                    Use an existing email address that you
+                    can access during setup. You may need it
+                    for account verification or recovery.
+                  </p>
 
                 </div>
 
@@ -1208,13 +446,15 @@ export default function GoogleAnalyticsPage() {
 
 
             {/* ==================================================
-                WHAT HAPPENS NEXT
+                SET UP YOUR DOMAIN
             ================================================== */}
 
             <section
-              id="what-happens-next"
+              id="set-up-domain"
               className="
                 scroll-mt-28
+                border-b
+                border-border
                 py-8
               "
             >
@@ -1225,7 +465,7 @@ export default function GoogleAnalyticsPage() {
                   font-bold
                 "
               >
-                What Happens Next?
+                Set Up Your Domain
               </h2>
 
 
@@ -1237,51 +477,380 @@ export default function GoogleAnalyticsPage() {
                   text-navy-mute
                 "
               >
-                Once tracking is active, Google Analytics
-                can begin building reports from activity on
-                your Sellio storefront.
+                Use the same domain associated with your
+                Sellio store when setting up your business
+                email address.
               </p>
 
 
-              <ul
+              <ol
                 className="
-                  mt-5
-                  list-disc
-                  space-y-2
-                  pl-5
-                  text-sm
-                  leading-6
-                  text-navy-mute
+                  mt-6
+                  space-y-4
                 "
               >
 
-                <li>
-                  Review how visitors reach your store.
-                </li>
+                {[
+                  "When asked whether you have a domain, choose the option indicating that you already have one.",
+                  "Enter the domain used for your Sellio storefront.",
+                  "Continue through the domain verification steps.",
+                ].map((item, index) => (
 
-                <li>
-                  Understand which pages receive traffic.
-                </li>
+                  <li
+                    key={item}
+                    className="
+                      flex
+                      items-start
+                      gap-3
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
 
-                <li>
-                  Analyze product and ecommerce activity.
-                </li>
+                    <span
+                      className="
+                        flex
+                        h-6
+                        w-6
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-md
+                        bg-black/5
+                        text-xs
+                        font-semibold
+                        text-coral
+                      "
+                    >
+                      {index + 1}
+                    </span>
 
-                <li>
-                  Compare traffic sources and customer
-                  behavior.
-                </li>
 
-                <li>
-                  Use the available reports to identify
-                  areas that may need improvement.
-                </li>
+                    <span>
+                      {item}
+                    </span>
 
-              </ul>
+                  </li>
+
+                ))}
+
+              </ol>
+
+
+              <div
+                className="
+                  mt-6
+                  rounded-lg
+                  border
+                  border-border
+                  bg-black/5
+                  px-5
+                  py-4
+                "
+              >
+
+                <div
+                  className="
+                    flex
+                    items-start
+                    gap-3
+                  "
+                >
+
+                  <Info
+                    className="
+                      mt-0.5
+                      h-4
+                      w-4
+                      shrink-0
+                      text-coral
+                    "
+                  />
+
+
+                  <p
+                    className="
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+                    Make sure you enter the correct domain.
+                    Your email address will use this domain
+                    after the setup is complete.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            {/* ==================================================
+                CREATE FIRST EMAIL
+            ================================================== */}
+
+            <section
+              id="create-email"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Create Your First Email Address
+              </h2>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                Choose an email address that looks
+                professional and is easy for customers to
+                remember.
+              </p>
+
+
+              <div
+                className="
+                  mt-6
+                  grid
+                  gap-3
+                  sm:grid-cols-2
+                "
+              >
+
+                <div
+                  className="
+                    rounded-lg
+                    border
+                    border-border
+                    p-5
+                  "
+                >
+
+                  <p
+                    className="
+                      text-xs
+                      text-navy-mute
+                    "
+                  >
+                    Personal
+                  </p>
+
+                  <p
+                    className="
+                      mt-2
+                      text-sm
+                      font-semibold
+                    "
+                  >
+                    name@yourdomain.com
+                  </p>
+
+                </div>
+
+
+                <div
+                  className="
+                    rounded-lg
+                    border
+                    border-border
+                    p-5
+                  "
+                >
+
+                  <p
+                    className="
+                      text-xs
+                      text-navy-mute
+                    "
+                  >
+                    General
+                  </p>
+
+                  <p
+                    className="
+                      mt-2
+                      text-sm
+                      font-semibold
+                    "
+                  >
+                    hello@yourdomain.com
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <ol
+                className="
+                  mt-6
+                  space-y-4
+                "
+              >
+
+                {[
+                  "Choose the first email address you want to use.",
+                  "Create a secure password for the account.",
+                  "Continue through the account setup process.",
+                ].map((item, index) => (
+
+                  <li
+                    key={item}
+                    className="
+                      flex
+                      items-start
+                      gap-3
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+
+                    <span
+                      className="
+                        flex
+                        h-6
+                        w-6
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-md
+                        bg-black/5
+                        text-xs
+                        font-semibold
+                        text-coral
+                      "
+                    >
+                      {index + 1}
+                    </span>
+
+                    <span>
+                      {item}
+                    </span>
+
+                  </li>
+
+                ))}
+
+              </ol>
+
+            </section>
+
+
+                    {/* ==================================================
+                SUBSCRIPTION PLAN
+            ================================================== */}
+
+            <section
+              id="subscription-plan"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Choose a Subscription Plan
+              </h2>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                Choose an email plan that fits the needs of
+                your business. Consider how many email
+                accounts you need and which features your
+                team will use.
+              </p>
+
+
+              <ol
+                className="
+                  mt-6
+                  space-y-4
+                "
+              >
+
+                {[
+                  "Open the available subscription options.",
+                  "Compare the plans and included features.",
+                  "Choose the plan that best fits your business needs.",
+                  "Review the payment details before completing the setup.",
+                ].map((item, index) => (
+
+                  <li
+                    key={item}
+                    className="
+                      flex
+                      items-start
+                      gap-3
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+
+                    <span
+                      className="
+                        flex
+                        h-6
+                        w-6
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-md
+                        bg-black/5
+                        text-xs
+                        font-semibold
+                        text-coral
+                      "
+                    >
+                      {index + 1}
+                    </span>
+
+                    <span>
+                      {item}
+                    </span>
+
+                  </li>
+
+                ))}
+
+              </ol>
 
 
               {/* ==================================================
-                  REPORTING CALLOUT
+                  PLAN TIP
               ================================================== */}
 
               <div
@@ -1296,6 +865,387 @@ export default function GoogleAnalyticsPage() {
                 "
               >
 
+                <div
+                  className="
+                    flex
+                    items-start
+                    gap-3
+                  "
+                >
+
+                  <Info
+                    className="
+                      mt-0.5
+                      h-4
+                      w-4
+                      shrink-0
+                      text-coral
+                    "
+                  />
+
+                  <p
+                    className="
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+                    Review the current pricing and included
+                    features directly with your email provider
+                    before choosing a plan.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            {/* ==================================================
+                VERIFY DOMAIN
+            ================================================== */}
+
+            <section
+              id="verify-domain"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Verify Your Domain
+              </h2>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                Your email provider may require you to verify
+                ownership of the domain before business email
+                can be fully activated.
+              </p>
+
+
+              <ol
+                className="
+                  mt-6
+                  space-y-4
+                "
+              >
+
+                {[
+                  "Open the domain verification instructions provided during email setup.",
+                  "Sign in to the account where your domain DNS is managed.",
+                  "Add or update the requested DNS record.",
+                  "Save the DNS change and return to your email provider.",
+                  "Complete the verification step.",
+                ].map((item, index) => (
+
+                  <li
+                    key={item}
+                    className="
+                      flex
+                      items-start
+                      gap-3
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+
+                    <span
+                      className="
+                        flex
+                        h-6
+                        w-6
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-md
+                        bg-black/5
+                        text-xs
+                        font-semibold
+                        text-coral
+                      "
+                    >
+                      {index + 1}
+                    </span>
+
+                    <span>
+                      {item}
+                    </span>
+
+                  </li>
+
+                ))}
+
+              </ol>
+
+
+              {/* ==================================================
+                  VERIFICATION CALLOUT
+              ================================================== */}
+
+              <div
+                className="
+                  mt-6
+                  rounded-lg
+                  border
+                  border-border
+                  bg-black/5
+                  px-5
+                  py-5
+                "
+              >
+
+                <div
+                  className="
+                    flex
+                    items-start
+                    gap-3
+                  "
+                >
+
+                  <Check
+                    className="
+                      mt-0.5
+                      h-4
+                      w-4
+                      shrink-0
+                      text-coral
+                    "
+                  />
+
+                  <div>
+
+                    <p
+                      className="
+                        text-sm
+                        font-semibold
+                      "
+                    >
+                      Check the domain carefully
+                    </p>
+
+                    <p
+                      className="
+                        mt-2
+                        text-sm
+                        leading-6
+                        text-navy-mute
+                      "
+                    >
+                      The domain used for your email should
+                      match the domain associated with your
+                      business and Sellio storefront.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            {/* ==================================================
+                ACCESS EMAIL
+            ================================================== */}
+
+            <section
+              id="access-email"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Access Your Email
+              </h2>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                After your domain has been verified and the
+                mailbox has been created, you can sign in to
+                your business email account.
+              </p>
+
+
+              <ol
+                className="
+                  mt-6
+                  space-y-4
+                "
+              >
+
+                {[
+                  "Open the sign-in page for your email provider.",
+                  "Enter the business email address you created.",
+                  "Enter the password associated with the mailbox.",
+                  "Complete any additional security verification requested by your provider.",
+                ].map((item, index) => (
+
+                  <li
+                    key={item}
+                    className="
+                      flex
+                      items-start
+                      gap-3
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+
+                    <span
+                      className="
+                        flex
+                        h-6
+                        w-6
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-md
+                        bg-black/5
+                        text-xs
+                        font-semibold
+                        text-coral
+                      "
+                    >
+                      {index + 1}
+                    </span>
+
+                    <span>
+                      {item}
+                    </span>
+
+                  </li>
+
+                ))}
+
+              </ol>
+
+
+              {/* ==================================================
+                  EMAIL ACCESS CHECKLIST
+              ================================================== */}
+
+              <div
+                className="
+                  mt-6
+                  rounded-lg
+                  border
+                  border-border
+                  bg-black/5
+                  px-5
+                  py-5
+                "
+              >
+
+                <p
+                  className="
+                    text-sm
+                    font-semibold
+                  "
+                >
+                  Before you finish
+                </p>
+
+
+                <div
+                  className="
+                    mt-4
+                    space-y-3
+                  "
+                >
+
+                  {[
+                    "Your business email address is active.",
+                    "You can sign in successfully.",
+                    "Your domain has been verified.",
+                    "You can send and receive test messages.",
+                  ].map((item) => (
+
+                    <div
+                      key={item}
+                      className="
+                        flex
+                        items-start
+                        gap-3
+                        text-sm
+                        leading-6
+                        text-navy-mute
+                      "
+                    >
+
+                      <Check
+                        className="
+                          mt-0.5
+                          h-4
+                          w-4
+                          shrink-0
+                          text-coral
+                        "
+                      />
+
+                      <span>
+                        {item}
+                      </span>
+
+                    </div>
+
+                  ))}
+
+                </div>
+
+              </div>
+
+
+              {/* ==================================================
+                  FINAL NOTE
+              ================================================== */}
+
+              <div
+                className="
+                  mt-6
+                  rounded-lg
+                  border
+                  border-border
+                  px-5
+                  py-4
+                "
+              >
+
                 <p
                   className="
                     text-sm
@@ -1303,16 +1253,19 @@ export default function GoogleAnalyticsPage() {
                     text-navy-mute
                   "
                 >
-                  Analytics data can take some time to
-                  populate in standard reports. Use the
-                  available real-time reporting tools when
-                  checking a new tracking setup.
+                  Send a test message to another address
+                  before using the inbox for customer
+                  communication. This confirms that the
+                  mailbox can send and receive messages
+                  correctly.
                 </p>
 
               </div>
 
             </section>
-                        {/* ==================================================
+
+
+            {/* ==================================================
                 NEED HELP
             ================================================== */}
 
@@ -1325,7 +1278,6 @@ export default function GoogleAnalyticsPage() {
                 py-8
               "
             >
-
               <div
                 className="
                   rounded-lg
@@ -1349,7 +1301,6 @@ export default function GoogleAnalyticsPage() {
                   Support
                 </p>
 
-
                 <h2
                   className="
                     mt-2
@@ -1360,6 +1311,20 @@ export default function GoogleAnalyticsPage() {
                   Need Help?
                 </h2>
 
+                <p
+                  className="
+                    mt-3
+                    max-w-2xl
+                    text-sm
+                    leading-7
+                    text-navy-mute
+                  "
+                >
+                  If your business email is not working as
+                  expected, first check that your domain has
+                  been verified and that the email account
+                  is active with your provider.
+                </p>
 
                 <p
                   className="
@@ -1370,27 +1335,10 @@ export default function GoogleAnalyticsPage() {
                     text-navy-mute
                   "
                 >
-                  If Google Analytics is not receiving data
-                  from your Sellio storefront, review the
-                  measurement ID, tracking configuration,
-                  and placement of the tracking code.
+                  If you still need assistance with your
+                  Sellio store or domain configuration,
+                  contact the Sellio support team.
                 </p>
-
-
-                <p
-                  className="
-                    mt-3
-                    max-w-2xl
-                    text-sm
-                    leading-7
-                    text-navy-mute
-                  "
-                >
-                  If you have checked these settings and
-                  still need assistance, contact Sellio
-                  support for help with your analytics setup.
-                </p>
-
 
                 <Link
                   href="/#contact"
@@ -1413,16 +1361,11 @@ export default function GoogleAnalyticsPage() {
                   Contact Support
 
                   <ArrowRight
-                    className="
-                      h-4
-                      w-4
-                    "
+                    className="h-4 w-4"
                   />
-
                 </Link>
 
               </div>
-
             </section>
 
 
@@ -1450,7 +1393,6 @@ export default function GoogleAnalyticsPage() {
                 Continue Learning
               </p>
 
-
               <h2
                 className="
                   mt-2
@@ -1461,7 +1403,6 @@ export default function GoogleAnalyticsPage() {
                 Related Guides
               </h2>
 
-
               <p
                 className="
                   mt-3
@@ -1470,9 +1411,9 @@ export default function GoogleAnalyticsPage() {
                   text-navy-mute
                 "
               >
-                Explore other Sellio documentation to
-                learn more about analytics, products, and
-                customer activity.
+                Explore more Sellio documentation to learn
+                about domains, analytics, and other store
+                setup tasks.
               </p>
 
 
@@ -1486,11 +1427,11 @@ export default function GoogleAnalyticsPage() {
               >
 
                 {/* ==================================================
-                    GUIDE 1
+                    DOMAIN GUIDE
                 ================================================== */}
 
                 <Link
-                  href=""
+                  href="/helpful-info/ensure-www-loads-your-site"
                   className="
                     group
                     rounded-lg
@@ -1508,9 +1449,8 @@ export default function GoogleAnalyticsPage() {
                       text-navy-mute
                     "
                   >
-                    Analytics
+                    Helpful Info
                   </p>
-
 
                   <h3
                     className="
@@ -1520,9 +1460,8 @@ export default function GoogleAnalyticsPage() {
                       group-hover:text-coral
                     "
                   >
-                    Conversion Event Tracking
+                    Ensure Your Website Loads Correctly
                   </h3>
-
 
                   <p
                     className="
@@ -1532,22 +1471,42 @@ export default function GoogleAnalyticsPage() {
                       text-navy-mute
                     "
                   >
-                    Learn how important ecommerce actions
-                    can help you understand customer
-                    activity.
+                    Review domain records and website
+                    configuration for your storefront.
                   </p>
 
+                  <span
+                    className="
+                      mt-4
+                      inline-flex
+                      items-center
+                      gap-1.5
+                      text-xs
+                      font-semibold
+                      text-coral
+                    "
+                  >
+                    Read guide
 
+                    <ArrowRight
+                      className="
+                        h-3.5
+                        w-3.5
+                        transition-transform
+                        group-hover:translate-x-1
+                      "
+                    />
+                  </span>
 
                 </Link>
 
 
                 {/* ==================================================
-                    GUIDE 2
+                    GOOGLE ANALYTICS
                 ================================================== */}
 
                 <Link
-                  href=""
+                  href="/helpful-info/google-analytics"
                   className="
                     group
                     rounded-lg
@@ -1568,7 +1527,6 @@ export default function GoogleAnalyticsPage() {
                     Analytics
                   </p>
 
-
                   <h3
                     className="
                       mt-2
@@ -1577,9 +1535,8 @@ export default function GoogleAnalyticsPage() {
                       group-hover:text-coral
                     "
                   >
-                    Dashboard Overview
+                    Google Analytics
                   </h3>
-
 
                   <p
                     className="
@@ -1589,11 +1546,32 @@ export default function GoogleAnalyticsPage() {
                       text-navy-mute
                     "
                   >
-                    Review key store metrics and understand
-                    the information available in Sellio.
+                    Learn how analytics can help you
+                    understand activity from your store.
                   </p>
 
+                  <span
+                    className="
+                      mt-4
+                      inline-flex
+                      items-center
+                      gap-1.5
+                      text-xs
+                      font-semibold
+                      text-coral
+                    "
+                  >
+                    Read guide
 
+                    <ArrowRight
+                      className="
+                        h-3.5
+                        w-3.5
+                        transition-transform
+                        group-hover:translate-x-1
+                      "
+                    />
+                  </span>
 
                 </Link>
 
@@ -1622,7 +1600,7 @@ export default function GoogleAnalyticsPage() {
               ================================================== */}
 
               <Link
-                href="/documentation/analytics"
+                href="/helpful-info/pending-tickets"
                 className="
                   group
                   rounded-lg
@@ -1644,7 +1622,6 @@ export default function GoogleAnalyticsPage() {
                   Previous
                 </p>
 
-
                 <div
                   className="
                     mt-2
@@ -1658,13 +1635,10 @@ export default function GoogleAnalyticsPage() {
                 >
 
                   <ArrowLeft
-                    className="
-                      h-4
-                      w-4
-                    "
+                    className="h-4 w-4"
                   />
 
-                  Analytics
+                  Pending-Tickets
 
                 </div>
 
@@ -1676,7 +1650,7 @@ export default function GoogleAnalyticsPage() {
               ================================================== */}
 
               <Link
-                href="/documentation/what-google-analytics-tracks"
+                href="/helpful-info/image-size-guide"
                 className="
                   group
                   rounded-lg
@@ -1699,7 +1673,6 @@ export default function GoogleAnalyticsPage() {
                   Next
                 </p>
 
-
                 <div
                   className="
                     mt-2
@@ -1713,14 +1686,10 @@ export default function GoogleAnalyticsPage() {
                   "
                 >
 
-               What Google Analytics Tracks
-
+               Image-Size-Guide
 
                   <ArrowRight
-                    className="
-                      h-4
-                      w-4
-                    "
+                    className="h-4 w-4"
                   />
 
                 </div>
@@ -1747,8 +1716,9 @@ export default function GoogleAnalyticsPage() {
           </article>
 
 
+
           {/* ==================================================
-              RIGHT SIDE — ON THIS PAGE
+              RIGHT TOC
           ================================================== */}
 
           <aside
@@ -1791,18 +1761,29 @@ export default function GoogleAnalyticsPage() {
                 {sections.map((section) => {
 
                   const isActive =
-                    activeSection ===
-                    section.id;
+                    activeSection === section.id;
 
                   return (
                     <a
                       key={section.id}
                       href={`#${section.id}`}
-                      onClick={() =>
+                      onClick={(event) => {
+
+                        event.preventDefault();
+
+                        document
+                          .getElementById(
+                            section.id
+                          )
+                          ?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                          });
+
                         setActiveSection(
                           section.id
-                        )
-                      }
+                        );
+                      }}
                       className={`
                         block
                         border-l-2
@@ -1851,7 +1832,6 @@ export default function GoogleAnalyticsPage() {
       ====================================================== */}
 
       <Footer />
-
     </>
   );
 }

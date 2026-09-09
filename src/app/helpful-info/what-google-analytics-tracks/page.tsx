@@ -1948,7 +1948,7 @@ window.dataLayer.push({
               ================================================== */}
 
               <Link
-                href="/documentation/google-analytics"
+                href="/helpful-info/google-analytics"
                 className="
                   group
                   rounded-lg
@@ -2002,7 +2002,7 @@ window.dataLayer.push({
               ================================================== */}
 
               <Link
-                href="/documentation/utm-tags"
+                href="/helpful-info/utm-tags"
                 className="
                   group
                   rounded-lg

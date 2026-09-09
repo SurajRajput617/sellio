@@ -1477,94 +1477,94 @@ const subLinkClass = (path: string) => {
                             </Link>
 
                             <Link
-                              href="/documentation/google-analytics"
-                              className={subLinkClass("/documentation/google-analytics")}
+                              href="/helpful-info/google-analytics"
+                              className={subLinkClass("/helpful-info/google-analytics")}
                             >
                               Google Analytics
                             </Link>
 
                             <Link
-                              href="/documentation/what-google-analytics-tracks"
+                              href="/helpful-info/what-google-analytics-tracks"
                               className={subLinkClass(
-                                "/documentation/what-google-analytics-tracks"
+                                "/helpful-info/what-google-analytics-tracks"
                               )}
                             >
                               What Google Analytics Tracks
                             </Link>
 
                             <Link
-                              href="/documentation/utm-tags"
-                              className={subLinkClass("/documentation/utm-tags")}
+                              href="/helpful-info/utm-tags"
+                              className={subLinkClass("/helpful-info/utm-tags")}
                             >
                               UTM Tags
                             </Link>
 
                             <Link
-                              href="/documentation/creating-a-free-entry-competition"
+                              href="/helpful-info/creating-a-free-entry-competition"
                               className={subLinkClass(
-                                "/documentation/creating-a-free-entry-competition"
+                                "/helpful-info/creating-a-free-entry-competition"
                               )}
                             >
                               Creating a Free Entry Competition
                             </Link>
 
                             <Link
-                              href="/documentation/ensure-www-loads-your-site"
+                              href="/helpful-info/ensure-www-loads-your-site"
                               className={subLinkClass(
-                                "/documentation/ensure-www-loads-your-site"
+                                "/helpful-info/ensure-www-loads-your-site"
                               )}
                             >
                               Ensure www. Loads Your Site
                             </Link>
 
                             <Link
-                              href="/documentation/pci-compliance-scan"
+                              href="/helpful-info/pci-compliance-scan"
                               className={subLinkClass(
-                                "/documentation/pci-compliance-scan"
+                                "/helpful-info/pci-compliance-scan"
                               )}
                             >
                               PCI Compliance Scan
                             </Link>
 
                             <Link
-                              href="/documentation/pending-tickets"
+                              href="/helpful-info/pending-tickets"
                               className={subLinkClass(
-                                "/documentation/pending-tickets"
+                                "/helpful-info/pending-tickets"
                               )}
                             >
                               Pending Tickets
                             </Link>
 
                             <Link
-                              href="/documentation/set-up-email-inbox"
+                              href="/helpful-info/set-up-email-inbox"
                               className={subLinkClass(
-                                "/documentation/set-up-email-inbox"
+                                "/helpful-info/set-up-email-inbox"
                               )}
                             >
                               Set Up Email Inbox
                             </Link>
 
                             <Link
-                              href="/documentation/image-size-guide"
+                              href="/helpful-info/image-size-guide"
                               className={subLinkClass(
-                                "/documentation/image-size-guide"
+                                "/helpful-info/image-size-guide"
                               )}
                             >
                               Image Size Guide
                             </Link>
 
                             <Link
-                              href="/documentation/reset-password"
+                              href="/helpful-info/reset-password"
                               className={subLinkClass(
-                                "/documentation/reset-password"
+                                "/helpful-info/reset-password"
                               )}
                             >
                               Reset Password
                             </Link>
 
                             <Link
-                              href="/documentation/checklist"
-                              className={subLinkClass("/documentation/checklist")}
+                              href="/helpful-info/checklist"
+                              className={subLinkClass("/helpful-info/checklist")}
                             >
                               Checklist
                             </Link>

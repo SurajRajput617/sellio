@@ -8,7 +8,6 @@ import {
   ArrowLeft,
   Check,
   Info,
-  Mail,
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
@@ -16,47 +15,31 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
-/* ============================================================
-   ON THIS PAGE
-============================================================ */
-
 const sections = [
   {
-    id: "google-workspace",
-    label: "Go to Google Workspace",
+    id: "overview",
+    label: "Overview",
   },
   {
-    id: "set-up-domain",
-    label: "Set Up Your Domain",
+    id: "payment-security",
+    label: "Payment Security",
   },
   {
-    id: "create-email",
-    label: "Create Your First Email Address",
+    id: "security-checks",
+    label: "Security Checks",
   },
   {
-    id: "subscription-plan",
-    label: "Choose a Subscription Plan",
-  },
-  {
-    id: "verify-domain",
-    label: "Verify Your Domain",
-  },
-  {
-    id: "access-email",
-    label: "Access Your Email",
+    id: "after-check",
+    label: "After a Security Check",
   },
 ];
 
 
-export default function SetUpEmailInboxPage() {
+export default function PaymentSecurityPage() {
 
   const [activeSection, setActiveSection] =
-    useState("google-workspace");
+    useState("overview");
 
-
-  /* ============================================================
-     ACTIVE SECTION
-  ============================================================ */
 
   useEffect(() => {
 
@@ -120,7 +103,7 @@ export default function SetUpEmailInboxPage() {
 
 
       {/* ======================================================
-          MAIN DOCUMENTATION
+          DOCUMENTATION
       ====================================================== */}
 
       <main
@@ -149,7 +132,7 @@ export default function SetUpEmailInboxPage() {
 
 
           {/* ==================================================
-              MAIN ARTICLE
+              ARTICLE
           ================================================== */}
 
           <article
@@ -159,11 +142,13 @@ export default function SetUpEmailInboxPage() {
           >
 
             {/* ==================================================
-                HEADER
+                OVERVIEW
             ================================================== */}
 
-            <header
+            <section
+              id="overview"
               className="
+                scroll-mt-28
                 border-b
                 border-border
                 pb-8
@@ -183,37 +168,16 @@ export default function SetUpEmailInboxPage() {
               </p>
 
 
-              <div
+              <h1
                 className="
                   mt-3
-                  flex
-                  items-start
-                  gap-3
+                  text-3xl
+                  font-bold
+                  tracking-tight
                 "
               >
-
-                <Mail
-                  className="
-                    mt-1
-                    h-6
-                    w-6
-                    shrink-0
-                    text-coral
-                  "
-                />
-
-
-                <h1
-                  className="
-                    text-3xl
-                    font-bold
-                    tracking-tight
-                  "
-                >
-                  Set Up Email Inbox
-                </h1>
-
-              </div>
+                Payment Security
+              </h1>
 
 
               <p
@@ -225,10 +189,9 @@ export default function SetUpEmailInboxPage() {
                   text-navy-mute
                 "
               >
-                Set up a professional email address using
-                your store domain so you can communicate
-                with customers from an address that matches
-                your Sellio store.
+                Learn the basics of payment security and
+                the steps you can take to keep your Sellio
+                store and customer information protected.
               </p>
 
 
@@ -241,9 +204,11 @@ export default function SetUpEmailInboxPage() {
                   text-navy-mute
                 "
               >
-                This guide walks you through the basic steps
-                for connecting a domain-based inbox and
-                accessing your business email.
+                Secure payment processing is an important
+                part of running an ecommerce store. Sellio
+                merchants should regularly review their
+                store configuration and follow the security
+                requirements of their payment providers.
               </p>
 
 
@@ -289,153 +254,11 @@ export default function SetUpEmailInboxPage() {
                       text-navy-mute
                     "
                   >
-                    Your email provider manages the mailbox,
-                    while your domain settings determine how
-                    your domain is connected to that service.
-                  </p>
-
-                </div>
-
-              </div>
-
-            </header>
-
-
-            {/* ==================================================
-                GO TO GOOGLE WORKSPACE
-            ================================================== */}
-
-            <section
-              id="google-workspace"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Go to Google Workspace
-              </h2>
-
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                If you want to use Google Workspace for your
-                business inbox, start the setup from Google's
-                Workspace service.
-              </p>
-
-
-              <ol
-                className="
-                  mt-6
-                  space-y-4
-                "
-              >
-
-                {[
-                  "Open Google Workspace in your browser.",
-                  "Choose the option to get started.",
-                  "Enter your business information.",
-                  "Provide an existing contact email address that you can access.",
-                ].map((item, index) => (
-
-                  <li
-                    key={item}
-                    className="
-                      flex
-                      items-start
-                      gap-3
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-
-                    <span
-                      className="
-                        flex
-                        h-6
-                        w-6
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-md
-                        bg-black/5
-                        text-xs
-                        font-semibold
-                        text-coral
-                      "
-                    >
-                      {index + 1}
-                    </span>
-
-
-                    <span>
-                      {item}
-                    </span>
-
-                  </li>
-
-                ))}
-
-              </ol>
-
-
-              <div
-                className="
-                  mt-6
-                  rounded-lg
-                  border
-                  border-border
-                  bg-black/5
-                  px-5
-                  py-4
-                "
-              >
-
-                <div
-                  className="
-                    flex
-                    items-start
-                    gap-3
-                  "
-                >
-
-                  <Check
-                    className="
-                      mt-0.5
-                      h-4
-                      w-4
-                      shrink-0
-                      text-coral
-                    "
-                  />
-
-
-                  <p
-                    className="
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-                    Use an existing email address that you
-                    can access during setup. You may need it
-                    for account verification or recovery.
+                    Payment security requirements can vary
+                    depending on your payment provider and
+                    store setup. Always follow the current
+                    requirements provided by your payment
+                    service.
                   </p>
 
                 </div>
@@ -446,11 +269,11 @@ export default function SetUpEmailInboxPage() {
 
 
             {/* ==================================================
-                SET UP YOUR DOMAIN
+                PAYMENT SECURITY
             ================================================== */}
 
             <section
-              id="set-up-domain"
+              id="payment-security"
               className="
                 scroll-mt-28
                 border-b
@@ -465,7 +288,7 @@ export default function SetUpEmailInboxPage() {
                   font-bold
                 "
               >
-                Set Up Your Domain
+                Payment Security
               </h2>
 
 
@@ -477,139 +300,12 @@ export default function SetUpEmailInboxPage() {
                   text-navy-mute
                 "
               >
-                Use the same domain associated with your
-                Sellio store when setting up your business
-                email address.
+                Payment security helps protect sensitive
+                customer information during the checkout
+                process. A secure ecommerce setup reduces
+                unnecessary exposure of payment information
+                and helps customers shop with confidence.
               </p>
-
-
-              <ol
-                className="
-                  mt-6
-                  space-y-4
-                "
-              >
-
-                {[
-                  "When asked whether you have a domain, choose the option indicating that you already have one.",
-                  "Enter the domain used for your Sellio storefront.",
-                  "Continue through the domain verification steps.",
-                ].map((item, index) => (
-
-                  <li
-                    key={item}
-                    className="
-                      flex
-                      items-start
-                      gap-3
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-
-                    <span
-                      className="
-                        flex
-                        h-6
-                        w-6
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-md
-                        bg-black/5
-                        text-xs
-                        font-semibold
-                        text-coral
-                      "
-                    >
-                      {index + 1}
-                    </span>
-
-
-                    <span>
-                      {item}
-                    </span>
-
-                  </li>
-
-                ))}
-
-              </ol>
-
-
-              <div
-                className="
-                  mt-6
-                  rounded-lg
-                  border
-                  border-border
-                  bg-black/5
-                  px-5
-                  py-4
-                "
-              >
-
-                <div
-                  className="
-                    flex
-                    items-start
-                    gap-3
-                  "
-                >
-
-                  <Info
-                    className="
-                      mt-0.5
-                      h-4
-                      w-4
-                      shrink-0
-                      text-coral
-                    "
-                  />
-
-
-                  <p
-                    className="
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-                    Make sure you enter the correct domain.
-                    Your email address will use this domain
-                    after the setup is complete.
-                  </p>
-
-                </div>
-
-              </div>
-
-            </section>
-
-
-            {/* ==================================================
-                CREATE FIRST EMAIL
-            ================================================== */}
-
-            <section
-              id="create-email"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Create Your First Email Address
-              </h2>
 
 
               <p
@@ -620,426 +316,66 @@ export default function SetUpEmailInboxPage() {
                   text-navy-mute
                 "
               >
-                Choose an email address that looks
-                professional and is easy for customers to
-                remember.
+                Sellio stores should use supported payment
+                providers and keep store configuration,
+                integrations, and account credentials up to
+                date.
               </p>
-
-
-              <div
-                className="
-                  mt-6
-                  grid
-                  gap-3
-                  sm:grid-cols-2
-                "
-              >
-
-                <div
-                  className="
-                    rounded-lg
-                    border
-                    border-border
-                    p-5
-                  "
-                >
-
-                  <p
-                    className="
-                      text-xs
-                      text-navy-mute
-                    "
-                  >
-                    Personal
-                  </p>
-
-                  <p
-                    className="
-                      mt-2
-                      text-sm
-                      font-semibold
-                    "
-                  >
-                    name@yourdomain.com
-                  </p>
-
-                </div>
-
-
-                <div
-                  className="
-                    rounded-lg
-                    border
-                    border-border
-                    p-5
-                  "
-                >
-
-                  <p
-                    className="
-                      text-xs
-                      text-navy-mute
-                    "
-                  >
-                    General
-                  </p>
-
-                  <p
-                    className="
-                      mt-2
-                      text-sm
-                      font-semibold
-                    "
-                  >
-                    hello@yourdomain.com
-                  </p>
-
-                </div>
-
-              </div>
-
-
-              <ol
-                className="
-                  mt-6
-                  space-y-4
-                "
-              >
-
-                {[
-                  "Choose the first email address you want to use.",
-                  "Create a secure password for the account.",
-                  "Continue through the account setup process.",
-                ].map((item, index) => (
-
-                  <li
-                    key={item}
-                    className="
-                      flex
-                      items-start
-                      gap-3
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-
-                    <span
-                      className="
-                        flex
-                        h-6
-                        w-6
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-md
-                        bg-black/5
-                        text-xs
-                        font-semibold
-                        text-coral
-                      "
-                    >
-                      {index + 1}
-                    </span>
-
-                    <span>
-                      {item}
-                    </span>
-
-                  </li>
-
-                ))}
-
-              </ol>
-
-            </section>
-
-
-                    {/* ==================================================
-                SUBSCRIPTION PLAN
-            ================================================== */}
-
-            <section
-              id="subscription-plan"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Choose a Subscription Plan
-              </h2>
-
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Choose an email plan that fits the needs of
-                your business. Consider how many email
-                accounts you need and which features your
-                team will use.
-              </p>
-
-
-              <ol
-                className="
-                  mt-6
-                  space-y-4
-                "
-              >
-
-                {[
-                  "Open the available subscription options.",
-                  "Compare the plans and included features.",
-                  "Choose the plan that best fits your business needs.",
-                  "Review the payment details before completing the setup.",
-                ].map((item, index) => (
-
-                  <li
-                    key={item}
-                    className="
-                      flex
-                      items-start
-                      gap-3
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-
-                    <span
-                      className="
-                        flex
-                        h-6
-                        w-6
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-md
-                        bg-black/5
-                        text-xs
-                        font-semibold
-                        text-coral
-                      "
-                    >
-                      {index + 1}
-                    </span>
-
-                    <span>
-                      {item}
-                    </span>
-
-                  </li>
-
-                ))}
-
-              </ol>
 
 
               {/* ==================================================
-                  PLAN TIP
+                  SECURITY PRINCIPLES
               ================================================== */}
 
               <div
                 className="
                   mt-6
-                  rounded-lg
-                  border
-                  border-border
-                  bg-black/5
-                  px-5
-                  py-4
-                "
-              >
-
-                <div
-                  className="
-                    flex
-                    items-start
-                    gap-3
-                  "
-                >
-
-                  <Info
-                    className="
-                      mt-0.5
-                      h-4
-                      w-4
-                      shrink-0
-                      text-coral
-                    "
-                  />
-
-                  <p
-                    className="
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-                    Review the current pricing and included
-                    features directly with your email provider
-                    before choosing a plan.
-                  </p>
-
-                </div>
-
-              </div>
-
-            </section>
-
-
-            {/* ==================================================
-                VERIFY DOMAIN
-            ================================================== */}
-
-            <section
-              id="verify-domain"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Verify Your Domain
-              </h2>
-
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Your email provider may require you to verify
-                ownership of the domain before business email
-                can be fully activated.
-              </p>
-
-
-              <ol
-                className="
-                  mt-6
-                  space-y-4
+                  space-y-3
                 "
               >
 
                 {[
-                  "Open the domain verification instructions provided during email setup.",
-                  "Sign in to the account where your domain DNS is managed.",
-                  "Add or update the requested DNS record.",
-                  "Save the DNS change and return to your email provider.",
-                  "Complete the verification step.",
-                ].map((item, index) => (
+                  {
+                    title: "Use a Supported Payment Provider",
+                    text:
+                      "Choose a payment service that is appropriate for your store and follow its security requirements.",
+                  },
+                  {
+                    title: "Protect Account Access",
+                    text:
+                      "Use strong credentials and limit access to people who need administrative access to your store.",
+                  },
+                  {
+                    title: "Keep Integrations Updated",
+                    text:
+                      "Review connected services and keep supported integrations up to date.",
+                  },
+                  {
+                    title: "Use Secure Connections",
+                    text:
+                      "Make sure customers access your storefront through a secure HTTPS connection.",
+                  },
+                ].map((item) => (
 
-                  <li
-                    key={item}
+                  <div
+                    key={item.title}
                     className="
-                      flex
-                      items-start
-                      gap-3
-                      text-sm
-                      leading-6
-                      text-navy-mute
+                      rounded-lg
+                      border
+                      border-border
+                      p-5
                     "
                   >
 
-                    <span
-                      className="
-                        flex
-                        h-6
-                        w-6
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-md
-                        bg-black/5
-                        text-xs
-                        font-semibold
-                        text-coral
-                      "
-                    >
-                      {index + 1}
-                    </span>
-
-                    <span>
-                      {item}
-                    </span>
-
-                  </li>
-
-                ))}
-
-              </ol>
-
-
-              {/* ==================================================
-                  VERIFICATION CALLOUT
-              ================================================== */}
-
-              <div
-                className="
-                  mt-6
-                  rounded-lg
-                  border
-                  border-border
-                  bg-black/5
-                  px-5
-                  py-5
-                "
-              >
-
-                <div
-                  className="
-                    flex
-                    items-start
-                    gap-3
-                  "
-                >
-
-                  <Check
-                    className="
-                      mt-0.5
-                      h-4
-                      w-4
-                      shrink-0
-                      text-coral
-                    "
-                  />
-
-                  <div>
-
-                    <p
+                    <h3
                       className="
                         text-sm
                         font-semibold
                       "
                     >
-                      Check the domain carefully
-                    </p>
+                      {item.title}
+                    </h3>
+
 
                     <p
                       className="
@@ -1049,14 +385,12 @@ export default function SetUpEmailInboxPage() {
                         text-navy-mute
                       "
                     >
-                      The domain used for your email should
-                      match the domain associated with your
-                      business and Sellio storefront.
+                      {item.text}
                     </p>
 
                   </div>
 
-                </div>
+                ))}
 
               </div>
 
@@ -1064,11 +398,11 @@ export default function SetUpEmailInboxPage() {
 
 
             {/* ==================================================
-                ACCESS EMAIL
+                SECURITY CHECKS
             ================================================== */}
 
             <section
-              id="access-email"
+              id="security-checks"
               className="
                 scroll-mt-28
                 border-b
@@ -1083,7 +417,7 @@ export default function SetUpEmailInboxPage() {
                   font-bold
                 "
               >
-                Access Your Email
+                Security Checks
               </h2>
 
 
@@ -1095,24 +429,26 @@ export default function SetUpEmailInboxPage() {
                   text-navy-mute
                 "
               >
-                After your domain has been verified and the
-                mailbox has been created, you can sign in to
-                your business email account.
+                Regular security checks can help you identify
+                configuration issues before they affect your
+                customers or store operations.
               </p>
 
 
               <ol
                 className="
                   mt-6
-                  space-y-4
+                  space-y-3
                 "
               >
 
                 {[
-                  "Open the sign-in page for your email provider.",
-                  "Enter the business email address you created.",
-                  "Enter the password associated with the mailbox.",
-                  "Complete any additional security verification requested by your provider.",
+                  "Review your connected payment provider.",
+                  "Check that your storefront uses HTTPS.",
+                  "Review administrator access to your store.",
+                  "Check connected integrations and services.",
+                  "Review any security notifications from your payment provider.",
+                  "Update outdated configuration when required.",
                 ].map((item, index) => (
 
                   <li
@@ -1145,6 +481,7 @@ export default function SetUpEmailInboxPage() {
                       {index + 1}
                     </span>
 
+
                     <span>
                       {item}
                     </span>
@@ -1157,7 +494,7 @@ export default function SetUpEmailInboxPage() {
 
 
               {/* ==================================================
-                  EMAIL ACCESS CHECKLIST
+                  CHECKLIST
               ================================================== */}
 
               <div
@@ -1178,7 +515,7 @@ export default function SetUpEmailInboxPage() {
                     font-semibold
                   "
                 >
-                  Before you finish
+                  Quick security checklist
                 </p>
 
 
@@ -1190,10 +527,10 @@ export default function SetUpEmailInboxPage() {
                 >
 
                   {[
-                    "Your business email address is active.",
-                    "You can sign in successfully.",
-                    "Your domain has been verified.",
-                    "You can send and receive test messages.",
+                    "HTTPS is enabled.",
+                    "Payment provider settings are current.",
+                    "Only authorized users have store access.",
+                    "Connected services are reviewed regularly.",
                   ].map((item) => (
 
                     <div
@@ -1230,9 +567,115 @@ export default function SetUpEmailInboxPage() {
 
               </div>
 
+            </section>
+
+
+                       {/* ==================================================
+                AFTER A SECURITY CHECK
+            ================================================== */}
+
+            <section
+              id="after-check"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                After a Security Check
+              </h2>
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                Once you finish reviewing your payment and
+                store security settings, record any changes
+                that need attention and confirm that your
+                storefront continues to work normally.
+              </p>
+
+              <div
+                className="
+                  mt-6
+                  space-y-3
+                "
+              >
+
+                {[
+                  {
+                    title: "Review Any Warnings",
+                    text:
+                      "Check notifications from your payment provider or other connected services and follow their current recommendations.",
+                  },
+                  {
+                    title: "Confirm Store Access",
+                    text:
+                      "Make sure administrative access is limited to the people who need it.",
+                  },
+                  {
+                    title: "Test the Customer Experience",
+                    text:
+                      "Open your storefront and verify that customers can browse products and reach checkout normally.",
+                  },
+                  {
+                    title: "Document Important Changes",
+                    text:
+                      "Keep a simple record of security-related configuration changes so your team knows what was updated.",
+                  },
+                ].map((item) => (
+
+                  <div
+                    key={item.title}
+                    className="
+                      rounded-lg
+                      border
+                      border-border
+                      p-5
+                    "
+                  >
+
+                    <h3
+                      className="
+                        text-sm
+                        font-semibold
+                      "
+                    >
+                      {item.title}
+                    </h3>
+
+                    <p
+                      className="
+                        mt-2
+                        text-sm
+                        leading-6
+                        text-navy-mute
+                      "
+                    >
+                      {item.text}
+                    </p>
+
+                  </div>
+
+                ))}
+
+              </div>
+
 
               {/* ==================================================
-                  FINAL NOTE
+                  IMPORTANT NOTE
               ================================================== */}
 
               <div
@@ -1241,24 +684,45 @@ export default function SetUpEmailInboxPage() {
                   rounded-lg
                   border
                   border-border
+                  bg-black/5
                   px-5
                   py-4
                 "
               >
 
-                <p
+                <div
                   className="
-                    text-sm
-                    leading-6
-                    text-navy-mute
+                    flex
+                    items-start
+                    gap-3
                   "
                 >
-                  Send a test message to another address
-                  before using the inbox for customer
-                  communication. This confirms that the
-                  mailbox can send and receive messages
-                  correctly.
-                </p>
+
+                  <Info
+                    className="
+                      mt-0.5
+                      h-4
+                      w-4
+                      shrink-0
+                      text-coral
+                    "
+                  />
+
+                  <p
+                    className="
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+                    Do not make payment configuration changes
+                    based only on an unfamiliar warning. Check
+                    the documentation or support resources for
+                    the service involved before changing a
+                    working configuration.
+                  </p>
+
+                </div>
 
               </div>
 
@@ -1266,6 +730,359 @@ export default function SetUpEmailInboxPage() {
 
 
             {/* ==================================================
+                COMMON SECURITY ISSUES
+            ================================================== */}
+
+            <section
+              id="common-issues"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Common Security Issues
+              </h2>
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                Some problems are caused by store
+                configuration rather than the payment
+                provider itself. Review these common areas
+                when something does not look right.
+              </p>
+
+
+              <div
+                className="
+                  mt-6
+                  overflow-x-auto
+                  rounded-lg
+                  border
+                  border-border
+                "
+              >
+
+                <table
+                  className="
+                    w-full
+                    min-w-[620px]
+                    text-left
+                    text-sm
+                  "
+                >
+
+                  <thead
+                    className="
+                      bg-black/5
+                    "
+                  >
+
+                    <tr>
+
+                      <th
+                        className="
+                          px-4
+                          py-3
+                          font-semibold
+                        "
+                      >
+                        Issue
+                      </th>
+
+                      <th
+                        className="
+                          px-4
+                          py-3
+                          font-semibold
+                        "
+                      >
+                        What to Check
+                      </th>
+
+                    </tr>
+
+                  </thead>
+
+
+                  <tbody>
+
+                    <tr
+                      className="
+                        border-t
+                        border-border
+                      "
+                    >
+
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          font-medium
+                        "
+                      >
+                        Store does not use HTTPS
+                      </td>
+
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          text-navy-mute
+                        "
+                      >
+                        Review your connected domain and
+                        secure connection settings.
+                      </td>
+
+                    </tr>
+
+
+                    <tr
+                      className="
+                        border-t
+                        border-border
+                      "
+                    >
+
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          font-medium
+                        "
+                      >
+                        Payment provider warning
+                      </td>
+
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          text-navy-mute
+                        "
+                      >
+                        Review the provider's current
+                        requirements and account settings.
+                      </td>
+
+                    </tr>
+
+
+                    <tr
+                      className="
+                        border-t
+                        border-border
+                      "
+                    >
+
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          font-medium
+                        "
+                      >
+                        Unexpected checkout behavior
+                      </td>
+
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          text-navy-mute
+                        "
+                      >
+                        Review recent configuration or
+                        integration changes.
+                      </td>
+
+                    </tr>
+
+
+                    <tr
+                      className="
+                        border-t
+                        border-border
+                      "
+                    >
+
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          font-medium
+                        "
+                      >
+                        Unknown administrator access
+                      </td>
+
+                      <td
+                        className="
+                          px-4
+                          py-4
+                          text-navy-mute
+                        "
+                      >
+                        Review account permissions and
+                        remove access that is no longer
+                        required.
+                      </td>
+
+                    </tr>
+
+                  </tbody>
+
+                </table>
+
+              </div>
+
+            </section>
+
+
+            {/* ==================================================
+                SECURITY BEST PRACTICES
+            ================================================== */}
+
+            <section
+              id="best-practices"
+              className="
+                scroll-mt-28
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Security Best Practices
+              </h2>
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                Good security habits make it easier to
+                protect your store as it grows. Add these
+                checks to your regular store maintenance
+                routine.
+              </p>
+
+
+              <ul
+                className="
+                  mt-6
+                  space-y-3
+                "
+              >
+
+                {[
+                  "Use strong, unique credentials for your Sellio account.",
+                  "Give administrative access only to people who need it.",
+                  "Review connected payment and marketing services regularly.",
+                  "Keep your storefront and domain configuration current.",
+                  "Use HTTPS for your customer-facing storefront.",
+                  "Pay attention to security notices from your payment provider.",
+                  "Review unexpected account or payment activity promptly.",
+                ].map((item) => (
+
+                  <li
+                    key={item}
+                    className="
+                      flex
+                      items-start
+                      gap-3
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+
+                    <Check
+                      className="
+                        mt-0.5
+                        h-4
+                        w-4
+                        shrink-0
+                        text-coral
+                      "
+                    />
+
+                    <span>
+                      {item}
+                    </span>
+
+                  </li>
+
+                ))}
+
+              </ul>
+
+
+              {/* ==================================================
+                  FINAL TIP
+              ================================================== */}
+
+              <div
+                className="
+                  mt-6
+                  rounded-lg
+                  border
+                  border-border
+                  bg-black/5
+                  px-5
+                  py-5
+                "
+              >
+
+                <p
+                  className="
+                    text-sm
+                    font-semibold
+                  "
+                >
+                  Keep security reviews simple
+                </p>
+
+                <p
+                  className="
+                    mt-2
+                    text-sm
+                    leading-6
+                    text-navy-mute
+                  "
+                >
+                  A regular review of your domain, payment
+                  provider, account access, and connected
+                  services can help you spot configuration
+                  problems early.
+                </p>
+
+              </div>
+
+            </section>
+    {/* ==================================================
                 NEED HELP
             ================================================== */}
 
@@ -1320,10 +1137,10 @@ export default function SetUpEmailInboxPage() {
                     text-navy-mute
                   "
                 >
-                  If your business email is not working as
-                  expected, first check that your domain has
-                  been verified and that the email account
-                  is active with your provider.
+                  If you are unsure whether your payment
+                  setup meets the requirements for your
+                  store, review your payment provider's
+                  current documentation first.
                 </p>
 
                 <p
@@ -1335,9 +1152,9 @@ export default function SetUpEmailInboxPage() {
                     text-navy-mute
                   "
                 >
-                  If you still need assistance with your
-                  Sellio store or domain configuration,
-                  contact the Sellio support team.
+                  For Sellio store configuration questions,
+                  contact Sellio support and provide details
+                  about the issue you are seeing.
                 </p>
 
                 <Link
@@ -1411,9 +1228,9 @@ export default function SetUpEmailInboxPage() {
                   text-navy-mute
                 "
               >
-                Explore more Sellio documentation to learn
-                about domains, analytics, and other store
-                setup tasks.
+                Explore more Sellio documentation for
+                information about your store, domains,
+                payments, and analytics.
               </p>
 
 
@@ -1427,11 +1244,86 @@ export default function SetUpEmailInboxPage() {
               >
 
                 {/* ==================================================
+                    PAYMENT GATEWAY
+                ================================================== */}
+
+                <Link
+                  href="/getting-started/payment-gateway"
+                  className="
+                    group
+                    rounded-lg
+                    border
+                    border-border
+                    p-5
+                    transition-colors
+                    hover:border-coral
+                  "
+                >
+
+                  <p
+                    className="
+                      text-xs
+                      text-navy-mute
+                    "
+                  >
+                    Store Management
+                  </p>
+
+                  <h3
+                    className="
+                      mt-2
+                      text-sm
+                      font-semibold
+                      group-hover:text-coral
+                    "
+                  >
+                    Payment Gateway
+                  </h3>
+
+                  <p
+                    className="
+                      mt-2
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+                    Learn more about payment configuration
+                    for your Sellio store.
+                  </p>
+
+                  <span
+                    className="
+                      mt-4
+                      inline-flex
+                      items-center
+                      gap-1.5
+                      text-xs
+                      font-semibold
+                      text-coral
+                    "
+                  >
+                    Read guide
+
+                    <ArrowRight
+                      className="
+                        h-3.5
+                        w-3.5
+                        transition-transform
+                        group-hover:translate-x-1
+                      "
+                    />
+                  </span>
+
+                </Link>
+
+
+                {/* ==================================================
                     DOMAIN GUIDE
                 ================================================== */}
 
                 <Link
-                  href="/documentation/ensure-www-loads-your-site"
+                  href="/helpful-info/ensure-www-loads-your-site"
                   className="
                     group
                     rounded-lg
@@ -1471,83 +1363,8 @@ export default function SetUpEmailInboxPage() {
                       text-navy-mute
                     "
                   >
-                    Review domain records and website
-                    configuration for your storefront.
-                  </p>
-
-                  <span
-                    className="
-                      mt-4
-                      inline-flex
-                      items-center
-                      gap-1.5
-                      text-xs
-                      font-semibold
-                      text-coral
-                    "
-                  >
-                    Read guide
-
-                    <ArrowRight
-                      className="
-                        h-3.5
-                        w-3.5
-                        transition-transform
-                        group-hover:translate-x-1
-                      "
-                    />
-                  </span>
-
-                </Link>
-
-
-                {/* ==================================================
-                    GOOGLE ANALYTICS
-                ================================================== */}
-
-                <Link
-                  href="/documentation/google-analytics"
-                  className="
-                    group
-                    rounded-lg
-                    border
-                    border-border
-                    p-5
-                    transition-colors
-                    hover:border-coral
-                  "
-                >
-
-                  <p
-                    className="
-                      text-xs
-                      text-navy-mute
-                    "
-                  >
-                    Analytics
-                  </p>
-
-                  <h3
-                    className="
-                      mt-2
-                      text-sm
-                      font-semibold
-                      group-hover:text-coral
-                    "
-                  >
-                    Google Analytics
-                  </h3>
-
-                  <p
-                    className="
-                      mt-2
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-                    Learn how analytics can help you
-                    understand activity from your store.
+                    Review domain records, redirects, and
+                    HTTPS configuration for your storefront.
                   </p>
 
                   <span
@@ -1600,7 +1417,7 @@ export default function SetUpEmailInboxPage() {
               ================================================== */}
 
               <Link
-                href="/documentation/pending-tickets"
+                href="/helpful-info/ensure-www-loads-your-site"
                 className="
                   group
                   rounded-lg
@@ -1638,7 +1455,7 @@ export default function SetUpEmailInboxPage() {
                     className="h-4 w-4"
                   />
 
-                  Pending-Tickets
+                  Ensure-www-Loads-Your-Site
 
                 </div>
 
@@ -1650,7 +1467,7 @@ export default function SetUpEmailInboxPage() {
               ================================================== */}
 
               <Link
-                href="/documentation/image-size-guide"
+                href="/helpful-info/pending-tickets"
                 className="
                   group
                   rounded-lg
@@ -1686,7 +1503,7 @@ export default function SetUpEmailInboxPage() {
                   "
                 >
 
-               Image-Size-Guide
+                  Pending-Tickets
 
                   <ArrowRight
                     className="h-4 w-4"
@@ -1714,7 +1531,7 @@ export default function SetUpEmailInboxPage() {
             </div>
 
           </article>
-
+        
 
 
           {/* ==================================================
@@ -1783,6 +1600,7 @@ export default function SetUpEmailInboxPage() {
                         setActiveSection(
                           section.id
                         );
+
                       }}
                       className={`
                         block
@@ -1792,7 +1610,6 @@ export default function SetUpEmailInboxPage() {
                         text-sm
                         leading-5
                         transition-colors
-                        duration-200
 
                         ${
                           isActive
@@ -1832,6 +1649,7 @@ export default function SetUpEmailInboxPage() {
       ====================================================== */}
 
       <Footer />
+
     </>
   );
 }

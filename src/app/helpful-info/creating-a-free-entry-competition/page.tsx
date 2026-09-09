@@ -1546,7 +1546,7 @@ export default function CreatingFreePromotionalCampaignPage() {
               ================================================== */}
 
               <Link
-                href="/documentation/utm-tags"
+                href="/helpful-info/utm-tags"
                 className="
                   group
                   rounded-lg
@@ -1596,7 +1596,7 @@ export default function CreatingFreePromotionalCampaignPage() {
               ================================================== */}
 
               <Link
-                href="/documentation/ensure-www-loads-your-site"
+                href="/helpful-info/ensure-www-loads-your-site"
                 className="
                   group
                   rounded-lg

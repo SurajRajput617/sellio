@@ -23,7 +23,7 @@ const sections = [
     title: "Buy Your Domain",
     description:
       "Choose and purchase the domain customers will use to find your online store.",
-    href: "/documentation/buy-domain",
+    href: "/getting-started/buy-domain",
     target: "Domain setup",
     icon: Globe,
   },
@@ -32,7 +32,7 @@ const sections = [
     title: "Add Your Domain to Sellio",
     description:
       "Connect your existing domain to your Sellio ecommerce store.",
-    href: "/documentation/add-domain",
+    href: "/getting-started/add-domain",
     target: "Connect domain",
     icon: Store,
   },
@@ -41,7 +41,7 @@ const sections = [
     title: "Creating Your Company",
     description:
       "Prepare your company information and the business details needed for your store.",
-    href: "/documentation/create-company",
+    href: "/getting-started/create-company",
     target: "Company setup",
     icon: Building2,
   },
@@ -50,7 +50,7 @@ const sections = [
     title: "Adding Your Terms",
     description:
       "Add your store policies, customer terms and other important legal information.",
-    href: "/documentation/terms",
+    href: "/getting-started/terms",
     target: "Terms & policies",
     icon: FileText,
   },
@@ -59,7 +59,7 @@ const sections = [
     title: "Payment Gateway",
     description:
       "Connect your payment provider so customers can securely pay for their orders.",
-    href: "/documentation/payment-gateway",
+    href: "/getting-started/payment-gateway",
     target: "Payments",
     icon: CreditCard,
   },
@@ -1697,7 +1697,7 @@ export default function DocumentationPage() {
       </Link>
 
       <Link
-        href="/documentation/what-google-analytics-tracks"
+        href="/helpful-info/what-google-analytics-tracks"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1709,7 +1709,7 @@ export default function DocumentationPage() {
       </Link>
 
       <Link
-        href="/documentation/utm-tags"
+        href="/helpful-info/utm-tags"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1721,7 +1721,7 @@ export default function DocumentationPage() {
       </Link>
 
       <Link
-        href="/documentation/creating-a-free-entry-competition"
+        href="/helpful-info/creating-a-free-entry-competition"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1733,7 +1733,7 @@ export default function DocumentationPage() {
       </Link>
 
       <Link
-        href="/documentation/ensure-www-loads-your-site"
+        href="/helpful-info/ensure-www-loads-your-site"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1745,7 +1745,7 @@ export default function DocumentationPage() {
       </Link>
 
       <Link
-        href="/documentation/pci-compliance-scan"
+        href="/helpful-info/pci-compliance-scan"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1757,7 +1757,7 @@ export default function DocumentationPage() {
       </Link>
 
       <Link
-        href="/documentation/pending-tickets"
+        href="/helpful-info/pending-tickets"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1769,7 +1769,7 @@ export default function DocumentationPage() {
       </Link>
 
       <Link
-        href="/documentation/set-up-email-inbox"
+        href="/helpful-info/set-up-email-inbox"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1781,7 +1781,7 @@ export default function DocumentationPage() {
       </Link>
 
       <Link
-        href="/documentation/image-size-guide"
+        href="/helpful-info/image-size-guide"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1793,7 +1793,7 @@ export default function DocumentationPage() {
       </Link>
 
       <Link
-        href="/documentation/reset-password"
+        href="/helpful-info/reset-password"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1805,7 +1805,7 @@ export default function DocumentationPage() {
       </Link>
 
       <Link
-        href="/documentation/checklist"
+        href="/helpful-info/checklist"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute

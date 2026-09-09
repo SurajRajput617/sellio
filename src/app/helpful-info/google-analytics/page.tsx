@@ -6,15 +6,16 @@ import Link from "next/link";
 import {
   ArrowRight,
   ArrowLeft,
+  Copy,
   Check,
   Info,
-  Clock3,
+  BarChart3,
+  ChevronRight,
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
-
 
 /* ============================================================
    ON THIS PAGE
@@ -26,46 +27,52 @@ const sections = [
     label: "Overview",
   },
   {
-    id: "find-tickets",
-    label: "Where to Find Tickets",
+    id: "create-account",
+    label: "Create a Google Analytics Account",
   },
   {
-    id: "ticket-status",
-    label: "What the Status Shows",
+    id: "create-property",
+    label: "Create a Property",
   },
   {
-    id: "reading-ticket",
-    label: "Reading a Ticket",
+    id: "business-details",
+    label: "Enter Business Details",
   },
   {
-    id: "cancelled-requests",
-    label: "Cancelled Requests",
+    id: "website-tracking",
+    label: "Set Up Website Tracking",
   },
   {
-    id: "need-help",
-    label: "Need Help",
+    id: "install-analytics",
+    label: "Install Google Analytics",
+  },
+  {
+    id: "confirm-tracking",
+    label: "Confirm Analytics Tracking",
+  },
+  {
+    id: "what-happens-next",
+    label: "What Happens Next?",
   },
 ];
-
 
 /* ============================================================
    PAGE
 ============================================================ */
 
-export default function PendingSupportRequestsPage() {
-
+export default function GoogleAnalyticsPage() {
   const [activeSection, setActiveSection] =
     useState("overview");
 
+  const [copied, setCopied] =
+    useState(false);
 
   /* ============================================================
-     SCROLL SPY
+     ACTIVE SECTION
   ============================================================ */
 
   useEffect(() => {
-
     const handleScroll = () => {
-
       const position =
         window.scrollY + 180;
 
@@ -73,7 +80,6 @@ export default function PendingSupportRequestsPage() {
         sections[0].id;
 
       sections.forEach((section) => {
-
         const element =
           document.getElementById(
             section.id
@@ -86,12 +92,10 @@ export default function PendingSupportRequestsPage() {
         ) {
           current = section.id;
         }
-
       });
 
       setActiveSection(current);
     };
-
 
     handleScroll();
 
@@ -103,16 +107,60 @@ export default function PendingSupportRequestsPage() {
       }
     );
 
-
     return () => {
       window.removeEventListener(
         "scroll",
         handleScroll
       );
     };
-
   }, []);
 
+  /* ============================================================
+     TRACKING CODE
+  ============================================================ */
+
+  const trackingCode = `<!-- Google Analytics -->
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX">
+</script>
+
+<script>
+  window.dataLayer =
+    window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag("js", new Date());
+
+  gtag(
+    "config",
+    "G-XXXXXXXXXX"
+  );
+</script>`;
+
+  /* ============================================================
+     COPY
+  ============================================================ */
+
+  const copyCode = async () => {
+    try {
+      await navigator.clipboard.writeText(
+        trackingCode
+      );
+
+      setCopied(true);
+
+      setTimeout(() => {
+        setCopied(false);
+      }, 1800);
+    } catch {
+      setCopied(false);
+    }
+  };
 
   return (
     <>
@@ -124,7 +172,7 @@ export default function PendingSupportRequestsPage() {
 
 
       {/* ======================================================
-          DOCUMENTATION CONTENT
+          DOCUMENTATION
       ====================================================== */}
 
       <main
@@ -153,7 +201,7 @@ export default function PendingSupportRequestsPage() {
 
 
           {/* ==================================================
-              MAIN ARTICLE
+              MAIN CONTENT
           ================================================== */}
 
           <article
@@ -185,41 +233,20 @@ export default function PendingSupportRequestsPage() {
                   text-coral
                 "
               >
-                Helpful Info
+                Analytics
               </p>
 
 
-              <div
+              <h1
                 className="
                   mt-3
-                  flex
-                  items-start
-                  gap-3
+                  text-3xl
+                  font-bold
+                  tracking-tight
                 "
               >
-
-                <Clock3
-                  className="
-                    mt-1
-                    h-6
-                    w-6
-                    shrink-0
-                    text-coral
-                  "
-                />
-
-
-                <h1
-                  className="
-                    text-3xl
-                    font-bold
-                    tracking-tight
-                  "
-                >
-                  Pending Support Requests
-                </h1>
-
-              </div>
+                Google Analytics
+              </h1>
 
 
               <p
@@ -231,11 +258,10 @@ export default function PendingSupportRequestsPage() {
                   text-navy-mute
                 "
               >
-                Keep an eye on support requests that still
-                need attention. Reviewing pending requests
-                helps your team understand which customer
-                questions remain open and what needs to
-                happen next.
+                Connect Google Analytics to your Sellio
+                store to understand how visitors discover
+                your website and how they interact with
+                your products and pages.
               </p>
 
 
@@ -248,15 +274,15 @@ export default function PendingSupportRequestsPage() {
                   text-navy-mute
                 "
               >
-                This guide explains where to find pending
-                requests, how to understand their status,
-                and how to review the information associated
-                with each request.
+                This guide walks you through creating your
+                analytics property, preparing website
+                tracking, and confirming that data is
+                reaching Google Analytics.
               </p>
 
 
               {/* ==================================================
-                  INFO CALLOUT
+                  INFO BOX
               ================================================== */}
 
               <div
@@ -289,7 +315,6 @@ export default function PendingSupportRequestsPage() {
                     "
                   />
 
-
                   <p
                     className="
                       text-sm
@@ -297,10 +322,9 @@ export default function PendingSupportRequestsPage() {
                       text-navy-mute
                     "
                   >
-                    A pending request simply means that
-                    additional attention or action may still
-                    be required. Review the request details
-                    before deciding what action to take.
+                    You will need access to your Google
+                    Analytics account and the Sellio store
+                    you want to connect.
                   </p>
 
                 </div>
@@ -311,11 +335,11 @@ export default function PendingSupportRequestsPage() {
 
 
             {/* ==================================================
-                WHERE TO FIND TICKETS
+                CREATE ACCOUNT
             ================================================== */}
 
             <section
-              id="find-tickets"
+              id="create-account"
               className="
                 scroll-mt-28
                 border-b
@@ -330,7 +354,7 @@ export default function PendingSupportRequestsPage() {
                   font-bold
                 "
               >
-                Where to Find Tickets
+                Create a Google Analytics Account
               </h2>
 
 
@@ -342,26 +366,25 @@ export default function PendingSupportRequestsPage() {
                   text-navy-mute
                 "
               >
-                Pending customer requests can be reviewed
-                from the support area of your Sellio
-                workspace.
+                Start by creating or signing in to the
+                Google Analytics account you want to use
+                for your Sellio store.
               </p>
 
 
               <ol
                 className="
-                  mt-6
-                  space-y-4
+                  mt-5
+                  space-y-3
                 "
               >
 
                 {[
-                  "Open your Sellio dashboard.",
-                  "Go to the customer support or requests area.",
-                  "Open the list of requests that require attention.",
-                  "Review the request status to identify items that are still pending.",
+                  "Open Google Analytics and sign in with your Google account.",
+                  "Choose the option to create an Analytics account.",
+                  "Enter a name that clearly identifies your Sellio store.",
+                  "Review the account settings and continue.",
                 ].map((item, index) => (
-
                   <li
                     key={item}
                     className="
@@ -392,20 +415,732 @@ export default function PendingSupportRequestsPage() {
                       {index + 1}
                     </span>
 
+                    <span>
+                      {item}
+                    </span>
+
+                  </li>
+                ))}
+
+              </ol>
+
+
+              <div
+                className="
+                  mt-5
+                  rounded-lg
+                  border
+                  border-border
+                  bg-black/5
+                  px-5
+                  py-4
+                "
+              >
+
+                <p
+                  className="
+                    text-sm
+                    leading-6
+                    text-navy-mute
+                  "
+                >
+                  Use a recognizable account name so you
+                  can easily identify the correct store if
+                  you manage more than one website.
+                </p>
+
+              </div>
+
+            </section>
+
+
+            {/* ==================================================
+                CREATE PROPERTY
+            ================================================== */}
+
+            <section
+              id="create-property"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Create a Property
+              </h2>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                Create a Google Analytics property for the
+                Sellio website you want to measure.
+              </p>
+
+
+              <ol
+                className="
+                  mt-5
+                  space-y-3
+                "
+              >
+
+                {[
+                  "Enter the name of your Sellio store.",
+                  "Select the appropriate reporting settings.",
+                  "Choose the relevant business or website information.",
+                  "Continue to the data collection setup.",
+                ].map((item, index) => (
+                  <li
+                    key={item}
+                    className="
+                      flex
+                      items-start
+                      gap-3
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+
+                    <span
+                      className="
+                        flex
+                        h-6
+                        w-6
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-md
+                        bg-black/5
+                        text-xs
+                        font-semibold
+                        text-coral
+                      "
+                    >
+                      {index + 1}
+                    </span>
 
                     <span>
                       {item}
                     </span>
 
                   </li>
+                ))}
 
+              </ol>
+
+            </section>
+
+
+            {/* ==================================================
+                BUSINESS DETAILS
+            ================================================== */}
+
+            <section
+              id="business-details"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Enter Business Details
+              </h2>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                Provide the business information requested
+                during the property setup process. Use
+                information that accurately represents
+                your Sellio store.
+              </p>
+
+
+              <ul
+                className="
+                  mt-5
+                  list-disc
+                  space-y-2
+                  pl-5
+                  text-sm
+                  leading-6
+                  text-navy-mute
+                "
+              >
+
+                <li>
+                  Select the business category that best
+                  describes your store.
+                </li>
+
+                <li>
+                  Choose the business size that matches
+                  your operation.
+                </li>
+
+                <li>
+                  Select the goals that are most relevant
+                  to your analytics setup.
+                </li>
+
+              </ul>
+
+            </section>
+                        {/* ==================================================
+                SET UP WEBSITE TRACKING
+            ================================================== */}
+
+            <section
+              id="website-tracking"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Set Up Website Tracking
+              </h2>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                After creating your property, set up a web
+                data stream for your Sellio storefront.
+                This gives Google Analytics a destination
+                from which it can collect website activity.
+              </p>
+
+
+              <ol
+                className="
+                  mt-5
+                  space-y-3
+                "
+              >
+
+                {[
+                  "Open the data collection or web stream setup.",
+                  "Choose Web as the platform.",
+                  "Enter the URL of your Sellio storefront.",
+                  "Give the stream a recognizable name.",
+                  "Complete the setup and locate your measurement ID.",
+                ].map((item, index) => (
+                  <li
+                    key={item}
+                    className="
+                      flex
+                      items-start
+                      gap-3
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+
+                    <span
+                      className="
+                        flex
+                        h-6
+                        w-6
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-md
+                        bg-black/5
+                        text-xs
+                        font-semibold
+                        text-coral
+                      "
+                    >
+                      {index + 1}
+                    </span>
+
+                    <span>
+                      {item}
+                    </span>
+
+                  </li>
                 ))}
 
               </ol>
 
 
               {/* ==================================================
-                  QUICK TIP
+                  MEASUREMENT ID
+              ================================================== */}
+
+              <div
+                className="
+                  mt-6
+                  rounded-lg
+                  border
+                  border-border
+                  bg-black/5
+                  px-5
+                  py-4
+                "
+              >
+
+                <p
+                  className="
+                    text-xs
+                    font-semibold
+                    uppercase
+                    tracking-wide
+                    text-navy-mute
+                  "
+                >
+                  Measurement ID
+                </p>
+
+
+                <p
+                  className="
+                    mt-2
+                    font-mono
+                    text-sm
+                    font-semibold
+                    text-coral
+                  "
+                >
+                  G-XXXXXXXXXX
+                </p>
+
+
+                <p
+                  className="
+                    mt-2
+                    text-sm
+                    leading-6
+                    text-navy-mute
+                  "
+                >
+                  Keep your measurement ID available for
+                  the tracking configuration.
+                </p>
+
+              </div>
+
+            </section>
+
+
+            {/* ==================================================
+                INSTALL GOOGLE ANALYTICS
+            ================================================== */}
+
+            <section
+              id="install-analytics"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Install Google Analytics on Your Sellio Site
+              </h2>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                Add your Google Analytics tracking
+                configuration to the appropriate location
+                in your Sellio site so Google can receive
+                visitor activity.
+              </p>
+
+
+              <ol
+                className="
+                  mt-5
+                  space-y-3
+                "
+              >
+
+                {[
+                  "Copy the tracking configuration from your Google Analytics property.",
+                  "Open the tracking or custom code area available for your Sellio site.",
+                  "Add the tracking configuration to the site's global head area.",
+                  "Save your changes.",
+                  "Open your storefront and test the connection.",
+                ].map((item, index) => (
+                  <li
+                    key={item}
+                    className="
+                      flex
+                      items-start
+                      gap-3
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+
+                    <span
+                      className="
+                        flex
+                        h-6
+                        w-6
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-md
+                        bg-black/5
+                        text-xs
+                        font-semibold
+                        text-coral
+                      "
+                    >
+                      {index + 1}
+                    </span>
+
+                    <span>
+                      {item}
+                    </span>
+
+                  </li>
+                ))}
+
+              </ol>
+
+
+              {/* ==================================================
+                  CODE BLOCK
+              ================================================== */}
+
+              <div
+                className="
+                  mt-6
+                  overflow-hidden
+                  rounded-lg
+                  border
+                  border-border
+                  bg-[#101a2c]
+                "
+              >
+
+                <div
+                  className="
+                    flex
+                    items-center
+                    justify-between
+                    border-b
+                    border-white/10
+                    px-4
+                    py-3
+                  "
+                >
+
+                  <div
+                    className="
+                      flex
+                      items-center
+                      gap-2
+                    "
+                  >
+
+                    <BarChart3
+                      className="
+                        h-4
+                        w-4
+                        text-white/60
+                      "
+                    />
+
+                    <span
+                      className="
+                        text-xs
+                        text-white/70
+                      "
+                    >
+                      Google Analytics
+                    </span>
+
+                  </div>
+
+
+                  <button
+                    type="button"
+                    onClick={copyCode}
+                    className="
+                      flex
+                      items-center
+                      gap-2
+                      rounded-md
+                      border
+                      border-white/10
+                      px-3
+                      py-1.5
+                      text-xs
+                      text-white/70
+                      transition-colors
+                      hover:border-white/30
+                      hover:text-white
+                    "
+                  >
+
+                    {copied ? (
+                      <>
+                        <Check
+                          className="
+                            h-3.5
+                            w-3.5
+                          "
+                        />
+
+                        Copied
+                      </>
+                    ) : (
+                      <>
+                        <Copy
+                          className="
+                            h-3.5
+                            w-3.5
+                          "
+                        />
+
+                        Copy
+                      </>
+                    )}
+
+                  </button>
+
+                </div>
+
+
+                <pre
+                  className="
+                    overflow-x-auto
+                    p-5
+                    text-sm
+                    leading-7
+                    text-white/85
+                  "
+                >
+                  <code>
+                    {trackingCode}
+                  </code>
+                </pre>
+
+              </div>
+
+
+              {/* ==================================================
+                  IMPORTANT NOTE
+              ================================================== */}
+
+              <div
+                className="
+                  mt-5
+                  rounded-lg
+                  border
+                  border-border
+                  bg-black/5
+                  px-5
+                  py-4
+                "
+              >
+
+                <div
+                  className="
+                    flex
+                    items-start
+                    gap-3
+                  "
+                >
+
+                  <Info
+                    className="
+                      mt-0.5
+                      h-4
+                      w-4
+                      shrink-0
+                      text-coral
+                    "
+                  />
+
+                  <p
+                    className="
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+                    Replace the example measurement ID with
+                    the ID assigned to your Google Analytics
+                    web stream.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            {/* ==================================================
+                CONFIRM TRACKING
+            ================================================== */}
+
+            <section
+              id="confirm-tracking"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Confirm Analytics Tracking
+              </h2>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                After adding the tracking configuration,
+                visit your Sellio storefront and confirm
+                that Google Analytics receives activity.
+              </p>
+
+
+              {/* ==================================================
+                  CHECKLIST
+              ================================================== */}
+
+              <div
+                className="
+                  mt-6
+                  space-y-3
+                "
+              >
+
+                {[
+                  "Open your Sellio storefront in a browser.",
+                  "Visit several pages on the site.",
+                  "Open the reporting area in Google Analytics.",
+                  "Check the real-time or current activity view.",
+                  "Confirm that your visit is being detected.",
+                ].map((item, index) => (
+                  <div
+                    key={item}
+                    className="
+                      flex
+                      items-start
+                      gap-3
+                      rounded-lg
+                      border
+                      border-border
+                      px-4
+                      py-3
+                    "
+                  >
+
+                    <span
+                      className="
+                        flex
+                        h-6
+                        w-6
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-full
+                        bg-black/5
+                        text-xs
+                        font-semibold
+                        text-coral
+                      "
+                    >
+                      {index + 1}
+                    </span>
+
+
+                    <span
+                      className="
+                        text-sm
+                        leading-6
+                        text-navy-mute
+                      "
+                    >
+                      {item}
+                    </span>
+
+                  </div>
+                ))}
+
+              </div>
+
+
+              {/* ==================================================
+                  SUCCESS CALLOUT
               ================================================== */}
 
               <div
@@ -438,18 +1173,32 @@ export default function PendingSupportRequestsPage() {
                     "
                   />
 
+                  <div>
 
-                  <p
-                    className="
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-                    Start with the oldest pending requests
-                    when your team needs to work through a
-                    larger support queue.
-                  </p>
+                    <p
+                      className="
+                        text-sm
+                        font-semibold
+                      "
+                    >
+                      Tracking is connected
+                    </p>
+
+
+                    <p
+                      className="
+                        mt-1
+                        text-sm
+                        leading-6
+                        text-navy-mute
+                      "
+                    >
+                      Once your storefront activity appears
+                      in Google Analytics, the basic website
+                      tracking setup is complete.
+                    </p>
+
+                  </div>
 
                 </div>
 
@@ -459,550 +1208,11 @@ export default function PendingSupportRequestsPage() {
 
 
             {/* ==================================================
-                WHAT THE STATUS SHOWS
+                WHAT HAPPENS NEXT
             ================================================== */}
 
             <section
-              id="ticket-status"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                What the Status Shows
-              </h2>
-
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                The status of a customer request gives your
-                team a quick way to understand whether an
-                item still needs attention.
-              </p>
-
-
-              <div
-                className="
-                  mt-6
-                  space-y-3
-                "
-              >
-
-                {[
-                  {
-                    title: "Pending",
-                    text:
-                      "The request still needs review or another action from your team.",
-                  },
-                  {
-                    title: "In Review",
-                    text:
-                      "Your team has started looking at the request and is working through the details.",
-                  },
-                  {
-                    title: "Resolved",
-                    text:
-                      "The request has been addressed and no further action is currently expected.",
-                  },
-                ].map((item) => (
-
-                  <div
-                    key={item.title}
-                    className="
-                      rounded-lg
-                      border
-                      border-border
-                      p-5
-                    "
-                  >
-
-                    <h3
-                      className="
-                        text-sm
-                        font-semibold
-                      "
-                    >
-                      {item.title}
-                    </h3>
-
-
-                    <p
-                      className="
-                        mt-2
-                        text-sm
-                        leading-6
-                        text-navy-mute
-                      "
-                    >
-                      {item.text}
-                    </p>
-
-                  </div>
-
-                ))}
-
-              </div>
-
-            </section>
-
-
-                     {/* ==================================================
-                READING A SUPPORT REQUEST
-            ================================================== */}
-
-            <section
-              id="reading-ticket"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Reading a Support Request
-              </h2>
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Before responding to a customer, review the
-                complete request and any information attached
-                to it. This gives your team the context needed
-                to provide a useful response.
-              </p>
-
-
-              {/* ==================================================
-                  REQUEST DETAILS
-              ================================================== */}
-
-              <div
-                className="
-                  mt-6
-                  space-y-3
-                "
-              >
-
-                {[
-                  {
-                    title: "Customer Details",
-                    text:
-                      "Review the customer's name and contact information before responding.",
-                  },
-                  {
-                    title: "Request Subject",
-                    text:
-                      "Use the subject to quickly understand the main reason for the request.",
-                  },
-                  {
-                    title: "Message",
-                    text:
-                      "Read the customer's complete message and check whether they included relevant order or product information.",
-                  },
-                  {
-                    title: "Request Status",
-                    text:
-                      "Check the current status so you know whether the request still needs action.",
-                  },
-                  {
-                    title: "Created Date",
-                    text:
-                      "The request date can help your team prioritize older unresolved requests.",
-                  },
-                ].map((item) => (
-
-                  <div
-                    key={item.title}
-                    className="
-                      rounded-lg
-                      border
-                      border-border
-                      p-5
-                    "
-                  >
-
-                    <h3
-                      className="
-                        text-sm
-                        font-semibold
-                      "
-                    >
-                      {item.title}
-                    </h3>
-
-                    <p
-                      className="
-                        mt-2
-                        text-sm
-                        leading-6
-                        text-navy-mute
-                      "
-                    >
-                      {item.text}
-                    </p>
-
-                  </div>
-
-                ))}
-
-              </div>
-
-
-              {/* ==================================================
-                  QUICK TIP
-              ================================================== */}
-
-              <div
-                className="
-                  mt-6
-                  rounded-lg
-                  border
-                  border-border
-                  bg-black/5
-                  px-5
-                  py-4
-                "
-              >
-
-                <div
-                  className="
-                    flex
-                    items-start
-                    gap-3
-                  "
-                >
-
-                  <Info
-                    className="
-                      mt-0.5
-                      h-4
-                      w-4
-                      shrink-0
-                      text-coral
-                    "
-                  />
-
-                  <p
-                    className="
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-                    Read the entire customer message before
-                    taking action. Important details may appear
-                    later in the request.
-                  </p>
-
-                </div>
-
-              </div>
-
-            </section>
-
-
-            {/* ==================================================
-                PRIORITIZING REQUESTS
-            ================================================== */}
-
-            <section
-              id="prioritizing-requests"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Prioritizing Requests
-              </h2>
-
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                When several customer requests are waiting,
-                use the available information to decide which
-                items need attention first.
-              </p>
-
-
-              <ol
-                className="
-                  mt-6
-                  space-y-4
-                "
-              >
-
-                {[
-                  "Review requests that have been waiting the longest.",
-                  "Identify requests that affect an active customer order.",
-                  "Look for requests that require information from another team member.",
-                  "Check whether the customer has already contacted your team about the same issue.",
-                  "Update the request after the required action has been completed.",
-                ].map((item, index) => (
-
-                  <li
-                    key={item}
-                    className="
-                      flex
-                      items-start
-                      gap-3
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-
-                    <span
-                      className="
-                        flex
-                        h-6
-                        w-6
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-md
-                        bg-black/5
-                        text-xs
-                        font-semibold
-                        text-coral
-                      "
-                    >
-                      {index + 1}
-                    </span>
-
-                    <span>
-                      {item}
-                    </span>
-
-                  </li>
-
-                ))}
-
-              </ol>
-
-
-              {/* ==================================================
-                  PRIORITY NOTE
-              ================================================== */}
-
-              <div
-                className="
-                  mt-6
-                  rounded-lg
-                  border
-                  border-border
-                  bg-black/5
-                  px-5
-                  py-4
-                "
-              >
-
-                <p
-                  className="
-                    text-sm
-                    font-semibold
-                  "
-                >
-                  Keep the queue organized
-                </p>
-
-                <p
-                  className="
-                    mt-2
-                    text-sm
-                    leading-6
-                    text-navy-mute
-                  "
-                >
-                  A consistent process makes it easier for
-                  your team to see which customer requests
-                  still require attention.
-                </p>
-
-              </div>
-
-            </section>
-
-
-            {/* ==================================================
-                HANDLING A PENDING REQUEST
-            ================================================== */}
-
-            <section
-              id="handling-request"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Handling a Pending Request
-              </h2>
-
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Once you understand the customer's request,
-                decide what action is needed and keep the
-                request status up to date.
-              </p>
-
-
-              <div
-                className="
-                  mt-6
-                  space-y-3
-                "
-              >
-
-                {[
-                  {
-                    title: "Review",
-                    text:
-                      "Read the request and identify the customer's main question or problem.",
-                  },
-                  {
-                    title: "Investigate",
-                    text:
-                      "Check relevant store, product, or order information when additional context is needed.",
-                  },
-                  {
-                    title: "Respond",
-                    text:
-                      "Provide a clear response using the information available to your support team.",
-                  },
-                  {
-                    title: "Update",
-                    text:
-                      "Update the request status after the next action has been completed.",
-                  },
-                ].map((item) => (
-
-                  <div
-                    key={item.title}
-                    className="
-                      flex
-                      items-start
-                      gap-4
-                      rounded-lg
-                      border
-                      border-border
-                      p-5
-                    "
-                  >
-
-                    <div
-                      className="
-                        flex
-                        h-8
-                        w-8
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-md
-                        bg-black/5
-                        text-xs
-                        font-bold
-                        text-coral
-                      "
-                    >
-                      {item.title.charAt(0)}
-                    </div>
-
-                    <div>
-
-                      <h3
-                        className="
-                          text-sm
-                          font-semibold
-                        "
-                      >
-                        {item.title}
-                      </h3>
-
-                      <p
-                        className="
-                          mt-2
-                          text-sm
-                          leading-6
-                          text-navy-mute
-                        "
-                      >
-                        {item.text}
-                      </p>
-
-                    </div>
-
-                  </div>
-
-                ))}
-
-              </div>
-
-            </section>
-
-
-            {/* ==================================================
-                SUPPORT QUEUE BEST PRACTICES
-            ================================================== */}
-
-            <section
-              id="queue-best-practices"
+              id="what-happens-next"
               className="
                 scroll-mt-28
                 py-8
@@ -1015,7 +1225,7 @@ export default function PendingSupportRequestsPage() {
                   font-bold
                 "
               >
-                Support Queue Best Practices
+                What Happens Next?
               </h2>
 
 
@@ -1027,61 +1237,52 @@ export default function PendingSupportRequestsPage() {
                   text-navy-mute
                 "
               >
-                A clean support queue helps your team respond
-                consistently and prevents older requests from
-                being overlooked.
+                Once tracking is active, Google Analytics
+                can begin building reports from activity on
+                your Sellio storefront.
               </p>
 
 
               <ul
                 className="
-                  mt-6
-                  space-y-3
+                  mt-5
+                  list-disc
+                  space-y-2
+                  pl-5
+                  text-sm
+                  leading-6
+                  text-navy-mute
                 "
               >
 
-                {[
-                  "Review pending requests regularly.",
-                  "Keep request statuses accurate.",
-                  "Read the full customer message before responding.",
-                  "Use clear and helpful responses.",
-                  "Check order or product details when relevant.",
-                  "Avoid leaving completed requests marked as pending.",
-                  "Escalate issues when your team needs additional assistance.",
-                ].map((item) => (
+                <li>
+                  Review how visitors reach your store.
+                </li>
 
-                  <li
-                    key={item}
-                    className="
-                      flex
-                      items-start
-                      gap-3
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
+                <li>
+                  Understand which pages receive traffic.
+                </li>
 
-                    <Check
-                      className="
-                        mt-0.5
-                        h-4
-                        w-4
-                        shrink-0
-                        text-coral
-                      "
-                    />
+                <li>
+                  Analyze product and ecommerce activity.
+                </li>
 
-                    <span>
-                      {item}
-                    </span>
+                <li>
+                  Compare traffic sources and customer
+                  behavior.
+                </li>
 
-                  </li>
-
-                ))}
+                <li>
+                  Use the available reports to identify
+                  areas that may need improvement.
+                </li>
 
               </ul>
 
+
+              {/* ==================================================
+                  REPORTING CALLOUT
+              ================================================== */}
 
               <div
                 className="
@@ -1091,37 +1292,27 @@ export default function PendingSupportRequestsPage() {
                   border-border
                   bg-black/5
                   px-5
-                  py-5
+                  py-4
                 "
               >
 
                 <p
                   className="
                     text-sm
-                    font-semibold
-                  "
-                >
-                  Keep customer communication clear
-                </p>
-
-                <p
-                  className="
-                    mt-2
-                    text-sm
                     leading-6
                     text-navy-mute
                   "
                 >
-                  Customers should be able to understand what
-                  happens next without needing to repeat the
-                  same information.
+                  Analytics data can take some time to
+                  populate in standard reports. Use the
+                  available real-time reporting tools when
+                  checking a new tracking setup.
                 </p>
 
               </div>
 
             </section>
-
-           {/* ==================================================
+                        {/* ==================================================
                 NEED HELP
             ================================================== */}
 
@@ -1134,6 +1325,7 @@ export default function PendingSupportRequestsPage() {
                 py-8
               "
             >
+
               <div
                 className="
                   rounded-lg
@@ -1144,6 +1336,7 @@ export default function PendingSupportRequestsPage() {
                   py-6
                 "
               >
+
                 <p
                   className="
                     text-xs
@@ -1156,6 +1349,7 @@ export default function PendingSupportRequestsPage() {
                   Support
                 </p>
 
+
                 <h2
                   className="
                     mt-2
@@ -1166,20 +1360,6 @@ export default function PendingSupportRequestsPage() {
                   Need Help?
                 </h2>
 
-                <p
-                  className="
-                    mt-3
-                    max-w-2xl
-                    text-sm
-                    leading-7
-                    text-navy-mute
-                  "
-                >
-                  If you are having trouble finding or
-                  managing customer support requests, first
-                  review the request status and the details
-                  associated with the customer.
-                </p>
 
                 <p
                   className="
@@ -1190,10 +1370,27 @@ export default function PendingSupportRequestsPage() {
                     text-navy-mute
                   "
                 >
-                  If the issue continues or you need help
-                  with your Sellio store configuration,
-                  contact the Sellio support team.
+                  If Google Analytics is not receiving data
+                  from your Sellio storefront, review the
+                  measurement ID, tracking configuration,
+                  and placement of the tracking code.
                 </p>
+
+
+                <p
+                  className="
+                    mt-3
+                    max-w-2xl
+                    text-sm
+                    leading-7
+                    text-navy-mute
+                  "
+                >
+                  If you have checked these settings and
+                  still need assistance, contact Sellio
+                  support for help with your analytics setup.
+                </p>
+
 
                 <Link
                   href="/#contact"
@@ -1216,10 +1413,16 @@ export default function PendingSupportRequestsPage() {
                   Contact Support
 
                   <ArrowRight
-                    className="h-4 w-4"
+                    className="
+                      h-4
+                      w-4
+                    "
                   />
+
                 </Link>
+
               </div>
+
             </section>
 
 
@@ -1234,6 +1437,7 @@ export default function PendingSupportRequestsPage() {
                 py-8
               "
             >
+
               <p
                 className="
                   text-xs
@@ -1246,6 +1450,7 @@ export default function PendingSupportRequestsPage() {
                 Continue Learning
               </p>
 
+
               <h2
                 className="
                   mt-2
@@ -1256,6 +1461,7 @@ export default function PendingSupportRequestsPage() {
                 Related Guides
               </h2>
 
+
               <p
                 className="
                   mt-3
@@ -1264,9 +1470,9 @@ export default function PendingSupportRequestsPage() {
                   text-navy-mute
                 "
               >
-                Continue exploring Sellio documentation to
-                learn more about managing customers, orders,
-                and your store.
+                Explore other Sellio documentation to
+                learn more about analytics, products, and
+                customer activity.
               </p>
 
 
@@ -1280,7 +1486,7 @@ export default function PendingSupportRequestsPage() {
               >
 
                 {/* ==================================================
-                    CUSTOMERS
+                    GUIDE 1
                 ================================================== */}
 
                 <Link
@@ -1295,14 +1501,16 @@ export default function PendingSupportRequestsPage() {
                     hover:border-coral
                   "
                 >
+
                   <p
                     className="
                       text-xs
                       text-navy-mute
                     "
                   >
-                    Store Management
+                    Analytics
                   </p>
+
 
                   <h3
                     className="
@@ -1312,8 +1520,9 @@ export default function PendingSupportRequestsPage() {
                       group-hover:text-coral
                     "
                   >
-                    Customers
+                    Conversion Event Tracking
                   </h3>
+
 
                   <p
                     className="
@@ -1323,16 +1532,18 @@ export default function PendingSupportRequestsPage() {
                       text-navy-mute
                     "
                   >
-                    Learn more about managing customer
-                    information in Sellio.
+                    Learn how important ecommerce actions
+                    can help you understand customer
+                    activity.
                   </p>
 
-                 
+
+
                 </Link>
 
 
                 {/* ==================================================
-                    ORDERS
+                    GUIDE 2
                 ================================================== */}
 
                 <Link
@@ -1347,14 +1558,16 @@ export default function PendingSupportRequestsPage() {
                     hover:border-coral
                   "
                 >
+
                   <p
                     className="
                       text-xs
                       text-navy-mute
                     "
                   >
-                    Store Management
+                    Analytics
                   </p>
+
 
                   <h3
                     className="
@@ -1364,8 +1577,9 @@ export default function PendingSupportRequestsPage() {
                       group-hover:text-coral
                     "
                   >
-                    Orders
+                    Dashboard Overview
                   </h3>
+
 
                   <p
                     className="
@@ -1375,14 +1589,16 @@ export default function PendingSupportRequestsPage() {
                       text-navy-mute
                     "
                   >
-                    Review and manage orders from your
-                    Sellio store.
+                    Review key store metrics and understand
+                    the information available in Sellio.
                   </p>
 
-                 
+
+
                 </Link>
 
               </div>
+
             </section>
 
 
@@ -1406,7 +1622,7 @@ export default function PendingSupportRequestsPage() {
               ================================================== */}
 
               <Link
-                href="/documentation/pci-compliance-scan"
+                href="/helpful-info/analytics"
                 className="
                   group
                   rounded-lg
@@ -1418,6 +1634,7 @@ export default function PendingSupportRequestsPage() {
                   hover:border-coral
                 "
               >
+
                 <p
                   className="
                     text-xs
@@ -1426,6 +1643,7 @@ export default function PendingSupportRequestsPage() {
                 >
                   Previous
                 </p>
+
 
                 <div
                   className="
@@ -1438,12 +1656,18 @@ export default function PendingSupportRequestsPage() {
                     group-hover:text-coral
                   "
                 >
+
                   <ArrowLeft
-                    className="h-4 w-4"
+                    className="
+                      h-4
+                      w-4
+                    "
                   />
 
-                  PCI-Compliance-Scan
+                  Analytics
+
                 </div>
+
               </Link>
 
 
@@ -1452,7 +1676,7 @@ export default function PendingSupportRequestsPage() {
               ================================================== */}
 
               <Link
-                href="/documentation/set-up-email-inbox"
+                href="/helpful-info/what-google-analytics-tracks"
                 className="
                   group
                   rounded-lg
@@ -1465,6 +1689,7 @@ export default function PendingSupportRequestsPage() {
                   hover:border-coral
                 "
               >
+
                 <p
                   className="
                     text-xs
@@ -1473,6 +1698,7 @@ export default function PendingSupportRequestsPage() {
                 >
                   Next
                 </p>
+
 
                 <div
                   className="
@@ -1486,12 +1712,19 @@ export default function PendingSupportRequestsPage() {
                     group-hover:text-coral
                   "
                 >
-                  Set-up-Email-Inbox
+
+               What Google Analytics Tracks
+
 
                   <ArrowRight
-                    className="h-4 w-4"
+                    className="
+                      h-4
+                      w-4
+                    "
                   />
+
                 </div>
+
               </Link>
 
             </div>
@@ -1514,9 +1747,8 @@ export default function PendingSupportRequestsPage() {
           </article>
 
 
-
           {/* ==================================================
-              RIGHT SIDE TOC
+              RIGHT SIDE — ON THIS PAGE
           ================================================== */}
 
           <aside
@@ -1559,30 +1791,18 @@ export default function PendingSupportRequestsPage() {
                 {sections.map((section) => {
 
                   const isActive =
-                    activeSection === section.id;
+                    activeSection ===
+                    section.id;
 
                   return (
                     <a
                       key={section.id}
                       href={`#${section.id}`}
-                      onClick={(event) => {
-
-                        event.preventDefault();
-
-                        document
-                          .getElementById(
-                            section.id
-                          )
-                          ?.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start",
-                          });
-
+                      onClick={() =>
                         setActiveSection(
                           section.id
-                        );
-
-                      }}
+                        )
+                      }
                       className={`
                         block
                         border-l-2

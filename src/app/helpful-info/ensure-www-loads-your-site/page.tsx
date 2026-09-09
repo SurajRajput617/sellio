@@ -6,11 +6,9 @@ import Link from "next/link";
 import {
   ArrowRight,
   ArrowLeft,
-  ChevronRight,
-  Copy,
   Check,
   Info,
-  Link2,
+  Copy,
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
@@ -27,20 +25,16 @@ const sections = [
     label: "Overview",
   },
   {
-    id: "what-are-utms",
-    label: "What Are UTM Tags?",
+    id: "domain-record",
+    label: "Add a Domain Record",
   },
   {
-    id: "create-utm-link",
-    label: "How to Create a UTM Link",
+    id: "redirect-rules",
+    label: "Set Up Redirect Rules",
   },
   {
-    id: "using-utm",
-    label: "Using Your UTM Tag",
-  },
-  {
-    id: "utm-sms",
-    label: "Adding a UTM Link to SMS",
+    id: "https",
+    label: "Ensure HTTPS Is Enabled",
   },
 ];
 
@@ -49,7 +43,7 @@ const sections = [
    PAGE
 ============================================================ */
 
-export default function UTMTagsPage() {
+export default function EnsureWWWLoadsYourSitePage() {
 
   const [activeSection, setActiveSection] =
     useState("overview");
@@ -116,23 +110,24 @@ export default function UTMTagsPage() {
 
 
   /* ============================================================
-     UTM EXAMPLE
+     DNS EXAMPLE
   ============================================================ */
 
-  const utmExample =
-    `https://yourstore.com/product/example-product?utm_source=instagram&utm_medium=social&utm_campaign=spring-sale`;
+  const dnsExample = `Type: CNAME
+Name: www
+Target: your-sellio-domain.com`;
 
 
   /* ============================================================
-     COPY
+     COPY DNS
   ============================================================ */
 
-  const copyUTM = async () => {
+  const copyDNS = async () => {
 
     try {
 
       await navigator.clipboard.writeText(
-        utmExample
+        dnsExample
       );
 
       setCopied(true);
@@ -179,7 +174,6 @@ export default function UTMTagsPage() {
           "
         >
 
-
           {/* ==================================================
               LEFT SIDEBAR
           ================================================== */}
@@ -196,7 +190,6 @@ export default function UTMTagsPage() {
               min-w-0
             "
           >
-
 
             {/* ==================================================
                 OVERVIEW
@@ -221,7 +214,7 @@ export default function UTMTagsPage() {
                   text-coral
                 "
               >
-                Marketing & Analytics
+                Helpful Info
               </p>
 
 
@@ -233,7 +226,7 @@ export default function UTMTagsPage() {
                   tracking-tight
                 "
               >
-                UTM Tags
+                Ensure Your Website Loads Correctly
               </h1>
 
 
@@ -246,11 +239,11 @@ export default function UTMTagsPage() {
                   text-navy-mute
                 "
               >
-                UTM tags help you understand where visitors
-                come from when they reach your Sellio store.
-                They add useful campaign information to a
-                website URL so you can measure the performance
-                of your marketing links.
+                Make sure customers can reach your Sellio
+                storefront through the domain address you
+                expect them to use. Correct DNS records and
+                redirects help visitors reach the right
+                version of your website.
               </p>
 
 
@@ -263,10 +256,9 @@ export default function UTMTagsPage() {
                   text-navy-mute
                 "
               >
-                By adding campaign parameters to links shared
-                through social media, email, advertising, or
-                other channels, you can make your traffic
-                reports more useful and easier to understand.
+                This guide covers the basic domain
+                configuration steps to check when your
+                website address is not loading correctly.
               </p>
 
 
@@ -312,11 +304,10 @@ export default function UTMTagsPage() {
                       text-navy-mute
                     "
                   >
-                    UTM parameters do not change the page
-                    that a visitor reaches. They add
-                    information to the URL that analytics
-                    tools can use to identify the source
-                    and campaign.
+                    DNS changes can take some time to
+                    propagate. If you have just updated your
+                    domain records, allow time for the changes
+                    to become visible.
                   </p>
 
                 </div>
@@ -327,11 +318,11 @@ export default function UTMTagsPage() {
 
 
             {/* ==================================================
-                WHAT ARE UTM TAGS
+                DOMAIN RECORD
             ================================================== */}
 
             <section
-              id="what-are-utms"
+              id="domain-record"
               className="
                 scroll-mt-28
                 border-b
@@ -346,7 +337,7 @@ export default function UTMTagsPage() {
                   font-bold
                 "
               >
-                What Are UTM Tags?
+                Add a Domain Record
               </h2>
 
 
@@ -358,160 +349,10 @@ export default function UTMTagsPage() {
                   text-navy-mute
                 "
               >
-                UTM tags are small parameters added to the
-                end of a URL. They tell analytics platforms
-                where a visitor came from and which campaign
-                or promotion introduced them to your store.
-              </p>
-
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                For a Sellio store, you can use UTM tags to
-                compare traffic from different marketing
-                campaigns and understand which channels bring
-                visitors to your products.
-              </p>
-
-
-              {/* ==================================================
-                  UTM PARAMETERS
-              ================================================== */}
-
-              <div
-                className="
-                  mt-6
-                  grid
-                  gap-3
-                  sm:grid-cols-2
-                "
-              >
-
-                {[
-                  {
-                    name: "utm_source",
-                    text:
-                      "Identifies where the traffic came from, such as Instagram, email, or another marketing source.",
-                  },
-                  {
-                    name: "utm_medium",
-                    text:
-                      "Describes the marketing channel, such as social, email, or paid advertising.",
-                  },
-                  {
-                    name: "utm_campaign",
-                    text:
-                      "Identifies the specific campaign or promotion connected to the link.",
-                  },
-                  {
-                    name: "utm_content",
-                    text:
-                      "Can help distinguish between different links or creative versions within the same campaign.",
-                  },
-                ].map((item) => (
-
-                  <div
-                    key={item.name}
-                    className="
-                      rounded-lg
-                      border
-                      border-border
-                      p-5
-                    "
-                  >
-
-                    <div
-                      className="
-                        flex
-                        items-center
-                        gap-2
-                      "
-                    >
-
-                      <Link2
-                        className="
-                          h-4
-                          w-4
-                          text-coral
-                        "
-                      />
-
-
-                      <code
-                        className="
-                          text-xs
-                          font-semibold
-                          text-coral
-                        "
-                      >
-                        {item.name}
-                      </code>
-
-                    </div>
-
-
-                    <p
-                      className="
-                        mt-3
-                        text-sm
-                        leading-6
-                        text-navy-mute
-                      "
-                    >
-                      {item.text}
-                    </p>
-
-                  </div>
-
-                ))}
-
-              </div>
-
-            </section>
-
-
-            {/* ==================================================
-                CREATE UTM LINK
-            ================================================== */}
-
-            <section
-              id="create-utm-link"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                How to Create a UTM Link
-              </h2>
-
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Create a UTM link by starting with the Sellio
-                page you want visitors to open and then adding
-                campaign parameters that describe where the
-                link will be shared.
+                Your domain provider controls the DNS records
+                that tell browsers where your website should
+                load from. Check the DNS settings for the
+                domain connected to your Sellio store.
               </p>
 
 
@@ -523,11 +364,11 @@ export default function UTMTagsPage() {
               >
 
                 {[
-                  "Choose the Sellio product or storefront page you want to promote.",
-                  "Decide which marketing source will share the link.",
-                  "Choose a medium that describes the marketing channel.",
-                  "Give the campaign a clear and recognizable name.",
-                  "Add the UTM parameters to the destination URL.",
+                  "Sign in to the account where your domain DNS is managed.",
+                  "Open the DNS or domain records section.",
+                  "Find the record used for your website address.",
+                  "Add or update the required record using the values provided by your Sellio setup.",
+                  "Save the DNS changes.",
                 ].map((item, index) => (
 
                   <li
@@ -573,7 +414,7 @@ export default function UTMTagsPage() {
 
 
               {/* ==================================================
-                  URL EXAMPLE
+                  DNS CODE BLOCK
               ================================================== */}
 
               <div
@@ -605,13 +446,13 @@ export default function UTMTagsPage() {
                       text-white/70
                     "
                   >
-                    Example UTM URL
+                    Example DNS record
                   </span>
 
 
                   <button
                     type="button"
-                    onClick={copyUTM}
+                    onClick={copyDNS}
                     className="
                       flex
                       items-center
@@ -668,7 +509,7 @@ export default function UTMTagsPage() {
                   "
                 >
                   <code>
-                    {utmExample}
+                    {dnsExample}
                   </code>
                 </pre>
 
@@ -676,7 +517,7 @@ export default function UTMTagsPage() {
 
 
               {/* ==================================================
-                  URL BREAKDOWN
+                  WARNING
               ================================================== */}
 
               <div
@@ -686,144 +527,56 @@ export default function UTMTagsPage() {
                   border
                   border-border
                   bg-black/5
-                  p-5
+                  px-5
+                  py-4
                 "
               >
 
-                <p
-                  className="
-                    text-xs
-                    font-semibold
-                    uppercase
-                    tracking-wide
-                    text-navy-mute
-                  "
-                >
-                  Example breakdown
-                </p>
-
-
                 <div
                   className="
-                    mt-4
-                    space-y-3
+                    flex
+                    items-start
+                    gap-3
                   "
                 >
 
-                  <div
+                  <Info
                     className="
-                      flex
-                      flex-col
-                      gap-1
-                      sm:flex-row
-                      sm:items-center
-                      sm:gap-4
+                      mt-0.5
+                      h-4
+                      w-4
+                      shrink-0
+                      text-coral
+                    "
+                  />
+
+
+                  <p
+                    className="
+                      text-sm
+                      leading-6
+                      text-navy-mute
                     "
                   >
-
-                    <code
-                      className="
-                        text-xs
-                        font-semibold
-                        text-coral
-                      "
-                    >
-                      utm_source=instagram
-                    </code>
-
-
-                    <span
-                      className="
-                        text-sm
-                        text-navy-mute
-                      "
-                    >
-                      Traffic came from Instagram.
-                    </span>
-
-                  </div>
-
-
-                  <div
-                    className="
-                      flex
-                      flex-col
-                      gap-1
-                      sm:flex-row
-                      sm:items-center
-                      sm:gap-4
-                    "
-                  >
-
-                    <code
-                      className="
-                        text-xs
-                        font-semibold
-                        text-coral
-                      "
-                    >
-                      utm_medium=social
-                    </code>
-
-
-                    <span
-                      className="
-                        text-sm
-                        text-navy-mute
-                      "
-                    >
-                      The link was shared through a social
-                      channel.
-                    </span>
-
-                  </div>
-
-
-                  <div
-                    className="
-                      flex
-                      flex-col
-                      gap-1
-                      sm:flex-row
-                      sm:items-center
-                      sm:gap-4
-                    "
-                  >
-
-                    <code
-                      className="
-                        text-xs
-                        font-semibold
-                        text-coral
-                      "
-                    >
-                      utm_campaign=spring-sale
-                    </code>
-
-
-                    <span
-                      className="
-                        text-sm
-                        text-navy-mute
-                      "
-                    >
-                      The link belongs to the Spring Sale
-                      campaign.
-                    </span>
-
-                  </div>
+                    Use the exact DNS values shown in your
+                    Sellio domain configuration. Do not
+                    replace a working DNS record unless you
+                    know which service currently uses it.
+                  </p>
 
                 </div>
 
               </div>
 
             </section>
-                        {/* ==================================================
-                USING YOUR UTM TAG
+
+
+                  {/* ==================================================
+                REDIRECT RULES
             ================================================== */}
 
             <section
-              id="using-utm"
+              id="redirect-rules"
               className="
                 scroll-mt-28
                 border-b
@@ -838,7 +591,7 @@ export default function UTMTagsPage() {
                   font-bold
                 "
               >
-                Using Your UTM Tag
+                Set Up Redirect Rules
               </h2>
 
 
@@ -850,11 +603,10 @@ export default function UTMTagsPage() {
                   text-navy-mute
                 "
               >
-                Once you have created a UTM link, use that
-                exact URL in the marketing channel you want
-                to measure. The parameters remain attached
-                when a visitor follows the link to your
-                Sellio store.
+                A redirect sends visitors from one website
+                address to another. This can be useful when
+                you want customers to consistently reach the
+                preferred version of your Sellio storefront.
               </p>
 
 
@@ -866,201 +618,30 @@ export default function UTMTagsPage() {
                   text-navy-mute
                 "
               >
-                Keep your naming consistent across campaigns
-                so your analytics reports remain easier to
-                read and compare.
+                Before creating a redirect, check which
+                domain and URL should be the primary
+                destination for your store.
               </p>
 
 
               {/* ==================================================
-                  COMMON USES
+                  STEPS
               ================================================== */}
-
-              <div
-                className="
-                  mt-6
-                  space-y-3
-                "
-              >
-
-                {[
-                  {
-                    title: "Social Media",
-                    text:
-                      "Add UTM parameters to links shared on social platforms so you can identify traffic generated by those posts.",
-                  },
-                  {
-                    title: "Email Campaigns",
-                    text:
-                      "Use campaign links in promotional emails to understand which messages drive visitors to your storefront.",
-                  },
-                  {
-                    title: "Paid Advertising",
-                    text:
-                      "Add appropriate campaign parameters to advertising destination URLs so traffic sources can be compared.",
-                  },
-                  {
-                    title: "Promotions",
-                    text:
-                      "Create separate links for different promotions when you want to compare their performance.",
-                  },
-                ].map((item) => (
-
-                  <div
-                    key={item.title}
-                    className="
-                      rounded-lg
-                      border
-                      border-border
-                      p-5
-                    "
-                  >
-
-                    <h3
-                      className="
-                        text-sm
-                        font-semibold
-                      "
-                    >
-                      {item.title}
-                    </h3>
-
-
-                    <p
-                      className="
-                        mt-2
-                        text-sm
-                        leading-6
-                        text-navy-mute
-                      "
-                    >
-                      {item.text}
-                    </p>
-
-                  </div>
-
-                ))}
-
-              </div>
-
-
-              {/* ==================================================
-                  NAMING TIPS
-              ================================================== */}
-
-              <div
-                className="
-                  mt-6
-                  rounded-lg
-                  border
-                  border-border
-                  bg-black/5
-                  px-5
-                  py-5
-                "
-              >
-
-                <p
-                  className="
-                    text-sm
-                    font-semibold
-                  "
-                >
-                  Keep your UTM names consistent
-                </p>
-
-
-                <ul
-                  className="
-                    mt-3
-                    list-disc
-                    space-y-2
-                    pl-5
-                    text-sm
-                    leading-6
-                    text-navy-mute
-                  "
-                >
-
-                  <li>
-                    Use clear names that describe the
-                    campaign.
-                  </li>
-
-                  <li>
-                    Use the same spelling and capitalization
-                    conventions across campaigns.
-                  </li>
-
-                  <li>
-                    Avoid unnecessary spaces or confusing
-                    parameter values.
-                  </li>
-
-                  <li>
-                    Make campaign names easy for your team
-                    to recognize later.
-                  </li>
-
-                </ul>
-
-              </div>
-
-            </section>
-
-
-            {/* ==================================================
-                ADDING UTM LINK TO SMS
-            ================================================== */}
-
-            <section
-              id="utm-sms"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Adding a UTM Link to SMS
-              </h2>
-
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                You can also use UTM-tagged URLs in SMS
-                campaigns. This lets you distinguish visits
-                generated by a text message from traffic
-                generated by other channels.
-              </p>
-
 
               <ol
                 className="
                   mt-6
-                  space-y-3
+                  space-y-4
                 "
               >
 
                 {[
-                  "Create the destination URL for the Sellio page you want to promote.",
-                  "Add the UTM source, medium, and campaign parameters.",
-                  "Copy the completed URL.",
-                  "Place the URL in your SMS campaign.",
-                  "Review your analytics reports after customers begin visiting the link.",
+                  "Open the domain or DNS management area provided by your domain host.",
+                  "Locate the redirect or forwarding settings.",
+                  "Choose the source address that should redirect visitors.",
+                  "Enter the preferred destination address for your Sellio storefront.",
+                  "Save the redirect rule.",
+                  "Open the original address in a new browser window and confirm that it reaches the expected destination.",
                 ].map((item, index) => (
 
                   <li
@@ -1106,84 +687,12 @@ export default function UTMTagsPage() {
 
 
               {/* ==================================================
-                  SMS EXAMPLE
+                  REDIRECT NOTE
               ================================================== */}
 
               <div
                 className="
                   mt-6
-                  rounded-lg
-                  border
-                  border-border
-                  bg-black/5
-                  p-5
-                "
-              >
-
-                <p
-                  className="
-                    text-xs
-                    font-semibold
-                    uppercase
-                    tracking-wide
-                    text-navy-mute
-                  "
-                >
-                  Example
-                </p>
-
-
-                <p
-                  className="
-                    mt-3
-                    text-sm
-                    leading-6
-                    text-navy-mute
-                  "
-                >
-                  A promotional SMS could direct customers
-                  to a Sellio product page using a campaign
-                  URL such as:
-                </p>
-
-
-                <div
-                  className="
-                    mt-4
-                    overflow-hidden
-                    rounded-md
-                    border
-                    border-border
-                    bg-[#101a2c]
-                  "
-                >
-
-                  <pre
-                    className="
-                      overflow-x-auto
-                      p-4
-                      text-xs
-                      leading-6
-                      text-white/85
-                    "
-                  >
-                    <code>
-                      {`https://yourstore.com/products/example-product?utm_source=sms&utm_medium=message&utm_campaign=spring-sale`}
-                    </code>
-                  </pre>
-
-                </div>
-
-              </div>
-
-
-              {/* ==================================================
-                  IMPORTANT NOTE
-              ================================================== */}
-
-              <div
-                className="
-                  mt-5
                   rounded-lg
                   border
                   border-border
@@ -1219,10 +728,10 @@ export default function UTMTagsPage() {
                       text-navy-mute
                     "
                   >
-                    Keep links reasonably short when using
-                    them in messages. If a URL becomes difficult
-                    to read, consider using a trusted link
-                    management solution.
+                    Avoid creating multiple redirect rules
+                    for the same address. Keep one clear
+                    destination for each domain or URL
+                    whenever possible.
                   </p>
 
                 </div>
@@ -1233,11 +742,11 @@ export default function UTMTagsPage() {
 
 
             {/* ==================================================
-                UTM NAMING BEST PRACTICES
+                HTTPS
             ================================================== */}
 
             <section
-              id="utm-best-practices"
+              id="https"
               className="
                 scroll-mt-28
                 border-b
@@ -1252,7 +761,7 @@ export default function UTMTagsPage() {
                   font-bold
                 "
               >
-                UTM Naming Best Practices
+                Ensure HTTPS Is Enabled
               </h2>
 
 
@@ -1264,265 +773,232 @@ export default function UTMTagsPage() {
                   text-navy-mute
                 "
               >
-                Consistent naming is important because
-                analytics reports use your UTM values to
-                group and identify campaign traffic.
+                Your storefront should use a secure HTTPS
+                connection. HTTPS protects information
+                exchanged between a visitor's browser and
+                your website.
+              </p>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                After connecting your domain, check that
+                your storefront opens with
+                <code
+                  className="
+                    mx-1
+                    rounded
+                    bg-black/5
+                    px-1.5
+                    py-0.5
+                    font-mono
+                    text-xs
+                    text-coral
+                  "
+                >
+                  https://
+                </code>
+                rather than an unsecured HTTP address.
               </p>
 
 
               {/* ==================================================
-                  BEST PRACTICE TABLE
+                  HTTPS CHECKLIST
               ================================================== */}
 
               <div
                 className="
                   mt-6
-                  overflow-x-auto
-                  rounded-lg
-                  border
-                  border-border
+                  space-y-3
                 "
               >
 
-                <table
-                  className="
-                    w-full
-                    min-w-[600px]
-                    text-left
-                    text-sm
-                  "
-                >
+                {[
+                  "Open your Sellio storefront using its main domain.",
+                  "Confirm that the browser address begins with https://.",
+                  "Check that the page loads without a certificate warning.",
+                  "Test the preferred domain and any configured alternate address.",
+                  "Confirm that visitors are sent to the correct secure destination.",
+                ].map((item) => (
 
-                  <thead
+                  <div
+                    key={item}
                     className="
-                      bg-black/5
+                      flex
+                      items-start
+                      gap-3
+                      rounded-lg
+                      border
+                      border-border
+                      px-4
+                      py-3
                     "
                   >
 
-                    <tr>
-
-                      <th
-                        className="
-                          px-4
-                          py-3
-                          font-semibold
-                        "
-                      >
-                        Parameter
-                      </th>
-
-                      <th
-                        className="
-                          px-4
-                          py-3
-                          font-semibold
-                        "
-                      >
-                        Good Example
-                      </th>
-
-                      <th
-                        className="
-                          px-4
-                          py-3
-                          font-semibold
-                        "
-                      >
-                        Purpose
-                      </th>
-
-                    </tr>
-
-                  </thead>
-
-
-                  <tbody>
-
-                    <tr
+                    <Check
                       className="
-                        border-t
-                        border-border
+                        mt-0.5
+                        h-4
+                        w-4
+                        shrink-0
+                        text-coral
+                      "
+                    />
+
+
+                    <span
+                      className="
+                        text-sm
+                        leading-6
+                        text-navy-mute
                       "
                     >
+                      {item}
+                    </span>
 
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          font-mono
-                          text-xs
-                          text-coral
-                        "
-                      >
-                        source
-                      </td>
+                  </div>
 
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          font-mono
-                          text-xs
-                          text-navy-mute
-                        "
-                      >
-                        instagram
-                      </td>
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          text-navy-mute
-                        "
-                      >
-                        Identifies the traffic source.
-                      </td>
-
-                    </tr>
-
-
-                    <tr
-                      className="
-                        border-t
-                        border-border
-                      "
-                    >
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          font-mono
-                          text-xs
-                          text-coral
-                        "
-                      >
-                        medium
-                      </td>
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          font-mono
-                          text-xs
-                          text-navy-mute
-                        "
-                      >
-                        social
-                      </td>
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          text-navy-mute
-                        "
-                      >
-                        Identifies the marketing channel.
-                      </td>
-
-                    </tr>
-
-
-                    <tr
-                      className="
-                        border-t
-                        border-border
-                      "
-                    >
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          font-mono
-                          text-xs
-                          text-coral
-                        "
-                      >
-                        campaign
-                      </td>
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          font-mono
-                          text-xs
-                          text-navy-mute
-                        "
-                      >
-                        spring-sale
-                      </td>
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          text-navy-mute
-                        "
-                      >
-                        Identifies the promotion or campaign.
-                      </td>
-
-                    </tr>
-
-
-                    <tr
-                      className="
-                        border-t
-                        border-border
-                      "
-                    >
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          font-mono
-                          text-xs
-                          text-coral
-                        "
-                      >
-                        content
-                      </td>
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          font-mono
-                          text-xs
-                          text-navy-mute
-                        "
-                      >
-                        hero-banner
-                      </td>
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          text-navy-mute
-                        "
-                      >
-                        Distinguishes different links or
-                        creatives.
-                      </td>
-
-                    </tr>
-
-                  </tbody>
-
-                </table>
+                ))}
 
               </div>
 
 
               {/* ==================================================
-                  CONSISTENCY CALLOUT
+                  HTTPS CALLOUT
+              ================================================== */}
+
+              <div
+                className="
+                  mt-6
+                  rounded-lg
+                  border
+                  border-border
+                  bg-black/5
+                  px-5
+                  py-5
+                "
+              >
+
+                <p
+                  className="
+                    text-sm
+                    font-semibold
+                  "
+                >
+                  If HTTPS is not working
+                </p>
+
+
+                <p
+                  className="
+                    mt-2
+                    text-sm
+                    leading-6
+                    text-navy-mute
+                  "
+                >
+                  Check your domain configuration first.
+                  Make sure the domain points to the correct
+                  destination and that there are no conflicting
+                  DNS or redirect settings.
+                </p>
+
+              </div>
+
+            </section>
+
+
+            {/* ==================================================
+                DOMAIN CHECKLIST
+            ================================================== */}
+
+            <section
+              id="domain-checklist"
+              className="
+                scroll-mt-28
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Final Domain Checklist
+              </h2>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                Use this quick checklist after making your
+                domain changes.
+              </p>
+
+
+              <ul
+                className="
+                  mt-6
+                  space-y-3
+                "
+              >
+
+                {[
+                  "The correct DNS record is configured.",
+                  "Your preferred website address opens successfully.",
+                  "Redirect rules point visitors to the intended destination.",
+                  "Your storefront loads over HTTPS.",
+                  "The domain works on both desktop and mobile browsers.",
+                ].map((item) => (
+
+                  <li
+                    key={item}
+                    className="
+                      flex
+                      items-start
+                      gap-3
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+
+                    <Check
+                      className="
+                        mt-0.5
+                        h-4
+                        w-4
+                        shrink-0
+                        text-coral
+                      "
+                    />
+
+                    <span>
+                      {item}
+                    </span>
+
+                  </li>
+
+                ))}
+
+              </ul>
+
+
+              {/* ==================================================
+                  DNS PROPAGATION NOTE
               ================================================== */}
 
               <div
@@ -1537,29 +1013,44 @@ export default function UTMTagsPage() {
                 "
               >
 
-                <p
+                <div
                   className="
-                    text-sm
-                    leading-6
-                    text-navy-mute
+                    flex
+                    items-start
+                    gap-3
                   "
                 >
-                  For example, avoid using both
-                  <code className="mx-1 font-mono text-xs text-coral">
-                    Instagram
-                  </code>
-                  and
-                  <code className="mx-1 font-mono text-xs text-coral">
-                    instagram
-                  </code>
-                  for the same traffic source if your
-                  reporting convention expects one format.
-                </p>
+
+                  <Info
+                    className="
+                      mt-0.5
+                      h-4
+                      w-4
+                      shrink-0
+                      text-coral
+                    "
+                  />
+
+
+                  <p
+                    className="
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+                    If a recent DNS change does not appear
+                    immediately, allow time for the change to
+                    propagate before making additional
+                    modifications.
+                  </p>
+
+                </div>
 
               </div>
 
             </section>
-                        {/* ==================================================
+ {/* ==================================================
                 NEED HELP
             ================================================== */}
 
@@ -1572,7 +1063,6 @@ export default function UTMTagsPage() {
                 py-8
               "
             >
-
               <div
                 className="
                   rounded-lg
@@ -1583,7 +1073,6 @@ export default function UTMTagsPage() {
                   py-6
                 "
               >
-
                 <p
                   className="
                     text-xs
@@ -1596,7 +1085,6 @@ export default function UTMTagsPage() {
                   Support
                 </p>
 
-
                 <h2
                   className="
                     mt-2
@@ -1607,6 +1095,19 @@ export default function UTMTagsPage() {
                   Need Help?
                 </h2>
 
+                <p
+                  className="
+                    mt-3
+                    max-w-2xl
+                    text-sm
+                    leading-7
+                    text-navy-mute
+                  "
+                >
+                  If your domain is not loading correctly,
+                  review the DNS record, redirect settings,
+                  and HTTPS configuration for your storefront.
+                </p>
 
                 <p
                   className="
@@ -1617,27 +1118,10 @@ export default function UTMTagsPage() {
                     text-navy-mute
                   "
                 >
-                  If your UTM links are not appearing as
-                  expected in your analytics reports, check
-                  that the parameters were added correctly
-                  and that the complete URL is being used.
+                  If everything looks correct but your website
+                  still does not load as expected, contact
+                  Sellio support for assistance.
                 </p>
-
-
-                <p
-                  className="
-                    mt-3
-                    max-w-2xl
-                    text-sm
-                    leading-7
-                    text-navy-mute
-                  "
-                >
-                  If you still need assistance with your
-                  analytics or campaign tracking setup,
-                  contact Sellio support.
-                </p>
-
 
                 <Link
                   href="/#contact"
@@ -1662,11 +1146,8 @@ export default function UTMTagsPage() {
                   <ArrowRight
                     className="h-4 w-4"
                   />
-
                 </Link>
-
               </div>
-
             </section>
 
 
@@ -1681,7 +1162,6 @@ export default function UTMTagsPage() {
                 py-8
               "
             >
-
               <p
                 className="
                   text-xs
@@ -1694,7 +1174,6 @@ export default function UTMTagsPage() {
                 Continue Learning
               </p>
 
-
               <h2
                 className="
                   mt-2
@@ -1705,7 +1184,6 @@ export default function UTMTagsPage() {
                 Related Guides
               </h2>
 
-
               <p
                 className="
                   mt-3
@@ -1714,9 +1192,9 @@ export default function UTMTagsPage() {
                   text-navy-mute
                 "
               >
-                Explore more Sellio documentation to learn
-                about analytics, campaigns, and customer
-                activity.
+                Continue exploring Sellio documentation for
+                more information about domains, analytics,
+                and store setup.
               </p>
 
 
@@ -1730,11 +1208,11 @@ export default function UTMTagsPage() {
               >
 
                 {/* ==================================================
-                    GOOGLE ANALYTICS
+                    DOMAIN SETUP
                 ================================================== */}
 
                 <Link
-                  href="/documentation/google-analytics"
+                  href="/getting-started/add-domain"
                   className="
                     group
                     rounded-lg
@@ -1745,7 +1223,79 @@ export default function UTMTagsPage() {
                     hover:border-coral
                   "
                 >
+                  <p
+                    className="
+                      text-xs
+                      text-navy-mute
+                    "
+                  >
+                    Getting Started
+                  </p>
 
+                  <h3
+                    className="
+                      mt-2
+                      text-sm
+                      font-semibold
+                      group-hover:text-coral
+                    "
+                  >
+                    Add Your Domain to Sellio
+                  </h3>
+
+                  <p
+                    className="
+                      mt-2
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+                    Learn more about connecting your domain
+                    to your Sellio store.
+                  </p>
+
+                  <span
+                    className="
+                      mt-4
+                      inline-flex
+                      items-center
+                      gap-1.5
+                      text-xs
+                      font-semibold
+                      text-coral
+                    "
+                  >
+                    Read guide
+
+                    <ArrowRight
+                      className="
+                        h-3.5
+                        w-3.5
+                        transition-transform
+                        group-hover:translate-x-1
+                      "
+                    />
+                  </span>
+                </Link>
+
+
+                {/* ==================================================
+                    GOOGLE ANALYTICS
+                ================================================== */}
+
+                <Link
+                  href="/helpful-info/google-analytics"
+                  className="
+                    group
+                    rounded-lg
+                    border
+                    border-border
+                    p-5
+                    transition-colors
+                    hover:border-coral
+                  "
+                >
                   <p
                     className="
                       text-xs
@@ -1754,7 +1304,6 @@ export default function UTMTagsPage() {
                   >
                     Analytics
                   </p>
-
 
                   <h3
                     className="
@@ -1767,7 +1316,6 @@ export default function UTMTagsPage() {
                     Google Analytics
                   </h3>
 
-
                   <p
                     className="
                       mt-2
@@ -1776,11 +1324,9 @@ export default function UTMTagsPage() {
                       text-navy-mute
                     "
                   >
-                    Learn how to connect analytics to your
-                    Sellio storefront and review visitor
-                    activity.
+                    Learn how to connect analytics and
+                    understand activity from your store.
                   </p>
-
 
                   <span
                     className="
@@ -1795,7 +1341,7 @@ export default function UTMTagsPage() {
                   >
                     Read guide
 
-                    <ChevronRight
+                    <ArrowRight
                       className="
                         h-3.5
                         w-3.5
@@ -1803,92 +1349,10 @@ export default function UTMTagsPage() {
                         group-hover:translate-x-1
                       "
                     />
-
                   </span>
-
-                </Link>
-
-
-                {/* ==================================================
-                    GOOGLE ANALYTICS TRACKING
-                ================================================== */}
-
-                <Link
-                  href="/documentation/what-google-analytics-tracks"
-                  className="
-                    group
-                    rounded-lg
-                    border
-                    border-border
-                    p-5
-                    transition-colors
-                    hover:border-coral
-                  "
-                >
-
-                  <p
-                    className="
-                      text-xs
-                      text-navy-mute
-                    "
-                  >
-                    Analytics
-                  </p>
-
-
-                  <h3
-                    className="
-                      mt-2
-                      text-sm
-                      font-semibold
-                      group-hover:text-coral
-                    "
-                  >
-                    What Google Analytics Tracks
-                  </h3>
-
-
-                  <p
-                    className="
-                      mt-2
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-                    Understand the types of activity that
-                    analytics can measure on your storefront.
-                  </p>
-
-
-                  <span
-                    className="
-                      mt-4
-                      inline-flex
-                      items-center
-                      gap-1.5
-                      text-xs
-                      font-semibold
-                      text-coral
-                    "
-                  >
-                    Read guide
-
-                    <ChevronRight
-                      className="
-                        h-3.5
-                        w-3.5
-                        transition-transform
-                        group-hover:translate-x-1
-                      "
-                    />
-
-                  </span>
-
                 </Link>
 
               </div>
-
             </section>
 
 
@@ -1908,11 +1372,11 @@ export default function UTMTagsPage() {
             >
 
               {/* ==================================================
-                  PREVIOUS PAGE
+                  PREVIOUS
               ================================================== */}
 
               <Link
-                href="/documentation/what-google-analytics-tracks"
+                href="/helpful-info/creating-a-free-entry-competition"
                 className="
                   group
                   rounded-lg
@@ -1924,7 +1388,6 @@ export default function UTMTagsPage() {
                   hover:border-coral
                 "
               >
-
                 <p
                   className="
                     text-xs
@@ -1933,7 +1396,6 @@ export default function UTMTagsPage() {
                 >
                   Previous
                 </p>
-
 
                 <div
                   className="
@@ -1946,24 +1408,21 @@ export default function UTMTagsPage() {
                     group-hover:text-coral
                   "
                 >
-
                   <ArrowLeft
                     className="h-4 w-4"
                   />
 
-                  What Google Analytics Tracks
-
+              Creating a Free Entry Competition
                 </div>
-
               </Link>
 
 
               {/* ==================================================
-                  NEXT PAGE
+                  NEXT
               ================================================== */}
 
               <Link
-                href="/documentation/creating-a-free-entry-competition"
+                href="/helpful-info/pci-compliance-scan"
                 className="
                   group
                   rounded-lg
@@ -1976,7 +1435,6 @@ export default function UTMTagsPage() {
                   hover:border-coral
                 "
               >
-
                 <p
                   className="
                     text-xs
@@ -1985,7 +1443,6 @@ export default function UTMTagsPage() {
                 >
                   Next
                 </p>
-
 
                 <div
                   className="
@@ -1999,15 +1456,12 @@ export default function UTMTagsPage() {
                     group-hover:text-coral
                   "
                 >
-
-                  Creating a Free Entry Competition
+              Pci-Compliance-Scan
 
                   <ArrowRight
                     className="h-4 w-4"
                   />
-
                 </div>
-
               </Link>
 
             </div>
@@ -2027,11 +1481,12 @@ export default function UTMTagsPage() {
               Last updated recently
             </div>
 
+
           </article>
 
 
           {/* ==================================================
-              RIGHT SIDE — ON THIS PAGE
+              RIGHT SIDE TOC
           ================================================== */}
 
           <aside
@@ -2074,13 +1529,15 @@ export default function UTMTagsPage() {
                 {sections.map((section) => {
 
                   const isActive =
-                    activeSection === section.id;
+                    activeSection ===
+                    section.id;
 
                   return (
                     <a
                       key={section.id}
                       href={`#${section.id}`}
                       onClick={(event) => {
+
                         event.preventDefault();
 
                         document
@@ -2088,13 +1545,16 @@ export default function UTMTagsPage() {
                             section.id
                           )
                           ?.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start",
+                            behavior:
+                              "smooth",
+                            block:
+                              "start",
                           });
 
                         setActiveSection(
                           section.id
                         );
+
                       }}
                       className={`
                         block

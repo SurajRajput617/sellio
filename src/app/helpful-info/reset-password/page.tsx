@@ -1436,7 +1436,7 @@ export default function ResetPasswordPage() {
                 ================================================== */}
 
                 <Link
-                  href="/documentation/set-up-email-inbox"
+                  href="/essential-settings/email-setup"
                   className="
                     group
                     rounded-lg
@@ -1511,7 +1511,7 @@ export default function ResetPasswordPage() {
                 ================================================== */}
 
                 <Link
-                  href="/documentation/image-size-guide"
+                  href="/helpful-info/image-size-guide"
                   className="
                     group
                     rounded-lg
@@ -1605,7 +1605,7 @@ export default function ResetPasswordPage() {
               ================================================== */}
 
               <Link
-                href="/documentation/image-size-guide"
+                href="/helpful-info/image-size-guide"
                 className="
                   group
                   rounded-lg
@@ -1655,7 +1655,7 @@ export default function ResetPasswordPage() {
               ================================================== */}
 
               <Link
-                href="/documentation/checklist"
+                href="/helpful-info/checklist"
                 className="
                   group
                   rounded-lg

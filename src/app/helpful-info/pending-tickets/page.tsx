@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
+  ArrowRight,
+  ArrowLeft,
   Check,
   Info,
-  ArrowLeft,
-  ArrowRight,
-  ClipboardCheck,
+  Clock3,
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
@@ -16,35 +16,51 @@ import Footer from "@/components/Footer";
 import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 
+/* ============================================================
+   ON THIS PAGE
+============================================================ */
+
 const sections = [
   {
-    id: "store-checklist",
-    label: "Store Launch Checklist",
+    id: "overview",
+    label: "Overview",
   },
   {
-    id: "products",
-    label: "Products",
+    id: "find-tickets",
+    label: "Where to Find Tickets",
   },
   {
-    id: "checkout",
-    label: "Checkout & Payments",
+    id: "ticket-status",
+    label: "What the Status Shows",
   },
   {
-    id: "storefront",
-    label: "Storefront Review",
+    id: "reading-ticket",
+    label: "Reading a Ticket",
   },
   {
-    id: "final-check",
-    label: "Final Check",
+    id: "cancelled-requests",
+    label: "Cancelled Requests",
+  },
+  {
+    id: "need-help",
+    label: "Need Help",
   },
 ];
 
 
-export default function ChecklistPage() {
+/* ============================================================
+   PAGE
+============================================================ */
+
+export default function PendingSupportRequestsPage() {
 
   const [activeSection, setActiveSection] =
-    useState("store-checklist");
+    useState("overview");
 
+
+  /* ============================================================
+     SCROLL SPY
+  ============================================================ */
 
   useEffect(() => {
 
@@ -59,11 +75,15 @@ export default function ChecklistPage() {
       sections.forEach((section) => {
 
         const element =
-          document.getElementById(section.id);
+          document.getElementById(
+            section.id
+          );
 
         if (!element) return;
 
-        if (element.offsetTop <= position) {
+        if (
+          element.offsetTop <= position
+        ) {
           current = section.id;
         }
 
@@ -78,8 +98,11 @@ export default function ChecklistPage() {
     window.addEventListener(
       "scroll",
       handleScroll,
-      { passive: true }
+      {
+        passive: true,
+      }
     );
+
 
     return () => {
       window.removeEventListener(
@@ -93,12 +116,16 @@ export default function ChecklistPage() {
 
   return (
     <>
-      {/* ==================================================
+      {/* ======================================================
           SELLIO HEADER
-      ================================================== */}
+      ====================================================== */}
 
       <Navbar />
 
+
+      {/* ======================================================
+          DOCUMENTATION CONTENT
+      ====================================================== */}
 
       <main
         className="
@@ -126,17 +153,23 @@ export default function ChecklistPage() {
 
 
           {/* ==================================================
-              ARTICLE
+              MAIN ARTICLE
           ================================================== */}
 
-          <article className="min-w-0">
+          <article
+            className="
+              min-w-0
+            "
+          >
 
             {/* ==================================================
-                HEADER
+                OVERVIEW
             ================================================== */}
 
-            <header
+            <section
+              id="overview"
               className="
+                scroll-mt-28
                 border-b
                 border-border
                 pb-8
@@ -165,7 +198,7 @@ export default function ChecklistPage() {
                 "
               >
 
-                <ClipboardCheck
+                <Clock3
                   className="
                     mt-1
                     h-6
@@ -175,6 +208,7 @@ export default function ChecklistPage() {
                   "
                 />
 
+
                 <h1
                   className="
                     text-3xl
@@ -182,7 +216,7 @@ export default function ChecklistPage() {
                     tracking-tight
                   "
                 >
-                  Checklist
+                  Pending Support Requests
                 </h1>
 
               </div>
@@ -197,14 +231,32 @@ export default function ChecklistPage() {
                   text-navy-mute
                 "
               >
-                Use this checklist to make sure your Sellio
-                store is ready before you start accepting
-                customers.
+                Keep an eye on support requests that still
+                need attention. Reviewing pending requests
+                helps your team understand which customer
+                questions remain open and what needs to
+                happen next.
+              </p>
+
+
+              <p
+                className="
+                  mt-4
+                  max-w-3xl
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                This guide explains where to find pending
+                requests, how to understand their status,
+                and how to review the information associated
+                with each request.
               </p>
 
 
               {/* ==================================================
-                  INTRO CALLOUT
+                  INFO CALLOUT
               ================================================== */}
 
               <div
@@ -237,6 +289,7 @@ export default function ChecklistPage() {
                     "
                   />
 
+
                   <p
                     className="
                       text-sm
@@ -244,128 +297,13 @@ export default function ChecklistPage() {
                       text-navy-mute
                     "
                   >
-                    Complete each section before launch so
-                    customers can browse products, place
-                    orders, and receive the information they
-                    need from your store.
+                    A pending request simply means that
+                    additional attention or action may still
+                    be required. Review the request details
+                    before deciding what action to take.
                   </p>
 
                 </div>
-
-              </div>
-
-            </header>
-
-
-            {/* ==================================================
-                STORE LAUNCH CHECKLIST
-            ================================================== */}
-
-            <section
-              id="store-checklist"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Store Launch Checklist
-              </h2>
-
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Before launching your Sellio store, review
-                the key areas below and confirm that everything
-                is ready.
-              </p>
-
-
-              <div
-                className="
-                  mt-6
-                  space-y-3
-                "
-              >
-
-                {[
-                  "Confirm your store name and business information.",
-                  "Add the products you want customers to purchase.",
-                  "Review product prices and descriptions.",
-                  "Check your store navigation and important pages.",
-                  "Configure your available payment options.",
-                  "Review shipping and order settings.",
-                  "Test the customer checkout experience.",
-                  "Confirm your contact information is correct.",
-                ].map((item) => (
-
-                  <div
-                    key={item}
-                    className="
-                      flex
-                      items-start
-                      gap-3
-                      rounded-md
-                      border
-                      border-border
-                      px-4
-                      py-3
-                    "
-                  >
-
-                    <span
-                      className="
-                        mt-0.5
-                        flex
-                        h-5
-                        w-5
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-sm
-                        border
-                        border-border
-                      "
-                    >
-
-                      <Check
-                        className="
-                          h-3
-                          w-3
-                          text-coral
-                        "
-                      />
-
-                    </span>
-
-
-                    <span
-                      className="
-                        text-sm
-                        leading-6
-                        text-navy-mute
-                      "
-                    >
-                      {item}
-                    </span>
-
-                  </div>
-
-                ))}
 
               </div>
 
@@ -373,11 +311,11 @@ export default function ChecklistPage() {
 
 
             {/* ==================================================
-                PRODUCTS
+                WHERE TO FIND TICKETS
             ================================================== */}
 
             <section
-              id="products"
+              id="find-tickets"
               className="
                 scroll-mt-28
                 border-b
@@ -392,7 +330,7 @@ export default function ChecklistPage() {
                   font-bold
                 "
               >
-                Products
+                Where to Find Tickets
               </h2>
 
 
@@ -404,27 +342,25 @@ export default function ChecklistPage() {
                   text-navy-mute
                 "
               >
-                Review your product catalog before launch.
-                Customers should have enough information to
-                understand what they are purchasing.
+                Pending customer requests can be reviewed
+                from the support area of your Sellio
+                workspace.
               </p>
 
 
-              <ul
+              <ol
                 className="
                   mt-6
-                  space-y-3
+                  space-y-4
                 "
               >
 
                 {[
-                  "Product names are clear and accurate.",
-                  "Product descriptions contain the important details customers need.",
-                  "Prices are correct.",
-                  "Product images are clear and properly sized.",
-                  "Products are assigned to the correct collections.",
-                  "Unavailable products are correctly marked.",
-                ].map((item) => (
+                  "Open your Sellio dashboard.",
+                  "Go to the customer support or requests area.",
+                  "Open the list of requests that require attention.",
+                  "Review the request status to identify items that are still pending.",
+                ].map((item, index) => (
 
                   <li
                     key={item}
@@ -438,175 +374,38 @@ export default function ChecklistPage() {
                     "
                   >
 
-                    <Check
-                      className="
-                        mt-0.5
-                        h-4
-                        w-4
-                        shrink-0
-                        text-coral
-                      "
-                    />
-
-                    <span>
-                      {item}
-                    </span>
-
-                  </li>
-
-                ))}
-
-              </ul>
-
-
-              <div
-                className="
-                  mt-6
-                  rounded-lg
-                  border
-                  border-border
-                  bg-black/5
-                  px-5
-                  py-4
-                "
-              >
-
-                <p
-                  className="
-                    text-sm
-                    leading-6
-                    text-navy-mute
-                  "
-                >
-                  <strong className="text-navy">
-                    Tip:
-                  </strong>{" "}
-                  Open several product pages as a customer
-                  would and check the information from their
-                  point of view.
-                </p>
-
-              </div>
-
-            </section>
-
-
-                      {/* ==================================================
-                CHECKOUT & PAYMENTS
-            ================================================== */}
-
-            <section
-              id="checkout"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Checkout & Payments
-              </h2>
-
-
-              <p
-                className="
-                  mt-4
-                  max-w-3xl
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Test the complete purchasing experience
-                before your store goes live. A customer
-                should be able to move from product selection
-                to order confirmation without confusion.
-              </p>
-
-
-              <div
-                className="
-                  mt-6
-                  space-y-3
-                "
-              >
-
-                {[
-                  "Confirm your payment options are configured correctly.",
-                  "Check that product prices appear correctly at checkout.",
-                  "Review shipping charges and available delivery options.",
-                  "Test the checkout flow from cart to order confirmation.",
-                  "Make sure required customer information is clearly requested.",
-                  "Confirm the order confirmation page displays correctly.",
-                  "Verify that order confirmation emails are being sent.",
-                ].map((item) => (
-
-                  <div
-                    key={item}
-                    className="
-                      flex
-                      items-start
-                      gap-3
-                      rounded-md
-                      border
-                      border-border
-                      px-4
-                      py-3
-                    "
-                  >
-
                     <span
                       className="
-                        mt-0.5
                         flex
-                        h-5
-                        w-5
+                        h-6
+                        w-6
                         shrink-0
                         items-center
                         justify-center
-                        rounded-sm
-                        border
-                        border-border
+                        rounded-md
+                        bg-black/5
+                        text-xs
+                        font-semibold
+                        text-coral
                       "
                     >
-
-                      <Check
-                        className="
-                          h-3
-                          w-3
-                          text-coral
-                        "
-                      />
-
+                      {index + 1}
                     </span>
 
 
-                    <span
-                      className="
-                        text-sm
-                        leading-6
-                        text-navy-mute
-                      "
-                    >
+                    <span>
                       {item}
                     </span>
 
-                  </div>
+                  </li>
 
                 ))}
 
-              </div>
+              </ol>
 
 
               {/* ==================================================
-                  CHECKOUT NOTE
+                  QUICK TIP
               ================================================== */}
 
               <div
@@ -618,309 +417,6 @@ export default function ChecklistPage() {
                   bg-black/5
                   px-5
                   py-4
-                "
-              >
-
-                <div
-                  className="
-                    flex
-                    items-start
-                    gap-3
-                  "
-                >
-
-                  <Info
-                    className="
-                      mt-0.5
-                      h-4
-                      w-4
-                      shrink-0
-                      text-coral
-                    "
-                  />
-
-                  <p
-                    className="
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-                    Complete a full test purchase before
-                    launch. Review every step from adding an
-                    item to the cart through the final order
-                    confirmation.
-                  </p>
-
-                </div>
-
-              </div>
-
-            </section>
-
-
-            {/* ==================================================
-                STOREFRONT REVIEW
-            ================================================== */}
-
-            <section
-              id="storefront"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Storefront Review
-              </h2>
-
-
-              <p
-                className="
-                  mt-4
-                  max-w-3xl
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Review your storefront as if you were a
-                first-time customer. Make sure visitors can
-                easily understand your products and find the
-                information they need.
-              </p>
-
-
-              <ul
-                className="
-                  mt-6
-                  space-y-3
-                "
-              >
-
-                {[
-                  "Your logo and store name are displayed correctly.",
-                  "Navigation links take customers to the correct pages.",
-                  "Product and collection pages are easy to find.",
-                  "Contact and support information is accurate.",
-                  "About and business information is complete.",
-                  "Important policies and store information are available.",
-                  "Images display correctly on desktop and mobile.",
-                  "Buttons and links work as expected.",
-                ].map((item) => (
-
-                  <li
-                    key={item}
-                    className="
-                      flex
-                      items-start
-                      gap-3
-                      text-sm
-                      leading-6
-                      text-navy-mute
-                    "
-                  >
-
-                    <Check
-                      className="
-                        mt-0.5
-                        h-4
-                        w-4
-                        shrink-0
-                        text-coral
-                      "
-                    />
-
-                    <span>
-                      {item}
-                    </span>
-
-                  </li>
-
-                ))}
-
-              </ul>
-
-
-              {/* ==================================================
-                  MOBILE REVIEW
-              ================================================== */}
-
-              <div
-                className="
-                  mt-6
-                  rounded-lg
-                  border
-                  border-border
-                  p-5
-                "
-              >
-
-                <h3
-                  className="
-                    text-sm
-                    font-semibold
-                  "
-                >
-                  Check Mobile Too
-                </h3>
-
-
-                <p
-                  className="
-                    mt-2
-                    text-sm
-                    leading-6
-                    text-navy-mute
-                  "
-                >
-                  Open your storefront on a phone or narrow
-                  browser window. Check that menus, product
-                  images, buttons, forms, and checkout remain
-                  easy to use.
-                </p>
-
-              </div>
-
-            </section>
-
-
-            {/* ==================================================
-                FINAL CHECK
-            ================================================== */}
-
-            <section
-              id="final-check"
-              className="
-                scroll-mt-28
-                border-b
-                border-border
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Final Check
-              </h2>
-
-
-              <p
-                className="
-                  mt-4
-                  max-w-3xl
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Before you announce your store, perform one
-                final review. Fix anything that could prevent
-                customers from browsing, purchasing, or
-                contacting your business.
-              </p>
-
-
-              <div
-                className="
-                  mt-6
-                  rounded-lg
-                  border
-                  border-border
-                  bg-black/5
-                  p-5
-                "
-              >
-
-                <div
-                  className="
-                    space-y-4
-                  "
-                >
-
-                  {[
-                    "Store information is complete.",
-                    "Products and prices have been reviewed.",
-                    "Navigation and important links work.",
-                    "Payment and shipping settings are ready.",
-                    "Checkout has been tested.",
-                    "Customer emails are working.",
-                    "The storefront has been reviewed on mobile.",
-                    "Contact and support information is correct.",
-                  ].map((item) => (
-
-                    <div
-                      key={item}
-                      className="
-                        flex
-                        items-start
-                        gap-3
-                        text-sm
-                        leading-6
-                        text-navy-mute
-                      "
-                    >
-
-                      <span
-                        className="
-                          flex
-                          h-5
-                          w-5
-                          shrink-0
-                          items-center
-                          justify-center
-                          rounded-full
-                          bg-white
-                        "
-                      >
-
-                        <Check
-                          className="
-                            h-3
-                            w-3
-                            text-coral
-                          "
-                        />
-
-                      </span>
-
-                      <span>
-                        {item}
-                      </span>
-
-                    </div>
-
-                  ))}
-
-                </div>
-
-              </div>
-
-
-              {/* ==================================================
-                  READY TO LAUNCH
-              ================================================== */}
-
-              <div
-                className="
-                  mt-6
-                  rounded-lg
-                  border
-                  border-border
-                  px-5
-                  py-5
                 "
               >
 
@@ -942,16 +438,108 @@ export default function ChecklistPage() {
                     "
                   />
 
-                  <div>
 
-                    <p
+                  <p
+                    className="
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+                    Start with the oldest pending requests
+                    when your team needs to work through a
+                    larger support queue.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            {/* ==================================================
+                WHAT THE STATUS SHOWS
+            ================================================== */}
+
+            <section
+              id="ticket-status"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                What the Status Shows
+              </h2>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                The status of a customer request gives your
+                team a quick way to understand whether an
+                item still needs attention.
+              </p>
+
+
+              <div
+                className="
+                  mt-6
+                  space-y-3
+                "
+              >
+
+                {[
+                  {
+                    title: "Pending",
+                    text:
+                      "The request still needs review or another action from your team.",
+                  },
+                  {
+                    title: "In Review",
+                    text:
+                      "Your team has started looking at the request and is working through the details.",
+                  },
+                  {
+                    title: "Resolved",
+                    text:
+                      "The request has been addressed and no further action is currently expected.",
+                  },
+                ].map((item) => (
+
+                  <div
+                    key={item.title}
+                    className="
+                      rounded-lg
+                      border
+                      border-border
+                      p-5
+                    "
+                  >
+
+                    <h3
                       className="
                         text-sm
                         font-semibold
                       "
                     >
-                      Ready to launch?
-                    </p>
+                      {item.title}
+                    </h3>
+
 
                     <p
                       className="
@@ -961,13 +549,177 @@ export default function ChecklistPage() {
                         text-navy-mute
                       "
                     >
-                      Once you have completed the checklist,
-                      review your storefront one final time
-                      and make sure everything customers need
-                      is available.
+                      {item.text}
                     </p>
 
                   </div>
+
+                ))}
+
+              </div>
+
+            </section>
+
+
+                     {/* ==================================================
+                READING A SUPPORT REQUEST
+            ================================================== */}
+
+            <section
+              id="reading-ticket"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Reading a Support Request
+              </h2>
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                Before responding to a customer, review the
+                complete request and any information attached
+                to it. This gives your team the context needed
+                to provide a useful response.
+              </p>
+
+
+              {/* ==================================================
+                  REQUEST DETAILS
+              ================================================== */}
+
+              <div
+                className="
+                  mt-6
+                  space-y-3
+                "
+              >
+
+                {[
+                  {
+                    title: "Customer Details",
+                    text:
+                      "Review the customer's name and contact information before responding.",
+                  },
+                  {
+                    title: "Request Subject",
+                    text:
+                      "Use the subject to quickly understand the main reason for the request.",
+                  },
+                  {
+                    title: "Message",
+                    text:
+                      "Read the customer's complete message and check whether they included relevant order or product information.",
+                  },
+                  {
+                    title: "Request Status",
+                    text:
+                      "Check the current status so you know whether the request still needs action.",
+                  },
+                  {
+                    title: "Created Date",
+                    text:
+                      "The request date can help your team prioritize older unresolved requests.",
+                  },
+                ].map((item) => (
+
+                  <div
+                    key={item.title}
+                    className="
+                      rounded-lg
+                      border
+                      border-border
+                      p-5
+                    "
+                  >
+
+                    <h3
+                      className="
+                        text-sm
+                        font-semibold
+                      "
+                    >
+                      {item.title}
+                    </h3>
+
+                    <p
+                      className="
+                        mt-2
+                        text-sm
+                        leading-6
+                        text-navy-mute
+                      "
+                    >
+                      {item.text}
+                    </p>
+
+                  </div>
+
+                ))}
+
+              </div>
+
+
+              {/* ==================================================
+                  QUICK TIP
+              ================================================== */}
+
+              <div
+                className="
+                  mt-6
+                  rounded-lg
+                  border
+                  border-border
+                  bg-black/5
+                  px-5
+                  py-4
+                "
+              >
+
+                <div
+                  className="
+                    flex
+                    items-start
+                    gap-3
+                  "
+                >
+
+                  <Info
+                    className="
+                      mt-0.5
+                      h-4
+                      w-4
+                      shrink-0
+                      text-coral
+                    "
+                  />
+
+                  <p
+                    className="
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+                    Read the entire customer message before
+                    taking action. Important details may appear
+                    later in the request.
+                  </p>
 
                 </div>
 
@@ -976,8 +728,400 @@ export default function ChecklistPage() {
             </section>
 
 
-          
-{/* ==================================================
+            {/* ==================================================
+                PRIORITIZING REQUESTS
+            ================================================== */}
+
+            <section
+              id="prioritizing-requests"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Prioritizing Requests
+              </h2>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                When several customer requests are waiting,
+                use the available information to decide which
+                items need attention first.
+              </p>
+
+
+              <ol
+                className="
+                  mt-6
+                  space-y-4
+                "
+              >
+
+                {[
+                  "Review requests that have been waiting the longest.",
+                  "Identify requests that affect an active customer order.",
+                  "Look for requests that require information from another team member.",
+                  "Check whether the customer has already contacted your team about the same issue.",
+                  "Update the request after the required action has been completed.",
+                ].map((item, index) => (
+
+                  <li
+                    key={item}
+                    className="
+                      flex
+                      items-start
+                      gap-3
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+
+                    <span
+                      className="
+                        flex
+                        h-6
+                        w-6
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-md
+                        bg-black/5
+                        text-xs
+                        font-semibold
+                        text-coral
+                      "
+                    >
+                      {index + 1}
+                    </span>
+
+                    <span>
+                      {item}
+                    </span>
+
+                  </li>
+
+                ))}
+
+              </ol>
+
+
+              {/* ==================================================
+                  PRIORITY NOTE
+              ================================================== */}
+
+              <div
+                className="
+                  mt-6
+                  rounded-lg
+                  border
+                  border-border
+                  bg-black/5
+                  px-5
+                  py-4
+                "
+              >
+
+                <p
+                  className="
+                    text-sm
+                    font-semibold
+                  "
+                >
+                  Keep the queue organized
+                </p>
+
+                <p
+                  className="
+                    mt-2
+                    text-sm
+                    leading-6
+                    text-navy-mute
+                  "
+                >
+                  A consistent process makes it easier for
+                  your team to see which customer requests
+                  still require attention.
+                </p>
+
+              </div>
+
+            </section>
+
+
+            {/* ==================================================
+                HANDLING A PENDING REQUEST
+            ================================================== */}
+
+            <section
+              id="handling-request"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Handling a Pending Request
+              </h2>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                Once you understand the customer's request,
+                decide what action is needed and keep the
+                request status up to date.
+              </p>
+
+
+              <div
+                className="
+                  mt-6
+                  space-y-3
+                "
+              >
+
+                {[
+                  {
+                    title: "Review",
+                    text:
+                      "Read the request and identify the customer's main question or problem.",
+                  },
+                  {
+                    title: "Investigate",
+                    text:
+                      "Check relevant store, product, or order information when additional context is needed.",
+                  },
+                  {
+                    title: "Respond",
+                    text:
+                      "Provide a clear response using the information available to your support team.",
+                  },
+                  {
+                    title: "Update",
+                    text:
+                      "Update the request status after the next action has been completed.",
+                  },
+                ].map((item) => (
+
+                  <div
+                    key={item.title}
+                    className="
+                      flex
+                      items-start
+                      gap-4
+                      rounded-lg
+                      border
+                      border-border
+                      p-5
+                    "
+                  >
+
+                    <div
+                      className="
+                        flex
+                        h-8
+                        w-8
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-md
+                        bg-black/5
+                        text-xs
+                        font-bold
+                        text-coral
+                      "
+                    >
+                      {item.title.charAt(0)}
+                    </div>
+
+                    <div>
+
+                      <h3
+                        className="
+                          text-sm
+                          font-semibold
+                        "
+                      >
+                        {item.title}
+                      </h3>
+
+                      <p
+                        className="
+                          mt-2
+                          text-sm
+                          leading-6
+                          text-navy-mute
+                        "
+                      >
+                        {item.text}
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                ))}
+
+              </div>
+
+            </section>
+
+
+            {/* ==================================================
+                SUPPORT QUEUE BEST PRACTICES
+            ================================================== */}
+
+            <section
+              id="queue-best-practices"
+              className="
+                scroll-mt-28
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Support Queue Best Practices
+              </h2>
+
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                A clean support queue helps your team respond
+                consistently and prevents older requests from
+                being overlooked.
+              </p>
+
+
+              <ul
+                className="
+                  mt-6
+                  space-y-3
+                "
+              >
+
+                {[
+                  "Review pending requests regularly.",
+                  "Keep request statuses accurate.",
+                  "Read the full customer message before responding.",
+                  "Use clear and helpful responses.",
+                  "Check order or product details when relevant.",
+                  "Avoid leaving completed requests marked as pending.",
+                  "Escalate issues when your team needs additional assistance.",
+                ].map((item) => (
+
+                  <li
+                    key={item}
+                    className="
+                      flex
+                      items-start
+                      gap-3
+                      text-sm
+                      leading-6
+                      text-navy-mute
+                    "
+                  >
+
+                    <Check
+                      className="
+                        mt-0.5
+                        h-4
+                        w-4
+                        shrink-0
+                        text-coral
+                      "
+                    />
+
+                    <span>
+                      {item}
+                    </span>
+
+                  </li>
+
+                ))}
+
+              </ul>
+
+
+              <div
+                className="
+                  mt-6
+                  rounded-lg
+                  border
+                  border-border
+                  bg-black/5
+                  px-5
+                  py-5
+                "
+              >
+
+                <p
+                  className="
+                    text-sm
+                    font-semibold
+                  "
+                >
+                  Keep customer communication clear
+                </p>
+
+                <p
+                  className="
+                    mt-2
+                    text-sm
+                    leading-6
+                    text-navy-mute
+                  "
+                >
+                  Customers should be able to understand what
+                  happens next without needing to repeat the
+                  same information.
+                </p>
+
+              </div>
+
+            </section>
+
+           {/* ==================================================
                 NEED HELP
             ================================================== */}
 
@@ -990,7 +1134,6 @@ export default function ChecklistPage() {
                 py-8
               "
             >
-
               <div
                 className="
                   rounded-lg
@@ -1001,7 +1144,6 @@ export default function ChecklistPage() {
                   py-6
                 "
               >
-
                 <p
                   className="
                     text-xs
@@ -1014,7 +1156,6 @@ export default function ChecklistPage() {
                   Support
                 </p>
 
-
                 <h2
                   className="
                     mt-2
@@ -1022,10 +1163,9 @@ export default function ChecklistPage() {
                     font-bold
                   "
                 >
-                  Need Help Getting Your Store Ready?
+                  Need Help?
                 </h2>
 
-
                 <p
                   className="
                     mt-3
@@ -1035,13 +1175,12 @@ export default function ChecklistPage() {
                     text-navy-mute
                   "
                 >
-                  If you have completed the checklist but
-                  something does not look right, review the
-                  relevant Sellio documentation before
-                  launching your store.
+                  If you are having trouble finding or
+                  managing customer support requests, first
+                  review the request status and the details
+                  associated with the customer.
                 </p>
 
-
                 <p
                   className="
                     mt-3
@@ -1051,14 +1190,13 @@ export default function ChecklistPage() {
                     text-navy-mute
                   "
                 >
-                  If you still need assistance with your
-                  store setup, account, or configuration,
+                  If the issue continues or you need help
+                  with your Sellio store configuration,
                   contact the Sellio support team.
                 </p>
 
-
                 <Link
-                  href="/contact"
+                  href="/#contact"
                   className="
                     mt-5
                     inline-flex
@@ -1081,9 +1219,7 @@ export default function ChecklistPage() {
                     className="h-4 w-4"
                   />
                 </Link>
-
               </div>
-
             </section>
 
 
@@ -1098,7 +1234,6 @@ export default function ChecklistPage() {
                 py-8
               "
             >
-
               <p
                 className="
                   text-xs
@@ -1111,7 +1246,6 @@ export default function ChecklistPage() {
                 Continue Learning
               </p>
 
-
               <h2
                 className="
                   mt-2
@@ -1122,7 +1256,6 @@ export default function ChecklistPage() {
                 Related Guides
               </h2>
 
-
               <p
                 className="
                   mt-3
@@ -1131,8 +1264,9 @@ export default function ChecklistPage() {
                   text-navy-mute
                 "
               >
-                Continue with these Sellio guides to help
-                complete your store setup.
+                Continue exploring Sellio documentation to
+                learn more about managing customers, orders,
+                and your store.
               </p>
 
 
@@ -1146,11 +1280,11 @@ export default function ChecklistPage() {
               >
 
                 {/* ==================================================
-                    IMAGE SIZE GUIDE
+                    CUSTOMERS
                 ================================================== */}
 
                 <Link
-                  href="/documentation/image-size-guide"
+                  href=""
                   className="
                     group
                     rounded-lg
@@ -1161,16 +1295,14 @@ export default function ChecklistPage() {
                     hover:border-coral
                   "
                 >
-
                   <p
                     className="
                       text-xs
                       text-navy-mute
                     "
                   >
-                    Helpful Info
+                    Store Management
                   </p>
-
 
                   <h3
                     className="
@@ -1180,9 +1312,8 @@ export default function ChecklistPage() {
                       group-hover:text-coral
                     "
                   >
-                    Image Size Guide
+                    Customers
                   </h3>
-
 
                   <p
                     className="
@@ -1192,43 +1323,20 @@ export default function ChecklistPage() {
                       text-navy-mute
                     "
                   >
-                    Prepare product and storefront images
-                    before uploading them to Sellio.
+                    Learn more about managing customer
+                    information in Sellio.
                   </p>
 
-
-                  <span
-                    className="
-                      mt-4
-                      inline-flex
-                      items-center
-                      gap-1.5
-                      text-xs
-                      font-semibold
-                      text-coral
-                    "
-                  >
-                    Read guide
-
-                    <ArrowRight
-                      className="
-                        h-3.5
-                        w-3.5
-                        transition-transform
-                        group-hover:translate-x-1
-                      "
-                    />
-                  </span>
-
+                 
                 </Link>
 
 
                 {/* ==================================================
-                    SET UP EMAIL
+                    ORDERS
                 ================================================== */}
 
                 <Link
-                  href="/documentation/set-up-email-inbox"
+                  href=""
                   className="
                     group
                     rounded-lg
@@ -1239,16 +1347,14 @@ export default function ChecklistPage() {
                     hover:border-coral
                   "
                 >
-
                   <p
                     className="
                       text-xs
                       text-navy-mute
                     "
                   >
-                    Helpful Info
+                    Store Management
                   </p>
-
 
                   <h3
                     className="
@@ -1258,9 +1364,8 @@ export default function ChecklistPage() {
                       group-hover:text-coral
                     "
                   >
-                    Set Up Email Inbox
+                    Orders
                   </h3>
-
 
                   <p
                     className="
@@ -1270,38 +1375,14 @@ export default function ChecklistPage() {
                       text-navy-mute
                     "
                   >
-                    Set up a professional email address for
-                    your business communication.
+                    Review and manage orders from your
+                    Sellio store.
                   </p>
 
-
-                  <span
-                    className="
-                      mt-4
-                      inline-flex
-                      items-center
-                      gap-1.5
-                      text-xs
-                      font-semibold
-                      text-coral
-                    "
-                  >
-                    Read guide
-
-                    <ArrowRight
-                      className="
-                        h-3.5
-                        w-3.5
-                        transition-transform
-                        group-hover:translate-x-1
-                      "
-                    />
-                  </span>
-
+                 
                 </Link>
 
               </div>
-
             </section>
 
 
@@ -1325,7 +1406,7 @@ export default function ChecklistPage() {
               ================================================== */}
 
               <Link
-                href="/documentation/reset-password"
+                href="/helpful-info/pci-compliance-scan"
                 className="
                   group
                   rounded-lg
@@ -1337,7 +1418,6 @@ export default function ChecklistPage() {
                   hover:border-coral
                 "
               >
-
                 <p
                   className="
                     text-xs
@@ -1346,7 +1426,6 @@ export default function ChecklistPage() {
                 >
                   Previous
                 </p>
-
 
                 <div
                   className="
@@ -1359,15 +1438,12 @@ export default function ChecklistPage() {
                     group-hover:text-coral
                   "
                 >
-
                   <ArrowLeft
                     className="h-4 w-4"
                   />
 
-                  Reset Password
-
+                  PCI-Compliance-Scan
                 </div>
-
               </Link>
 
 
@@ -1375,8 +1451,8 @@ export default function ChecklistPage() {
                   NEXT
               ================================================== */}
 
-              {/* <Link
-                href="/documentation"
+              <Link
+                href="/helpful-info/set-up-email-inbox"
                 className="
                   group
                   rounded-lg
@@ -1389,7 +1465,6 @@ export default function ChecklistPage() {
                   hover:border-coral
                 "
               >
-
                 <p
                   className="
                     text-xs
@@ -1398,7 +1473,6 @@ export default function ChecklistPage() {
                 >
                   Next
                 </p>
-
 
                 <div
                   className="
@@ -1412,16 +1486,13 @@ export default function ChecklistPage() {
                     group-hover:text-coral
                   "
                 >
-
-                  Documentation Home
+                  Set-up-Email-Inbox
 
                   <ArrowRight
                     className="h-4 w-4"
                   />
-
                 </div>
-
-              </Link> */}
+              </Link>
 
             </div>
 
@@ -1440,13 +1511,12 @@ export default function ChecklistPage() {
               Last updated recently
             </div>
 
-
           </article>
 
 
 
           {/* ==================================================
-              RIGHT TOC
+              RIGHT SIDE TOC
           ================================================== */}
 
           <aside
@@ -1500,7 +1570,9 @@ export default function ChecklistPage() {
                         event.preventDefault();
 
                         document
-                          .getElementById(section.id)
+                          .getElementById(
+                            section.id
+                          )
                           ?.scrollIntoView({
                             behavior: "smooth",
                             block: "start",
@@ -1519,6 +1591,7 @@ export default function ChecklistPage() {
                         text-sm
                         leading-5
                         transition-colors
+                        duration-200
 
                         ${
                           isActive
@@ -1553,9 +1626,9 @@ export default function ChecklistPage() {
       </main>
 
 
-      {/* ==================================================
+      {/* ======================================================
           SELLIO FOOTER
-      ================================================== */}
+      ====================================================== */}
 
       <Footer />
 

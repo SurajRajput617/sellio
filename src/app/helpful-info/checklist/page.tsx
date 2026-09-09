@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
-  ArrowRight,
-  ArrowLeft,
   Check,
   Info,
+  ArrowLeft,
+  ArrowRight,
+  ClipboardCheck,
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
@@ -17,28 +18,32 @@ import DocumentationSidebar from "@/components/DocumentationSidebar";
 
 const sections = [
   {
-    id: "overview",
-    label: "Overview",
+    id: "store-checklist",
+    label: "Store Launch Checklist",
   },
   {
-    id: "payment-security",
-    label: "Payment Security",
+    id: "products",
+    label: "Products",
   },
   {
-    id: "security-checks",
-    label: "Security Checks",
+    id: "checkout",
+    label: "Checkout & Payments",
   },
   {
-    id: "after-check",
-    label: "After a Security Check",
+    id: "storefront",
+    label: "Storefront Review",
+  },
+  {
+    id: "final-check",
+    label: "Final Check",
   },
 ];
 
 
-export default function PaymentSecurityPage() {
+export default function ChecklistPage() {
 
   const [activeSection, setActiveSection] =
-    useState("overview");
+    useState("store-checklist");
 
 
   useEffect(() => {
@@ -54,15 +59,11 @@ export default function PaymentSecurityPage() {
       sections.forEach((section) => {
 
         const element =
-          document.getElementById(
-            section.id
-          );
+          document.getElementById(section.id);
 
         if (!element) return;
 
-        if (
-          element.offsetTop <= position
-        ) {
+        if (element.offsetTop <= position) {
           current = section.id;
         }
 
@@ -77,11 +78,8 @@ export default function PaymentSecurityPage() {
     window.addEventListener(
       "scroll",
       handleScroll,
-      {
-        passive: true,
-      }
+      { passive: true }
     );
-
 
     return () => {
       window.removeEventListener(
@@ -95,16 +93,12 @@ export default function PaymentSecurityPage() {
 
   return (
     <>
-      {/* ======================================================
+      {/* ==================================================
           SELLIO HEADER
-      ====================================================== */}
+      ================================================== */}
 
       <Navbar />
 
-
-      {/* ======================================================
-          DOCUMENTATION
-      ====================================================== */}
 
       <main
         className="
@@ -135,20 +129,14 @@ export default function PaymentSecurityPage() {
               ARTICLE
           ================================================== */}
 
-          <article
-            className="
-              min-w-0
-            "
-          >
+          <article className="min-w-0">
 
             {/* ==================================================
-                OVERVIEW
+                HEADER
             ================================================== */}
 
-            <section
-              id="overview"
+            <header
               className="
-                scroll-mt-28
                 border-b
                 border-border
                 pb-8
@@ -168,16 +156,36 @@ export default function PaymentSecurityPage() {
               </p>
 
 
-              <h1
+              <div
                 className="
                   mt-3
-                  text-3xl
-                  font-bold
-                  tracking-tight
+                  flex
+                  items-start
+                  gap-3
                 "
               >
-                Payment Security
-              </h1>
+
+                <ClipboardCheck
+                  className="
+                    mt-1
+                    h-6
+                    w-6
+                    shrink-0
+                    text-coral
+                  "
+                />
+
+                <h1
+                  className="
+                    text-3xl
+                    font-bold
+                    tracking-tight
+                  "
+                >
+                  Checklist
+                </h1>
+
+              </div>
 
 
               <p
@@ -189,31 +197,14 @@ export default function PaymentSecurityPage() {
                   text-navy-mute
                 "
               >
-                Learn the basics of payment security and
-                the steps you can take to keep your Sellio
-                store and customer information protected.
-              </p>
-
-
-              <p
-                className="
-                  mt-4
-                  max-w-3xl
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Secure payment processing is an important
-                part of running an ecommerce store. Sellio
-                merchants should regularly review their
-                store configuration and follow the security
-                requirements of their payment providers.
+                Use this checklist to make sure your Sellio
+                store is ready before you start accepting
+                customers.
               </p>
 
 
               {/* ==================================================
-                  INFO CALLOUT
+                  INTRO CALLOUT
               ================================================== */}
 
               <div
@@ -246,7 +237,6 @@ export default function PaymentSecurityPage() {
                     "
                   />
 
-
                   <p
                     className="
                       text-sm
@@ -254,26 +244,25 @@ export default function PaymentSecurityPage() {
                       text-navy-mute
                     "
                   >
-                    Payment security requirements can vary
-                    depending on your payment provider and
-                    store setup. Always follow the current
-                    requirements provided by your payment
-                    service.
+                    Complete each section before launch so
+                    customers can browse products, place
+                    orders, and receive the information they
+                    need from your store.
                   </p>
 
                 </div>
 
               </div>
 
-            </section>
+            </header>
 
 
             {/* ==================================================
-                PAYMENT SECURITY
+                STORE LAUNCH CHECKLIST
             ================================================== */}
 
             <section
-              id="payment-security"
+              id="store-checklist"
               className="
                 scroll-mt-28
                 border-b
@@ -288,7 +277,7 @@ export default function PaymentSecurityPage() {
                   font-bold
                 "
               >
-                Payment Security
+                Store Launch Checklist
               </h2>
 
 
@@ -300,32 +289,11 @@ export default function PaymentSecurityPage() {
                   text-navy-mute
                 "
               >
-                Payment security helps protect sensitive
-                customer information during the checkout
-                process. A secure ecommerce setup reduces
-                unnecessary exposure of payment information
-                and helps customers shop with confidence.
+                Before launching your Sellio store, review
+                the key areas below and confirm that everything
+                is ready.
               </p>
 
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Sellio stores should use supported payment
-                providers and keep store configuration,
-                integrations, and account credentials up to
-                date.
-              </p>
-
-
-              {/* ==================================================
-                  SECURITY PRINCIPLES
-              ================================================== */}
 
               <div
                 className="
@@ -335,58 +303,65 @@ export default function PaymentSecurityPage() {
               >
 
                 {[
-                  {
-                    title: "Use a Supported Payment Provider",
-                    text:
-                      "Choose a payment service that is appropriate for your store and follow its security requirements.",
-                  },
-                  {
-                    title: "Protect Account Access",
-                    text:
-                      "Use strong credentials and limit access to people who need administrative access to your store.",
-                  },
-                  {
-                    title: "Keep Integrations Updated",
-                    text:
-                      "Review connected services and keep supported integrations up to date.",
-                  },
-                  {
-                    title: "Use Secure Connections",
-                    text:
-                      "Make sure customers access your storefront through a secure HTTPS connection.",
-                  },
+                  "Confirm your store name and business information.",
+                  "Add the products you want customers to purchase.",
+                  "Review product prices and descriptions.",
+                  "Check your store navigation and important pages.",
+                  "Configure your available payment options.",
+                  "Review shipping and order settings.",
+                  "Test the customer checkout experience.",
+                  "Confirm your contact information is correct.",
                 ].map((item) => (
 
                   <div
-                    key={item.title}
+                    key={item}
                     className="
-                      rounded-lg
+                      flex
+                      items-start
+                      gap-3
+                      rounded-md
                       border
                       border-border
-                      p-5
+                      px-4
+                      py-3
                     "
                   >
 
-                    <h3
+                    <span
                       className="
-                        text-sm
-                        font-semibold
+                        mt-0.5
+                        flex
+                        h-5
+                        w-5
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-sm
+                        border
+                        border-border
                       "
                     >
-                      {item.title}
-                    </h3>
+
+                      <Check
+                        className="
+                          h-3
+                          w-3
+                          text-coral
+                        "
+                      />
+
+                    </span>
 
 
-                    <p
+                    <span
                       className="
-                        mt-2
                         text-sm
                         leading-6
                         text-navy-mute
                       "
                     >
-                      {item.text}
-                    </p>
+                      {item}
+                    </span>
 
                   </div>
 
@@ -398,11 +373,11 @@ export default function PaymentSecurityPage() {
 
 
             {/* ==================================================
-                SECURITY CHECKS
+                PRODUCTS
             ================================================== */}
 
             <section
-              id="security-checks"
+              id="products"
               className="
                 scroll-mt-28
                 border-b
@@ -417,7 +392,7 @@ export default function PaymentSecurityPage() {
                   font-bold
                 "
               >
-                Security Checks
+                Products
               </h2>
 
 
@@ -429,13 +404,13 @@ export default function PaymentSecurityPage() {
                   text-navy-mute
                 "
               >
-                Regular security checks can help you identify
-                configuration issues before they affect your
-                customers or store operations.
+                Review your product catalog before launch.
+                Customers should have enough information to
+                understand what they are purchasing.
               </p>
 
 
-              <ol
+              <ul
                 className="
                   mt-6
                   space-y-3
@@ -443,13 +418,13 @@ export default function PaymentSecurityPage() {
               >
 
                 {[
-                  "Review your connected payment provider.",
-                  "Check that your storefront uses HTTPS.",
-                  "Review administrator access to your store.",
-                  "Check connected integrations and services.",
-                  "Review any security notifications from your payment provider.",
-                  "Update outdated configuration when required.",
-                ].map((item, index) => (
+                  "Product names are clear and accurate.",
+                  "Product descriptions contain the important details customers need.",
+                  "Prices are correct.",
+                  "Product images are clear and properly sized.",
+                  "Products are assigned to the correct collections.",
+                  "Unavailable products are correctly marked.",
+                ].map((item) => (
 
                   <li
                     key={item}
@@ -463,24 +438,15 @@ export default function PaymentSecurityPage() {
                     "
                   >
 
-                    <span
+                    <Check
                       className="
-                        flex
-                        h-6
-                        w-6
+                        mt-0.5
+                        h-4
+                        w-4
                         shrink-0
-                        items-center
-                        justify-center
-                        rounded-md
-                        bg-black/5
-                        text-xs
-                        font-semibold
                         text-coral
                       "
-                    >
-                      {index + 1}
-                    </span>
-
+                    />
 
                     <span>
                       {item}
@@ -490,12 +456,8 @@ export default function PaymentSecurityPage() {
 
                 ))}
 
-              </ol>
+              </ul>
 
-
-              {/* ==================================================
-                  CHECKLIST
-              ================================================== */}
 
               <div
                 className="
@@ -505,77 +467,36 @@ export default function PaymentSecurityPage() {
                   border-border
                   bg-black/5
                   px-5
-                  py-5
+                  py-4
                 "
               >
 
                 <p
                   className="
                     text-sm
-                    font-semibold
+                    leading-6
+                    text-navy-mute
                   "
                 >
-                  Quick security checklist
+                  <strong className="text-navy">
+                    Tip:
+                  </strong>{" "}
+                  Open several product pages as a customer
+                  would and check the information from their
+                  point of view.
                 </p>
-
-
-                <div
-                  className="
-                    mt-4
-                    space-y-3
-                  "
-                >
-
-                  {[
-                    "HTTPS is enabled.",
-                    "Payment provider settings are current.",
-                    "Only authorized users have store access.",
-                    "Connected services are reviewed regularly.",
-                  ].map((item) => (
-
-                    <div
-                      key={item}
-                      className="
-                        flex
-                        items-start
-                        gap-3
-                        text-sm
-                        leading-6
-                        text-navy-mute
-                      "
-                    >
-
-                      <Check
-                        className="
-                          mt-0.5
-                          h-4
-                          w-4
-                          shrink-0
-                          text-coral
-                        "
-                      />
-
-                      <span>
-                        {item}
-                      </span>
-
-                    </div>
-
-                  ))}
-
-                </div>
 
               </div>
 
             </section>
 
 
-                       {/* ==================================================
-                AFTER A SECURITY CHECK
+                      {/* ==================================================
+                CHECKOUT & PAYMENTS
             ================================================== */}
 
             <section
-              id="after-check"
+              id="checkout"
               className="
                 scroll-mt-28
                 border-b
@@ -590,22 +511,25 @@ export default function PaymentSecurityPage() {
                   font-bold
                 "
               >
-                After a Security Check
+                Checkout & Payments
               </h2>
+
 
               <p
                 className="
                   mt-4
+                  max-w-3xl
                   text-sm
                   leading-7
                   text-navy-mute
                 "
               >
-                Once you finish reviewing your payment and
-                store security settings, record any changes
-                that need attention and confirm that your
-                storefront continues to work normally.
+                Test the complete purchasing experience
+                before your store goes live. A customer
+                should be able to move from product selection
+                to order confirmation without confusion.
               </p>
+
 
               <div
                 className="
@@ -615,57 +539,64 @@ export default function PaymentSecurityPage() {
               >
 
                 {[
-                  {
-                    title: "Review Any Warnings",
-                    text:
-                      "Check notifications from your payment provider or other connected services and follow their current recommendations.",
-                  },
-                  {
-                    title: "Confirm Store Access",
-                    text:
-                      "Make sure administrative access is limited to the people who need it.",
-                  },
-                  {
-                    title: "Test the Customer Experience",
-                    text:
-                      "Open your storefront and verify that customers can browse products and reach checkout normally.",
-                  },
-                  {
-                    title: "Document Important Changes",
-                    text:
-                      "Keep a simple record of security-related configuration changes so your team knows what was updated.",
-                  },
+                  "Confirm your payment options are configured correctly.",
+                  "Check that product prices appear correctly at checkout.",
+                  "Review shipping charges and available delivery options.",
+                  "Test the checkout flow from cart to order confirmation.",
+                  "Make sure required customer information is clearly requested.",
+                  "Confirm the order confirmation page displays correctly.",
+                  "Verify that order confirmation emails are being sent.",
                 ].map((item) => (
 
                   <div
-                    key={item.title}
+                    key={item}
                     className="
-                      rounded-lg
+                      flex
+                      items-start
+                      gap-3
+                      rounded-md
                       border
                       border-border
-                      p-5
+                      px-4
+                      py-3
                     "
                   >
 
-                    <h3
+                    <span
                       className="
-                        text-sm
-                        font-semibold
+                        mt-0.5
+                        flex
+                        h-5
+                        w-5
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-sm
+                        border
+                        border-border
                       "
                     >
-                      {item.title}
-                    </h3>
 
-                    <p
+                      <Check
+                        className="
+                          h-3
+                          w-3
+                          text-coral
+                        "
+                      />
+
+                    </span>
+
+
+                    <span
                       className="
-                        mt-2
                         text-sm
                         leading-6
                         text-navy-mute
                       "
                     >
-                      {item.text}
-                    </p>
+                      {item}
+                    </span>
 
                   </div>
 
@@ -675,7 +606,7 @@ export default function PaymentSecurityPage() {
 
 
               {/* ==================================================
-                  IMPORTANT NOTE
+                  CHECKOUT NOTE
               ================================================== */}
 
               <div
@@ -715,11 +646,10 @@ export default function PaymentSecurityPage() {
                       text-navy-mute
                     "
                   >
-                    Do not make payment configuration changes
-                    based only on an unfamiliar warning. Check
-                    the documentation or support resources for
-                    the service involved before changing a
-                    working configuration.
+                    Complete a full test purchase before
+                    launch. Review every step from adding an
+                    item to the cart through the final order
+                    confirmation.
                   </p>
 
                 </div>
@@ -730,11 +660,11 @@ export default function PaymentSecurityPage() {
 
 
             {/* ==================================================
-                COMMON SECURITY ISSUES
+                STOREFRONT REVIEW
             ================================================== */}
 
             <section
-              id="common-issues"
+              id="storefront"
               className="
                 scroll-mt-28
                 border-b
@@ -749,244 +679,23 @@ export default function PaymentSecurityPage() {
                   font-bold
                 "
               >
-                Common Security Issues
+                Storefront Review
               </h2>
+
 
               <p
                 className="
                   mt-4
+                  max-w-3xl
                   text-sm
                   leading-7
                   text-navy-mute
                 "
               >
-                Some problems are caused by store
-                configuration rather than the payment
-                provider itself. Review these common areas
-                when something does not look right.
-              </p>
-
-
-              <div
-                className="
-                  mt-6
-                  overflow-x-auto
-                  rounded-lg
-                  border
-                  border-border
-                "
-              >
-
-                <table
-                  className="
-                    w-full
-                    min-w-[620px]
-                    text-left
-                    text-sm
-                  "
-                >
-
-                  <thead
-                    className="
-                      bg-black/5
-                    "
-                  >
-
-                    <tr>
-
-                      <th
-                        className="
-                          px-4
-                          py-3
-                          font-semibold
-                        "
-                      >
-                        Issue
-                      </th>
-
-                      <th
-                        className="
-                          px-4
-                          py-3
-                          font-semibold
-                        "
-                      >
-                        What to Check
-                      </th>
-
-                    </tr>
-
-                  </thead>
-
-
-                  <tbody>
-
-                    <tr
-                      className="
-                        border-t
-                        border-border
-                      "
-                    >
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          font-medium
-                        "
-                      >
-                        Store does not use HTTPS
-                      </td>
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          text-navy-mute
-                        "
-                      >
-                        Review your connected domain and
-                        secure connection settings.
-                      </td>
-
-                    </tr>
-
-
-                    <tr
-                      className="
-                        border-t
-                        border-border
-                      "
-                    >
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          font-medium
-                        "
-                      >
-                        Payment provider warning
-                      </td>
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          text-navy-mute
-                        "
-                      >
-                        Review the provider's current
-                        requirements and account settings.
-                      </td>
-
-                    </tr>
-
-
-                    <tr
-                      className="
-                        border-t
-                        border-border
-                      "
-                    >
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          font-medium
-                        "
-                      >
-                        Unexpected checkout behavior
-                      </td>
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          text-navy-mute
-                        "
-                      >
-                        Review recent configuration or
-                        integration changes.
-                      </td>
-
-                    </tr>
-
-
-                    <tr
-                      className="
-                        border-t
-                        border-border
-                      "
-                    >
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          font-medium
-                        "
-                      >
-                        Unknown administrator access
-                      </td>
-
-                      <td
-                        className="
-                          px-4
-                          py-4
-                          text-navy-mute
-                        "
-                      >
-                        Review account permissions and
-                        remove access that is no longer
-                        required.
-                      </td>
-
-                    </tr>
-
-                  </tbody>
-
-                </table>
-
-              </div>
-
-            </section>
-
-
-            {/* ==================================================
-                SECURITY BEST PRACTICES
-            ================================================== */}
-
-            <section
-              id="best-practices"
-              className="
-                scroll-mt-28
-                py-8
-              "
-            >
-
-              <h2
-                className="
-                  text-xl
-                  font-bold
-                "
-              >
-                Security Best Practices
-              </h2>
-
-              <p
-                className="
-                  mt-4
-                  text-sm
-                  leading-7
-                  text-navy-mute
-                "
-              >
-                Good security habits make it easier to
-                protect your store as it grows. Add these
-                checks to your regular store maintenance
-                routine.
+                Review your storefront as if you were a
+                first-time customer. Make sure visitors can
+                easily understand your products and find the
+                information they need.
               </p>
 
 
@@ -998,13 +707,14 @@ export default function PaymentSecurityPage() {
               >
 
                 {[
-                  "Use strong, unique credentials for your Sellio account.",
-                  "Give administrative access only to people who need it.",
-                  "Review connected payment and marketing services regularly.",
-                  "Keep your storefront and domain configuration current.",
-                  "Use HTTPS for your customer-facing storefront.",
-                  "Pay attention to security notices from your payment provider.",
-                  "Review unexpected account or payment activity promptly.",
+                  "Your logo and store name are displayed correctly.",
+                  "Navigation links take customers to the correct pages.",
+                  "Product and collection pages are easy to find.",
+                  "Contact and support information is accurate.",
+                  "About and business information is complete.",
+                  "Important policies and store information are available.",
+                  "Images display correctly on desktop and mobile.",
+                  "Buttons and links work as expected.",
                 ].map((item) => (
 
                   <li
@@ -1041,7 +751,7 @@ export default function PaymentSecurityPage() {
 
 
               {/* ==================================================
-                  FINAL TIP
+                  MOBILE REVIEW
               ================================================== */}
 
               <div
@@ -1050,20 +760,19 @@ export default function PaymentSecurityPage() {
                   rounded-lg
                   border
                   border-border
-                  bg-black/5
-                  px-5
-                  py-5
+                  p-5
                 "
               >
 
-                <p
+                <h3
                   className="
                     text-sm
                     font-semibold
                   "
                 >
-                  Keep security reviews simple
-                </p>
+                  Check Mobile Too
+                </h3>
+
 
                 <p
                   className="
@@ -1073,16 +782,202 @@ export default function PaymentSecurityPage() {
                     text-navy-mute
                   "
                 >
-                  A regular review of your domain, payment
-                  provider, account access, and connected
-                  services can help you spot configuration
-                  problems early.
+                  Open your storefront on a phone or narrow
+                  browser window. Check that menus, product
+                  images, buttons, forms, and checkout remain
+                  easy to use.
                 </p>
 
               </div>
 
             </section>
-    {/* ==================================================
+
+
+            {/* ==================================================
+                FINAL CHECK
+            ================================================== */}
+
+            <section
+              id="final-check"
+              className="
+                scroll-mt-28
+                border-b
+                border-border
+                py-8
+              "
+            >
+
+              <h2
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Final Check
+              </h2>
+
+
+              <p
+                className="
+                  mt-4
+                  max-w-3xl
+                  text-sm
+                  leading-7
+                  text-navy-mute
+                "
+              >
+                Before you announce your store, perform one
+                final review. Fix anything that could prevent
+                customers from browsing, purchasing, or
+                contacting your business.
+              </p>
+
+
+              <div
+                className="
+                  mt-6
+                  rounded-lg
+                  border
+                  border-border
+                  bg-black/5
+                  p-5
+                "
+              >
+
+                <div
+                  className="
+                    space-y-4
+                  "
+                >
+
+                  {[
+                    "Store information is complete.",
+                    "Products and prices have been reviewed.",
+                    "Navigation and important links work.",
+                    "Payment and shipping settings are ready.",
+                    "Checkout has been tested.",
+                    "Customer emails are working.",
+                    "The storefront has been reviewed on mobile.",
+                    "Contact and support information is correct.",
+                  ].map((item) => (
+
+                    <div
+                      key={item}
+                      className="
+                        flex
+                        items-start
+                        gap-3
+                        text-sm
+                        leading-6
+                        text-navy-mute
+                      "
+                    >
+
+                      <span
+                        className="
+                          flex
+                          h-5
+                          w-5
+                          shrink-0
+                          items-center
+                          justify-center
+                          rounded-full
+                          bg-white
+                        "
+                      >
+
+                        <Check
+                          className="
+                            h-3
+                            w-3
+                            text-coral
+                          "
+                        />
+
+                      </span>
+
+                      <span>
+                        {item}
+                      </span>
+
+                    </div>
+
+                  ))}
+
+                </div>
+
+              </div>
+
+
+              {/* ==================================================
+                  READY TO LAUNCH
+              ================================================== */}
+
+              <div
+                className="
+                  mt-6
+                  rounded-lg
+                  border
+                  border-border
+                  px-5
+                  py-5
+                "
+              >
+
+                <div
+                  className="
+                    flex
+                    items-start
+                    gap-3
+                  "
+                >
+
+                  <Check
+                    className="
+                      mt-0.5
+                      h-4
+                      w-4
+                      shrink-0
+                      text-coral
+                    "
+                  />
+
+                  <div>
+
+                    <p
+                      className="
+                        text-sm
+                        font-semibold
+                      "
+                    >
+                      Ready to launch?
+                    </p>
+
+                    <p
+                      className="
+                        mt-2
+                        text-sm
+                        leading-6
+                        text-navy-mute
+                      "
+                    >
+                      Once you have completed the checklist,
+                      review your storefront one final time
+                      and make sure everything customers need
+                      is available.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+          
+{/* ==================================================
                 NEED HELP
             ================================================== */}
 
@@ -1095,6 +990,7 @@ export default function PaymentSecurityPage() {
                 py-8
               "
             >
+
               <div
                 className="
                   rounded-lg
@@ -1118,6 +1014,7 @@ export default function PaymentSecurityPage() {
                   Support
                 </p>
 
+
                 <h2
                   className="
                     mt-2
@@ -1125,23 +1022,9 @@ export default function PaymentSecurityPage() {
                     font-bold
                   "
                 >
-                  Need Help?
+                  Need Help Getting Your Store Ready?
                 </h2>
 
-                <p
-                  className="
-                    mt-3
-                    max-w-2xl
-                    text-sm
-                    leading-7
-                    text-navy-mute
-                  "
-                >
-                  If you are unsure whether your payment
-                  setup meets the requirements for your
-                  store, review your payment provider's
-                  current documentation first.
-                </p>
 
                 <p
                   className="
@@ -1152,13 +1035,30 @@ export default function PaymentSecurityPage() {
                     text-navy-mute
                   "
                 >
-                  For Sellio store configuration questions,
-                  contact Sellio support and provide details
-                  about the issue you are seeing.
+                  If you have completed the checklist but
+                  something does not look right, review the
+                  relevant Sellio documentation before
+                  launching your store.
                 </p>
+
+
+                <p
+                  className="
+                    mt-3
+                    max-w-2xl
+                    text-sm
+                    leading-7
+                    text-navy-mute
+                  "
+                >
+                  If you still need assistance with your
+                  store setup, account, or configuration,
+                  contact the Sellio support team.
+                </p>
+
 
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="
                     mt-5
                     inline-flex
@@ -1183,6 +1083,7 @@ export default function PaymentSecurityPage() {
                 </Link>
 
               </div>
+
             </section>
 
 
@@ -1210,6 +1111,7 @@ export default function PaymentSecurityPage() {
                 Continue Learning
               </p>
 
+
               <h2
                 className="
                   mt-2
@@ -1220,6 +1122,7 @@ export default function PaymentSecurityPage() {
                 Related Guides
               </h2>
 
+
               <p
                 className="
                   mt-3
@@ -1228,9 +1131,8 @@ export default function PaymentSecurityPage() {
                   text-navy-mute
                 "
               >
-                Explore more Sellio documentation for
-                information about your store, domains,
-                payments, and analytics.
+                Continue with these Sellio guides to help
+                complete your store setup.
               </p>
 
 
@@ -1244,11 +1146,11 @@ export default function PaymentSecurityPage() {
               >
 
                 {/* ==================================================
-                    PAYMENT GATEWAY
+                    IMAGE SIZE GUIDE
                 ================================================== */}
 
                 <Link
-                  href="/documentation/payment-gateway"
+                  href="/helpful-info/image-size-guide"
                   className="
                     group
                     rounded-lg
@@ -1266,8 +1168,9 @@ export default function PaymentSecurityPage() {
                       text-navy-mute
                     "
                   >
-                    Store Management
+                    Helpful Info
                   </p>
+
 
                   <h3
                     className="
@@ -1277,8 +1180,9 @@ export default function PaymentSecurityPage() {
                       group-hover:text-coral
                     "
                   >
-                    Payment Gateway
+                    Image Size Guide
                   </h3>
+
 
                   <p
                     className="
@@ -1288,9 +1192,10 @@ export default function PaymentSecurityPage() {
                       text-navy-mute
                     "
                   >
-                    Learn more about payment configuration
-                    for your Sellio store.
+                    Prepare product and storefront images
+                    before uploading them to Sellio.
                   </p>
+
 
                   <span
                     className="
@@ -1319,11 +1224,11 @@ export default function PaymentSecurityPage() {
 
 
                 {/* ==================================================
-                    DOMAIN GUIDE
+                    SET UP EMAIL
                 ================================================== */}
 
                 <Link
-                  href="/documentation/ensure-www-loads-your-site"
+                  href="/helpful-info/set-up-email-inbox"
                   className="
                     group
                     rounded-lg
@@ -1344,6 +1249,7 @@ export default function PaymentSecurityPage() {
                     Helpful Info
                   </p>
 
+
                   <h3
                     className="
                       mt-2
@@ -1352,8 +1258,9 @@ export default function PaymentSecurityPage() {
                       group-hover:text-coral
                     "
                   >
-                    Ensure Your Website Loads Correctly
+                    Set Up Email Inbox
                   </h3>
+
 
                   <p
                     className="
@@ -1363,9 +1270,10 @@ export default function PaymentSecurityPage() {
                       text-navy-mute
                     "
                   >
-                    Review domain records, redirects, and
-                    HTTPS configuration for your storefront.
+                    Set up a professional email address for
+                    your business communication.
                   </p>
+
 
                   <span
                     className="
@@ -1417,7 +1325,7 @@ export default function PaymentSecurityPage() {
               ================================================== */}
 
               <Link
-                href="/documentation/ensure-www-loads-your-site"
+                href="/helpful-info/reset-password"
                 className="
                   group
                   rounded-lg
@@ -1439,6 +1347,7 @@ export default function PaymentSecurityPage() {
                   Previous
                 </p>
 
+
                 <div
                   className="
                     mt-2
@@ -1455,7 +1364,7 @@ export default function PaymentSecurityPage() {
                     className="h-4 w-4"
                   />
 
-                  Ensure-www-Loads-Your-Site
+                  Reset Password
 
                 </div>
 
@@ -1466,8 +1375,8 @@ export default function PaymentSecurityPage() {
                   NEXT
               ================================================== */}
 
-              <Link
-                href="/documentation/pending-tickets"
+              {/* <Link
+                href="/documentation"
                 className="
                   group
                   rounded-lg
@@ -1490,6 +1399,7 @@ export default function PaymentSecurityPage() {
                   Next
                 </p>
 
+
                 <div
                   className="
                     mt-2
@@ -1503,7 +1413,7 @@ export default function PaymentSecurityPage() {
                   "
                 >
 
-                  Pending-Tickets
+                  Documentation Home
 
                   <ArrowRight
                     className="h-4 w-4"
@@ -1511,7 +1421,7 @@ export default function PaymentSecurityPage() {
 
                 </div>
 
-              </Link>
+              </Link> */}
 
             </div>
 
@@ -1530,8 +1440,9 @@ export default function PaymentSecurityPage() {
               Last updated recently
             </div>
 
+
           </article>
-        
+
 
 
           {/* ==================================================
@@ -1589,9 +1500,7 @@ export default function PaymentSecurityPage() {
                         event.preventDefault();
 
                         document
-                          .getElementById(
-                            section.id
-                          )
+                          .getElementById(section.id)
                           ?.scrollIntoView({
                             behavior: "smooth",
                             block: "start",
@@ -1644,9 +1553,9 @@ export default function PaymentSecurityPage() {
       </main>
 
 
-      {/* ======================================================
+      {/* ==================================================
           SELLIO FOOTER
-      ====================================================== */}
+      ================================================== */}
 
       <Footer />
 

@@ -1658,7 +1658,7 @@ export default function ImageSizeGuidePage() {
                 ================================================== */}
 
                 <Link
-                  href="/documentation/set-up-email-inbox"
+                  href="/helpful-info/set-up-email-inbox"
                   className="
                     group
                     rounded-lg
@@ -1733,7 +1733,7 @@ export default function ImageSizeGuidePage() {
                 ================================================== */}
 
                 <Link
-                  href="/documentation/google-analytics"
+                  href="/helpful-info/google-analytics"
                   className="
                     group
                     rounded-lg
@@ -1827,7 +1827,7 @@ export default function ImageSizeGuidePage() {
               ================================================== */}
 
               <Link
-                href="/documentation/set-up-email-inbox"
+                href="/helpful-info/set-up-email-inbox"
                 className="
                   group
                   rounded-lg
@@ -1877,7 +1877,7 @@ export default function ImageSizeGuidePage() {
               ================================================== */}
 
               <Link
-                href="/documentation/reset-password"
+                href="/helpful-info/reset-password"
                 className="
                   group
                   rounded-lg
