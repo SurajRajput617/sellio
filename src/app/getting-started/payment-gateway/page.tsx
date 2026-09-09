@@ -211,7 +211,7 @@ export default function PaymentGatewayPage() {
               {/* SAME LINK CARD STYLE AS REFERENCE */}
 
               <Link
-                href="/documentation/terms"
+                href="/essential-settings/terms-conditions"
                 className="group mt-7 flex items-center justify-between rounded-xl border border-border bg-white px-5 py-4 transition-colors hover:border-coral/40"
               >
 
@@ -222,7 +222,7 @@ export default function PaymentGatewayPage() {
                   </span>
 
                   <span className="font-semibold text-navy">
-                    Adding Your Terms
+                    Adding Your Terms-Conditions
                   </span>
 
                 </div>
