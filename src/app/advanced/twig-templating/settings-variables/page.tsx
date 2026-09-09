@@ -7171,7 +7171,7 @@ export default function SettingsVariablesPage() {
                 {/* STANDARDS */}
 
                 <Link
-                  href="/documentation/standards-overview"
+                  href="/standards/standards-overview"
                   className="
                     group
                     rounded-lg
