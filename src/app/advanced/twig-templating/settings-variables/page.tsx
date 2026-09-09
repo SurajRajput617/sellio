@@ -7320,7 +7320,7 @@ export default function SettingsVariablesPage() {
                 {/* NEXT */}
 
                 <Link
-                  href="/documentation/analytics"
+                  href="/helpful-info/analytics"
                   className="
                     group
                     rounded-lg

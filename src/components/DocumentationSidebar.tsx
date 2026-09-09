@@ -1470,8 +1470,8 @@ const subLinkClass = (path: string) => {
                           <nav className="mt-2 space-y-1">
 
                             <Link
-                              href="/documentation/analytics"
-                              className={subLinkClass("/documentation/analytics")}
+                              href="/helpful-info/analytics"
+                              className={subLinkClass("/helpful-info/analytics")}
                             >
                               Analytics
                             </Link>

@@ -8599,7 +8599,7 @@ export default function AnalyticsPage() {
                 {/* PREVIOUS */}
 
                 <Link
-                  href="/documentation/settings-variables"
+                  href="/advanced/twig-templating/settings-variables"
                   className="
                     group
                     rounded-lg

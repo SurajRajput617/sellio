@@ -1673,7 +1673,7 @@ export default function DocumentationPage() {
     <nav className="mt-2 space-y-1">
 
       <Link
-        href="/documentation/analytics"
+        href="/helpful-info/analytics"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1685,7 +1685,7 @@ export default function DocumentationPage() {
       </Link>
 
       <Link
-        href="/documentation/google-analytics"
+        href="/helpful-info/google-analytics"
         className="
           block rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
