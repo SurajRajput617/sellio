@@ -24,6 +24,8 @@ const columns = [
     links: [
       { label: "Connect Your Social Accounts", href: "/essential-settings/connect-social-accounts" },
       { label: "Email Setup", href: "/essential-settings/email-setup" },
+      // { label: "Wallet & Withdrawals", href: "/essential-settings/wallet-withdrawals" },
+      // { label: "Add Terms & Conditions", href: "/essential-settings/terms-conditions" },
     ],
   },
 ];
