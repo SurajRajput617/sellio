@@ -8369,7 +8369,7 @@ export default function AnalyticsPage() {
                 {/* STOREFRONT */}
 
                 <Link
-                  href="/documentation/settings-variables"
+                  href="/advanced/twig-templating/settings-variables"
                   className="
                     group
                     rounded-lg
@@ -8447,7 +8447,7 @@ export default function AnalyticsPage() {
                 {/* STANDARDS */}
 
                 <Link
-                  href="/documentation/standards-overview"
+                  href="/standards/standards-overview"
                   className="
                     group
                     rounded-lg
@@ -8844,7 +8844,7 @@ export default function AnalyticsPage() {
                   </Link>
 
                   <Link
-                    href="/documentation/settings-variables"
+                    href="/advanced/twig-templating/settings-variables"
                     className="
                       group
                       flex
@@ -8875,7 +8875,7 @@ export default function AnalyticsPage() {
                   </Link>
 
                   <Link
-                    href="/documentation/standards-overview"
+                    href="/standards/standards-overview"
                     className="
                       group
                       flex
