@@ -531,7 +531,7 @@ export default function SafeCrackerPage() {
 
 
               <Link
-                href="/instant-win-games/safe-cracker"
+                href="/instant-win-games/pinata"
                 className="
                 rounded-2xl
                 border
@@ -546,7 +546,7 @@ export default function SafeCrackerPage() {
 
 
                 <p className="mt-2 font-bold">
-                  Piñata
+                 Pinata
                 </p>
 
 
