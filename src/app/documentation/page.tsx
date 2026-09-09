@@ -1528,7 +1528,7 @@ export default function DocumentationPage() {
 
   <nav className="mt-2 space-y-1 pl-5">
     <Link
-      href="/advanced/conversion-event-tracking"
+      href="/documentation/conversion-event-tracking"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -1580,7 +1580,7 @@ export default function DocumentationPage() {
   <nav className="mt-1 space-y-1 pl-5">
 
     <Link
-      href="/advanced/twig-templating/custom-twig-block"
+      href="/documentation/custom-twig-block"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -1592,7 +1592,7 @@ export default function DocumentationPage() {
     </Link>
 
     <Link
-      href="/advanced/twig-templating/custom-twig-product-grid"
+      href="/documentation/custom-twig-product-grid"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -1604,7 +1604,7 @@ export default function DocumentationPage() {
     </Link>
 
     <Link
-      href="/advanced/twig-templating/custom-twig-slider"
+      href="/documentation/custom-twig-slider"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute
@@ -1616,7 +1616,7 @@ export default function DocumentationPage() {
     </Link>
 
     <Link
-      href="/advanced/twig-templating/settings-variables"
+      href="/documentation/settings-variables"
       className="
         block rounded-lg px-3 py-2
         text-sm font-medium text-navy-mute

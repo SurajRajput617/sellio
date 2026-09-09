@@ -1323,9 +1323,9 @@ const subLinkClass = (path: string) => {
 
                           {/* Conversion Event Tracking */}
                           <Link
-                            href="/advanced/conversion-event-tracking"
+                            href="/documentation/conversion-event-tracking"
                             className={subLinkClass(
-                              "/advanced/conversion-event-tracking"
+                              "/documentation/conversion-event-tracking"
                             )}
                           >
                             Conversion Event Tracking
@@ -1382,9 +1382,9 @@ const subLinkClass = (path: string) => {
                         <nav className="mt-2 space-y-1">
 
                           <Link
-                            href="/advanced/twig-templating/custom-twig-block"
+                            href="/documentation/custom-twig-block"
                             className={subLinkClass(
-                              "/advanced/twig-templating/custom-twig-block"
+                              "/documentation/custom-twig-block"
                             )}
                           >
                             Custom Twig Block
@@ -1392,9 +1392,9 @@ const subLinkClass = (path: string) => {
 
 
                           <Link
-                            href="/advanced/twig-templating/custom-twig-product-grid"
+                            href="/documentation/custom-twig-product-grid"
                             className={subLinkClass(
-                              "/advanced/twig-templating/custom-twig-product-grid"
+                              "/documentation/custom-twig-product-grid"
                             )}
                           >
                             Custom Twig Product Grid
@@ -1402,9 +1402,9 @@ const subLinkClass = (path: string) => {
 
 
                           <Link
-                            href="/advanced/twig-templating/custom-twig-slider"
+                            href="/documentation/custom-twig-slider"
                             className={subLinkClass(
-                              "/advanced/twig-templating/custom-twig-slider"
+                              "/documentation/custom-twig-slider"
                             )}
                           >
                             Custom Twig Slider
@@ -1412,9 +1412,9 @@ const subLinkClass = (path: string) => {
 
 
                           <Link
-                            href="/advanced/twig-templating/settings-variables"
+                            href="/documentation/settings-variables"
                             className={subLinkClass(
-                              "/advanced/twig-templating/settings-variables"
+                              "/documentation/settings-variables"
                             )}
                           >
                             Settings Variables
