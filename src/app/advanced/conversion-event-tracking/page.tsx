@@ -2121,7 +2121,7 @@ export default function ConversionEventTrackingPage() {
             >
 
               <Link
-                href="/documentation/accountability"
+                href="/standards/accountability"
                 className="
                   group
                   rounded-xl
@@ -2172,7 +2172,7 @@ export default function ConversionEventTrackingPage() {
 
 
               <Link
-                href="/documentation/custom-twig-block"
+                href="/advanced/twig-templating/custom-twig-block"
                 className="
                   group
                   rounded-xl

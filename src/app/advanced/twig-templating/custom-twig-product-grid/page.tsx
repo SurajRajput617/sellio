@@ -2475,7 +2475,7 @@ export default function CustomTwigProductGridPage() {
               {/* PREVIOUS */}
 
               <Link
-                href="/documentation/custom-twig-block"
+                href="/advanced/twig-templating/custom-twig-block"
                 className="
                   group
                   rounded-lg
@@ -2517,7 +2517,7 @@ export default function CustomTwigProductGridPage() {
                     "
                   />
 
-                  Custom Template Block
+                  Custom Twig Block
 
                 </div>
 
@@ -2527,7 +2527,7 @@ export default function CustomTwigProductGridPage() {
               {/* NEXT */}
 
               <Link
-                href="/documentation/custom-twig-slider"
+                href="/advanced/twig-templating/custom-twig-slider"
                 className="
                   group
                   rounded-lg

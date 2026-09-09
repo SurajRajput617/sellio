@@ -3965,7 +3965,7 @@ export default function AccountabilityPage() {
 
               {/* NEXT */}
               <Link
-                href="/documentation/conversion-event-tracking"
+                href="/advanced/conversion-event-tracking"
                 className="
                   group
                   rounded-lg

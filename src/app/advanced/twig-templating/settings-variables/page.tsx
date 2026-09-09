@@ -7267,7 +7267,7 @@ export default function SettingsVariablesPage() {
                 {/* PREVIOUS */}
 
                 <Link
-                  href="/documentation/custom-twig-slider"
+                  href="/advanced/twig-templating/custom-twig-slider"
                   className="
                     group
                     rounded-lg

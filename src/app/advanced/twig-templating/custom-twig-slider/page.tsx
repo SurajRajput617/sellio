@@ -4146,7 +4146,7 @@ export default function CustomTwigSliderPage() {
                 {/* STANDARDS */}
 
                 <Link
-                  href="/documentation/standards-overview"
+                  href="/standards/standards-overview"
                   className="
                     group
                     rounded-lg
@@ -4291,7 +4291,7 @@ export default function CustomTwigSliderPage() {
               {/* PREVIOUS */}
 
               <Link
-                href="/documentation/custom-twig-product-grid"
+                href="/advanced/twig-templating/custom-twig-product-grid"
                 className="
                   group
                   rounded-lg
@@ -4339,7 +4339,7 @@ export default function CustomTwigSliderPage() {
               {/* NEXT */}
 
               <Link
-                href="/documentation/settings-variables"
+                href="/advanced/twig-templating/settings-variables"
                 className="
                   group
                   rounded-lg
@@ -4521,7 +4521,7 @@ export default function CustomTwigSliderPage() {
                   {/* STANDARDS */}
 
                   <Link
-                    href="/documentation/standards-overview"
+                    href="/standards/standards-overview"
                     className="
                       group
                       flex

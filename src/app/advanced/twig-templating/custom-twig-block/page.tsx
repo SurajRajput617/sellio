@@ -1827,7 +1827,7 @@ export default function CustomTwigBlockPage() {
               >
 
                 <Link
-                  href="/documentation/standards-overview"
+                  href="/standards/standards-overview"
                   className="
                     flex
                     items-center
@@ -1859,7 +1859,7 @@ export default function CustomTwigBlockPage() {
 
 
                 <Link
-                  href="/documentation/conversion-event-tracking"
+                  href="/advanced/conversion-event-tracking"
                   className="
                     flex
                     items-center
@@ -1912,7 +1912,7 @@ export default function CustomTwigBlockPage() {
               {/* PREVIOUS */}
 
               <Link
-                href="/documentation/conversion-event-tracking"
+                href="/advanced/conversion-event-tracking"
                 className="
                   group
                   rounded-lg
@@ -1964,7 +1964,7 @@ export default function CustomTwigBlockPage() {
               {/* NEXT */}
 
               <Link
-                href="/documentation/custom-twig-product-grid"
+                href="/advanced/twig-templating/custom-twig-product-grid"
                 className="
                   group
                   rounded-lg
