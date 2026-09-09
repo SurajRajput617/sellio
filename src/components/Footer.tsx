@@ -2,30 +2,28 @@ import Link from "next/link";
 
 const columns = [
   {
-    title: "Product",
+    title: "Overview",
     links: [
-      { label: "Features", href: "#how-it-works" },
-      { label: "Dashboard", href: "#dashboard" },
-      { label: "Pricing", href: "#pricing" },
-      { label: "What's included", href: "#everything" },
+      { label: "Buy Your Domain", href: "/getting-started/buy-domain" },
+      { label: "Add Your Domain to Sellio", href: "/getting-started/add-domain" },
+      { label: "Creating Your Company", href: "/getting-started/create-company" },
+      { label: "Adding Your Terms", href: "/getting-started/terms" },
+      { label: "Payment Gateway", href: "/getting-started/payment-gateway" },
     ],
   },
   {
-    title: "Resources",
+    title: "CUSTOMIZE YOUR SITE",
     links: [
-      { label: "Academy", href: "#support" },
-      { label: "Ecommerce guides", href: "#support" },
-      { label: "SEO guides", href: "#support" },
-      { label: "Support", href: "#support" },
+      { label: "Add Your Logo", href: "/customize-your-site/add-logo" },
+      { label: "Choose Site Colours", href: "/customize-your-site/site-colours" },
+      { label: "Set Up Your Homepage", href: "/customize-your-site/homepage-setup" },
     ],
   },
   {
-    title: "Company",
+    title: "ESSENTIAL SETTINGS",
     links: [
-      { label: "About", href: "#" },
-      { label: "Contact", href: "#" },
-      { label: "Privacy", href: "#" },
-      { label: "Terms", href: "#" },
+      { label: "Connect Your Social Accounts", href: "/essential-settings/connect-social-accounts" },
+      { label: "Email Setup", href: "/essential-settings/email-setup" },
     ],
   },
 ];
