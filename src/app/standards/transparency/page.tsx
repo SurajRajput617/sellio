@@ -2071,7 +2071,7 @@ export default function TransparencyPage() {
               </div>
 
               <Link
-                href="/documentation/payment-gateway"
+                href="/getting-started/payment-gateway"
                 className="
                   mt-8
                   flex
@@ -2415,7 +2415,7 @@ export default function TransparencyPage() {
               {/* RELATED LINKS */}
               <div className="mt-6 space-y-3">
                 <Link
-                  href="/documentation/promos-and-discounts"
+                  href="/marketing/website-tools/promos-and-discounts"
                   className="
                     flex
                     items-center
@@ -4380,7 +4380,7 @@ export default function TransparencyPage() {
 
               <div className="mt-6 space-y-3">
                 <Link
-                  href="/documentation/payment-gateway"
+                  href="/getting-started/payment-gateway"
                   className="
                     group
                     flex
@@ -4421,7 +4421,7 @@ export default function TransparencyPage() {
         
 
                 <Link
-                  href="/documentation/promos-and-discounts"
+                  href="/marketing/website-tools/promos-and-discounts"
                   className="
                     group
                     flex
@@ -4670,7 +4670,7 @@ export default function TransparencyPage() {
 
                 <div className="mt-4 space-y-3">
                   <Link
-                    href="/documentation/standards-overview"
+                    href="/standards/standards-overview"
                     className="
                       group
                       flex
@@ -4730,7 +4730,7 @@ export default function TransparencyPage() {
 
                 <div className="mt-4 space-y-3">
                   <Link
-                    href="/documentation/payment-gateway"
+                    href="/getting-started/payment-gateway"
                     className="
                       group
                       flex
@@ -4761,7 +4761,7 @@ export default function TransparencyPage() {
 
 
                   <Link
-                    href="/documentation/promos-and-discounts"
+                    href="/marketing/website-tools/promos-and-discounts"
                     className="
                       group
                       flex

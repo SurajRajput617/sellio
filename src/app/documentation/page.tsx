@@ -1433,7 +1433,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/standards-overview"
+        href="/standards/standards-overview"
         className="
           flex items-center gap-3 rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1447,7 +1447,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/player-protections"
+        href="/standards/player-protections"
         className="
           flex items-center gap-3 rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1461,7 +1461,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/transparency"
+        href="/standards/transparency"
         className="
           flex items-center gap-3 rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute
@@ -1475,7 +1475,7 @@ export default function DocumentationPage() {
 
 
       <Link
-        href="/documentation/accountability"
+        href="/standards/accountability"
         className="
           flex items-center gap-3 rounded-lg px-3 py-2
           text-sm font-medium text-navy-mute

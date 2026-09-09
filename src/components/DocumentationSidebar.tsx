@@ -1239,9 +1239,9 @@ const subLinkClass = (path: string) => {
 
                         {/* Overview */}
                         <Link
-                          href="/documentation/standards-overview"
+                          href="/standards/standards-overview"
                           className={subLinkClass(
-                            "/documentation/standards-overview"
+                            "/standards/standards-overview"
                           )}
                         >
                           ⚖ <span className="ml-2">Overview</span>
@@ -1249,9 +1249,9 @@ const subLinkClass = (path: string) => {
 
                         {/* Player Protections */}
                         <Link
-                          href="/documentation/player-protections"
+                          href="/standards/player-protections"
                           className={subLinkClass(
-                            "/documentation/player-protections"
+                            "/standards/player-protections"
                           )}
                         >
                           ♡ <span className="ml-2">Player Protections</span>
@@ -1259,9 +1259,9 @@ const subLinkClass = (path: string) => {
 
                         {/* Transparency */}
                         <Link
-                          href="/documentation/transparency"
+                          href="/standards/transparency"
                           className={subLinkClass(
-                            "/documentation/transparency"
+                            "/standards/transparency"
                           )}
                         >
                           ◉ <span className="ml-2">Transparency</span>
@@ -1269,9 +1269,9 @@ const subLinkClass = (path: string) => {
 
                         {/* Accountability */}
                         <Link
-                          href="/documentation/accountability"
+                          href="/standards/accountability"
                           className={subLinkClass(
-                            "/documentation/accountability"
+                            "/standards/accountability"
                           )}
                         >
                           ☑ <span className="ml-2">Accountability</span>

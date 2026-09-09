@@ -1025,7 +1025,7 @@ export default function PlayerProtectionsPage() {
               </ul>
 
               <Link
-                href="/documentation/tracking"
+                href="/marketing/facebook-and-meta/tracking"
                 className="
                   mt-6
                   flex
@@ -1661,7 +1661,7 @@ export default function PlayerProtectionsPage() {
               "
             >
               <Link
-                href="/documentation/standards-overview"
+                href="/standards/standards-overview"
                 className="
                   group
                   rounded-lg
@@ -1841,7 +1841,7 @@ export default function PlayerProtectionsPage() {
                 </p>
 
                 <Link
-                  href="/documentation/standards-overview"
+                  href="/standards/standards-overview"
                   className="
                     mt-2
                     flex

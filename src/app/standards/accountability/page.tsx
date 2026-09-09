@@ -709,7 +709,7 @@ export default function AccountabilityPage() {
 
               {/* LINK CARD */}
               <Link
-                href="/documentation/standards-overview"
+                href="/standards/standards-overview"
                 className="
                   group
                   mt-8
@@ -3837,7 +3837,7 @@ export default function AccountabilityPage() {
 
               <div className="mt-6 space-y-3">
                 <Link
-                  href="/documentation/standards-overview"
+                  href="/standards/standards-overview"
                   className="
                     group
                     flex
@@ -4109,7 +4109,7 @@ export default function AccountabilityPage() {
                 <div className="mt-4 space-y-3">
                   {/* STANDARDS OVERVIEW */}
                   <Link
-                    href="/documentation/standards-overview"
+                    href="/standards/standards-overview"
                     className="
                       group
                       flex
@@ -4200,7 +4200,7 @@ export default function AccountabilityPage() {
 
                   {/* PAYMENT */}
                   <Link
-                    href="/documentation/payment-gateway"
+                    href="/getting-started/payment-gateway"
                     className="
                       group
                       flex
