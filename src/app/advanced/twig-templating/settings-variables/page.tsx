@@ -7510,7 +7510,7 @@ export default function SettingsVariablesPage() {
                
 
                   <Link
-                    href="/documentation/standards-overview"
+                    href="/standards/standards-overview"
                     className="
                       group
                       flex
